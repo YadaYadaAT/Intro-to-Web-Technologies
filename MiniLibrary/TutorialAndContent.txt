@@ -1,0 +1,27 @@
+add these to the element you want to have the pop up 
+->      class="PopUpClass" data-PopUpMessage='the message of the pop up here' 
+.daPopUp{thats the class for the innerPopup window}
+.daPopUpArrow{the arrow of the poped up}
+
+<style>
+.daPopUp{
+		position:absolute;
+		z-index:9999;
+		background-color:grey;
+		text-align:center;
+		width:10em;
+		color:white;
+		min-height:4em;
+		border-radius:5px 5px 5px 5px;
+		transition:1s opacity;
+		opacity:0.1;
+	}
+.daPopUpArrow{position:absolute;
+height:0;
+width:0;
+ right:100%;
+border:10px solid transparent;
+border-right: 25px solid grey;
+z-index:9998;
+	}
+	</style>

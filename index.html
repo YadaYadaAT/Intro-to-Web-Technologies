@@ -1,13 +1,66 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <body>
-            <div class=header_wrapper>
-                
-            </div>
-            
-        </body>
-        <script async></script>
+<html lang="en-US">
+    <head>        
+        <link rel="stylesheet/less" type="text/css" href="other/less/master.less">
+        <title></title>
+        <meta name="Description" content="changeThisToTheDescription">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="keywords" content="Mantises, Mantises Species, Mantises lifespan">
+        <link rel="icon" href="#" type="image/x-icon">
+        <link rel="mask-icon" href="#" color="#000000">
+        <meta property="og:url" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="images/YadaYadaTest.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="436">
+        <meta property="og:image:height" content="228">
+        <meta property="og:description" content="Learn all about Mantises in our beautiful website">
+        <script type="text/javascript" src="other/js/less.js"></script>
+        <script>document.addEventListener("DOMContentLoaded",function(){
+                        fetch("html/headerNav.html")
+                        .then(response=>response.text())
+                        .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("beforebegin",html)})
+                    })        
+                    document.addEventListener("DOMContentLoaded",function(){
+                        fetch("html/footer.html")
+                        .then(response=>response.text())
+                        .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("afterend",html)})
+                    })
+        </script>                
+        <!--the following informs the visitor that our site is not viewable in case the browser has disabled javascript-->
+        <noscript>
+            <style type="text/css">    	
+                body *{display:none;}
+                html{height:100%;width:100%;}
+                body{min-height:100%;background-image:url(images/NOjavascript.png);background-position:center;background-repeat:no-repeat;background-color:white;background-size:100% 100%;}
+            </style>         
+        </noscript>
     </head>
+
+
+    
+    <body>
+        <main>
+
+            <h1>hello</h1>
+
+            <section id="species">
+                <h2>hello</h2>
+                <p>randomtextrandomtextrandomtextrandomtextrandomtextrandomtextrandom
+                textrandomtextrandomtextrandomtextrandomtextrandomtextrandomtextrando
+                mtextrandomtextrandomtext</p>
+            </section>
+
+            <section id="habitat">
+                <h2>hello</h2>
+                <p>randomtextrandomtextrandomtextrandomtextrandomtextrandomtextrandom
+                textrandomtextrandomtextrandomtextrandomtextrandomtextrandomtextrando
+                mtextrandomtextrandomtext</p>
+            </section>
+            
+
+
+        </main>
+    </body>    
 </html>
