@@ -1,0 +1,20 @@
+
+
+<script>
+
+var theCookies = document.cookie.split(';');
+    var aString = '';
+    for (var i = 1 ; i <= theCookies.length; i++) {
+        aString += i + ' ' + theCookies[i-1] + "\n";
+    }
+    
+
+alert(aString);
+</script>
+
+<?php 
+
+<script>document.cookie="PHPSESSID=a4b9e2";</script>
+
+
+PHPSESSID=114f2v5ur4kuks8plitpqp36kb
