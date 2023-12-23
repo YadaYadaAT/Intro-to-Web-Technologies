@@ -51,8 +51,33 @@
             this.parentNode.parentNode.parentNode.querySelector("h2").style.width="100%";
         })
     }  
+            //IMG previewer
+const jImg = document.getElementsByClassName('clickable-jImgBored');
+const prev = document.getElementById('HomePageImgPreview');
+const jImgIn = document.getElementById('HomePageImgPreviewIn');
+// I add to each one of the images the listener
+for (p=0;p<jImg.length;p++){
+    jImg[p].addEventListener('click', handleImageClick);
+}
+
+//
+function handleImageClick(event) {
+    event.stopPropagation();
+    let getTheSrc=this.getAttribute('src');
+    jImgIn.setAttribute("src",getTheSrc);
+    prev.style.display = 'block';
+    document.addEventListener('click', handleOutsideClickOnce);
+
+    function handleOutsideClickOnce() {
+        jImgIn.setAttribute("src","#");
+        prev.style.display = 'none';
+        document.removeEventListener('click', handleOutsideClickOnce);
+    }
+}
+
 
 
 })
+
 
 })(); 
