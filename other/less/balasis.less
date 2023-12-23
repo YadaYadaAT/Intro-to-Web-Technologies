@@ -30,6 +30,16 @@ main{
     position:relative;
 }
 
+.jHomePageMenuItemOverview{
+    display:flex;
+    flex-direction:column;
+    width:90%;
+    max-width: 130em;
+}
+.jHomePageMenuItemOverview img{
+    width:50%;
+    height:auto;
+}
 
 .jHomePageMenuItem{
     max-width: 130em;
@@ -42,6 +52,10 @@ main{
     border:1px solid black;
     border-radius:5px 5px 5px 5px;
     position:relative;
+}
+.jHomePageMenuItem img{
+width:35%;
+height:auto;
 }
 .jHomePageMenuItemAddHeight{
   height:auto;
@@ -117,16 +131,26 @@ main{
     background:none;
     border-style:none;
     padding:0;
+    color:@colorLightGreen;
+    text-shadow:0px 0px @colorMantisGreen;
+    font-size:@fontSizeTitles;
+    transition: transform 0.3s ease-in-out;
 }
+.jHomePageReadMore:hover{
+    transform:scale(1.2);
+}
+
+
 .jHomePageReadMore:hover{
     color:@colorLightGreen;
     cursor: pointer;
 }
 .jHomePageMinimizerHolder{
-    
+    right:0;
+    margin-right:1em;
     flex-grow:1;
     height:100%;
-    position:relative;
+    position:absolute;
     display:none;
     justify-content: center;
 }
@@ -137,83 +161,47 @@ main{
     height:3em;
     width:3em;
     border-radius:50%;
-    border-style:none;
     cursor: pointer;
+    font-weight:bold;
+    background-color:@colorFlowerRed;
+    
 }
 
 
 #jHomePageSideBar{
     flex-grow:1;
     display:flex;
-    background-color:green;
+   border-left:1px solid black;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .jHomePageMenuItem img{
-        height:33em;
-        width:75em;
-        
-        }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 1000px) {
-    .jHomePageMenuItem img{
-        height:16em;
-        width:24em;
-        
-        }
-       
-}
-
-
-@media only screen and (max-width: 1000px) {
-    #jHomePageSideBar{
-        flex-grow:1;
-        display:none;
-        background-color:green;
+@media only screen and (max-width: 850px) {
+    #jHomePageSideBar{      
+        display:none;      
     }
     .jHomePageMenuItem img{
-          height:8em;
-        width:16em;      
-        }
+           width:40%;
+        }  
         #jHomePageAboutMantisesMenu{
             width:100%;
-        }
+         }
    
 }
 
 
 @media only screen and (max-width: 650px) {
-    #jHomePageSideBar{
-        flex-grow:1;
-        display:none;
-        background-color:green;
+    #jHomePageSideBar{      
+        display:none;      
     }
-    .jHomePageMenuItem img{
-        height:auto;
+    .jHomePageMenuItem img{       
         width:100%;
         padding-left:0;
         padding-right:0;
         
         }
         #jHomePageAboutMantisesMenu{
-            width:100%;
+           width:100%;
         }
    
 }
