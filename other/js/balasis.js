@@ -42,6 +42,7 @@
             this.parentNode.parentNode.parentNode.classList.add("jHomePageMenuItemAddHeight");           
             this.parentNode.parentNode.parentNode.querySelector(".jHomePageMenuItemContent").classList.remove("jHomePageMenuItemContentFog");
             this.parentNode.parentNode.parentNode.querySelector(".jHomePageMinimizerHolder").style.display="flex";
+            this.parentNode.parentNode.parentNode.scrollIntoView({ behavior: 'smooth' });
             this.style.display="none";    
         })
     }  

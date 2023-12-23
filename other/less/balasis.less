@@ -8,51 +8,74 @@ main{
     position:relative;
     
 }
-#main h1{
+main h1{
     font-family:@fontFamilyHeader;
+    font-size:@fontSizeTitles;
 }
-#main h2,h3,h4,h5,h6{
+main h2,h3,h4,h5,h6{
     font-family:@fontFamilyTitle;
     font-size:@fontSizeTitles;
     }
-#main p{
+main p{
     font-family:@fontFamilyMainText;
     font-size:@fontSizeMainText;
+    line-height:1.5;
+    text-indent: 50px;
 }
 
 
 #jHomePageAboutMantisesMenu{
-    width:80%;
+    width:100%;
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
     position:relative;
 }
-
+#jHomePageAboutMantisesMenu section{
+margin-bottom:5em;  
+}
 .jHomePageMenuItemOverview{
     display:flex;
     flex-direction:column;
-    width:90%;
-    max-width: 130em;
-}
-.jHomePageMenuItemOverview img{
     width:50%;
-    height:auto;
+    max-width: 130em;
+    line-height:1.5;
+    align-self:center;
+    
 }
+.jHomePageMenuItemOverview h1{
+ text-align: center;
+}
+
+.jHomePageMenuItemOverview p{
+    background-color:@colorCreme;
+   padding:1em;
+}
+
+
 
 .jHomePageMenuItem{
     max-width: 130em;
     margin-bottom:2.5em;
-    width:90%;
+    width:65%;
     display:flex;
     flex-wrap:nowrap;
-    padding:1em;
     height:20em;
-    border:1px solid black;
     border-radius:5px 5px 5px 5px;
     position:relative;
+    
+   
 }
+
+.jHomePageMenuItem h2{
+    width:70%;
+   padding-top:0.5em;
+   padding-bottom:0.5em;
+    text-align: left;
+    padding-left:3em;
+    background-color:@colorCreme;
+}
+
 .jHomePageMenuItem img{
 width:35%;
 height:auto;
@@ -63,7 +86,7 @@ height:auto;
 
 
 .jHomePageMenuItem p{
-   
+    line-height:1.5;
     text-align:justify;
 }
 .jHomePageContentAndReadMoreHolder{
@@ -71,12 +94,15 @@ height:auto;
     flex-direction:column;
     width:90%;
     position:relative;
-    flex-grow:1;
+    flex-grow:0;
+    flex-shrink:0;
 }
 .jHomePageMenuItemContent{
     flex-grow:1;
     position:relative;
     overflow:hidden;
+    margin-top:1em;
+    
 }
 
 .jAddPaddingRightToImg{
@@ -92,7 +118,7 @@ height:auto;
     position:absolute;
    width:100%;
    height:100%;
-    background: linear-gradient(transparent 45%, white 75%);
+    background: linear-gradient(transparent 45%, white 70%;);
     bottom:0;
     right:0;
     left:0;
@@ -111,59 +137,60 @@ height:auto;
    z-index:10; 
 }
 
-
-
-.jHomePageMenuItemContent h1{
-    text-align:center;
+.jHomePageMenuItemContent p{
+    padding-left:10em;
 }
 
-
 .jHomePageReadMoreHolder{
+    bottom:-3em;
     display:flex;
     justify-content:flex-start;
-    position:relative;
+    position:absolute;
     flex-shrink: 0;
-    margin-top:1em;
-   
+   padding-left:10em;
 }
 .jHomePageReadMore{
     font-weight:bold;
     background:none;
+    border-radius: 5px 5px 5px 5px;
     border-style:none;
-    padding:0;
-    color:@colorLightGreen;
-    text-shadow:0px 0px @colorMantisGreen;
-    font-size:@fontSizeTitles;
+    font-weight:bold;
+    opacity: 1;
+    padding:0.5em;
+    color:white;
+    background-color:@colorMantisGreen;
+    font-size:1.2em;
     transition: transform 0.3s ease-in-out;
 }
-.jHomePageReadMore:hover{
-    transform:scale(1.2);
-}
-
 
 .jHomePageReadMore:hover{
-    color:@colorLightGreen;
+    
     cursor: pointer;
+    opacity:0.7;
 }
 .jHomePageMinimizerHolder{
-    right:0;
     margin-right:1em;
     flex-grow:1;
     height:100%;
-    position:absolute;
+    position:relative;
     display:none;
     justify-content: center;
+ 
 }
 .jHomePageMinimizer{
     position:sticky;
     top:1em;
-    margin-bottom:1em;
+    margin-bottom:2em;
     height:3em;
     width:3em;
-    border-radius:50%;
+    background:none;
+    border:none;
+    border-collapse: collapse;
     cursor: pointer;
     font-weight:bold;
-    background-color:@colorFlowerRed;
+    font-size:2em;
+    line-height:0;
+    color:@colorFlowerRed;
     
 }
 
@@ -172,6 +199,7 @@ height:auto;
     flex-grow:1;
     display:flex;
    border-left:1px solid black;
+   display:none;
 }
 
 
