@@ -27,6 +27,7 @@
             this.parentNode.style.display="none"; 
             this.parentNode.parentNode.querySelector(".jHomePageReadMore").style.display="flex";
             this.parentNode.parentNode.scrollIntoView({ behavior: 'smooth' });
+            this.parentNode.parentNode.querySelector("h2").style.width="70%";
         })
     }
     for(let k=0;k<ReadMores.length;k++){
@@ -37,13 +38,14 @@
                 HomePageMini[qq].parentNode.parentNode.querySelector(".jHomePageMenuItemContent").classList.add("jHomePageMenuItemContentFog");
                 HomePageMini[qq].parentNode.style.display="none"; 
                 HomePageMini[qq].parentNode.parentNode.querySelector(".jHomePageReadMore").style.display="flex";
-            
+                HomePageMini[qq].parentNode.parentNode.querySelector("h2").style.width="70%";
             }
             this.parentNode.parentNode.parentNode.classList.add("jHomePageMenuItemAddHeight");           
             this.parentNode.parentNode.parentNode.querySelector(".jHomePageMenuItemContent").classList.remove("jHomePageMenuItemContentFog");
             this.parentNode.parentNode.parentNode.querySelector(".jHomePageMinimizerHolder").style.display="flex";
             this.parentNode.parentNode.parentNode.scrollIntoView({ behavior: 'smooth' });
-            this.style.display="none";    
+            this.style.display="none"; 
+            this.parentNode.parentNode.parentNode.querySelector("h2").style.width="100%";
         })
     }  
 
