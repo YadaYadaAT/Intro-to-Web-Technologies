@@ -10,7 +10,7 @@
 //colors:
 
 
-//@colorDarkGreen: rgb(136, 171, 142);
+@colorDarkGreen: rgb(136, 171, 142);
 
 @colorLightGreen: rgb(175, 200, 173);
 
@@ -46,16 +46,84 @@ html{
 html,body{
     padding:0;
     margin:0;
+    background-color: rgba(19, 73, 19, 0.658);
 
 }
 *{box-sizing: border-box;}
 body{
     min-height:100%;
-   
+    position: relative;
 }
-#header_nav{
 
+//HeaderNav
+
+.imgbox{
+    display: grid;
+    height: 100%;
+    object-fit: fill;
+    position: relative;
 }
+.center-fit{
+    min-width: 100%;
+    max-height: 100vh;
+    margin:auto;
+}
+#navbar_wrapper{
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    left:0;
+    right:0;
+    width: fit-content;
+}
+nav{
+    position: relative;
+    display: block;
+    // font-weight: bold;
+    font-family: @fontFamilyHeader;
+    width: 1200px;
+}
+.flex-container-navbar{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.flex-container div{
+    
+}
+
+
+#block-main-menu a:link{
+    color: @colorCreme;
+    background-color: transparent;
+    text-decoration: none;
+    opacity: 0.7;
+}
+#block-main-menu a:hover{
+    color: @colorCreme;
+    background-color: transparent;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 1;
+}
+#menu_item_gallery{
+    padding-top: 60px;
+}
+#menu_item_resources{
+    padding-top: 60px;
+}
+#menu_item_faq{
+    padding-top: 60px;
+}
+#menu_item_about{
+    padding-top: 60px;
+}
+
+    
+
 footer{
 
 }
