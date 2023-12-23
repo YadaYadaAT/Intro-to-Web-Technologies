@@ -11,16 +11,19 @@ main{
 main h1{
     font-family:@fontFamilyHeader;
     font-size:@fontSizeTitles;
+    color:#232323;
 }
 main h2,h3,h4,h5,h6{
     font-family:@fontFamilyTitle;
     font-size:@fontSizeTitles;
+    color:#232323;
     }
 main p{
     font-family:@fontFamilyMainText;
     font-size:@fontSizeMainText;
     line-height:1.5;
     text-indent: 50px;
+    color:#232323;
 }
 
 
@@ -37,21 +40,25 @@ margin-bottom:5em;
 .jHomePageMenuItemOverview{
     display:flex;
     flex-direction:column;
-    width:50%;
+    width:100%;
     max-width: 130em;
     line-height:1.5;
-    align-self:center;
+    background-color:@colorFlowerOrange;
+    padding:1em;
+    padding-top:0em;
+    align-items:center;
     
 }
 .jHomePageMenuItemOverview h1{
  text-align: center;
+ width:50%;
+ color:#232323;
 }
-
 .jHomePageMenuItemOverview p{
-    background-color:@colorCreme;
-   padding:1em;
-}
-
+    text-align: justify;
+    width:50%;
+    color:#232323;
+   }
 
 
 .jHomePageMenuItem{
@@ -73,8 +80,9 @@ margin-bottom:5em;
    padding-bottom:0.5em;
     text-align: left;
     padding-left:3em;
-    background-color:@colorCreme;
+    background-color:@colorFlowerOrange;
     transition:600ms linear;
+    color:#232323;
 }
 
 
@@ -92,6 +100,7 @@ height:auto;
 .jHomePageMenuItem p{
     line-height:1.5;
     text-align:justify;
+    
 }
 .jHomePageContentAndReadMoreHolder{
     display:flex;
@@ -106,6 +115,7 @@ height:auto;
     position:relative;
     overflow:hidden;
     margin-top:1em;
+    color:#232323;
     
 }
 
@@ -122,7 +132,7 @@ height:auto;
     position:absolute;
    width:100%;
    height:100%;
-    background: linear-gradient(transparent 45%, white 70%;);
+    background: linear-gradient(transparent 65%, white 95%;);
     bottom:0;
     right:0;
     left:0;
@@ -143,6 +153,7 @@ height:auto;
 
 .jHomePageMenuItemContent p{
     padding-left:10em;
+    color:#232323;
 }
 
 .jHomePageReadMoreHolder{
@@ -156,21 +167,19 @@ height:auto;
 .jHomePageReadMore{
     font-weight:bold;
     background:none;
-    border-radius: 5px 5px 5px 5px;
-    border-style:none;
+    color:#232323;
+    border:none;
     font-weight:bold;
     opacity: 1;
     padding:0.5em;
-    color:white;
-    background-color:@colorMantisGreen;
-    font-size:1.2em;
+    font-size:1em;
     transition: transform 0.3s ease-in-out;
 }
 
 .jHomePageReadMore:hover{
     
     cursor: pointer;
-    opacity:0.7;
+    opacity:0.5;
 }
 .jHomePageMinimizerHolder{
     margin-right:1em;
