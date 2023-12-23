@@ -1,8 +1,11 @@
 
 
 (function() {
+
+
+
     document.addEventListener("DOMContentLoaded",function(){
-        
+        /*
         const imagesOfHomePageMenu=document.getElementsByClassName("jHomepageMenuImg");
         for (let i=0;i<imagesOfHomePageMenu.length;i++){
             if (imagesOfHomePageMenu[i].style.cssFloat=="right"){
@@ -11,7 +14,7 @@
             }else{
                 imagesOfHomePageMenu[i].classList.add("jAddPaddingRightToImg");
             }
-        }
+        }*/
     
 
    //Setting the listener to the ReadMores. Expanding the divs of their parents.
