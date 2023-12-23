@@ -1,11 +1,223 @@
 //=======================Begin of your CSS code================//
 
+//=====================================================HOMEPAGE===================================================//
+//Home About Mantises
+main{
+    display:flex;
+    flex-direction: row;
+    position:relative;
+    
+}
+#main h1{
+    font-family:@fontFamilyHeader;
+}
+#main h2,h3,h4,h5,h6{
+    font-family:@fontFamilyTitle;
+    font-size:@fontSizeTitles;
+    }
+#main p{
+    font-family:@fontFamilyMainText;
+    font-size:@fontSizeMainText;
+}
+
+
+#jHomePageAboutMantisesMenu{
+    width:80%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    position:relative;
+}
+
+
+.jHomePageMenuItem{
+    max-width: 130em;
+    margin-bottom:2.5em;
+    width:90%;
+    display:flex;
+    flex-wrap:nowrap;
+    padding:1em;
+    height:20em;
+    border:1px solid black;
+    border-radius:5px 5px 5px 5px;
+    position:relative;
+}
+.jHomePageMenuItemAddHeight{
+  height:auto;
+}
+
+
+.jHomePageMenuItem p{
+   
+    text-align:justify;
+}
+.jHomePageContentAndReadMoreHolder{
+    display:flex;
+    flex-direction:column;
+    width:90%;
+    position:relative;
+    flex-grow:1;
+}
+.jHomePageMenuItemContent{
+    flex-grow:1;
+    position:relative;
+    overflow:hidden;
+}
+
+.jAddPaddingRightToImg{
+    padding-right:2em;
+}
+.jAddPaddingLeftToImg{
+    padding-left:2em;
+}
+
+
+
+.jHomePageMenuItemContent::before{
+    content:" ";
+    position:absolute;
+   width:100%;
+   height:100%;
+    background: linear-gradient(transparent 45%, white 75%);
+    bottom:0;
+    right:0;
+    left:0;
+   top:0;
+ 
+}
+.jHomePageMenuItemContent::after{
+    content:" ";
+    position:absolute;
+   width:100%;
+   height:50%;
+    bottom:0;
+    right:0;
+    left:0;
+   backdrop-filter: blur(1px);
+   z-index:10; 
+}
+
+
+
+.jHomePageMenuItemContent h1{
+    text-align:center;
+}
+
+
+.jHomePageReadMoreHolder{
+    display:flex;
+    justify-content:flex-start;
+    position:relative;
+    flex-shrink: 0;
+    margin-top:1em;
+   
+}
+.jHomePageReadMore{
+    font-weight:bold;
+    background:none;
+    border-style:none;
+    padding:0;
+}
+.jHomePageReadMore:hover{
+    color:@colorLightGreen;
+    cursor: pointer;
+}
+.jHomePageMinimizerHolder{
+    
+    flex-grow:1;
+    height:100%;
+    position:relative;
+    display:none;
+    justify-content: center;
+}
+.jHomePageMinimizer{
+    position:sticky;
+    top:1em;
+    margin-bottom:1em;
+    height:3em;
+    width:3em;
+    border-radius:50%;
+    border-style:none;
+    cursor: pointer;
+}
+
+
+#jHomePageSideBar{
+    flex-grow:1;
+    display:flex;
+    background-color:green;
+}
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .jHomePageMenuItem img{
+        height:33em;
+        width:75em;
+        
+        }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 1000px) {
+    .jHomePageMenuItem img{
+        height:16em;
+        width:24em;
+        
+        }
+       
+}
+
+
+@media only screen and (max-width: 1000px) {
+    #jHomePageSideBar{
+        flex-grow:1;
+        display:none;
+        background-color:green;
+    }
+    .jHomePageMenuItem img{
+          height:8em;
+        width:16em;      
+        }
+        #jHomePageAboutMantisesMenu{
+            width:100%;
+        }
+   
+}
+
+
+@media only screen and (max-width: 650px) {
+    #jHomePageSideBar{
+        flex-grow:1;
+        display:none;
+        background-color:green;
+    }
+    .jHomePageMenuItem img{
+        height:auto;
+        width:100%;
+        padding-left:0;
+        padding-right:0;
+        
+        }
+        #jHomePageAboutMantisesMenu{
+            width:100%;
+        }
+   
+}
 
 
 //=======================END of your CSS code==================//
