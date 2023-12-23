@@ -1,30 +1,119 @@
-//=======================Begin of your CSS code================//
+//=======================         John Balasis Stage 1 AthensTEch                                 ================//
 
 //=====================================================HOMEPAGE===================================================//
-//Home About Mantises
-main{
+//General settings to apply font families,colors e.t.c from master
+#jhomeMain{
     display:flex;
     flex-direction: row;
     position:relative;
     
 }
-main h1{
+#jhomeMain h1{
     font-family:@fontFamilyHeader;
     font-size:@fontSizeTitles;
     color:#232323;
 }
-main h2,h3,h4,h5,h6{
+#jhomeMain h2,h3,h4,h5,h6{
     font-family:@fontFamilyTitle;
     font-size:@fontSizeTitles;
     color:#232323;
     }
-main p{
+#jhomeMain p{
     font-family:@fontFamilyMainText;
     font-size:@fontSizeMainText;
     line-height:1.5;
     text-indent: 50px;
     color:#232323;
 }
+
+
+
+
+
+
+//==============================================================================================================//
+//===================================             jPhotoGallery      ==========================================//
+
+
+
+#jPhotoGallery{
+    display:flex;
+    width:1200px;
+    height:20.5em;
+    
+    align-self:center;
+    overflow:hidden;
+    
+}
+
+#jPhotoGallery img{
+    width:100%;
+    height:100%;
+    padding:0.2em;
+}
+#jPhotoGallery img:hover{
+    border:6px solid @colorCreme;
+    cursor: pointer;
+}
+
+
+#jPhotoGalleryFirstFour{
+    display:flex;
+    width:80%;
+    height:100%;
+    flex-direction:column;
+}
+
+
+
+
+
+#jPhotoFirstTwoRow{
+    display:flex;    
+    height:50%;
+    width:100%;
+}
+#jPhotoFirstTwoRowOne{
+    width:70%;
+    height:100%;
+}
+#jPhotoFirstTwoRowTwo{
+    width:30%;
+    height:100%;
+}
+
+
+
+#jPhotoSecondTwoRow{
+    display:flex;    
+    height:50%;
+    width:100%;
+}
+#jPhotoSecondTwoRowOne{
+    width:30%;
+    height:100%;
+}
+#jPhotoSecondTwoRowTwo{
+    width:70%;
+    height:100%;
+}
+
+
+
+
+#jPhotoGalleryLastOne{
+    width:20%;
+    height:100%;
+
+}
+
+
+
+
+
+//==============================================================================================================//
+//===================================             Home Overview       ==========================================//
+
 
 
 #jHomePageAboutMantisesMenu{
@@ -37,11 +126,11 @@ main p{
 #jHomePageAboutMantisesMenu section{
 margin-bottom:5em;  
 }
+
 .jHomePageMenuItemOverview{
     display:flex;
     flex-direction:column;
     width:100%;
-    max-width: 130em;
     line-height:1.5;
     background-color:@colorFlowerOrange;
     padding:1em;
@@ -59,6 +148,15 @@ margin-bottom:5em;
     width:50%;
     color:#232323;
    }
+
+
+
+
+//==============================================================================================================//
+//==================================   Menu Inside (ReadMore/Minimize)  ========================================//
+
+
+
 
 
 .jHomePageMenuItem{
@@ -217,6 +315,21 @@ height:auto;
 
 
 
+
+
+
+
+
+//==============================================================================================================//
+//===================================            Media Queries       ==========================================//
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 850px) {
     #jHomePageSideBar{      
         display:none;      
@@ -249,4 +362,9 @@ height:auto;
 
 
 //=======================END of your CSS code==================//
+
+//==============================================================================================================//
+//========================= Imports Should be only master.less here   ==========================================//
+
+
 @import "master.less";
