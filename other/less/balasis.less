@@ -4,7 +4,7 @@
 //General settings to apply font families,colors e.t.c from master
 #jhomeMain{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     position:relative;
     
 }
@@ -126,10 +126,105 @@
 
 
 
+//==============================================================================================================//
+//===================================            jhomePageFunFacts       ==========================================//
+#jhomePageFunFacts{
+ display:flex;
+    align-self:flex-end;
+    background-color:grey;
+     position: -webkit-sticky; /* Safari */
+    position:sticky;
+    top: calc(100vh - 30em);
+    border:none;
+    line-height:0;
+
+        /* Add these properties to make it behave like absolute */
+        height:30em;
+        width: 25%;
+        z-index: 40;
+
+
+}
+
+#jhomePageFunFacts img{
+    position:absolute;
+    bottom:0;
+    right:5%;
+    width:30%;
+    height:38%;
+    cursor: pointer;
+}
+#jhomePageFunFacts img:hover{
+    filter: drop-shadow(5px 5px 10px @colorFlowerOrange);
+}
+
+#jhomePageFunFacts h3{
+width:100%;
+text-align:center;
+font-family:Georgia, 'Times New Roman', Times, serif;
+font-size:@fontFamilyTitle;
+color:white;
+position:absolute;
+top:5%;
+z-index:10;
+}
+
+#jChatLoading{
+
+ width:1.2em;
+ height:1em;
+ position:absolute;
+ display:flex;
+ right:20%;
+ bottom:10em;
+ flex-direction: column;
+}
+
+
+@keyframes jLoadingChat{
+    0%{opacity:1;align-self:flex-start;}
+    10%{opacity:0.5;align-self:flex-start;}
+    20%{opacity:1;align-self:flex-start;}
+    25%{opacity:0.5;align-self:flex-start;}
+   50%{opacity:1;align-self:center;}
+   60%{opacity:0.5;align-self:center;}
+    70%{opacity:1;align-self:center;}
+    80%{opacity:0.5;align-self:flex-end;}
+    90%{opacity:1;align-self:flex-end;}
+    100%{opacity:1;align-self:flex-end;}
+    
+}
+
+
+#jChatLoadingBullets{
+    width:0.7em;
+    height:0.7em;
+    border-radius:50%;
+    background-color:white;
+    animation:jLoadingChat 2s ease-in-out infinite;
+}
+
+#jhomePageFunFactsText{
+    position:absolute;
+    background-image:url();
+    width:100%;
+    height:100%;
+    background-color:rgb(49,51,56);
+
+
+}
+
 
 //==============================================================================================================//
 //===================================             Home Overview       ==========================================//
-
+//Couldnt find an easy alternative the way I structured
+//the page..so Instead of creating a mess with the divs
+//I decided to occupy the place that the fun fact div
+// gives with a margin-top:-35em. Well I assume
+//minus em is there for a reason.(not beautiful I admit).
+.jfirstOfItsKind{
+    margin-top:-35em;
+}
 
 
 #jHomePageAboutMantisesMenu{
@@ -306,6 +401,7 @@ height:auto;
  
 }
 .jHomePageMinimizer{
+    position: -webkit-sticky; /* Safari */
     position:sticky;
     top:1em;
     margin-bottom:2em;
@@ -322,13 +418,6 @@ height:auto;
 }
 
 
-#jHomePageSideBar{
-    flex-grow:1;
-    display:flex;
-   border-left:1px solid black;
-   display:none;
-}
-
 
 
 
@@ -340,41 +429,6 @@ height:auto;
 //===================================            Media Queries       ==========================================//
 
 
-
-
-
-
-
-
-@media only screen and (max-width: 850px) {
-    #jHomePageSideBar{      
-        display:none;      
-    }
-    .jHomePageMenuItem img{
-           width:40%;
-        }  
-        #jHomePageAboutMantisesMenu{
-            width:100%;
-         }
-   
-}
-
-
-@media only screen and (max-width: 650px) {
-    #jHomePageSideBar{      
-        display:none;      
-    }
-    .jHomePageMenuItem img{       
-        width:100%;
-        padding-left:0;
-        padding-right:0;
-        
-        }
-        #jHomePageAboutMantisesMenu{
-           width:100%;
-        }
-   
-}
 
 
 //=======================END of your CSS code==================//
