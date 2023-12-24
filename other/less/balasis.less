@@ -37,13 +37,48 @@
     width:100vw;
     background-color:rgba(0,0,0,0.9);
 }
+
+
 #HomePageImgPreview img{
-    position:fixed;
     width:auto;
     height:70vh;
+}
+
+
+
+#HomePageImgPreviewInDescription{
+    transition:100ms linear;
+    position:absolute;
+    bottom:0;
+    display:flex;
+    overflow:hidden;
+    height:0;
+    width:100%;
+    background-color:black;
+    color:White;
+    align-items:center;
+    justify-content:flex-start;
+    padding-left:1em;
+    padding-right:1em;
+   
+}
+
+#HomePageImgPreviewFrame{
+    position:fixed;
     top:50%;
     left:50%;
     transform: translateX(-50%) translateY(-50%);
+    display:flex;
+    flex-direction:column;
+}
+
+
+
+#HomePageImgPreview img:hover + #HomePageImgPreviewInDescription{
+height:fit-content;
+padding-bottom:0.5em;
+padding-top:0.5em;
+
 }
 
 
@@ -54,7 +89,7 @@
 
 #jPhotoGallery{
     display:flex;
-    width:1200px;
+    width:50%;
     height:20.5em;
     
     align-self:center;
@@ -170,7 +205,7 @@ z-index:10;
  width:1.2em;
  height:1em;
  position:absolute;
- display:none;
+ display:flex;
  right:18%;
  bottom:11em;
  flex-direction: column;
@@ -270,10 +305,10 @@ z-index:10;
     display:flex;
     position:relative;
 }
-
+/*
 #jChatMantisImg:hover + #jChatLoading {
-    display: flex; /* or visibility: visible; */
-  }
+    display: flex;
+  }*/
 
 
 //==============================================================================================================//
@@ -405,7 +440,7 @@ height:auto;
     position:absolute;
    width:100%;
    height:100%;
-    background: linear-gradient(transparent 65%, white 95%;);
+    background: linear-gradient(transparent 65%, @colorCreme 95%;);
     bottom:0;
     right:0;
     left:0;

@@ -67,12 +67,16 @@ for (p=0;p<jImg.length;p++){
 function handleImageClick(event) {
     event.stopPropagation();
     let getTheSrc=this.getAttribute('src');
+    let getTheDescription=this.getAttribute('data-description');
     jImgIn.setAttribute("src",getTheSrc);
+
+    document.getElementById("HomePageImgPreviewInDescription").innerHTML=getTheDescription;
     prev.style.display = 'block';
     document.addEventListener('click', handleOutsideClickOnce);
 
     function handleOutsideClickOnce() {
         jImgIn.setAttribute("src","#");
+        document.getElementById("HomePageImgPreviewInDescription").innerHTML=" ";
         prev.style.display = 'none';
         document.removeEventListener('click', handleOutsideClickOnce);
     }
@@ -107,8 +111,8 @@ let jRouletaExclude=[];
 let jShowingTheEnd=false;
 function jSendText(){
 
-
-
+    console.log("you there?");
+//here
         //My first job is to generate a random number so I will use it to pick
         //one fun fact from the array....
         function Jjrandom(min, max) {
@@ -131,10 +135,18 @@ if (jRouletaExclude.length<=8){
     //I gate the date here
     let jTimeNow=new Date();
     let jDateNoww=jTimeNow.getDate()+":"+jTimeNow.getMonth()+":"+jTimeNow.getFullYear();
+
     let jAddTheZero=jTimeNow.getHours()<10?'0'+jTimeNow.getHours():jTimeNow.getHours();
+
+    console.log(jTimeNow.getMinutes());
+
     let jAddTheZeroMinutes=jTimeNow.getMinutes()<10?'0'+jTimeNow.getMinutes():jTimeNow.getMinutes();
-    let jClockNow=jAddTheZero+":"+jTimeNow.getMinutes();
-    
+
+    console.log(jAddTheZeroMinutes);
+
+    let jClockNow=jAddTheZero+":"+jAddTheZeroMinutes;
+    console.log(jClockNow);
+
     let jAmOrPmSign=jTimeNow.getHours()>=12?' PM' :' AM';
     
     
@@ -188,9 +200,14 @@ if (jRouletaExclude.length<=8){
                       //I gate the date here
     let jTimeNow=new Date();
     let jDateNoww=jTimeNow.getDate()+":"+jTimeNow.getMonth()+":"+jTimeNow.getFullYear();
+    
     let jAddTheZero=jTimeNow.getHours()<10?'0'+jTimeNow.getHours():jTimeNow.getHours();
+
     let jAddTheZeroMinutes=jTimeNow.getMinutes()<10?'0'+jTimeNow.getMinutes():jTimeNow.getMinutes();
-    let jClockNow=jAddTheZero+":"+jTimeNow.getMinutes();
+
+    console.log(jAddTheZeroMinutes);
+
+    let jClockNow=jAddTheZero+":"+jAddTheZeroMinutes;
     
     let jAmOrPmSign=jTimeNow.getHours()>=12?' PM' :' AM';
     
