@@ -22,7 +22,7 @@
     font-family:@fontFamilyMainText;
     font-size:@fontSizeMainText;
     line-height:1.5;
-    text-indent: 50px;
+   
     color:#232323;
 }
 
@@ -130,20 +130,19 @@
 //===================================            jhomePageFunFacts       ==========================================//
 #jhomePageFunFacts{
  display:flex;
+ border-radius: 7px 0px 0px 7px;
     align-self:flex-end;
-    background-color:grey;
      position: -webkit-sticky; /* Safari */
     position:sticky;
-    top: calc(100vh - 30em);
+    top: calc(100vh - 40em);
     border:none;
     line-height:0;
-
-        /* Add these properties to make it behave like absolute */
-        height:30em;
+        height:40em;
         width: 25%;
         z-index: 40;
-
-
+    border-left:1px solid black;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
 }
 
 #jhomePageFunFacts img{
@@ -151,7 +150,7 @@
     bottom:0;
     right:5%;
     width:30%;
-    height:38%;
+    height:30%;
     cursor: pointer;
 }
 #jhomePageFunFacts img:hover{
@@ -161,9 +160,9 @@
 #jhomePageFunFacts h3{
 width:100%;
 text-align:center;
-font-family:Georgia, 'Times New Roman', Times, serif;
+font-family:Comic Sans MS, 'Times New Roman', Times, serif;
 font-size:@fontFamilyTitle;
-color:white;
+color:@colorMantisGreen;
 position:absolute;
 top:5%;
 z-index:10;
@@ -174,9 +173,9 @@ z-index:10;
  width:1.2em;
  height:1em;
  position:absolute;
- display:flex;
- right:20%;
- bottom:10em;
+ display:none;
+ right:18%;
+ bottom:11em;
  flex-direction: column;
 }
 
@@ -200,19 +199,84 @@ z-index:10;
     width:0.7em;
     height:0.7em;
     border-radius:50%;
-    background-color:white;
+    background-color:@colorFlowerOrange;
     animation:jLoadingChat 2s ease-in-out infinite;
 }
 
 #jhomePageFunFactsText{
     position:absolute;
-    background-image:url();
     width:100%;
-    height:100%;
-    background-color:rgb(49,51,56);
+    height:50%;
+    overflow-y:scroll;
+    align-self:center;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    display:flex;
+    flex-direction:column;
+}
+#jhomePageFunFactsText::-webkit-scrollbar {
+    display: none;
+  }
+
+
+#jClickOnMeMessage{
+    position:absolute;
+    bottom:0em;
+    font-size:2em;
+    height:2em;
+    width:100%;
+    margin-left:10%;
+    text-align: left;
+    color:@colorFlowerOrange;
+}
+
+.jProfileAndFunFactDiv{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    padding-left:6em;
+}
+
+.jGeneratedChatDivPic{
+  width:4em;
+  height:4em;
+    position:absolute;
+    left:1em;
+    top:1em;
+  background-image:url('../../images/Balasis/chatyMantise.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  border-radius: 50%;
+  border:1px solid black;
+  
 
 
 }
+.jTopDiv{
+    color:black;
+}
+.jGeneratedChatDivAccountInfo{
+ font-weight:bold;
+}
+.jGeneratedChatMessage{
+    line-height:1.5;
+   
+    text-indent:none;
+}
+
+.jGeneratedChatDiv{
+    color:white;
+    width:100%;
+    text-wrap: wrap;
+    border-radius: 10px 10px 10px 10px;
+    padding:1em;
+    display:flex;
+    position:relative;
+}
+
+#jChatMantisImg:hover + #jChatLoading {
+    display: flex; /* or visibility: visible; */
+  }
 
 
 //==============================================================================================================//
@@ -223,7 +287,7 @@ z-index:10;
 // gives with a margin-top:-35em. Well I assume
 //minus em is there for a reason.(not beautiful I admit).
 .jfirstOfItsKind{
-    margin-top:-35em;
+    margin-top:-45em;
 }
 
 
@@ -258,6 +322,7 @@ margin-bottom:5em;
     text-align: justify;
     width:50%;
     color:#232323;
+    text-indent: 50px;
    }
 
 
@@ -309,6 +374,7 @@ height:auto;
 .jHomePageMenuItem p{
     line-height:1.5;
     text-align:justify;
+    text-indent: 50px;
     
 }
 .jHomePageContentAndReadMoreHolder{
@@ -394,7 +460,6 @@ height:auto;
 .jHomePageMinimizerHolder{
     margin-right:1em;
     flex-grow:1;
-    height:100%;
     position:relative;
     display:none;
     justify-content: center;
