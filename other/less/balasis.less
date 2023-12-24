@@ -236,18 +236,25 @@ z-index:10;
 }
 
 #jhomePageFunFactsText{
+    display:flex;
     position:absolute;
     width:100%;
     height:50%;
-    overflow-y:scroll;
+    overflow-y:auto;
     align-self:center;
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
-    display:flex;
+    
     flex-direction:column;
+   
 }
 
-#jhomePageFunFactsText::before{
+#jhomePageFunFactsText>:first-child{
+
+    margin-top:auto;
+}
+
+#jhomePageFunFacts::before{
     content:" ";
     position:absolute;
     top:0;
@@ -255,9 +262,10 @@ z-index:10;
     left:0;
     right:0;
     pointer-events: none;
-    background: linear-gradient(to top, transparent 35%, @colorCreme 55%);
+    background: linear-gradient(to top, transparent 60%, @colorCreme 72%);
     height:100%;
     width:100%;
+    z-index:10;
 }
 
 

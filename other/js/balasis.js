@@ -189,10 +189,9 @@ if (jRouletaExclude.length<=8){
 
     document.getElementById('jhomePageFunFactsText').appendChild(jnewFunFactDiv);
 
-    if (document.getElementsByClassName("jGeneratedChatDiv").length>2){
+    
    document.getElementById("jhomePageFunFactsText").scrollTop=document.getElementById("jhomePageFunFactsText").scrollHeight;
     
-    }
 }else{
 
             ///LAST CREATION HERE IN  IF to tell him a thanks for reading
@@ -251,10 +250,9 @@ if (jRouletaExclude.length<=8){
 
     document.getElementById('jhomePageFunFactsText').appendChild(jnewFunFactDiv);
     jShowingTheEnd=true;  
-    if (document.getElementsByClassName("jGeneratedChatDiv").length>2){
+  
    document.getElementById("jhomePageFunFactsText").scrollTop=document.getElementById("jhomePageFunFactsText").scrollHeight;
     
-    }
 
 
 
