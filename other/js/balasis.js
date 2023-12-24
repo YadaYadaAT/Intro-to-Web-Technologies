@@ -140,7 +140,7 @@ if (jRouletaExclude.length<=8){
     
    let jFullTime=jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign ;
    //Adding the name and I will combine these two since it will go to the same div.
-   let jMantiseName="<b>Wordy Mantise</b>";
+   let jMantiseName="<b>Wordy Mantis</b>";
    let jNameAndDate=jMantiseName+" "+jFullTime;
 
    
