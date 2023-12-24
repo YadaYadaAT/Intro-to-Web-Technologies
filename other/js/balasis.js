@@ -111,7 +111,7 @@ let jRouletaExclude=[];
 let jShowingTheEnd=false;
 function jSendText(){
 
-    console.log("you there?");
+  
 //here
         //My first job is to generate a random number so I will use it to pick
         //one fun fact from the array....
@@ -138,14 +138,14 @@ if (jRouletaExclude.length<=8){
 
     let jAddTheZero=jTimeNow.getHours()<10?'0'+jTimeNow.getHours():jTimeNow.getHours();
 
-    console.log(jTimeNow.getMinutes());
+    
 
     let jAddTheZeroMinutes=jTimeNow.getMinutes()<10?'0'+jTimeNow.getMinutes():jTimeNow.getMinutes();
 
-    console.log(jAddTheZeroMinutes);
+   
 
     let jClockNow=jAddTheZero+":"+jAddTheZeroMinutes;
-    console.log(jClockNow);
+  
 
     let jAmOrPmSign=jTimeNow.getHours()>=12?' PM' :' AM';
     
@@ -205,7 +205,7 @@ if (jRouletaExclude.length<=8){
 
     let jAddTheZeroMinutes=jTimeNow.getMinutes()<10?'0'+jTimeNow.getMinutes():jTimeNow.getMinutes();
 
-    console.log(jAddTheZeroMinutes);
+  
 
     let jClockNow=jAddTheZero+":"+jAddTheZeroMinutes;
     
