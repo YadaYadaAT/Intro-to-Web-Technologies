@@ -1,12 +1,561 @@
-//=======================Begin of your CSS code================//
+//=======================         John Balasis Stage 1 AthensTEch                                 ================//
+
+//=====================================================HOMEPAGE===================================================//
+//General settings to apply font families,colors e.t.c from master
+#jhomeMain{
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    
+}
+#jhomeMain h1{
+    font-family:@fontFamilyHeader;
+    font-size:@fontSizeTitles;
+    color:#232323;
+}
+#jhomeMain h2,h3,h4,h5,h6{
+    font-family:@fontFamilyTitle;
+    font-size:@fontSizeTitles;
+    color:#232323;
+    }
+#jhomeMain p{
+    font-family:@fontFamilyMainText;
+    font-size:@fontSizeMainText;
+    line-height:1.5;
+   
+    color:#232323;
+}
+
+//==============================================================================================================//
+//===================================             HomePageImgPreview      ==========================================//
+
+#HomePageImgPreview{
+    z-index:500;
+    position:fixed;
+    display:none;
+    height:100vh;
+    width:100vw;
+    background-color:rgba(0,0,0,0.9);
+}
+
+
+#HomePageImgPreview img{
+    width:auto;
+    height:70vh;
+}
+
+
+
+#HomePageImgPreviewInDescription{
+    transition:100ms linear;
+    position:absolute;
+    bottom:0;
+    display:flex;
+    overflow:hidden;
+    height:0;
+    width:100%;
+    background-color:black;
+    color:White;
+    align-items:center;
+    justify-content:flex-start;
+    padding-left:1em;
+    padding-right:1em;
+   
+}
+
+#HomePageImgPreviewFrame{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    display:flex;
+    flex-direction:column;
+}
+
+
+
+#HomePageImgPreview img:hover + #HomePageImgPreviewInDescription{
+height:fit-content;
+padding-bottom:0.5em;
+padding-top:0.5em;
+
+}
+
+
+//==============================================================================================================//
+//===================================             jPhotoGallery      ==========================================//
+
+
+
+#jPhotoGallery{
+    display:flex;
+    width:50%;
+    height:20.5em;
+    
+    align-self:center;
+    overflow:hidden;
+    
+}
+
+#jPhotoGallery img{
+    width:100%;
+    height:100%;
+    padding:0.2em;
+}
+#jPhotoGallery img:hover{
+    border:6px solid @colorCreme;
+    cursor: pointer;
+}
+
+
+#jPhotoGalleryFirstFour{
+    display:flex;
+    width:80%;
+    height:100%;
+    flex-direction:column;
+}
 
 
 
 
 
+#jPhotoFirstTwoRow{
+    display:flex;    
+    height:50%;
+    width:100%;
+}
+#jPhotoFirstTwoRowOne{
+    width:70%;
+    height:100%;
+}
+#jPhotoFirstTwoRowTwo{
+    width:30%;
+    height:100%;
+}
+
+
+
+#jPhotoSecondTwoRow{
+    display:flex;    
+    height:50%;
+    width:100%;
+}
+#jPhotoSecondTwoRowOne{
+    width:30%;
+    height:100%;
+}
+#jPhotoSecondTwoRowTwo{
+    width:70%;
+    height:100%;
+}
+
+
+
+
+#jPhotoGalleryLastOne{
+    width:20%;
+    height:100%;
+
+}
+
+
+
+
+//==============================================================================================================//
+//===================================            jhomePageFunFacts       ==========================================//
+#jhomePageFunFacts{
+ display:flex;
+ border-radius: 7px 0px 0px 7px;
+    align-self:flex-end;
+     position: -webkit-sticky; /* Safari */
+    position:sticky;
+    top: calc(100vh - 40em);
+    border:none;
+    line-height:0;
+        height:40em;
+        width: 25%;
+        z-index: 40;
+}
+
+#jhomePageFunFacts img{
+    position:absolute;
+    bottom:0;
+    right:5%;
+    width:30%;
+    height:30%;
+    cursor: pointer;
+}
+#jhomePageFunFacts img:hover{
+    filter: drop-shadow(5px 5px 10px @colorFlowerOrange);
+}
+
+#jhomePageFunFacts h3{
+width:100%;
+text-align:center;
+font-family:Comic Sans MS, 'Times New Roman', Times, serif;
+font-size:@fontFamilyTitle;
+color:@colorMantisGreen;
+position:absolute;
+top:5%;
+z-index:10;
+}
+
+#jChatLoading{
+
+ width:1.2em;
+ height:1em;
+ position:absolute;
+ display:flex;
+ right:18%;
+ bottom:11em;
+ flex-direction: column;
+}
+
+
+@keyframes jLoadingChat{
+    0%{opacity:1;align-self:flex-start;}
+    10%{opacity:0.5;align-self:flex-start;}
+    20%{opacity:1;align-self:flex-start;}
+    25%{opacity:0.5;align-self:flex-start;}
+   50%{opacity:1;align-self:center;}
+   60%{opacity:0.5;align-self:center;}
+    70%{opacity:1;align-self:center;}
+    80%{opacity:0.5;align-self:flex-end;}
+    90%{opacity:1;align-self:flex-end;}
+    100%{opacity:1;align-self:flex-end;}
+    
+}
+
+
+#jChatLoadingBullets{
+    width:0.7em;
+    height:0.7em;
+    border-radius:50%;
+    background-color:@colorFlowerOrange;
+    animation:jLoadingChat 2s ease-in-out infinite;
+}
+
+#jhomePageFunFactsText{
+    display:flex;
+    position:absolute;
+    width:100%;
+    height:50%;
+    overflow-y:auto;
+    align-self:center;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    
+    flex-direction:column;
+   
+}
+
+#jhomePageFunFactsText>:first-child{
+
+    margin-top:auto;
+}
+
+#jhomePageFunFacts::before{
+    content:" ";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    pointer-events: none;
+    background: linear-gradient(to top, transparent 60%, @colorCreme 72%);
+    height:100%;
+    width:100%;
+    z-index:10;
+}
+
+
+#jhomePageFunFactsText::-webkit-scrollbar {
+    display: none;
+  }
+
+
+#jClickOnMeMessage{
+    position:absolute;
+    bottom:0em;
+    font-size:2em;
+    height:2em;
+    width:100%;
+    margin-left:10%;
+    text-align: left;
+    color:@colorFlowerOrange;
+}
+
+.jProfileAndFunFactDiv{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    padding-left:6em;
+}
+
+.jGeneratedChatDivPic{
+  width:4em;
+  height:4em;
+    position:absolute;
+    left:1em;
+    top:1em;
+  background-image:url('../../images/Balasis/chatyMantise.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  border-radius: 50%;
+  border:1px solid black;
+  
+
+
+}
+.jTopDiv{
+    color:black;
+}
+.jGeneratedChatDivAccountInfo{
+ font-weight:bold;
+}
+.jGeneratedChatMessage{
+    line-height:1.5;
+   
+    text-indent:none;
+}
+
+.jGeneratedChatDiv{
+    color:white;
+    width:100%;
+    text-wrap: wrap;
+    border-radius: 10px 10px 10px 10px;
+    padding:1em;
+    display:flex;
+    position:relative;
+}
+/*
+#jChatMantisImg:hover + #jChatLoading {
+    display: flex;
+  }*/
+
+
+//==============================================================================================================//
+//===================================             Home Overview       ==========================================//
+//Couldnt find an easy alternative the way I structured
+//the page..so Instead of creating a mess with the divs
+//I decided to occupy the place that the fun fact div
+// gives with a margin-top:-35em. Well I assume
+//minus em is there for a reason.(not beautiful I admit).
+.jfirstOfItsKind{
+    margin-top:-47.5em;
+}
+
+#jHomePageAboutMantisesMenu{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position:relative;
+}
+#jHomePageAboutMantisesMenu section{
+margin-bottom:8em;  
+}
+
+.jHomePageMenuItemOverview{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    line-height:1.5;
+    background-color:@colorFlowerOrange;
+    padding:1em;
+    padding-top:0em;
+    align-items:center;
+    
+}
+.jHomePageMenuItemOverview h1{
+ text-align: center;
+ width:50%;
+ color:#232323;
+}
+.jHomePageMenuItemOverview p{
+    text-align: justify;
+    width:50%;
+    color:#232323;
+    text-indent: 50px;
+   }
+
+
+
+
+//==============================================================================================================//
+//==================================   Menu Inside (ReadMore/Minimize)  ========================================//
+
+
+
+
+
+.jHomePageMenuItem{
+    max-width: 130em;
+    margin-bottom:2.5em;
+    width:65%;
+    display:flex;
+    flex-wrap:nowrap;
+    height:20em;
+    border-radius:5px 5px 5px 5px;
+    position:relative;
+    
+   
+}
+
+.jHomePageMenuItem h2{
+    width:70%;
+   padding-top:0.5em;
+   padding-bottom:0.5em;
+    text-align: left;
+    padding-left:3em;
+    background-color:@colorFlowerOrange;
+    transition:600ms linear;
+    color:#232323;
+}
+
+
+
+
+.jHomePageMenuItem img{
+width:35%;
+height:auto;
+}
+.jHomePageMenuItemAddHeight{
+  height:auto;
+}
+
+
+
+.jHomePageMenuItem p{
+    line-height:1.5;
+    text-align:justify;
+  
+    
+}
+.jHomePageContentAndReadMoreHolder{
+    display:flex;
+    flex-direction:column;
+    width:90%;
+    position:relative;
+    flex-grow:0;
+    flex-shrink:0;
+}
+.jHomePageMenuItemContent{
+    flex-grow:1;
+    position:relative;
+    overflow:hidden;
+    margin-top:1em;
+    color:#232323;
+    
+}
+
+.jAddPaddingRightToImg{
+    padding-right:2em;
+}
+.jAddPaddingLeftToImg{
+    padding-left:2em;
+}
+
+
+.jHomePageMenuItemContentFog::before{
+    content:" ";
+    position:absolute;
+   width:100%;
+   height:100%;
+    background: linear-gradient(transparent 65%, @colorCreme 95%;);
+    bottom:0;
+    right:0;
+    left:0;
+   top:0;
+ 
+}
+.jHomePageMenuItemContentFog::after{
+    content:" ";
+    position:absolute;
+   width:100%;
+   height:50%;
+    bottom:0;
+    right:0;
+    left:0;
+   backdrop-filter: blur(1px);
+   z-index:10; 
+}
+
+.jHomePageMenuItemContent p{
+    padding-left:10em;
+    color:#232323;
+}
+
+
+.jHomePageReadMoreHolder{
+    bottom:-3em;
+    display:flex;
+    justify-content:flex-start;
+    position:absolute;
+    flex-shrink: 0;
+   padding-left:10em;
+}
+.jHomePageReadMore{
+    font-weight:bold;
+    background:none;
+    color:@colorCreme;
+    background-color:@colorFlowerOrange;
+    border:none;
+    font-weight:bold;
+    opacity: 1;
+    padding:0.5em;
+    font-size:1em;
+    transition: transform 0.3s ease-in-out;
+}
+
+.jHomePageReadMore:hover{
+    
+    cursor: pointer;
+    opacity:0.5;
+}
+.jHomePageMinimizerHolder{
+    margin-right:1em;
+    flex-grow:1;
+    position:relative;
+    display:none;
+    justify-content: center;
+ 
+}
+.jHomePageMinimizer{
+    position: -webkit-sticky; /* Safari */
+    position:sticky;
+    top:1em;
+    margin-bottom:2em;
+    height:3em;
+    width:3em;
+    background:none;
+    border:none;
+    border-collapse: collapse;
+    cursor: pointer;
+    font-weight:bold;
+    font-size:1em;
+    line-height:0;
+    
+}
+
+
+
+
+
+
+
+
+
+//==============================================================================================================//
+//===================================            Media Queries       ==========================================//
 
 
 
 
 //=======================END of your CSS code==================//
+
+//==============================================================================================================//
+//========================= Imports Should be only master.less here   ==========================================//
+
+
 @import "master.less";
