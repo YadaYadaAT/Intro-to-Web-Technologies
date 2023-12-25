@@ -15,11 +15,17 @@
     flex-direction: column;
     
     width:60%;
-    height:35em;
+    height:45em;
     position:relative;
     border-radius: 8px 8px 8px 8px;
     overflow:hidden;
 }
+#jjMiniQuizFrame *{
+    transition:150ms linear;
+}
+
+
+
 #jjMiniQuizContent{
 display:flex;
 flex-direction: row;
@@ -32,24 +38,29 @@ overflow:hidden;
 #jjMiniQuizContentLeftSide{
 display:flex;
 flex-direction: column;
-justify-content: space-between;
-width:55%;
-padding:1em;
+justify-content: space-around;
+width:50%;
+
 
 }
 .jjPauseTheQQloader{
     animation-play-state: paused;
 }
-
+#jjMiniQuizContentMiddleHelper1{
+border-radius: 10px 0px 0px 0px;
+}
+#jjMiniQuizContentMiddleHelper2{
+    border-radius: 0px 0px 0px 10px;
+}
 
 #jjMiniQuizContentMiddle{
     display:flex;
 flex-direction: column;
-width:15%;
+width:20%;
 height:100%;
 position:relative;
-justify-content:space-around;
-align-items: center;
+justify-content:center;
+align-items:flex-end;
 }
 
 .jjhelperButton{
@@ -59,11 +70,11 @@ align-items: center;
     align-items: center;
     flex-shrink: 0;
     cursor:pointer;
-    height:24%;
+    height:27%;
     width:10em;
 }
 .jjhelperButton:hover{
-    transform:scale(0.80);
+    transform:scale(0.99);
 
 }
 
@@ -96,14 +107,22 @@ border-radius: 0px 10px 0px 0px;
 #jjResetCountDown:hover{
     transform:scale(0.99);
 }
+#jjStartCountDown{
+    border-radius: 50%;
+    transition:100ms linear;
+    height:4em;
+    width:4em;
+    cursor: pointer;
+}
 
-
-
+#jjStartCountDown:hover{
+    background-color:green;
+}
 #jjMiniQuizContentRightSide{
     width:30%;
    
     display:flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 #jjQuizImgPlaceHolder{
@@ -120,7 +139,7 @@ height:4em;
 background-color:grey;
 position:relative;
 flex-direction: row;
-
+align-items: center;
 margin-top:auto;
 }
 
@@ -137,6 +156,10 @@ margin-top:auto;
     margin-right:auto;
     display:flex;
     color:white;
+    left:0;
+    right:0;
+    font-size:4.5em;
+    width:fit-content;
 }
 
 
@@ -150,14 +173,14 @@ margin-top:auto;
     text-align:center;
     cursor:pointer;
     border:1px solid black;
-    border-radius: 10px 10px 10px 10px;
+   
     display:flex;
     justify-content: center;
     align-items: center;
 }
 .jjQuizOptionsInputsLabel:hover{
 
-transform:scale(0.95);
+background-color:@colorLightGreen;
 }
 
 @keyframes jjBarMinus {
