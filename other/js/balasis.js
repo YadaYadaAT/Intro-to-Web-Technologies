@@ -11,61 +11,61 @@
 const jjquizData = [
     {
         question: "What is the scientific name for mantises?",
-        options: ["Mantodea", "Orthoptera", "Arachnida"],
+        options: ["Mantodea", "Orthoptera", "Arachnida", "Insecta"],
         correctAnswer: "Mantodea",
         imageUrl: "../images/Balasis/quizImages/mantodea.jpg"
     },
     {
         question: "How many mantis species are there?",
-        options: ["Approximately 2,000", "Approximately 3,500", "Approximately 5,000"],
+        options: ["Approximately 2,000", "Approximately 3,500", "Approximately 5,000", "Over 6,000"],
         correctAnswer: "Approximately 2,000",
         imageUrl: "../images/Balasis/quizImages/species.jpg"
     },
     {
         question: "What is the primary diet of mantises?",
-        options: ["Plants","Nectar","Other Insects"],
+        options: ["Plants", "Nectar", "Other Insects", "Small Vertebrates"],
         correctAnswer: "Other Insects",
         imageUrl: "../images/Balasis/quizImages/otherInsects.jpg"
     },
     {
         question: "Which continent has the greatest diversity of mantis species?",
-        options: ["Africa", "Asia", "North America"],
+        options: ["Africa", "Asia", "North America", "South America"],
         correctAnswer: "Africa",
         imageUrl: "../images/Balasis/quizImages/african.jpg"
     },
     {
         question: "How do mantises primarily catch their prey?",
-        options: ["Ambush", "Chasing", "Stinging"],
+        options: ["Ambush", "Chasing", "Stinging", "Jumping"],
         correctAnswer: "Ambush",
         imageUrl: "../images/Balasis/quizImages/ambush.jpg"
     },
     {
         question: "What is the lifespan of an average mantis?",
-        options: ["Few Weeks","Few Years","Few Months"],
+        options: ["Few Weeks", "Few Years", "Few Months", "Several Years"],
         correctAnswer: "Few Months",
         imageUrl: "../images/Balasis/quizImages/fewMonths.jpg"
     },
     {
         question: "What is the purpose of a mantis's distinctive posture with raised forelegs?",
-        options: ["Attracting Mates", "Camouflage", "Capturing Prey"],
+        options: ["Attracting Mates", "Camouflage", "Capturing Prey", "Intimidation"],
         correctAnswer: "Capturing Prey",
         imageUrl: "../images/Balasis/quizImages/capturingPrey.jpg"
     },
     {
         question: "Do mantises undergo metamorphosis?",
-        options: ["Sometimes", "No", "Yes"],
+        options: ["Sometimes", "No", "Yes", "Depends on Species"],
         correctAnswer: "Yes",
         imageUrl: "../images/Balasis/quizImages/metamorphosis.jpg"
     },
     {
         question: "Which sense is particularly well-developed in mantises?",
-        options: ["Hearing", "Sight", "Taste"],
+        options: ["Hearing", "Sight", "Taste", "Smell"],
         correctAnswer: "Sight",
         imageUrl: "../images/Balasis/quizImages/sight.jpg"
     },
     {
         question: "What is the purpose of the mantis's unique head movement?",
-        options: ["Balance", "Communication", "Hunting Strategy"],
+        options: ["Balance", "Communication", "Hunting Strategy", "Thermoregulation"],
         correctAnswer: "Hunting Strategy",
         imageUrl: "../images/Balasis/quizImages/huntingStrategy.jpg"
     }
@@ -80,7 +80,7 @@ let jjLockTillReset=1;
 //Declaring variables for the intervalObj and for the moving bar itself
 let jjCountDownInterval;
 let jjQuizLoadingBorderBarMoving=document.getElementById("jjQuizLoadingBorderBarMoving");
-
+let jjIntervalStillRun=false;
 //current Variables that we need in order to compare the given answer with the correct one.
 let jjquestionPickedd;
 let jjCorrectAnswer;
@@ -96,9 +96,18 @@ document.getElementById('jjResetCountDown').addEventListener('click',function(){
     jjResetTheWholeQuiz();
 
 })
-document.getElementById('jjConfirmChoice').addEventListener('click',function(){
-    jjConfirmChoice();
-})
+
+document.getElementsByClassName('jjQuizOptionsInputs')
+
+let jjQuizOptionsInputs = document.getElementsByClassName('jjQuizOptionsInputs');
+for (let i = 0; i < jjQuizOptionsInputs.length; i++) {
+    jjQuizOptionsInputs[i].addEventListener('click', function () {
+        jjConfirmChoice();
+        
+    });
+}
+
+
 document.getElementById('jjMiniQuizContentMiddleHelper1').addEventListener('click',function(){
     jjHelperSolver();
 })
@@ -112,8 +121,8 @@ document.getElementById('jjMiniQuizContentMiddleHelper2').addEventListener('clic
 //content is given from the jjConfirmChoice function 
 //(I make a copy of the content in order to manage it better...the copy gets destroyed in the end of each quiz)
 function jjStartTimer(timer){
-if (jjLockTillReset==1){
-
+if (jjLockTillReset==1 && jjIntervalStillRun==false){
+    jjIntervalStillRun=true;
     if (document.getElementById('jjQuizLoadingBorderBarMoving').classList.contains('jjPauseTheQQloader')){
         document.getElementById('jjQuizLoadingBorderBarMoving').classList.remove('jjPauseTheQQloader');
     }
@@ -144,6 +153,9 @@ if (jjLockTillReset==1){
     document.getElementById("jjOption3").value=jjquizDataCopy[jjquestionPickedd].options[2];
     document.getElementById("jjOption3Label").textContent=jjquizDataCopy[jjquestionPickedd].options[2];
 
+    document.getElementById("jjOption4").value=jjquizDataCopy[jjquestionPickedd].options[3];
+    document.getElementById("jjOption4Label").textContent=jjquizDataCopy[jjquestionPickedd].options[3];
+
 
     document.getElementById("jjQuizImgPlaceHolder").setAttribute("src",jjquizDataCopy[jjquestionPickedd].imageUrl);
 
@@ -172,6 +184,7 @@ if (jjLockTillReset==1){
 //cases that quiz fail
 function jjResetTimer(){
     clearInterval(jjCountDownInterval);
+    jjIntervalStillRun=false;
     jjQuizLoadingBorderBarMoving.classList.remove("jjAddAnimationForBar");
 };
 
@@ -269,6 +282,8 @@ function jjConfirmChoice(){
                                         document.getElementById("jjOption3").value=jjquizDataCopy[jjquestionPickedd].options[2];
                                         document.getElementById("jjOption3Label").textContent=jjquizDataCopy[jjquestionPickedd].options[2];
 
+                                        document.getElementById("jjOption4").value=jjquizDataCopy[jjquestionPickedd].options[3];
+                                        document.getElementById("jjOption4Label").textContent=jjquizDataCopy[jjquestionPickedd].options[3];
 
                                         document.getElementById("jjQuizImgPlaceHolder").setAttribute("src",jjquizDataCopy[jjquestionPickedd].imageUrl);
 
@@ -416,7 +431,10 @@ function jjResetTheWholeQuiz(){
     jjLockTillReset=1;
     jjResetTimer();
     document.querySelectorAll('input[name="jjOptions"]').forEach(function(radioButton){
-        radioButton.checked=false; })
+        radioButton.checked=false;
+        let jjTheCorrect= radioButton.id+"Label";
+                document.getElementById(jjTheCorrect).style.backgroundColor="";
+    })
 
         document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(1)'; 
         document.getElementById("jjMiniQuizContentMiddleHelper2").style.transform='scale(1)';
@@ -454,7 +472,8 @@ function jjResetTheWholeQuiz(){
      document.getElementById("jjOption2Label").textContent=undefined;   
      document.getElementById("jjOption3").value=undefined;
      document.getElementById("jjOption3Label").textContent=undefined;
-     document.getElementById("jjQuizImgPlaceHolder").setAttribute("src",undefined);     
+     document.getElementById("jjOption4").value=undefined;
+     document.getElementById("jjOption4Label").textContent=undefined;  
      document.getElementById("jjQuizImgPlaceHolder").setAttribute("src",undefined);
          
 }
