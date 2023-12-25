@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>  
+              
+        <!--Change the "../other/less/my.less" with yours ..for example "../other/less/john.less" -->
+        <link rel="stylesheet/less" type="text/css" href="../other/less/balasis.less">
+        <!--Change to title of your page-->
+        <title>Mini quiz</title>
+        <!--Change the content tag to the description of this current page-->
+        <meta name="Description" content="Test your knowledge about mantises by taking a short
+         quiz to see how much information you've gathered from our webpage.">
+
+
+        <!--Do Not Change. Sets the charset that it will be saved and informs the browser about it...google about charset if you are interested for more-->
+        <meta charset="utf-8">
+        <!--Do Not Change. Sets the width of your page depening of the devices width, also initial zoom of your page when loaded; default is (initial-scale=1)-->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <!--Do Not Change. keywords to provide info for web crawlers...although they don't seem to care about the tag much... -->
+        <meta name="keywords" content="Mantises, Mantises Species, Mantises lifespan">
+        <!--Do not Change.Icon of the page-->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!--Do not Change.Mask-Icon of the page, replaces the icon when tab pinned-->
+        <link rel="mask-icon" href="path/to/mask-icon.svg" color="#000000">
+
+        <!--Do not Change. Og ...basically how page appears on social media as link . Its what it shows for example when you post a link on Discord or Viber-->
+        <meta property="og:url" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="images/YadaYadaTest.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="436">
+        <meta property="og:image:height" content="228">
+        <meta property="og:description" content="Learn all about Mantises in our beautiful website">
+        <!--Do not Change. The Script for less.js that converts are less file into css in runtime-->
+        <script src="../other/js/less.js"></script>
+        <!--Do not Change. The Script that it gets the HeaderNav and the Footer to the current page. Will propably be deleted after production-->
+        <script>
+            document.addEventListener("DOMContentLoaded",function(){
+                fetch("headerNav.html")
+                .then(response=>response.text())
+                .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("beforebegin",html)})
+            })
+            document.addEventListener("DOMContentLoaded",function(){
+                fetch("footer.html")
+                .then(response=>response.text())
+                .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("afterend",html)})
+            })
+        </script>
+        <!--Do not Change. Disables page view if javascript is disabled on browser-->
+        <noscript>
+         <style type="text/css">    	
+         body *{display:none;}
+         html{height:100%;width:100%;}
+         body{min-height:100%;background-image:url(images/NOjavascript.png);background-position:center;background-repeat:no-repeat;background-color:white;background-size:100% 100%;}
+         </style>         
+        </noscript>
+      
+    </head>
+
+
+    <body>        
+        <main id="jjMiniQuizMain">
+            <!--Your writing begins here-->
+            <h2>Mini Quiz!</h2>
+            <button id="jjStartCountDown">Start</button>
+
+            <div id="jjMiniQuizFrame">
+                <div id="jjMiniQuizContent">
+                            <div id="jjMiniQuizContentLeftSide">
+                                        <div id="jjQuizQuestionPlaceholder">
+                                            Check your timing! You will have 1 minute to
+                                            answer 10 questions. In addition , you may
+                                            use 2 of your helping buttons, the one will
+                                            hide a wrong answer leaving you with 2 options
+                                            while the other makes it capable for you to
+                                            auto answer(skip the question)
+                                        </div>
+                                        
+                                        
+                                        <input class="jjQuizOptionsInputs" type="radio" id="jjOption1" name="jjOptions" value="">
+                                        <label class="jjQuizOptionsInputsLabel" id="jjOption1Label" for="jjOption1"></label>
+                                        
+                                        <input class="jjQuizOptionsInputs" type="radio" id="jjOption2" name="jjOptions" value="">
+                                        <label class="jjQuizOptionsInputsLabel" id="jjOption2Label" for="jjOption2"></label>
+                                        
+                                        <input class="jjQuizOptionsInputs" type="radio" id="jjOption3" name="jjOptions" value="">
+                                        <label class="jjQuizOptionsInputsLabel" id="jjOption3Label" for="jjOption3"></label>
+                                        
+                                        
+                                        <button id="jjConfirmChoice">Submit</button>
+
+                            </div>
+                            
+                            <div id="jjMiniQuizContentMiddle">
+                                    <button class="jjhelperButton" id="jjMiniQuizContentMiddleHelper1">Solver</button>
+                                    <button class="jjhelperButton" id="jjMiniQuizContentMiddleHelper2"></button>
+                                    <button class="jjhelperButton" id="jjResetCountDown">Reset</button>
+                            </div>
+
+                            <div id="jjMiniQuizContentRightSide">
+                                        <img id="jjQuizImgPlaceHolder" src="" alt="">
+                            </div>
+                </div>
+                <div id="jjQuizLoadingBorder">
+                    <div id="jjQuizLoadingBorderBarMoving"></div>
+                    <div id="jjQuizLoadingBorderBarMovingTimer"></div>
+                </div>
+            </div>
+
+
+                
+                
+            
+
+            
+                
+                
+
+                
+
+                
+                
+
+
+
+
+
+        
+            <!--Your writing stops here-->
+        </main>    
+        <script src="../other/js/balasis.js"></script>
+    </body>
+</html>
