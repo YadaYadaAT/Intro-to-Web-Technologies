@@ -28,6 +28,7 @@
 //Fonts
 
 //FontFamilies
+//I added Montserrat! font-family: 'Montserrat'; works
 @fontFamilyHeader: Helvetica, Arial;
 
 @fontFamilyMainText: Helvetica, Arial;
@@ -130,6 +131,9 @@ nav{
     object-fit: fill;
     position: relative;
 }
+
+// Footer
+
 .center-fit{
     min-width: 100%;
     max-height: 100vh;
@@ -137,6 +141,90 @@ nav{
 }
     
 
-footer{
 
+
+
+.row{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+}
+
+.footer_wrapper{
+    background-color: @colorLightGreen;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    position: absolute;
+    bottom: 0;
+    height: 15em;
+    width: 100%;
+    padding-left: 10%;
+}
+//margin-top for every column to control where it sits in the background
+//maybe add a line in between? 
+.columnOne, .columnFive{
+    margin-top:11em;
+}
+.columnTwo{
+    margin-top: 8.2em;
+}
+.columnFour{
+    margin-top: 8.2em;
+}
+.columnThree{
+    padding-bottom: 7em;
+}
+.athTechRow{
+    padding-top: 0.5em;
+}
+//'toggle dark mode' dropdown - currently not functional
+.dropdown {
+    position: absolute;
+    display: inline-block;
+}  
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: rgba(146, 194, 152, 0.384);
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+.dropdown-content p{
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}  
+.dropdown:hover .dropdown-content {
+    display: block;
+    height: 2.2em;
+}
+.columnFive a:link{
+    color: black;
+    text-decoration: none;
+}
+.columnFive a:visited{
+    color: black;
+}
+//link formatting for the rest of the links to different parts of the website +quiz 
+.columnTwo a:link, .meetTheTeam a:link, .columnFour a:link{
+    color: black;
+    text-decoration: none;
+}
+.columnTwo a:visited, .meetTheTeam a:visited, .columnFour a:visited{
+    color: black;
+    text-decoration: none;
+}
+.columnTwo a:hover, .meetTheTeam a:hover, .columnFour a:hover{
+    color: rgb(124, 126, 123) !important; 
+    opacity: 0.6;
 }
