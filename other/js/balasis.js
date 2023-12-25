@@ -2,6 +2,81 @@
 
  document.addEventListener("DOMContentLoaded",function(){
 
+
+
+//we create a copy so we can remove one by one and recheck during the exam
+//so we avoid dublicate questions and make them appear in a random manner
+
+
+const jjquizData = [
+    {
+        question: "What is the scientific name for mantises?",
+        options: ["Mantodea", "Orthoptera", "Arachnida"],
+        correctAnswer: "Mantodea",
+        imageUrl: "../images/Balasis/quizImages/mantodea.jpg"
+    },
+    {
+        question: "How many mantis species are there?",
+        options: ["Approximately 2,000", "Approximately 3,500", "Approximately 5,000"],
+        correctAnswer: "Approximately 2,000",
+        imageUrl: "../images/Balasis/quizImages/species.jpg"
+    },
+    {
+        question: "What is the primary diet of mantises?",
+        options: ["Plants","Nectar","Other Insects"],
+        correctAnswer: "Other Insects",
+        imageUrl: "../images/Balasis/quizImages/otherInsects.jpg"
+    },
+    {
+        question: "Which continent has the greatest diversity of mantis species?",
+        options: ["Africa", "Asia", "North America"],
+        correctAnswer: "Africa",
+        imageUrl: "../images/Balasis/quizImages/african.jpg"
+    },
+    {
+        question: "How do mantises primarily catch their prey?",
+        options: ["Ambush", "Chasing", "Stinging"],
+        correctAnswer: "Ambush",
+        imageUrl: "../images/Balasis/quizImages/ambush.jpg"
+    },
+    {
+        question: "What is the lifespan of an average mantis?",
+        options: ["Few Weeks","Few Years","Few Months"],
+        correctAnswer: "Few Months",
+        imageUrl: "../images/Balasis/quizImages/fewMonths.jpg"
+    },
+    {
+        question: "What is the purpose of a mantis's distinctive posture with raised forelegs?",
+        options: ["Attracting Mates", "Camouflage", "Capturing Prey"],
+        correctAnswer: "Capturing Prey",
+        imageUrl: "../images/Balasis/quizImages/capturingPrey.jpg"
+    },
+    {
+        question: "Do mantises undergo metamorphosis?",
+        options: ["Sometimes", "No", "Yes"],
+        correctAnswer: "Yes",
+        imageUrl: "../images/Balasis/quizImages/metamorphosis.jpg"
+    },
+    {
+        question: "Which sense is particularly well-developed in mantises?",
+        options: ["Hearing", "Sight", "Taste"],
+        correctAnswer: "Sight",
+        imageUrl: "../images/Balasis/quizImages/sight.jpg"
+    },
+    {
+        question: "What is the purpose of the mantis's unique head movement?",
+        options: ["Balance", "Communication", "Hunting Strategy"],
+        correctAnswer: "Hunting Strategy",
+        imageUrl: "../images/Balasis/quizImages/huntingStrategy.jpg"
+    }
+];
+
+
+
+
+    let jjquizDataCopy;
+    
+let jjLockTillReset=1;
 //Declaring variables for the intervalObj and for the moving bar itself
 let jjCountDownInterval;
 let jjQuizLoadingBorderBarMoving=document.getElementById("jjQuizLoadingBorderBarMoving");
@@ -18,7 +93,8 @@ document.getElementById('jjStartCountDown').addEventListener('click',function(){
     jjStartTimer(60);
 })
 document.getElementById('jjResetCountDown').addEventListener('click',function(){
-    jjResetTimer();
+    jjResetTheWholeQuiz();
+
 })
 document.getElementById('jjConfirmChoice').addEventListener('click',function(){
     jjConfirmChoice();
@@ -31,14 +107,25 @@ document.getElementById('jjMiniQuizContentMiddleHelper2').addEventListener('clic
 })
 
 
-let jjquizDataCopy;
+
 //This function starts the timer and loads for the first time the content(options,questions e.t.c). The rest of the times
 //content is given from the jjConfirmChoice function 
 //(I make a copy of the content in order to manage it better...the copy gets destroyed in the end of each quiz)
 function jjStartTimer(timer){
+if (jjLockTillReset==1){
+
+    if (document.getElementById('jjQuizLoadingBorderBarMoving').classList.contains('jjPauseTheQQloader')){
+        document.getElementById('jjQuizLoadingBorderBarMoving').classList.remove('jjPauseTheQQloader');
+    }
     
     jjQuiztimer=timer;
-    jjquizDataCopy=jjquizData;
+
+       // Ok I used google for this one...It seems like that I was creating a refference instead of a copy..which
+       //was obvious couldn't think of it..so instead of jjquizDataCopy = jjquizData; i switch to jjquizDataCopy = [...jjquizData];
+    if (!jjquizDataCopy || jjquizDataCopy.length === 0) {
+        jjquizDataCopy = [...jjquizData];
+    }
+
     jjquestionPickedd=jjgiveMeRandom(0,jjquizDataCopy.length-1);
     
     
@@ -75,6 +162,9 @@ function jjStartTimer(timer){
             jjQuizLoadingBorderBarMoving.classList.remove("jjAddAnimationForBar");
         }
     }   ,1000)
+
+}
+
 }
 
 
@@ -88,6 +178,7 @@ function jjResetTimer(){
 
 //this function gives instant answer to one of the questions..can be used only once
 function jjHelperSolver(){
+    if (jjLockTillReset==1){
     if (jjHelperSolverCounter==1){
     let jjTakejjOptionsInputs=document.querySelectorAll('input[name="jjOptions"]');
     jjTakejjOptionsInputs.forEach(function(radioButton) {
@@ -101,12 +192,15 @@ function jjHelperSolver(){
     });
     }
 
+    }
 }
 
 //this function removes an wrong option..can be used only once
 let jjHiddenToBeSeen;
 let jjflagToSeeIfOn;
 function jjHelperHideOne(){
+    if (jjLockTillReset==1){
+
     if (jjHelperHideOneCounter==1){
         let jjTakejjOptionsInputs=document.querySelectorAll('input[name="jjOptions"]');
 
@@ -135,19 +229,23 @@ function jjHelperHideOne(){
 
         
  }
+
+}
 }
 
 
 function jjConfirmChoice(){
+    if (jjLockTillReset==1){
+
+
    if (jjflagToSeeIfOn){
-    document.getElementById(jjHiddenToBeSeen).style.display="flex"
+    document.getElementById(jjHiddenToBeSeen).style.display="flex";
 }
 
 
    if(document.querySelector('input[name="jjOptions"]:checked').value==jjCorrectAnswer){
         //we remove the question from the copy...
         jjquizDataCopy.splice(jjquestionPickedd,1);
-        console.log(jjquizDataCopy)
 
         if (jjquizDataCopy.length!==0){
             
@@ -182,7 +280,7 @@ function jjConfirmChoice(){
                             }else{
             
                                         console.log("We have a winner");
-                                        jjResetTimer();
+                                        
                                         
                                         let jjassisted;
                                                             if ((jjHelperSolverCounter == 0) || (jjHelperHideOneCounter == 0)){
@@ -214,6 +312,8 @@ function jjConfirmChoice(){
                                                             
                                                                 let jjQuizScoresStringified = JSON.stringify(jjQuizScores);
                                                                 localStorage.setItem('jjQuizScores', jjQuizScoresStringified);
+                                                                
+                                                                jjUpdateScoreTable();
                                                                 jjResetTheWholeQuiz();
                                                             } else {
                                                                 let jjGetTheScoreTable = JSON.parse(localStorage.getItem("jjQuizScores"));
@@ -241,6 +341,8 @@ function jjConfirmChoice(){
                                                             
                                                                 // Update the localStorage
                                                                 localStorage.setItem('jjQuizScores', JSON.stringify(jjGetTheScoreTable));
+                                                                
+                                                                jjUpdateScoreTable();
                                                                 jjResetTheWholeQuiz();
                                                             }
                                                             
@@ -252,29 +354,98 @@ function jjConfirmChoice(){
 
 
     }else{
-        jjResetTheWholeQuiz();
+        jjLockTillReset=0;
+        document.getElementById('jjQuizLoadingBorderBarMoving').classList.add('jjPauseTheQQloader');
+        clearInterval(jjCountDownInterval);
+
+        document.querySelectorAll('input[name="jjOptions"]').forEach(function(radioButton){
+            if (radioButton.value==jjCorrectAnswer){
+               let jjTheCorrect= radioButton.id+"Label";
+                document.getElementById(jjTheCorrect).style.backgroundColor="orange";
+            }
+        
+        });
+       
+          
+     /*
+         document.getElementById("jjQuizLoadingBorderBarMovingTimer").textContent=jjQuiztimer;
+    */
+
     }
 
-
+}
 }
 
 
+
+
+
+
+function jjUpdateScoreTable() {
+    let jjScoreTable = document.getElementById("jjScoreTable");
+
+    // deleting my current rows ...
+                while (jjScoreTable.rows.length > 2) {
+                    jjScoreTable.deleteRow(2);
+                }
+
+        // Add new rows based on the updated score data
+        let jjGetTheScoreTable = JSON.parse(localStorage.getItem("jjQuizScores"));
+
+                for (let i = 0; i < jjGetTheScoreTable.length; i++) {
+                    let row = jjScoreTable.insertRow(i + 2);
+
+                    let jjCellDate = row.insertCell(0);
+                    let jjCellTime = row.insertCell(1);
+                    let jjCellAssisted = row.insertCell(2);
+
+                    jjCellDate.innerHTML = jjGetTheScoreTable[i].datetime;
+                    jjCellTime.innerHTML = jjGetTheScoreTable[i].time+"/60s";
+                    jjCellAssisted.innerHTML = jjGetTheScoreTable[i].assisted;
+                }
+}
+
+
+
+
+
+
+
+
 function jjResetTheWholeQuiz(){
+    jjLockTillReset=1;
+    jjResetTimer();
     document.querySelectorAll('input[name="jjOptions"]').forEach(function(radioButton){
         radioButton.checked=false; })
-        jjHelperSolverCounter=1;
-        jjHelperHideOneCounter=1;
+
         document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(1)'; 
         document.getElementById("jjMiniQuizContentMiddleHelper2").style.transform='scale(1)';
 
 
 
-    console.log('Game Over');       //Reset
+        
+    
+
+        //Declaring variables for the intervalObj and for the moving bar itself
+      
+        jjQuizLoadingBorderBarMoving=document.getElementById("jjQuizLoadingBorderBarMoving");
+        
+        //current Variables that we need in order to compare the given answer with the correct one.
+        jjCountDownInterval=undefined;
+        jjquizDataCopy=undefined;
+
+        jjquestionPickedd=undefined;
+        jjCorrectAnswer=undefined;
+        jjQuiztimer=undefined;
+        //here it will be given a +1 each time player answers wrong. If 3 answers quiz gets aborted.
+        jjHelperSolverCounter=1;
+        jjHelperHideOneCounter=1;
+
+
+     //Reset
             
-     jjquestionPickedd=undefined;
-     jjCorrectAnswer=undefined;
-     jjResetTimer();
-     jjQuiztimer=undefined;
+    
+    
      document.getElementById("jjQuizLoadingBorderBarMovingTimer").textContent=jjQuiztimer;
      document.getElementById("jjQuizQuestionPlaceholder").textContent=undefined;
      document.getElementById("jjOption1").value=undefined;
@@ -283,14 +454,12 @@ function jjResetTheWholeQuiz(){
      document.getElementById("jjOption2Label").textContent=undefined;   
      document.getElementById("jjOption3").value=undefined;
      document.getElementById("jjOption3Label").textContent=undefined;
+     document.getElementById("jjQuizImgPlaceHolder").setAttribute("src",undefined);     
      document.getElementById("jjQuizImgPlaceHolder").setAttribute("src",undefined);
-
-     setTimeout(function(){ 
-        document.getElementById("jjQuizImgPlaceHolder").setAttribute("src",undefined);
-           },3000);
+         
 }
 
-
+jjUpdateScoreTable();
 
 
 
@@ -298,72 +467,6 @@ function jjgiveMeRandom(min,max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-//we create a copy so we can remove one by one and recheck during the exam
-//so we avoid dublicate questions and make them appear in a random manner
-
-
-const jjquizData = [
-    {
-        question: "What is the scientific name for mantises?",
-        options: ["Mantodea", "Orthoptera", "Arachnida"],
-        correctAnswer: "Mantodea",
-        imageUrl: "url_for_question_1_image"
-    },
-    {
-        question: "How many mantis species are there?",
-        options: ["Approximately 2,000", "Approximately 3,500", "Approximately 5,000"],
-        correctAnswer: "Approximately 2,000",
-        imageUrl: "url_for_question_2_image"
-    },
-    {
-        question: "What is the primary diet of mantises?",
-        options: ["Plants", "Other Insects", "Nectar"],
-        correctAnswer: "Other Insects",
-        imageUrl: "url_for_question_3_image"
-    },
-    {
-        question: "Which continent has the greatest diversity of mantis species?",
-        options: ["Africa", "Asia", "North America"],
-        correctAnswer: "Africa",
-        imageUrl: "url_for_question_4_image"
-    },
-    {
-        question: "How do mantises primarily catch their prey?",
-        options: ["Ambush", "Chasing", "Stinging"],
-        correctAnswer: "Ambush",
-        imageUrl: "url_for_question_5_image"
-    },
-    {
-        question: "What is the lifespan of an average mantis?",
-        options: ["Few Weeks", "Few Months", "Few Years"],
-        correctAnswer: "Few Months",
-        imageUrl: "url_for_question_6_image"
-    },
-    {
-        question: "What is the purpose of a mantis's distinctive posture with raised forelegs?",
-        options: ["Attracting Mates", "Camouflage", "Capturing Prey"],
-        correctAnswer: "Capturing Prey",
-        imageUrl: "url_for_question_7_image"
-    },
-    {
-        question: "Do mantises undergo metamorphosis?",
-        options: ["Yes", "No", "Sometimes"],
-        correctAnswer: "Yes",
-        imageUrl: "url_for_question_8_image"
-    },
-    {
-        question: "Which sense is particularly well-developed in mantises?",
-        options: ["Hearing", "Sight", "Taste"],
-        correctAnswer: "Sight",
-        imageUrl: "url_for_question_9_image"
-    },
-    {
-        question: "What is the purpose of the mantis's unique head movement?",
-        options: ["Balance", "Communication", "Hunting Strategy"],
-        correctAnswer: "Hunting Strategy",
-        imageUrl: "url_for_question_10_image"
-    }
-];
 
 
 

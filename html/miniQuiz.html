@@ -73,8 +73,7 @@
                                             hide a wrong answer leaving you with 2 options
                                             while the other makes it capable for you to
                                             auto answer(skip the question)
-                                        </div>
-                                        
+                                        </div>                                        
                                         
                                         <input class="jjQuizOptionsInputs" type="radio" id="jjOption1" name="jjOptions" value="">
                                         <label class="jjQuizOptionsInputsLabel" id="jjOption1Label" for="jjOption1"></label>
@@ -84,27 +83,39 @@
                                         
                                         <input class="jjQuizOptionsInputs" type="radio" id="jjOption3" name="jjOptions" value="">
                                         <label class="jjQuizOptionsInputsLabel" id="jjOption3Label" for="jjOption3"></label>
-                                        
-                                        
-                                        <button id="jjConfirmChoice">Submit</button>
-
+                                    
                             </div>
                             
                             <div id="jjMiniQuizContentMiddle">
                                     <button class="jjhelperButton" id="jjMiniQuizContentMiddleHelper1">Solver</button>
-                                    <button class="jjhelperButton" id="jjMiniQuizContentMiddleHelper2"></button>
-                                    <button class="jjhelperButton" id="jjResetCountDown">Reset</button>
+                                    <button class="jjhelperButton" id="jjMiniQuizContentMiddleHelper2">Hide One</button>                                    
                             </div>
 
                             <div id="jjMiniQuizContentRightSide">
                                         <img id="jjQuizImgPlaceHolder" src="" alt="">
                             </div>
                 </div>
+                <div id="jjSubmitAndResetQuizHolder">
+                    <button id="jjConfirmChoice">Submit</button>
+                    <button id="jjResetCountDown">Reset</button>
+                </div>
+
                 <div id="jjQuizLoadingBorder">
                     <div id="jjQuizLoadingBorderBarMoving"></div>
                     <div id="jjQuizLoadingBorderBarMovingTimer"></div>
                 </div>
             </div>
+
+            <table id="jjScoreTable">
+                <tr>
+                    <th colspan="3">Your Top 10 Scores</th>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>Time/60s</td>
+                    <td>Assisted</td>
+                </tr>
+            </table>
 
 
                 

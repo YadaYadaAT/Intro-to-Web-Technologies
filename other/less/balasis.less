@@ -37,10 +37,8 @@ width:55%;
 padding:1em;
 
 }
-
-#jjQuizQuestionPlaceholder{
-
-   
+.jjPauseTheQQloader{
+    animation-play-state: paused;
 }
 
 
@@ -50,34 +48,60 @@ flex-direction: column;
 width:15%;
 height:100%;
 position:relative;
-justify-content: center;
+justify-content:space-around;
 align-items: center;
 }
 
-#jjResetCountDown{
-height:5em;
-width:100%;
-position:absolute;
-bottom:0;
-}
 .jjhelperButton{
     transition:100ms linear;
     display:flex;
     justify-content: center;
     align-items: center;
-    margin-top:1em;
     flex-shrink: 0;
     cursor:pointer;
-    height:10em;
+    height:24%;
     width:10em;
 }
 .jjhelperButton:hover{
     transform:scale(0.80);
 
 }
+
+
+
+
+
+#jjSubmitAndResetQuizHolder{
+    display:flex;
+    
+}
+
+#jjConfirmChoice{
+    width:50%;
+    height:5em;
+border-radius: 10px 0px 0px 0px;
+cursor:pointer;
+}
+#jjConfirmChoice:hover{
+    transform:scale(0.99);
+}
+
+
+#jjResetCountDown{
+height:5em;
+width:50%;
+border-radius: 0px 10px 0px 0px;
+}
+
+#jjResetCountDown:hover{
+    transform:scale(0.99);
+}
+
+
+
 #jjMiniQuizContentRightSide{
     width:30%;
-    background-color:orange;
+   
     display:flex;
     justify-content: center;
     align-items: center;
@@ -85,6 +109,7 @@ bottom:0;
 #jjQuizImgPlaceHolder{
     height:20em;
     width:20em;
+    
 }
 
 
@@ -168,6 +193,27 @@ transform:scale(0.95);
 
 .jjQuizOptionsInputs:checked + .jjQuizOptionsInputsLabel {
     background-color:@colorLightGreen;}
+
+
+
+
+#jjScoreTable{
+    margin-top:8em;
+    width:60%;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+    margin-bottom:8em;
+}
+
+#jjScoreTable td{
+    width:33.33%;
+    
+}
+#jjScoreTable td, th{
+    border: 1px solid black;
+    padding:0.5em;
+}
 
 //=======================END of your CSS code==================//
 @import "master.less";
