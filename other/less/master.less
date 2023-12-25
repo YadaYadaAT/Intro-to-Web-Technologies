@@ -22,6 +22,7 @@
 //Fonts
 
 //FontFamilies
+//I added Montserrat! font-family: 'Montserrat'; works
 @fontFamilyHeader: Helvetica, Arial;
 
 @fontFamilyMainText: Helvetica, Arial;
@@ -75,37 +76,36 @@ body{
 
 .footer_wrapper{
     background-color: @colorLightGreen;
-    font-family: @fontFamilyMainText;
+    font-family: 'Montserrat';
+    font-size: 15px;
     position: absolute;
     bottom: 0;
-    height: 10em;
+    height: 15em;
     width: 100%;
     padding-left: 10%;
 }
+//margin-top for every column to control where it sits in the background
+//maybe add a line in between? 
 .columnOne, .columnFive{
-    margin-top: 6em;
+    margin-top:11em;
 }
-
 .columnTwo{
-    margin-top: 4.2em;
+    margin-top: 8.2em;
 }
 .columnFour{
-    margin-top: 4.2em;
+    margin-top: 8.2em;
 }
 .columnThree{
-    padding-bottom: 3em;
+    padding-bottom: 7em;
 }
 .athTechRow{
     padding-top: 0.5em;
 }
-.columnFive a:visited{
-    color: black;
-}
+//'toggle dark mode' dropdown - currently not functional
 .dropdown {
     position: absolute;
     display: inline-block;
-}
-  
+}  
 .dropdown-content {
     display: none;
     position: relative;
@@ -119,21 +119,28 @@ body{
     display: inline;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
-}
-  
+}  
 .dropdown:hover .dropdown-content {
     display: block;
     height: 2.2em;
 }
-.columnTwo a:link{
+.columnFive a:link{
     color: black;
     text-decoration: none;
 }
-.columnTwo a:visited{
+.columnFive a:visited{
+    color: black;
+}
+//link formatting for the rest of the links to different parts of the website +quiz 
+.columnTwo a:link, .meetTheTeam a:link, .columnFour a:link{
     color: black;
     text-decoration: none;
 }
-.columnTwo a:hover{
+.columnTwo a:visited, .meetTheTeam a:visited, .columnFour a:visited{
+    color: black;
+    text-decoration: none;
+}
+.columnTwo a:hover, .meetTheTeam a:hover, .columnFour a:hover{
     color: rgb(124, 126, 123) !important; 
     opacity: 0.6;
 }
