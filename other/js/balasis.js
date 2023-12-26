@@ -88,6 +88,8 @@ let jjQuiztimer;
 //here it will be given a +1 each time player answers wrong. If 3 answers quiz gets aborted.
 let jjHelperSolverCounter=1;
 let jjHelperHideOneCounter=1;
+let jjStartingTableViewNoRecordsDisplay=false;
+let jjGetTheScoreTable;
 //bind event Listeners to start the quiz, reset the quiz , and confirm the choice.
 document.getElementById('jjStartCountDown').addEventListener('click',function(){
     jjStartTimer(60);
@@ -124,9 +126,11 @@ function jjStartTimer(timer){
 if (jjLockTillReset==1 && jjIntervalStillRun==false){
 
     jjIntervalStillRun=true;
+    jjStartingTableViewNoRecordsDisplay=true;
     document.getElementById('jjMiniQuizAssistButtons').classList.add('jjanimationForDropDown');
     document.getElementById('jjQuizLoadingBorderBarMovingTimer').classList.add('jjQuizLoadingBorderBarMovingTimerName');
     setTimeout(function() {
+        document.getElementById('jjScoreTable').style.display = 'none';
         document.getElementById('jjMiniQuizFrame').style.display = 'flex';
        
     }, 500);
@@ -189,8 +193,19 @@ if (jjLockTillReset==1 && jjIntervalStillRun==false){
     jjQuizLoadingBorderBarMoving.classList.add("jjAddAnimationForBar");
 
         if (jjQuiztimer==0 || jjQuiztimer==NaN){      
-            clearInterval(jjCountDownInterval);
-            jjQuizLoadingBorderBarMoving.classList.remove("jjAddAnimationForBar");
+                            jjLockTillReset=0;
+                            document.getElementById('jjQuizLoadingBorderBarMoving').classList.add('jjPauseTheQQloader');
+                            clearInterval(jjCountDownInterval);
+                    
+                            document.querySelectorAll('input[name="jjOptions"]').forEach(function(radioButton){
+                                if (radioButton.value==jjCorrectAnswer){
+                                let jjTheCorrect= radioButton.id+"Label";
+
+                                    document.getElementById(jjTheCorrect).classList.add('jjQuizRightAnswerAnimationClass');
+
+                                }
+                            
+                            });
         }
     }   ,1000)
 
@@ -218,7 +233,7 @@ function jjHelperSolver(){
         if (radioButton.value === jjCorrectAnswer) {
             radioButton.checked=true;
             jjConfirmChoice();
-            jjHelperSolverCounter=jjHelperSolverCounter-1;
+            jjHelperSolverCounter=jjHelperSolverCounter-0;
             document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(0.80)';        
         }
     });
@@ -229,6 +244,7 @@ function jjHelperSolver(){
 
 //this function removes an wrong option..can be used only once
 let jjHiddenToBeSeen;
+let jjHiddenToBeSeen2;
 let jjflagToSeeIfOn;
 function jjHelperHideOne(){
     if (jjLockTillReset==1){
@@ -241,20 +257,35 @@ function jjHelperHideOne(){
         shuffledInputs.sort(() => Math.random() - 0.5);
 
 
-
+        let jjUpToTwo=1;
+        let jjLabelCounterToSaveIdToSecond=1;
         shuffledInputs.forEach(function(radioButton) {
            if(jjflagToSeeIfOn!==true){
             if (radioButton.value !== jjCorrectAnswer) {
 
+                if (jjLabelCounterToSaveIdToSecond==1){
                 let jjFindTheLabel=radioButton.id+"Label";
-                
+            
                document.getElementById(jjFindTheLabel).style.display="none";
+               jjHiddenToBeSeen=jjFindTheLabel;
+               jjLabelCounterToSaveIdToSecond=jjLabelCounterToSaveIdToSecond-1;
+                
+            
+               
+            }else{
+                    let jjFindTheLabel2=radioButton.id+"Label";            
+                    document.getElementById(jjFindTheLabel2).style.display="none";
+                    jjHiddenToBeSeen2=jjFindTheLabel2;
 
+                 }
+
+                    if (jjUpToTwo==0){     
+                        jjflagToSeeIfOn=true;              
                 jjHelperHideOneCounter=jjHelperHideOneCounter-1;
-                document.getElementById("jjMiniQuizContentMiddleHelper2").style.transform='scale(0.80)';
-                    jjflagToSeeIfOn=true;
-                    jjHiddenToBeSeen=jjFindTheLabel;
-                   
+                document.getElementById("jjMiniQuizContentMiddleHelper2").style.transform='scale(0.80)'; 
+                }
+                jjUpToTwo=jjUpToTwo-1;
+
             }
         }
     });
@@ -272,6 +303,7 @@ function jjConfirmChoice(){
 
    if (jjflagToSeeIfOn){
     document.getElementById(jjHiddenToBeSeen).style.display="flex";
+    document.getElementById(jjHiddenToBeSeen2).style.display="flex";
 }
 
 
@@ -395,7 +427,7 @@ function jjConfirmChoice(){
         document.querySelectorAll('input[name="jjOptions"]').forEach(function(radioButton){
             if (radioButton.value==jjCorrectAnswer){
                let jjTheCorrect= radioButton.id+"Label";
-                document.getElementById(jjTheCorrect).style.backgroundColor="orange";
+               document.getElementById(jjTheCorrect).classList.add('jjQuizRightAnswerAnimationClass');
             }
         
         });
@@ -419,12 +451,17 @@ function jjUpdateScoreTable() {
     let jjScoreTable = document.getElementById("jjScoreTable");
 
     // deleting my current rows ...
+
+
+    if (jjStartingTableViewNoRecordsDisplay==true){
                 while (jjScoreTable.rows.length > 2) {
                     jjScoreTable.deleteRow(2);
                 }
 
+            }
         // Add new rows based on the updated score data
-        let jjGetTheScoreTable = JSON.parse(localStorage.getItem("jjQuizScores"));
+        if (localStorage.getItem("jjQuizScores")!==null){
+        jjGetTheScoreTable = JSON.parse(localStorage.getItem("jjQuizScores"));
 
                 for (let i = 0; i < jjGetTheScoreTable.length; i++) {
                     let row = jjScoreTable.insertRow(i + 2);
@@ -437,6 +474,16 @@ function jjUpdateScoreTable() {
                     jjCellTime.innerHTML = jjGetTheScoreTable[i].time+"/60s";
                     jjCellAssisted.innerHTML = jjGetTheScoreTable[i].assisted;
                 }
+        }else{
+            if (jjScoreTable.rows.length <=2){
+           let jjMyNewRowTable= jjScoreTable.insertRow(2);
+           jjMyNewRowTable.insertCell(0).innerHTML="<i>No records</i>";
+           jjMyNewRowTable.insertCell(1).innerHTML="<i>No records</i>";
+           jjMyNewRowTable.insertCell(2).innerHTML="<i>No records</i>";
+          }
+        }
+
+
 }
 
 
@@ -447,12 +494,15 @@ function jjUpdateScoreTable() {
 
 
 function jjResetTheWholeQuiz(){
+
+
+
     document.getElementById('jjQuizLoadingBorderBarMovingTimer').classList.remove('jjQuizLoadingBorderBarMovingTimerName');
 
     document.getElementById('jjMiniQuizAssistButtons').classList.add('jjanimationForDropDown');
     setTimeout(function() {
         document.getElementById('jjMiniQuizFrame').style.display = 'none';
-       
+        document.getElementById('jjScoreTable').style.display = 'table';
     }, 500);
     
     setTimeout(function() {
@@ -463,21 +513,14 @@ function jjResetTheWholeQuiz(){
         document.getElementById('jjResetCountDown').style.display='none';
     }, 1000);
 
-
-
-    
-
-
-
-
-   
+  
    
     jjLockTillReset=1;
     jjResetTimer();
     document.querySelectorAll('input[name="jjOptions"]').forEach(function(radioButton){
         radioButton.checked=false;
         let jjTheCorrect= radioButton.id+"Label";
-                document.getElementById(jjTheCorrect).style.backgroundColor="";
+        document.getElementById(jjTheCorrect).classList.remove('jjQuizRightAnswerAnimationClass');
     })
 
         document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(1)'; 
@@ -506,8 +549,11 @@ function jjResetTheWholeQuiz(){
 
      //Reset
             
-    
-    
+    if (jjflagToSeeIfOn){
+    document.getElementById(jjHiddenToBeSeen).style.display="flex";
+    document.getElementById(jjHiddenToBeSeen2).style.display="flex";
+}
+jjflagToSeeIfOn=false;
      document.getElementById("jjQuizLoadingBorderBarMovingTimer").textContent=jjQuiztimer;
      document.getElementById("jjQuizQuestionPlaceholder").textContent=undefined;
      document.getElementById("jjOption1").value=undefined;
@@ -526,9 +572,12 @@ jjUpdateScoreTable();
 
 
 document.getElementById('jjClearLocalStorageButton').addEventListener('click', function() {
-   
+    console.log("1");
     let jjKeyToRemove = 'jjQuizScores'; 
-    localStorage.removeItem(jjKeyToRemove);});
+    localStorage.removeItem(jjKeyToRemove);
+    jjUpdateScoreTable();
+});
+
 
 
 

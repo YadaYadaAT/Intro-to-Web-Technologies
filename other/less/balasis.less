@@ -85,6 +85,11 @@
     }
 
 
+   
+
+
+
+
 
 
 
@@ -92,6 +97,29 @@
     .jjQuizOptionsInputs{
         display:none;
     }
+
+
+
+    .jjQuizRightAnswerAnimationClass{
+        animation-name:jjQuizRightAnswerAnimation;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes jjQuizRightAnswerAnimation{
+    0%{background-color:orange;}
+    10%{ background-color:white;}
+    20%{background-color:orange;}
+    30%{ background-color:white;}
+    50%{background-color:orange;}
+    75%{background-color:white;}
+    100%{background-color:orange;}
+    }
+
+
+
+
+
+
     
     .jjQuizOptionsInputsLabel{
         padding:1em;
@@ -106,6 +134,7 @@
         justify-content: center;
         align-items: center;
         margin-top:1em;
+        animation-duration:3s;
     }
     .jjQuizOptionsInputsLabel:hover{
     
@@ -114,6 +143,14 @@
 
 
   
+    
+
+
+
+
+
+
+
 
 
 
@@ -235,7 +272,7 @@ margin-top:auto;
     bottom:0.5em;
     font-size:4.5em;
     width:fit-content;
-    animation-duration:60s;
+    animation-duration:61s;
     
     
 
@@ -346,13 +383,17 @@ z-index:100;
 
 #jjScoreTable{
     width: calc(50% - 2em);
-    height:50vh;
+    display:table;
     border-collapse: collapse;
     text-align: center;
     table-layout: fixed;
     
 }
-
+#jjScoreTable th{
+   padding-top:1em;
+   padding-bottom:1em;
+    
+}
 #jjScoreTable td{
     width:33.33%;
     
