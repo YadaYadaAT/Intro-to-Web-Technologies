@@ -122,7 +122,26 @@ document.getElementById('jjMiniQuizContentMiddleHelper2').addEventListener('clic
 //(I make a copy of the content in order to manage it better...the copy gets destroyed in the end of each quiz)
 function jjStartTimer(timer){
 if (jjLockTillReset==1 && jjIntervalStillRun==false){
+
     jjIntervalStillRun=true;
+    document.getElementById('jjMiniQuizAssistButtons').classList.add('jjanimationForDropDown');
+    document.getElementById('jjQuizLoadingBorderBarMovingTimer').classList.add('jjQuizLoadingBorderBarMovingTimerName');
+    setTimeout(function() {
+        document.getElementById('jjMiniQuizFrame').style.display = 'flex';
+       
+    }, 500);
+    
+    setTimeout(function() {
+        document.getElementById('jjMiniQuizAssistButtons').classList.remove('jjanimationForDropDown');
+        document.getElementById('jjStartCountDown').style.display="none";
+        document.getElementById('jjMiniQuizContentMiddleHelper2').style.display="flex";
+        document.getElementById('jjMiniQuizContentMiddleHelper1').style.display="flex";
+        document.getElementById('jjResetCountDown').style.display='flex';
+    }, 1000);
+
+
+    
+
     if (document.getElementById('jjQuizLoadingBorderBarMoving').classList.contains('jjPauseTheQQloader')){
         document.getElementById('jjQuizLoadingBorderBarMoving').classList.remove('jjPauseTheQQloader');
     }
@@ -428,6 +447,31 @@ function jjUpdateScoreTable() {
 
 
 function jjResetTheWholeQuiz(){
+    document.getElementById('jjQuizLoadingBorderBarMovingTimer').classList.remove('jjQuizLoadingBorderBarMovingTimerName');
+
+    document.getElementById('jjMiniQuizAssistButtons').classList.add('jjanimationForDropDown');
+    setTimeout(function() {
+        document.getElementById('jjMiniQuizFrame').style.display = 'none';
+       
+    }, 500);
+    
+    setTimeout(function() {
+        document.getElementById('jjMiniQuizAssistButtons').classList.remove('jjanimationForDropDown');
+        document.getElementById('jjStartCountDown').style.display="flex";
+        document.getElementById('jjMiniQuizContentMiddleHelper2').style.display="none";
+        document.getElementById('jjMiniQuizContentMiddleHelper1').style.display="none";
+        document.getElementById('jjResetCountDown').style.display='none';
+    }, 1000);
+
+
+
+    
+
+
+
+
+   
+   
     jjLockTillReset=1;
     jjResetTimer();
     document.querySelectorAll('input[name="jjOptions"]').forEach(function(radioButton){
@@ -479,6 +523,13 @@ function jjResetTheWholeQuiz(){
 }
 
 jjUpdateScoreTable();
+
+
+document.getElementById('jjClearLocalStorageButton').addEventListener('click', function() {
+   
+    let jjKeyToRemove = 'jjQuizScores'; 
+    localStorage.removeItem(jjKeyToRemove);});
+
 
 
 

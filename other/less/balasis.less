@@ -4,142 +4,217 @@
     display:flex;
     flex-direction: column;
     align-items:center;
+    justify-content: center;
+    position:relative;
+    height:100vh;
+    width:100vw;
+    padding-top: 4.5em;
 }
 
 #jjMiniQuizMain h2{
-    margin-top:5em;
+   
 }
 
+
 #jjMiniQuizFrame{
-    display:flex;
-    flex-direction: column;
-    
-    width:60%;
+    display:none;
+    flex-direction: column;    
+    width:50%;
     height:45em;
     position:relative;
-    border-radius: 8px 8px 8px 8px;
     overflow:hidden;
-    border:1px solid black;
+    justify-content:center;
+    align-items:center;
 }
+
+
 #jjMiniQuizFrame *{
     transition:150ms linear;
 }
 
+#jjMiniQuizImgHolder{
+    padding:1em;
+    padding-bottom:0;
+    width:100%;
+   height:30em;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    position:relative;
+   
+}
+#jjQuizImgPlaceHolder{
+    height:100%;
+    width:100%;
+   
+    
+}
 
 
-#jjMiniQuizContent{
-display:flex;
-flex-direction: row;
-position:relative;
-flex-grow:1;
-justify-content: center;
-overflow:hidden;
+#jjQuizQuestionPlaceholder{
+    width:100%;
+    padding:2em;
+    text-align: center;
+    font-size:1.2em;
+}
+
+#jjOptionsOfQuiz{
+    display:flex;
+    width:100%;
 
 }
+
+
 #jjMiniQuizContentLeftSide{
-display:flex;
-flex-direction: column;
-justify-content: space-around;
-width:50%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:50%;
+    padding-left:1em;
+    padding-right:1em;
+    }
 
 
-}
+#jjMiniQuizContentRightSide{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:50%;
+    padding-left:1em;
+    padding-right:1em;
+    }
+
+
+
+
+
+
+    .jjQuizOptionsInputs{
+        display:none;
+    }
+    
+    .jjQuizOptionsInputsLabel{
+        padding:1em;
+        width:100%;
+        height:100%;
+        font-size:1.1em;
+        text-align:center;
+        cursor:pointer;
+        border:1px solid @colorSand;
+        transition:200ms linear;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:1em;
+    }
+    .jjQuizOptionsInputsLabel:hover{
+    
+    background-color:@colorLightGreen;
+    }
+
+
+  
+
+
+
+
+
+
+
+
+
+
 .jjPauseTheQQloader{
     animation-play-state: paused;
 }
-#jjMiniQuizContentMiddleHelper1{
-border-radius: 10px 0px 0px 0px;
-}
-#jjMiniQuizContentMiddleHelper2{
-    border-radius: 0px 0px 0px 10px;
-}
 
-#jjMiniQuizContentMiddle{
-    display:flex;
-flex-direction: column;
-width:20%;
-height:100%;
-position:relative;
-justify-content:center;
-align-items:flex-end;
-}
+
+
 
 .jjhelperButton{
-    transition:100ms linear;
-    display:flex;
+    background-color:@colorSand;
+    border:none;
+    transition:150ms linear;
+    display:none;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
     cursor:pointer;
-    height:27%;
-    width:10em;
+    height:100%;
+    width:45%;
+    font-weight:bold;
 }
 .jjhelperButton:hover{
-    transform:scale(0.99);
-
+  
+   
 }
 
 
 
 
 
-#jjSubmitAndResetQuizHolder{
-    display:flex;
-    
-}
 
-#jjConfirmChoice{
-    width:50%;
-    height:5em;
-border-radius: 10px 0px 0px 0px;
-cursor:pointer;
-}
-#jjConfirmChoice:hover{
-    transform:scale(0.99);
-}
+
 
 
 #jjResetCountDown{
-height:5em;
-width:50%;
-border-radius: 0px 10px 0px 0px;
-}
-
-#jjResetCountDown:hover{
-    transform:scale(0.99);
-}
-#jjStartCountDown{
+    display:none;
+    background-color:@colorSand;
     border-radius: 50%;
     transition:100ms linear;
     height:4em;
     width:4em;
+    background-color:@colorSand;
+    justify-content: center;
+align-items: center;
     cursor: pointer;
-    margin-bottom:8em;
+    margin-top:1.5em;
+    border:none;
+    transition:300ms linear;
+    z-index:20;
 }
 
-#jjStartCountDown:hover{
-    background-color:green;
+#jjResetCountDown:hover{
+    color:green;
+    transform:scale(1.1);
+
 }
-#jjMiniQuizContentRightSide{
-    width:30%;
-   
+#jjStartCountDown{
     display:flex;
-    justify-content: flex-start;
-    align-items: center;
+    background-color:@colorSand;
+    border-radius: 50%;
+    height:4em;
+    width:4em;
+    background-color:@colorSand;
+    justify-content: center;
+align-items: center;
+    cursor: pointer;
+    margin-top:1.5em;
+    border:none;
+    transition:300ms linear;
+    z-index:20;
+    background-image: url(../../images/Balasis/quizImages/JJTurnOn.png);
+    background-repeat:no-repeat;
+    background-size:70% 70%;
+    background-position:50% 50%;
 }
-#jjQuizImgPlaceHolder{
-    height:20em;
-    width:20em;
-    
+
+
+
+#jjStartCountDown:hover{
+   transform:scale(1.5);
 }
+
 
 
 #jjQuizLoadingBorder{
     width:100%;
     display:flex;
-height:4em;
+    position:absolute;
+    bottom:0;
+height:1em;
 background-color:grey;
-position:relative;
+
 flex-direction: row;
 align-items: center;
 margin-top:auto;
@@ -154,36 +229,79 @@ margin-top:auto;
 }
 #jjQuizLoadingBorderBarMovingTimer{
     position:absolute;
-    margin-left:auto;
-    margin-right:auto;
     display:flex;
-    color:white;
-    left:0;
-    right:0;
+    
+    left:0.5em;
+    bottom:0.5em;
     font-size:4.5em;
     width:fit-content;
+    animation-duration:60s;
+    
+    
+
+}
+.jjQuizLoadingBorderBarMovingTimerName{
+animation-name:jjBarMinusForNum;
+}
+@keyframes jjBarMinusForNum {
+    0%{
+        
+        color:green;
+    }
+    40%{
+       
+        color: orange;
+    }
+    70%{
+        
+        color:darkorange;
+    }
+    85%{
+        
+        color:red;
+    }
+    100%{
+        
+        color:darkred;
+
+    }
+
+
 }
 
 
-.jjQuizOptionsInputs{
-    display:none;
-}
 
-.jjQuizOptionsInputsLabel{
-    width:100%;
-    height:5em;
-    text-align:center;
-    cursor:pointer;
-    border:1px solid black;
-   
+
+#jjMiniQuizAssistButtons{
+
+
     display:flex;
-    justify-content: center;
-    align-items: center;
+flex-direction: row;
+width: calc(50% - 2em);
+height:3em;
+position:absolute;
+top:0;
+justify-content:center;
+background-color:@colorSand;
+transition:200ms linear;
+animation-iteration-count: 1;
+animation-duration:1s;
+z-index:100;
 }
-.jjQuizOptionsInputsLabel:hover{
 
-background-color:@colorLightGreen;
+
+
+
+
+.jjanimationForDropDown{
+    animation-name: jjDropDownQuiz;
 }
+@keyframes jjDropDownQuiz{
+    0%{height:3em}
+    50%{height:calc(100vh - 1em)}
+    100%{height:3em}
+}
+
 
 @keyframes jjBarMinus {
     0%{
@@ -220,15 +338,19 @@ background-color:@colorLightGreen;
     background-color:@colorLightGreen;}
 
 
-
+  #jjClearLocalStorageButton{
+    position:absolute;
+    background:none;
+    margin-left:25em;
+  }
 
 #jjScoreTable{
-    margin-top:8em;
-    width:60%;
+    width: calc(50% - 2em);
+    height:50vh;
     border-collapse: collapse;
     text-align: center;
     table-layout: fixed;
-    margin-bottom:8em;
+    
 }
 
 #jjScoreTable td{

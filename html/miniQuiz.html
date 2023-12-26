@@ -33,6 +33,8 @@
         <!--Do not Change. The Script for less.js that converts are less file into css in runtime-->
         <script src="../other/js/less.js"></script>
         <!--Do not Change. The Script that it gets the HeaderNav and the Footer to the current page. Will propably be deleted after production-->
+        
+        <!--
         <script>
             document.addEventListener("DOMContentLoaded",function(){
                 fetch("headerNav.html")
@@ -44,7 +46,7 @@
                 .then(response=>response.text())
                 .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("afterend",html)})
             })
-        </script>
+        </script>-->
         <!--Do not Change. Disables page view if javascript is disabled on browser-->
         <noscript>
          <style type="text/css">    	
@@ -59,59 +61,21 @@
 
     <body>        
         <main id="jjMiniQuizMain">
-            <!--Your writing begins here-->
-            <h2>Mini Quiz!</h2>
-            <button id="jjStartCountDown">|</button>
-
-            <div id="jjMiniQuizFrame">
-                <div id="jjMiniQuizContent">
-                            <div id="jjMiniQuizContentLeftSide">
-                                        <div id="jjQuizQuestionPlaceholder">
-                                            Check your timing! You will have 1 minute to
-                                            answer 10 questions. In addition , you may
-                                            use 2 of your helping buttons, the one will
-                                            hide a wrong answer leaving you with 2 options
-                                            while the other makes it capable for you to
-                                            auto answer(skip the question)
-                                        </div>                                        
-                                        
-                                        <input class="jjQuizOptionsInputs" type="radio" id="jjOption1" name="jjOptions" value="">
-                                        <label class="jjQuizOptionsInputsLabel" id="jjOption1Label" for="jjOption1"></label>
-                                        
-                                        <input class="jjQuizOptionsInputs" type="radio" id="jjOption2" name="jjOptions" value="">
-                                        <label class="jjQuizOptionsInputsLabel" id="jjOption2Label" for="jjOption2"></label>
-                                        
-                                        <input class="jjQuizOptionsInputs" type="radio" id="jjOption3" name="jjOptions" value="">
-                                        <label class="jjQuizOptionsInputsLabel" id="jjOption3Label" for="jjOption3"></label>
-
-                                        <input class="jjQuizOptionsInputs" type="radio" id="jjOption4" name="jjOptions" value="">
-                                        <label class="jjQuizOptionsInputsLabel" id="jjOption4Label" for="jjOption4"></label>
-                                    
-                            </div>
-                            
-                            <div id="jjMiniQuizContentMiddle">
-                                    <button class="jjhelperButton" id="jjMiniQuizContentMiddleHelper1">Solver</button>
-                                    <button class="jjhelperButton" id="jjMiniQuizContentMiddleHelper2">Hide One</button>                                    
-                            </div>
-
-                            <div id="jjMiniQuizContentRightSide">
-                                        <img id="jjQuizImgPlaceHolder" src="" alt="">
-                            </div>
-                </div>
-                <div id="jjSubmitAndResetQuizHolder">
-                    <button id="jjConfirmChoice">Submit</button>
-                    <button id="jjResetCountDown">Reset</button>
-                </div>
-
-                <div id="jjQuizLoadingBorder">
-                    <div id="jjQuizLoadingBorderBarMoving"></div>
-                    <div id="jjQuizLoadingBorderBarMovingTimer"></div>
-                </div>
-            </div>
-
-            <table id="jjScoreTable">
+            
+            <div id="jjMiniQuizAssistButtons">
+               
+                <button class="jjhelperButton" id="jjMiniQuizContentMiddleHelper1">Solver</button>
+                <button id="jjStartCountDown"></button>
+                <button id="jjResetCountDown">↻</button>
+                <button class="jjhelperButton" id="jjMiniQuizContentMiddleHelper2">Hide One</button>                                    
+             </div>
+             <table id="jjScoreTable">
+                
                 <tr>
-                    <th colspan="3">Your Top 10 Scores</th>
+                    
+                    <th colspan="3">Your Top 10 Scores
+                        <button id="jjClearLocalStorageButton">Clear</button>
+                    </th>
                 </tr>
                 <tr>
                     <td>Date</td>
@@ -119,7 +83,60 @@
                     <td>Assisted</td>
                 </tr>
             </table>
+            
+             
+             
+            <!--Your writing begins here
+            <h2>Mini Quiz!</h2>
+            -->
+            <div id="jjMiniQuizFrame">
+                        <div id="jjMiniQuizImgHolder">
+                            <img id="jjQuizImgPlaceHolder" src="" alt="">
+                            
+                         </div>
+                        <div id="jjQuizQuestionPlaceholder">
+                            Check your timing! You will have 1 minute to
+                            answer 10 questions. In addition , you may
+                            use 2 of your helping buttons, the one will
+                            hide a wrong answer leaving you with 2 options
+                            while the other makes it capable for you to
+                            auto answer(skip the question)
+                        </div>  
+                        <div id="jjOptionsOfQuiz">
+                            <div id="jjMiniQuizContentRightSide">  
+                                <input class="jjQuizOptionsInputs" type="radio" id="jjOption1" name="jjOptions" value="">
+                                <label class="jjQuizOptionsInputsLabel" id="jjOption1Label" for="jjOption1"></label>                                        
+                                <input class="jjQuizOptionsInputs" type="radio" id="jjOption2" name="jjOptions" value="">
+                                <label class="jjQuizOptionsInputsLabel" id="jjOption2Label" for="jjOption2"></label>
+                            </div>
+                            <div id="jjMiniQuizContentLeftSide">
+                                <input class="jjQuizOptionsInputs" type="radio" id="jjOption3" name="jjOptions" value="">
+                                <label class="jjQuizOptionsInputsLabel" id="jjOption3Label" for="jjOption3"></label>                        
+                                <input class="jjQuizOptionsInputs" type="radio" id="jjOption4" name="jjOptions" value="">
+                                <label class="jjQuizOptionsInputsLabel" id="jjOption4Label" for="jjOption4"></label>                                                                           
+                            </div>   
+                        </div>
 
+            </div>
+
+
+            
+            
+            
+            <div id="jjQuizLoadingBorderBarMovingTimer"></div>
+                <div id="jjQuizLoadingBorder">
+                    <div id="jjQuizLoadingBorderBarMoving"></div>
+                    
+                </div>
+            
+
+<!--
+            
+    
+
+       
+           
+-->
 
                 
                 
