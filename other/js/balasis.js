@@ -4,8 +4,35 @@
 
 
 
-//we create a copy so we can remove one by one and recheck during the exam
-//so we avoid dublicate questions and make them appear in a random manner
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 const jjquizData = [
@@ -233,8 +260,9 @@ function jjHelperSolver(){
         if (radioButton.value === jjCorrectAnswer) {
             radioButton.checked=true;
             jjConfirmChoice();
-            jjHelperSolverCounter=jjHelperSolverCounter-0;
-            document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(0.80)';        
+            jjHelperSolverCounter=jjHelperSolverCounter-1;
+            document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(0.80)';
+            document.getElementById("jjMiniQuizContentMiddleHelper1").style.color="red";        
         }
     });
     }
@@ -283,6 +311,7 @@ function jjHelperHideOne(){
                         jjflagToSeeIfOn=true;              
                 jjHelperHideOneCounter=jjHelperHideOneCounter-1;
                 document.getElementById("jjMiniQuizContentMiddleHelper2").style.transform='scale(0.80)'; 
+                document.getElementById("jjMiniQuizContentMiddleHelper2").style.color="red";
                 }
                 jjUpToTwo=jjUpToTwo-1;
 
@@ -523,8 +552,10 @@ function jjResetTheWholeQuiz(){
         document.getElementById(jjTheCorrect).classList.remove('jjQuizRightAnswerAnimationClass');
     })
 
-        document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(1)'; 
+        document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(1)';
+        document.getElementById("jjMiniQuizContentMiddleHelper1").style.color="";   
         document.getElementById("jjMiniQuizContentMiddleHelper2").style.transform='scale(1)';
+        document.getElementById("jjMiniQuizContentMiddleHelper2").style.color="";
 
 
 
@@ -585,6 +616,139 @@ document.getElementById('jjClearLocalStorageButton').addEventListener('click', f
 function jjgiveMeRandom(min,max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+
+
+
+
+
+
+
+
+
+function jjhighlightElement(jjselect, jjmessage) {
+    const jjTargetIamBored = document.getElementById(jjselect);
+        jjTargetIamBored.classList.add('jjexplainHighLight');
+   
+    const jjMessageDiv = document.createElement('div');
+            jjMessageDiv.classList.add('jjhighlightMessage');
+     jjMessageDiv.textContent = jjmessage;
+
+  
+
+    document.body.appendChild(jjMessageDiv);
+   
+            const jjNextButton = document.createElement('button');
+    jjNextButton.textContent = 'Next';
+         jjNextButton.id = 'jjNextButton';
+
+    
+          const jjCancelButton = document.createElement('button');
+    jjCancelButton.textContent = 'Quit tutorial';
+          jjCancelButton.id = 'jjCancelButton';
+    
+         jjMessageDiv.appendChild(jjCancelButton);
+    jjMessageDiv.appendChild(jjNextButton);  
+         jjNextButton.addEventListener('click', jjNextIt);
+    jjCancelButton.addEventListener('click', jjCancel);
+}
+
+function jjremoveHighlightedItem() {
+    const jjOverlay = document.querySelector('.jjexplainHighLight');
+    if (jjOverlay) {
+        jjOverlay.classList.remove('jjexplainHighLight');
+
+        // Remove the message div
+        const jjMessageDiv = document.querySelector('.jjhighlightMessage');
+        if (jjMessageDiv) {
+            document.body.removeChild(jjMessageDiv);
+        }
+    }
+}
+
+
+
+  function jjremoveHighlight() {
+    const jjoverlay = document.querySelector('.jjwholeShadow');
+    document.getElementById('jjMiniQuizBody').removeChild(jjoverlay);
+    
+    
+     
+    
+  }
+
+
+let jjControlHighlights=1;
+
+  function jjHighLightController(jjStep){
+    switch(jjStep){
+        case 0:
+            document.getElementById('jjMiniQuizContentMiddleHelper1').style.display='';
+            document.getElementById('jjMiniQuizContentMiddleHelper2').style.display='';
+            document.getElementById('jjMiniQuizMain').style.pointerEvents='auto';
+            jjremoveHighlightedItem();
+            jjremoveHighlight();
+
+                 break;
+
+        case 1:
+                jjremoveHighlightedItem();
+                jjhighlightElement('jjQuizLoadingBorder', 'This is your timer ( highlighted green bar down)');
+                break;
+
+        case 2:jjremoveHighlightedItem();            
+        jjhighlightElement('jjMiniQuizAssistButtons', 'Hit power On button(center one) to start playing. Right and left of it you will have two help buttons');
+        document.getElementById('jjMiniQuizContentMiddleHelper1').style.display='flex';
+        document.getElementById('jjMiniQuizContentMiddleHelper2').style.display='flex';
+             break;
+             case 3:jjremoveHighlightedItem();
+             document.getElementById('jjMiniQuizContentMiddleHelper1').style.display='';
+             document.getElementById('jjMiniQuizContentMiddleHelper2').style.display='';
+             jjhighlightElement('jjScoreTable', 'The score table will keep your 10 fastest rounds.');
+             break;
+        default:
+            document.getElementById('jjMiniQuizContentMiddleHelper1').style.display='';
+            document.getElementById('jjMiniQuizContentMiddleHelper2').style.display='';
+            document.getElementById('jjMiniQuizMain').style.pointerEvents='auto';
+            jjremoveHighlightedItem();
+            jjremoveHighlight();
+
+            return;
+        
+    }
+  }
+
+
+
+jjGuidance();
+
+
+
+
+  function jjGuidance(){
+    let jjnumStep;
+
+    document.getElementById('jjMiniQuizMain').style.pointerEvents='none';
+    const jjshadowOver = document.createElement('div');
+    jjshadowOver.classList.add('jjwholeShadow'); 
+    document.getElementById('jjMiniQuizBody').appendChild(jjshadowOver);
+    jjHighLightController(jjControlHighlights); 
+  }
+
+
+function jjCancel(){
+    jjControlHighlights=0;
+    jjHighLightController(jjControlHighlights);
+} 
+function jjNextIt(){
+    jjControlHighlights=jjControlHighlights+1;
+    jjHighLightController(jjControlHighlights);
+}  
+ 
+
+
+
+
 
 
 
