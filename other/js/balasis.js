@@ -102,7 +102,7 @@ const jjquizData = [
 
 
     let jjquizDataCopy;
-    
+    let jjQuestionNumber=0;
 let jjLockTillReset=1;
 //Declaring variables for the intervalObj and for the moving bar itself
 let jjCountDownInterval;
@@ -160,7 +160,7 @@ if (jjLockTillReset==1 && jjIntervalStillRun==false){
         document.getElementById('jjScoreTable').style.display = 'none';
         document.getElementById('jjClearLocalStorageButton').style.display = 'none';
         document.getElementById('jjMiniQuizFrame').style.display = 'flex';
-       
+        document.getElementById("jjQuizLoadingBorderBarMovingTimer").textContent=jjQuestionNumber+"/10";
     }, 500);
     
     setTimeout(function() {
@@ -217,7 +217,7 @@ if (jjLockTillReset==1 && jjIntervalStillRun==false){
 
     jjCountDownInterval=setInterval(function(){
     jjQuiztimer=jjQuiztimer-1;
-    document.getElementById("jjQuizLoadingBorderBarMovingTimer").textContent=jjQuiztimer;
+    
     jjQuizLoadingBorderBarMoving.classList.add("jjAddAnimationForBar");
 
         if (jjQuiztimer==0 || jjQuiztimer==NaN){      
@@ -253,19 +253,25 @@ function jjResetTimer(){
 
 //this function gives instant answer to one of the questions..can be used only once
 function jjHelperSolver(){
+   
     if (jjLockTillReset==1){
     if (jjHelperSolverCounter==1){
     let jjTakejjOptionsInputs=document.querySelectorAll('input[name="jjOptions"]');
+
     jjTakejjOptionsInputs.forEach(function(radioButton) {
        
         if (radioButton.value === jjCorrectAnswer) {
-            radioButton.checked=true;
-            jjConfirmChoice();
-            jjHelperSolverCounter=jjHelperSolverCounter-1;
-            document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(0.80)';
-            document.getElementById("jjMiniQuizContentMiddleHelper1").style.color="red";        
-        }
+            radioButton.checked=true;}
+                         
+        
     });
+
+    jjConfirmChoice();
+            
+    // jjHelperSolverCounter=jjHelperSolverCounter-1;//I SET TO 0 so you can cheat the game to check it.
+     document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(0.80)';
+     document.getElementById("jjMiniQuizContentMiddleHelper1").style.color="red";   
+
     }
 
     }
@@ -339,13 +345,15 @@ function jjConfirmChoice(){
 
    if(document.querySelector('input[name="jjOptions"]:checked').value==jjCorrectAnswer){
         //we remove the question from the copy...
+        jjQuestionNumber=jjQuestionNumber+1;
+        document.getElementById("jjQuizLoadingBorderBarMovingTimer").textContent=jjQuestionNumber+"/10";
         jjquizDataCopy.splice(jjquestionPickedd,1);
 
         if (jjquizDataCopy.length!==0){
             
                                     jjquestionPickedd=jjgiveMeRandom(0,jjquizDataCopy.length-1);
 
-                                    console.log(jjquestionPickedd +"so I choose:");
+                
 
                                         //Loading the next question...
                                                 jjCorrectAnswer=jjquizDataCopy[jjquestionPickedd].correctAnswer;
@@ -525,7 +533,7 @@ function jjUpdateScoreTable() {
 
 function jjResetTheWholeQuiz(){
 
-
+    jjQuestionNumber=0;
 
     document.getElementById('jjQuizLoadingBorderBarMovingTimer').classList.remove('jjQuizLoadingBorderBarMovingTimerName');
 
