@@ -68,7 +68,6 @@ margin-top:1em;
     position:relative;
     height:100vh;
     width:100vw;
-    padding-top: 4.5em;
 }
 
 #jjMiniQuizMain h2{
@@ -80,9 +79,9 @@ margin-top:1em;
     display:none;
     flex-direction: column;    
     width:50%;
-    height:45em;
+    max-height:50em;
     position:relative;
-    overflow:hidden;
+    overflow-x:hidden;
     justify-content:center;
     align-items:center;
 }
@@ -96,7 +95,7 @@ margin-top:1em;
     padding:1em;
     padding-bottom:0;
     width:100%;
-   height:30em;
+   height:50%;
     display:flex;
     justify-content:center;
     align-items: center;
@@ -504,11 +503,20 @@ z-index:100;
 
 
   #jjClearLocalStorageButton{
-    position:absolute;
+    position:fixed;
     background:none;
-    margin-left:25em;
+    right:0;
+    border-radius: 10px 0px 0px 10px;
+    transition:400ms linear;
+    width:10em;
+    height:5em;
+    padding-left:1em;
+    text-align:left;
+    cursor: pointer;
   }
-
+  #jjClearLocalStorageButton:hover{
+    width:15em;;
+  }
 #jjScoreTable{
     width: calc(50% - 2em);
     display:table;
@@ -531,5 +539,39 @@ z-index:100;
     padding:0.5em;
 }
 
+
+@media screen and (max-width: 850px) {
+    #jjScoreTable{
+        width:calc(65% - 2em);
+    }
+    #jjMiniQuizAssistButtons{
+        width:calc(65% - 2em);
+
+    }
+    .jjhighlightMessage{
+        left:50%;
+        top:50%;
+        padding:1em;
+    }
+    #jjQuizLoadingBorderBarMovingTimer{
+        left:0.1em;
+        bottom:0.1em;
+    }
+    #jjMiniQuizFrame{
+        padding:5em;
+        width:100%;
+    }
+    #jjClearLocalStorageButton{
+        
+        width:5em;
+    }
+    #jjQuizQuestionPlaceholder{
+        padding:0.1em;
+    }
+    #jjQuizGoHome{
+        top:0.1em;
+        left:0.1em;
+    }
+  }
 //=======================END of your CSS code==================//
 @import "master.less";
