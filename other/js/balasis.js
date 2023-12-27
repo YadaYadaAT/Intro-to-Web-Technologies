@@ -158,6 +158,7 @@ if (jjLockTillReset==1 && jjIntervalStillRun==false){
     document.getElementById('jjQuizLoadingBorderBarMovingTimer').classList.add('jjQuizLoadingBorderBarMovingTimerName');
     setTimeout(function() {
         document.getElementById('jjScoreTable').style.display = 'none';
+        document.getElementById('jjClearLocalStorageButton').style.display = 'none';
         document.getElementById('jjMiniQuizFrame').style.display = 'flex';
        
     }, 500);
@@ -531,6 +532,7 @@ function jjResetTheWholeQuiz(){
     document.getElementById('jjMiniQuizAssistButtons').classList.add('jjanimationForDropDown');
     setTimeout(function() {
         document.getElementById('jjMiniQuizFrame').style.display = 'none';
+        document.getElementById('jjClearLocalStorageButton').style.display = 'flex';
         document.getElementById('jjScoreTable').style.display = 'table';
     }, 500);
     
