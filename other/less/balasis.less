@@ -521,33 +521,118 @@ z-index:100;
   #jjClearLocalStorageButton:hover{
     width:15em;;
   }
+
+  #jjScoreTable::before{
+    content:"Top 10 Score Table";
+    text-align:left;
+    padding-left:1em;
+    padding-top:1em;
+    top:-4em;
+    height:2em;
+    font-weight:bold;
+   left:-1em;
+   right:-1em;
+    position:absolute;
+    background-color:rgba(244, 244, 244, 0.9);
+    z-index:9;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  #jjScoreTable::after{
+    content:"";
+    top:-4em;
+    bottom:-1em;
+    left:-1em;
+    right:-1em;
+    position:absolute;
+    background-color:rgba(244,244,244,0.4);
+    z-index:8;
+    border-radius: 10px 10px 10px 10px;
+
+  }
+
+  #jjScoreTableAfter{
+
+  }
+
+  #jjScoreTable tbody{
+    position:relative;
+    z-index:50;
+    
+  
+  }
+.jjAssistedTableColorYes{
+  border-radius: 10px 10px 10px 10px;
+  background-color:green;
+}
+.jjAssistedTableColorNo{
+    border-radius: 10px 10px 10px 10px;
+    background-color:red;
+}
 #jjScoreTable{
-    width: calc(50% - 2em);
+    z-index:50;
+    width: calc(50% - 4em);
     display:table;
     border-collapse: collapse;
     text-align: center;
-    table-layout: fixed;
+    max-height:70vh;
     position:relative;
+    border-radius: 10px 10px 0px 0px;
+    overflow:hidden;
+    white-space: nowrap;
 }
 #jjScoreTable th{
+   
    padding-top:1em;
    padding-bottom:1em;
-    
+    background-color:rgb(214,210,222) ;
 }
-#jjScoreTable td{
-    width:33.33%;
-    
-}
-#jjScoreTable td, th{
-    border: 1px solid black;
-    padding:0.5em;
+#jjScoreTable td:nth-child(1) {
+    width: 10%;
 }
 
+#jjScoreTable td:nth-child(n+2) {
+    width: 30%;
+}
+
+#jjScoreTable tr:nth-child(even){
+   background-color:@colorSand;
+}
+
+#jjScoreTable tr:nth-child(odd){
+    background-color:rgb(226,224,238);
+ }
+ 
+#jjScoreTable td, th{
+    
+    padding:0.5em;
+}
+#jjScoreTable td{
+    padding-top:2vh;
+    padding-bottom:2vh;
+}
 
 @media screen and (max-width: 850px) {
     #jjScoreTable{
-        width:calc(65% - 2em);
+        width:calc(65% - 4em);
+        margin-top:3em;
+        overflow:auto;
     }
+
+   
+    
+      #jjScoreTable td, th{
+        
+        padding:0em;
+    }
+    #jjScoreTable  th{
+        
+        padding:0.1em;
+    }
+
+
+
+
     #jjMiniQuizAssistButtons{
         width:calc(65% - 2em);
 
@@ -563,30 +648,61 @@ z-index:100;
     }
     #jjMiniQuizFrame{
         padding:5em;
-        width:100%;
+        width:80%;
+        height:80vh;
     }
     #jjClearLocalStorageButton{
-        
+        bottom:8em;
         width:5em;
+    }
+    #jjClearLocalStorageButton:hover{
+        width:initial;
+  
     }
     #jjQuizQuestionPlaceholder{
         padding:0.1em;
     }
     #jjQuizGoHome{
-        top:0.1em;
         left:0.1em;
+        top:0.1em;
+       
     }
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 400px) {
     #jjMiniQuizFrame{
         padding:1em;
         width:100%;
+
     }
+    #jjQuizGoHome{
+        right:0.5em;
+        bottom:1em;
+        transform:scale(0.8);
+       left:initial;
+       top:initial;
+       
+    }
+    #jjMiniQuizAssistButtons{
+        width:100%;
+
+    }
+    
+
+  
+  #jjScoreTable{
+    margin-top:3em;
   }
 
+  #jjScoreTable td, th{
+    
+    padding:0em;
+}
+#jjScoreTable  th{
+    
+    padding:0.1em;
+}
 
-
-
+}
 //=======================END of your CSS code==================//
 @import "master.less";

@@ -117,6 +117,8 @@ let jjHelperSolverCounter=1;
 let jjHelperHideOneCounter=1;
 let jjStartingTableViewNoRecordsDisplay=false;
 let jjGetTheScoreTable;
+let jjassisted;
+let jjProtectClickingSolverBeforeStart=false;
 //bind event Listeners to start the quiz, reset the quiz , and confirm the choice.
 document.getElementById('jjStartCountDown').addEventListener('click',function(){
     jjStartTimer(60);
@@ -151,7 +153,7 @@ document.getElementById('jjMiniQuizContentMiddleHelper2').addEventListener('clic
 //(I make a copy of the content in order to manage it better...the copy gets destroyed in the end of each quiz)
 function jjStartTimer(timer){
 if (jjLockTillReset==1 && jjIntervalStillRun==false){
-
+    jjProtectClickingSolverBeforeStart=true;
     jjIntervalStillRun=true;
     jjStartingTableViewNoRecordsDisplay=true;
     document.getElementById('jjMiniQuizAssistButtons').classList.add('jjanimationForDropDown');
@@ -253,9 +255,9 @@ function jjResetTimer(){
 
 //this function gives instant answer to one of the questions..can be used only once
 function jjHelperSolver(){
-   
+   if (jjProtectClickingSolverBeforeStart){
     if (jjLockTillReset==1){
-    if (jjHelperSolverCounter==1){
+    //if (jjHelperSolverCounter==1){
     let jjTakejjOptionsInputs=document.querySelectorAll('input[name="jjOptions"]');
 
     jjTakejjOptionsInputs.forEach(function(radioButton) {
@@ -265,17 +267,20 @@ function jjHelperSolver(){
                          
         
     });
-
+    document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(0.80)';
+    document.getElementById("jjMiniQuizContentMiddleHelper1").style.color="red";   
+    if (jjHelperSolverCounter!==0){
+        jjHelperSolverCounter=jjHelperSolverCounter-1;//I SET TO 0 so you can cheat the game to check it.
+       }
     jjConfirmChoice();
-            
-    // jjHelperSolverCounter=jjHelperSolverCounter-1;//I SET TO 0 so you can cheat the game to check it.
-     document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(0.80)';
-     document.getElementById("jjMiniQuizContentMiddleHelper1").style.color="red";   
+           
+   
 
     }
-
+// }
     }
 }
+
 
 //this function removes an wrong option..can be used only once
 let jjHiddenToBeSeen;
@@ -334,6 +339,9 @@ function jjHelperHideOne(){
 
 
 function jjConfirmChoice(){
+   
+
+   
     if (jjLockTillReset==1){
 
 
@@ -383,10 +391,10 @@ function jjConfirmChoice(){
 
                             }else{
             
-                                        console.log("We have a winner");
                                         
                                         
-                                        let jjassisted;
+                                        
+                                        
                                                             if ((jjHelperSolverCounter == 0) || (jjHelperHideOneCounter == 0)){
                                                                 jjassisted="Yes";
                                                             }else{
@@ -471,9 +479,7 @@ function jjConfirmChoice(){
         });
        
           
-     /*
-         document.getElementById("jjQuizLoadingBorderBarMovingTimer").textContent=jjQuiztimer;
-    */
+
 
     }
 
@@ -484,44 +490,48 @@ function jjConfirmChoice(){
 
 
 
-
 function jjUpdateScoreTable() {
     let jjScoreTable = document.getElementById("jjScoreTable");
 
-    // deleting my current rows ...
+    // Deleting the current rows
+    if (jjStartingTableViewNoRecordsDisplay == true) {
+        while (jjScoreTable.rows.length > 1) {
+            jjScoreTable.deleteRow(1);
+        }
+    }
 
-
-    if (jjStartingTableViewNoRecordsDisplay==true){
-                while (jjScoreTable.rows.length > 2) {
-                    jjScoreTable.deleteRow(2);
-                }
-
-            }
-        // Add new rows based on the updated score data
-        if (localStorage.getItem("jjQuizScores")!==null){
+    // Add new rows based on the updated score data
+    if (localStorage.getItem("jjQuizScores") !== null) {
         jjGetTheScoreTable = JSON.parse(localStorage.getItem("jjQuizScores"));
 
-                for (let i = 0; i < jjGetTheScoreTable.length; i++) {
-                    let row = jjScoreTable.insertRow(i + 2);
+        for (let i = 0; i < jjGetTheScoreTable.length; i++) {
+            let row = jjScoreTable.insertRow(i + 1);
 
-                    let jjCellDate = row.insertCell(0);
-                    let jjCellTime = row.insertCell(1);
-                    let jjCellAssisted = row.insertCell(2);
+            let jjCellNumber = row.insertCell(0);
+            let jjCellDate = row.insertCell(1);
+            let jjCellTime = row.insertCell(2);
+            let jjCellAssisted = row.insertCell(3);
 
-                    jjCellDate.innerHTML = jjGetTheScoreTable[i].datetime;
-                    jjCellTime.innerHTML = jjGetTheScoreTable[i].time+"/60s";
-                    jjCellAssisted.innerHTML = jjGetTheScoreTable[i].assisted;
-                }
-        }else{
-            if (jjScoreTable.rows.length <=2){
-           let jjMyNewRowTable= jjScoreTable.insertRow(2);
-           jjMyNewRowTable.insertCell(0).innerHTML="<i>No records</i>";
-           jjMyNewRowTable.insertCell(1).innerHTML="<i>No records</i>";
-           jjMyNewRowTable.insertCell(2).innerHTML="<i>No records</i>";
-          }
+            jjCellNumber.innerHTML = i + 1;
+            jjCellDate.innerHTML = jjGetTheScoreTable[i].datetime;
+            jjCellTime.innerHTML = jjGetTheScoreTable[i].time + "/60s";
+            if (jjGetTheScoreTable[i].assisted=="Yes"){
+                jjCellAssisted.innerHTML = "<div class='jjAssistedTableColorYes'>"+jjGetTheScoreTable[i].assisted+"</div>";
+            }else{
+                jjCellAssisted.innerHTML = "<div class='jjAssistedTableColorNo'>"+jjGetTheScoreTable[i].assisted+"</div>";
+            }
+            
+
         }
-
-
+    } else {
+        if (jjScoreTable.rows.length <= 1) {
+            let jjMyNewRowTable = jjScoreTable.insertRow(1);
+            jjMyNewRowTable.insertCell(0).innerHTML = "<i>No records</i>";
+            jjMyNewRowTable.insertCell(1).innerHTML = "<i>No records</i>";
+            jjMyNewRowTable.insertCell(2).innerHTML = "<i>No records</i>";
+            jjMyNewRowTable.insertCell(3).innerHTML = "<i>No records</i>";
+        }
+    }
 }
 
 
@@ -531,8 +541,22 @@ function jjUpdateScoreTable() {
 
 
 
-function jjResetTheWholeQuiz(){
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+function jjResetTheWholeQuiz(){
+    jjProtectClickingSolverBeforeStart=false;
     jjQuestionNumber=0;
 
     document.getElementById('jjQuizLoadingBorderBarMovingTimer').classList.remove('jjQuizLoadingBorderBarMovingTimerName');
@@ -561,13 +585,14 @@ function jjResetTheWholeQuiz(){
         let jjTheCorrect= radioButton.id+"Label";
         document.getElementById(jjTheCorrect).classList.remove('jjQuizRightAnswerAnimationClass');
     })
-
+        jjHelperSolverCounter=1;
+        jjHelperHideOneCounter=1;
         document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(1)';
         document.getElementById("jjMiniQuizContentMiddleHelper1").style.color="";   
         document.getElementById("jjMiniQuizContentMiddleHelper2").style.transform='scale(1)';
         document.getElementById("jjMiniQuizContentMiddleHelper2").style.color="";
 
-
+       
 
         
     
@@ -584,8 +609,7 @@ function jjResetTheWholeQuiz(){
         jjCorrectAnswer=undefined;
         jjQuiztimer=undefined;
         //here it will be given a +1 each time player answers wrong. If 3 answers quiz gets aborted.
-        jjHelperSolverCounter=1;
-        jjHelperHideOneCounter=1;
+       
 
 
      //Reset
@@ -613,7 +637,7 @@ jjUpdateScoreTable();
 
 
 document.getElementById('jjClearLocalStorageButton').addEventListener('click', function() {
-    console.log("1");
+  
     let jjKeyToRemove = 'jjQuizScores'; 
     localStorage.removeItem(jjKeyToRemove);
     jjUpdateScoreTable();
