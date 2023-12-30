@@ -66,8 +66,12 @@ margin-top:1em;
     align-items:center;
     justify-content: center;
     position:relative;
-    height:100vh;
+    min-height:100vh;
     width:100vw;
+    background-image:url(../../images/Balasis/quizImages/backgroundd.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:10% 0%;
 }
 
 #jjMiniQuizMain h2{
@@ -81,7 +85,7 @@ margin-top:1em;
     width:50%;
     max-height:50em;
     position:relative;
-    overflow-x:hidden;
+    overflow:hidden;
     justify-content:center;
     align-items:center;
     padding-top:4em;
@@ -102,12 +106,14 @@ margin-top:1em;
     justify-content:center;
     align-items: center;
     position:relative;
+    
    
 }
 #jjQuizImgPlaceHolder{
     height:100%;
     width:100%;
-   
+    border:0.3em solid @colorLightGreen;
+    border-radius:10px 10px 10px 10px;
     
 }
 
@@ -673,7 +679,9 @@ z-index:100;
     #jjMiniQuizFrame{
         padding:1em;
         width:100%;
-
+        overflow-x:hidden;
+        overflow-y:auto;
+        scrollbar-width: thin;
     }
     #jjQuizGoHome{
         right:0.5em;
