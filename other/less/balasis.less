@@ -551,6 +551,744 @@ height:auto;
 //===================================            Media Queries       ==========================================//
 
 
+//=======================Begin of your CSS code================//
+.jjexplainHighLight{
+    position:relative;
+    z-index: 9950 !important; 
+}
+.jjexplainHighLight::before {
+    content: '';
+    position: absolute;
+    border: 2px solid #fff !important; 
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    
+  }
+  /*
+  .jjexplainHighLight::after {
+    content: '';
+    position: absolute;
+    border: 2px solid #fff; 
+    box-sizing: border-box;
+   // background-color:rgba(255,255,255,0.3);
+    
+  }*/
+
+  .jjwholeShadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); 
+    z-index: 9900; 
+  }
+
+
+  .jjhighlightMessage{
+    display:flex;
+    background-color:white;
+    position:absolute;
+    top:25%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding:2em;
+    border-radius:10px 10px 10px 10px;
+    flex-direction: column;
+    
+    z-index:9990;
+  }
+
+  .jjhighlightMessage *{
+margin-top:1em;
+
+  }
+
+
+
+
+
+
+#jjMiniQuizMain{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    position:relative;
+    min-height:100vh;
+    width:100vw;
+    background-image:url(../../images/Balasis/quizImages/backgroundd.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:10% 0%;
+}
+
+#jjMiniQuizMain h2{
+   
+}
+
+
+#jjMiniQuizFrame{
+    display:none;
+    flex-direction: column;    
+    width:50%;
+    position:relative;
+    overflow:hidden;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    padding-top:4em;
+    padding-bottom:2em;
+}
+
+
+#jjMiniQuizFrame *{
+    transition:150ms linear;
+}
+
+#jjMiniQuizImgHolder{
+    padding:1em;
+    padding-bottom:0;
+    width:100%;
+   height:60%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    position:relative;
+    
+   
+}
+#jjQuizImgPlaceHolder{
+    height:100%;
+    width:100%;
+    border:0.3em solid @colorLightGreen;
+    border-radius:10px 10px 10px 10px;
+    
+}
+
+#jjQuizGoHome{
+    position:absolute;
+    left:2em;
+    top:2em;
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+    width:4em;
+    height:4em;
+    cursor:pointer;
+    transition:500 linear;
+}
+#jjQuizGoHome img{
+    height:100%;
+    width:100%;
+    }
+
+
+#jjQuizGoHome:hover #jjQuizHomeOut{
+    opacity:1;
+    }
+
+#jjGoHomeYouReDrunk{
+    text-decoration: none;
+    color:inherit;
+}
+
+#jjWrapTheImage{
+    height:80%;
+    width:100%;
+    position:relative;
+}
+
+#jjQuizHome{
+   opacity:1;
+    height:100%;
+    width:100%;
+    position:absolute;
+    right:0;
+    top:0;
+    margin-left:auto;
+    margin-right:auto;
+    transition: opacity 0.5s linear;
+    z-index:5; 
+}
+#jjQuizHomeOut{
+    opacity:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    right:0;
+    top:0;
+    margin-left:auto;
+    margin-right:auto;
+    transition: opacity 0.5s linear; 
+    z-index:10;
+}
+#jjGoHomeText{
+    height:20%;
+    display:flex;
+    flex-shrink: 0;
+}
+
+
+
+
+#jjQuizQuestionPlaceholder{
+    width:100%;
+    padding:2em;
+    text-align: center;
+    font-size:1.2em;
+}
+
+#jjOptionsOfQuiz{
+    display:flex;
+    width:100%;
+
+}
+
+
+#jjMiniQuizContentLeftSide{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:50%;
+    padding-left:1em;
+    padding-right:1em;
+    }
+
+
+#jjMiniQuizContentRightSide{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:50%;
+    padding-left:1em;
+    padding-right:1em;
+    }
+
+
+   
+
+
+
+
+
+
+
+
+    .jjQuizOptionsInputs{
+        display:none;
+    }
+
+
+
+    .jjQuizRightAnswerAnimationClass{
+        animation-name:jjQuizRightAnswerAnimation;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes jjQuizRightAnswerAnimation{
+    0%{background-color:orange;}
+    10%{ background-color:white;}
+    20%{background-color:orange;}
+    30%{ background-color:white;}
+    50%{background-color:orange;}
+    75%{background-color:white;}
+    100%{background-color:orange;}
+    }
+
+
+
+
+
+
+    
+    .jjQuizOptionsInputsLabel{
+        padding:1em;
+        width:100%;
+        height:100%;
+        font-size:1.1em;
+        text-align:center;
+        cursor:pointer;
+        border:1px solid @colorSand;
+        transition:200ms linear;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:1em;
+        animation-duration:3s;
+    }
+    .jjQuizOptionsInputsLabel:hover{
+    
+    background-color:@colorLightGreen;
+    }
+
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.jjPauseTheQQloader{
+    animation-play-state: paused;
+}
+
+
+
+
+.jjhelperButton{
+    font-size:1em;
+    background-color:@colorSand;
+    border:none;
+    transition:150ms linear;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    cursor:pointer;
+    height:100%;
+    width:45%;
+    font-weight:bold;
+}
+.jjhelperButton:hover{
+  
+   
+}
+
+
+
+
+
+
+
+
+
+#jjResetCountDown{
+    display:none;
+    background-color:@colorSand;
+    border-radius: 50%;
+    transition:100ms linear;
+    height:4em;
+    width:4em;
+    background-color:@colorSand;
+    justify-content: center;
+align-items: center;
+    cursor: pointer;
+    margin-top:1.5em;
+    border:none;
+    transition:300ms linear;
+    z-index:20;
+}
+
+#jjResetCountDown:hover{
+    color:green;
+    transform:scale(1.1);
+
+}
+#jjStartCountDown{
+    display:flex;
+    background-color:@colorSand;
+    border-radius: 50%;
+    height:4em;
+    width:4em;
+    background-color:@colorSand;
+    justify-content: center;
+align-items: center;
+    cursor: pointer;
+    margin-top:1.5em;
+    border:none;
+    transition:300ms linear;
+    z-index:20;
+    background-image: url(../../images/Balasis/quizImages/JJTurnOn.png);
+    background-repeat:no-repeat;
+    background-size:70% 70%;
+    background-position:50% 50%;
+}
+
+
+
+#jjStartCountDown:hover{
+   transform:scale(1.5);
+}
+
+
+
+#jjQuizLoadingBorder{
+    width:100%;
+    display:flex;
+    position:absolute;
+    bottom:0;
+height:1em;
+background-color:grey;
+
+flex-direction: row;
+align-items: center;
+margin-top:auto;
+}
+
+#jjQuizLoadingBorderBarMoving{
+    width:100%;
+    background-color:green;
+    display:flex;
+    height:100%;
+
+}
+#jjQuizLoadingBorderBarMovingTimer{
+    position:absolute;
+    display:flex;
+    
+    left:0.5em;
+    bottom:0.5em;
+    font-size:4.5em;
+    width:fit-content;
+    animation-duration:61s;
+    
+    
+
+}
+.jjQuizLoadingBorderBarMovingTimerName{
+animation-name:jjBarMinusForNum;
+}
+@keyframes jjBarMinusForNum {
+    0%{
+        
+        color:green;
+    }
+    40%{
+       
+        color: orange;
+    }
+    70%{
+        
+        color:darkorange;
+    }
+    85%{
+        
+        color:red;
+    }
+    100%{
+        
+        color:darkred;
+
+    }
+
+
+}
+
+
+
+
+#jjMiniQuizAssistButtons{
+
+
+    display:flex;
+flex-direction: row;
+width: calc(50% - 1.9em);
+height:3em;
+position:absolute;
+top:0;
+justify-content:center;
+background-color:@colorSand;
+transition:200ms linear;
+animation-iteration-count: 1;
+animation-duration:1s;
+z-index:100;
+}
+
+
+
+
+
+.jjanimationForDropDown{
+    animation-name: jjDropDownQuiz;
+}
+@keyframes jjDropDownQuiz{
+    0%{height:3em}
+    50%{height:calc(100vh - 1em)}
+    100%{height:3em}
+}
+
+
+@keyframes jjBarMinus {
+    0%{
+        width:100%;
+        background-color:green;
+    }
+    40%{
+       
+        background-color: orange;
+    }
+    70%{
+        
+        background-color:darkorange;
+    }
+    85%{
+        
+        background-color:red;
+    }
+    100%{
+        width: 0%;
+        background-color:darkred;
+
+    }
+
+
+}
+.jjAddAnimationForBar{
+    animation-name:jjBarMinus;
+    animation-duration:60s;
+    animation-iteration-count:1;
+}
+
+.jjQuizOptionsInputs:checked + .jjQuizOptionsInputsLabel {
+    background-color:@colorLightGreen;}
+
+
+  #jjClearLocalStorageButton{
+    position:fixed;
+    background:none;
+    right:0;
+    border-radius: 10px 0px 0px 10px;
+    transition:400ms linear;
+    width:10em;
+    height:5em;
+    padding-left:1em;
+    text-align:left;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+  }
+  #jjClearLocalStorageButton:hover{
+    width:15em;;
+  }
+
+  #jjScoreTable::before{
+    content:"Top 10 Score Table";
+    text-align:left;
+    padding-left:1em;
+    padding-top:1em;
+    top:-4em;
+    height:2em;
+    font-weight:bold;
+   left:-1em;
+   right:-1em;
+    position:absolute;
+    background-color:rgba(244, 244, 244, 0.9);
+    z-index:9;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  #jjScoreTable::after{
+    content:"";
+    top:-4em;
+    bottom:-1em;
+    left:-1em;
+    right:-1em;
+    position:absolute;
+    background-color:rgba(244,244,244,0.4);
+    z-index:8;
+    border-radius: 10px 10px 10px 10px;
+
+  }
+
+  #jjScoreTableAfter{
+
+  }
+
+  #jjScoreTable tbody{
+    position:relative;
+    z-index:50;
+    
+  
+  }
+.jjAssistedTableColorYes{
+  border-radius: 10px 10px 10px 10px;
+  background-color:green;
+}
+.jjAssistedTableColorNo{
+    border-radius: 10px 10px 10px 10px;
+    background-color:red;
+}
+#jjScoreTable{
+    z-index:50;
+    width: calc(50% - 4em);
+    display:table;
+    border-collapse: collapse;
+    text-align: center;
+    max-height:70vh;
+    position:relative;
+    border-radius: 10px 10px 0px 0px;
+    overflow:hidden;
+    white-space: nowrap;
+}
+#jjScoreTable th{
+   
+   padding-top:1em;
+   padding-bottom:1em;
+    background-color:rgb(214,210,222) ;
+}
+#jjScoreTable td:nth-child(1) {
+    width: 10%;
+}
+
+#jjScoreTable td:nth-child(n+2) {
+    width: 30%;
+}
+
+#jjScoreTable tr:nth-child(even){
+   background-color:@colorSand;
+}
+
+#jjScoreTable tr:nth-child(odd){
+    background-color:rgb(226,224,238);
+ }
+ 
+#jjScoreTable td, th{
+    
+    padding:0.5em;
+}
+#jjScoreTable td{
+    padding-top:2vh;
+    padding-bottom:2vh;
+}
+
+@media screen and (max-width: 1000px) {
+    #jjScoreTable{
+        width:calc(65% - 4em);
+        margin-top:3em;
+        overflow:auto;
+    }
+
+   
+    
+      #jjScoreTable td, th{
+        
+        padding:0em;
+    }
+    #jjScoreTable  th{
+        
+        padding:0.1em;
+    }
+
+
+
+
+    #jjMiniQuizAssistButtons{
+        width:calc(65% - 1.9em);
+
+    }
+    .jjhighlightMessage{
+        left:50%;
+        top:50%;
+        padding:1em;
+    }
+    #jjQuizLoadingBorderBarMovingTimer{
+        left:0.1em;
+        bottom:0.1em;
+    }
+    #jjMiniQuizFrame{
+        padding-top:2em;
+        width:65%;
+        height:85vh;
+    }
+    #jjClearLocalStorageButton{
+        bottom:8em;
+        width:5em;
+    }
+    #jjClearLocalStorageButton:hover{
+        width:initial;
+  
+    }
+    #jjQuizQuestionPlaceholder{
+        padding:0.1em;
+    }
+    #jjQuizGoHome{
+        left:0.1em;
+        top:0.1em;
+       
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+
+
+
+  }
+
+
+
+  @media screen and (max-width: 450px) {
+    #jjMiniQuizFrame{
+        padding-top:4em;
+        width:100%;
+        overflow-x:hidden;
+        overflow-y:auto;
+        scrollbar-width: thin;
+        height:85vh;
+        margin-bottom:auto;
+    }
+   
+    #jjQuizGoHome{
+        right:0.5em;
+        bottom:1em;
+        transform:scale(0.8);
+       left:initial;
+       top:initial;
+       
+    }
+    #jjMiniQuizAssistButtons{
+        width:100%;
+
+    }
+    #jjQuizLoadingBorderBarMovingTimer{
+        font-size:3.5em;
+    }
+
+  
+  #jjScoreTable{
+    margin-top:3em;
+  }
+
+  #jjScoreTable td, th{
+    
+    padding:0em;
+}
+#jjScoreTable  th{
+    
+    padding:0.1em;
+}
+
+}
+
+
+
+@media screen and (max-width: 325px) {
+    #jjMiniQuizFrame,#jjMiniQuizAssistButtons,#jjClearLocalStorageButton,#jjScoreTable,#jjQuizLoadingBorderBarMovingTimer,#jjQuizLoadingBorder{
+        transform: scalex(0.5);
+    font-size: 0.5rem;
+    }
+
+
+}
 
 
 //=======================END of your CSS code==================//
