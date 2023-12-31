@@ -276,7 +276,8 @@ if (jRouletaExclude.length<=8){
 
 
 
-})})
+})})();
+
 
 
 (function() {
