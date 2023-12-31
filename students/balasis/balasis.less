@@ -1,0 +1,1593 @@
+
+
+
+
+#jjjHomePageImgPreview{
+    z-index:500;
+    position:fixed;
+    display:none;
+    height:100vh;
+    width:100vw;
+    background-color:rgba(0,0,0,0.9);
+}
+
+
+#jjjHomePageImgPreview img{
+    width:70vw;
+    height:auto;
+    max-height:80vh;
+}
+
+
+
+#jjjHomePageImgPreviewInDescription{
+    transition:100ms linear;
+    position:absolute;
+    bottom:0;
+    display:flex;
+    overflow:hidden;
+    height:0;
+    width:100%;
+    background-color:black;
+    color:White;
+    align-items:center;
+    justify-content:flex-start;
+    padding-left:1em;
+    padding-right:1em;
+   
+}
+
+#jjjHomePageImgPreviewFrame{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    display:flex;
+    flex-direction:column;
+}
+
+
+
+#jjjHomePageImgPreview img:hover + #jjjHomePageImgPreviewInDescription{
+height:fit-content;
+padding-bottom:0.5em;
+padding-top:0.5em;
+
+}
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+#jjjMyPageBody{
+    display:flex;
+    justify-content: center;
+}
+
+
+#jjjMyPageMain{
+ width:100%;
+ display:flex;
+ overflow-x: hidden;
+ overflow-y: auto;
+ flex-direction: column;
+ align-items: center;
+ background-color: black;
+}
+
+
+
+
+#jjjFakeHeader{
+    display:flex;
+    width:100vw;           
+    position:relative;
+    max-width:2000px;
+   justify-content: center;
+   background-color: black;
+   background-image:url(../../images/Balasis/myPage/YadaYadaTold.png);
+   
+   background-size:20% 10%;
+   background-position:20% 100%;
+
+
+    background-repeat: no-repeat;
+    
+   z-index: 3;
+    transition:2000ms linear;
+
+}
+
+
+#jjjParentOfCircles {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: calc(100vh - 4em);
+    aspect-ratio: 1;
+    display: flex;
+    position: relative;
+ 
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+     z-index:1;
+}
+/*
+.jjjAnimationRotate{
+    animation: jjjrotate 2s linear;
+    
+}
+
+@keyframes jjjrotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+*/
+
+#jjjParentOfCircles:before {
+    content: "";
+    pointer-events: none;
+    position:absolute;
+    top: -0.5em;
+    bottom: -0.5em;
+    left: -0.5em;
+    right: -0.5em;
+    box-shadow:0px 0px 14px  @colorSand;
+    border-radius: 50%;
+    z-index:-2;
+    
+    
+  }
+
+
+
+#jjjCircleFrame {
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    z-index: 5;
+   
+}
+
+#jjjToolsWrapperCounterRotate{
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+    display: flex;
+    width: 100%;
+    height: 100%;
+   
+    position: relative;
+    border-radius: 50%;
+    z-index:5;
+    background-image:url(../../images/Balasis/myPage/bg1cool.gif);
+    background-size:100% 100%;
+background-position:center center;
+background-repeat:no-repeat;
+}
+
+.jjjCircleFrameToolWheel{
+position:absolute;
+background-image:url(../../images/Balasis/myPage/pullItOver.png);
+
+background-size:contain;
+background-position:center center;
+background-repeat:no-repeat;
+transform-origin: center center; 
+z-index:5;
+filter:drop-shadow(5px 5px 35px rgba(222,222,138,0.5));
+}
+.jjjCircleFrameToolWheelRot{
+    position:absolute;
+    background-image:url(../../images/Balasis/myPage/pullItOver.png);
+    
+    background-size:contain;
+    background-position:center center;
+    background-repeat:no-repeat;
+    transform-origin: center center; 
+    z-index:5;
+    filter:drop-shadow(5px 15px 15px rgba(222,222,138,1));
+   
+    }
+
+
+#jjjToolWheel1{
+    width:18%;
+height:18%;
+    top:37%;
+    left:6%;
+   
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+}
+
+
+
+
+
+#jjjToolWheel2{
+    width:25%;
+    height:20%;
+    top:58%;
+    left:16%;
+   
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+}
+#jjjToolWheel3{
+    width:22%;
+    height:22%;
+    top:12%;
+    right:12%;
+   
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+}
+#jjjToolWheel4{
+    width:14%;
+    height:14%;
+    top:66%;
+    right:13%;
+  
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+}
+#jjjToolWheel5{
+    width:22%;
+    height:22%;
+    top:61%;
+    right:26%;
+  
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+}
+#jjjToolWheel6{
+    width:20%;
+    height:20%;
+    top:3%;
+    right:30%;
+  
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+}
+#jjjToolWheel7{
+    width:30%;
+    height:30%;
+    top:17%;
+    left:18%;
+  
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+}
+#jjjCircleFrameTools{
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+    display: flex;
+    width: 100%;
+    height: 100%;
+  
+    position: absolute;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+}
+
+#jjjCircleFrame1,
+#jjjCircleFrame2,
+#jjjCircleFrame3,
+#jjjCircleFrame4{
+position:absolute;
+width:28%;
+height:28%;
+display:flex;
+border-radius: 50%;
+justify-content: center;
+align-items: center;
+transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+z-index: 25;
+color:white;
+cursor: pointer;
+}
+
+.jjjCircleFrameCounterRotate:hover{
+    
+       box-shadow:0px 0px 25px @colorSand;
+    }
+.jjjCircleFrameFirstCircleCounterRotate:hover{
+    
+   box-shadow:0px 0px 50px @colorSand;
+}
+
+
+
+
+
+
+.jjjTextInside{
+    font-size:2em;
+    word-wrap: break-word;
+    background:rgba(0,0,0,0.4);
+    align-self:flex-end;
+    margin-bottom:1em;
+}
+
+#jjjCircleFrame1{
+  
+    top:1%;
+    margin-right:auto;
+    margin-left:auto;
+    left:0;
+    right:0;
+    background-image:url(../../images/Balasis/myPage/Hobby.png);
+    background-color: rgb(17,17,17);
+    background-size:contain;
+    background-position:center center;
+    background-repeat:no-repeat;
+} 
+
+
+
+
+#jjjCircleFrame2{
+   
+    right:1%;
+    top:36%;
+    background-image:url(../../images/Balasis/myPage/Gaming.jpg);
+    
+    background-size:100% 100%;
+    background-position:center center;
+    background-repeat:no-repeat;
+}  
+#jjjCircleFrame3{
+
+    bottom:1%;
+    margin-right:auto;
+    margin-left:auto;
+    left:0;
+    right:0;
+    background-image:url(../../images/Balasis/myPage/AboutMe.jpg);
+    
+    background-size:auto 100%;
+    background-position:center center;
+    background-repeat:no-repeat;
+
+}  
+#jjjCircleFrame4{
+  
+    left:1%;
+    top:36%;
+    background-image:url(../../images/Balasis/myPage/work2.jpg);
+    
+    background-size:100% 100%;
+    background-position:center center;
+    background-repeat:no-repeat;
+}  
+
+
+
+/*=================================jjjCircleFrameFirstCircle============================================*/
+
+
+
+
+
+#jjjCircleFrameFirstCircle{
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+    display: flex;
+    width: 50%;
+    height: 50%;
+   
+    position: absolute;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    z-index:8;
+    background-image:url(../../images/Balasis/myPage/whateverThisIsAlt.png);
+    
+    background-size:100% 100%;
+    background-position:center center;
+    background-repeat:no-repeat;
+  
+    filter:drop-shadow(5px 5px 35px @colorSand);
+}
+
+#jjjCircleFrameFirstCircle1,
+#jjjCircleFrameFirstCircle2{
+    position:absolute;
+width:30%;
+height:30%;
+display:flex;
+border-radius: 50%;
+justify-content: center;
+align-items: center;
+transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+cursor: pointer;
+}
+
+
+#jjjCircleFrameFirstCircle1{
+    background-color:black;
+    background-image:url(../../images/Balasis/myPage/YadaYada.png);    
+    background-size:80% 50%;
+    background-position:50% 45%;
+    background-repeat:no-repeat;
+    top:10%;
+    margin-right:auto;
+    margin-left:auto;
+    left:0;
+    right:0;
+}           
+#jjjCircleFrameFirstCircle2{
+    background-color:white;
+    bottom:10%;
+    margin-right:auto;
+    margin-left:auto;
+    left:0;
+    right:0;
+   
+    background-image:url(../../images/Balasis/myPage/web.png);    
+    background-size:80% 50%;
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+}
+
+
+#jjjCircleFrameFirstCircleCenterRSmoke1,
+#jjjCircleFrameFirstCircleCenterRSmoke2,
+#jjjCircleFrameFirstCircleCenterRSmoke3,
+#jjjCircleFrameFirstCircleCenterRSmoke4{
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+    display: flex;
+    width: 20%;
+    height: 20%;
+ 
+   pointer-events: none;
+    
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    border-radius: 50%;
+    z-index:9;
+
+}
+
+#jjjCircleFrameFirstCircleCenterRSmoke1 img,
+#jjjCircleFrameFirstCircleCenterRSmoke2 img,
+#jjjCircleFrameFirstCircleCenterRSmoke3 img,
+#jjjCircleFrameFirstCircleCenterRSmoke4 img{
+    height:100%;
+    width:100%;
+
+}
+#jjjCircleFrameFirstCircleCenterRSmoke1{
+    margin-left:35%;
+    margin-bottom:1em;
+    transform:rotate(-190deg);
+}
+#jjjCircleFrameFirstCircleCenterRSmoke2{
+    margin-right:32%;
+    transform:rotate(160deg);
+}
+#jjjCircleFrameFirstCircleCenterRSmoke3{
+    margin-right:5%;
+    margin-top:10%;
+    margin-bottom:1em;
+    transform:rotate(90deg);
+}
+#jjjCircleFrameFirstCircleCenterRSmoke4{
+    margin-bottom:10%;
+    transform:rotate(-90deg);
+}
+.jjjSmoky{
+    opacity:0;
+}
+
+/*=================================jjjCircleFrameFirstCircleCenter============================================*/    
+#jjjCircleFrameFirstCircleCenter{
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+    display: flex;
+    width: 17%;
+    height: 17%;
+ 
+    background-color:rgb(63,64,68);
+    
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    z-index:12;
+    
+}
+
+#jjjCircleFrameFirstCircleCenter img{
+    height:55%;
+    width:55%;
+    filter:drop-shadow(0px 0px 2px rgba(222,222,138,1));
+}
+
+
+
+
+
+#jjjCircleFrameFirstCircleCenterTool{
+
+    background-image:url(../../images/Balasis/myPage/pullItOverCenter.png);
+    background-size:contain;
+    background-position:center center;
+    background-repeat:no-repeat;
+    position:absolute;
+    width:24%;
+    height: 24%;
+    top:38%;
+    left:38%;
+    z-index:15;
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+    pointer-events: none;
+}
+
+
+#jjjUpperPick{
+    background-image:url(../../images/Balasis/myPage/fixIt.png);
+    background-size:100% 100%;
+    background-position:center center;
+    background-repeat:no-repeat;
+    transition: transform 3s cubic-bezier(0.45, 0, 0.35, 1);
+    display: flex;
+    width: 22%;
+    height: 22%;
+    margin-top:24%;
+   pointer-events: none;
+    
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    border-radius: 50%;
+    z-index:8;
+    animation-fill-mode: forwards;
+}
+
+
+#jjjHalfForPick{
+    background-image: url(../../images/Balasis/myPage/pullItOverCenter.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: -10%;
+  z-index: 6;
+  transition: transform 1.5s cubic-bezier(0.45, 0, 0.35, 1);
+  pointer-events: none;
+  animation-fill-mode: forwards;
+  border-radius: 50%;
+}
+
+
+
+
+.jjjChosenAnimationSmall {
+    animation: jjjChosenAnimationSmall 3s ease-in-out;
+  }
+@keyframes jjjChosenAnimationSmall{
+    0% {
+        
+        
+        box-shadow: 0 0 15px 1px rgba(222,222,138,1)
+      }
+      15%{
+       
+        box-shadow: 0 0 15px 1px rgba(222,222,138,0.1);
+
+      }
+
+      67%{box-shadow: 0 0 15px 1px rgba(222,222,138,0.1);
+      }
+
+      68%{box-shadow: 0 0 15px 1px rgba(222,222,138,1);
+      }
+
+      75%{box-shadow: 0 0 15px 1px rgba(222,222,138,0.1)};
+      80%{box-shadow: 0 0 15px 1px rgba(222,222,138,1)};
+      85%{box-shadow: 0 0 15px 1px rgba(222,222,138,0.1)};
+      90%{box-shadow: 0 0 15px 1px rgba(222,222,138,0.1);}
+      98% {    
+       
+        
+        box-shadow: 0 0 10px rgba(222,222,138,1);
+      }
+      100% {
+        box-shadow: 0 0 15px 1px rgba(222,222,138,1);
+        background-color:  rgba(222,222,138,0.2);
+
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#jjjouterDecoration{
+  background-image:url(../../images/Balasis/myPage/fixIt.png);
+    background-size:100% 100%;
+    background-position:center center;
+    background-repeat:no-repeat;
+  
+    
+    position:absolute;
+    border-radius: 50%;
+    height:38%;
+    width:38%;
+    margin-left:auto;
+    margin-right:auto;
+    left:0;
+    right:0;
+    
+    bottom:-3%;
+    z-index:7;
+    transition: transform 2s cubic-bezier(0.45, 0, 0.35, 1);
+    pointer-events: none;
+    animation-fill-mode: forwards;
+}
+
+.jjjchosenCircle {
+    animation: jjjChosenAnimation 3s ease-in-out;
+  }
+@keyframes jjjChosenAnimation{
+    0% {
+        
+        
+        box-shadow: 0 0 15px 1px rgba(222,222,138,1)
+      }
+      15%{
+       
+        box-shadow: 0 0 15px 1px rgba(222,222,138,0.1);
+
+      }
+
+      67%{box-shadow: 0 0 15px 1px rgba(222,222,138,0.1);
+      }
+
+      68%{box-shadow: 0 0 15px 1px rgba(222,222,138,1);
+      }
+
+      75%{box-shadow: 0 0 15px 1px rgba(222,222,138,0.1)};
+      80%{box-shadow: 0 0 15px 1px rgba(222,222,138,1)};
+      85%{box-shadow: 0 0 15px 1px rgba(222,222,138,0.1)};
+      90%{box-shadow: 0 0 15px 1px rgba(222,222,138,0.1);}
+      98% {    
+       
+        
+        box-shadow: 0 0 10px rgba(222,222,138,1);
+      }
+      100% {
+        box-shadow: 0 0 15px 1px rgba(222,222,138,1);
+        background-color:  rgba(222,222,138,0.2);
+
+      }
+}
+
+
+
+
+//*================================================text content ===============================*//
+
+#jjjScrollBackToTop{
+    position:relative;
+    display:flex;    
+    width:100%;
+    height:1em;
+    max-width: 3000px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:lightgrey;
+    box-shadow:0px 0px 20px 5px grey;
+    justify-content: center;
+    align-items: center;
+    padding:1em;
+    font-size:2em;
+    cursor:pointer;
+    
+}
+#jjjGoTopText{
+    animation: JJJpulse 2s infinite;
+}
+@keyframes JJJpulse {
+    0% {
+       transform: scale(1);
+      
+    }
+    50% {
+        transform: scale(1.2);
+      
+    }
+    100% {
+        transform: scale(1);
+     
+    }
+  }
+
+#jjjScrollBackToTop:hover{
+    background-color:orange;
+    color:white
+}
+
+#jjjTextParentFrame{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    padding:0;
+    margin:0;
+    z-index:2;
+    transition:1000ms linear;
+}
+
+
+#jjjTextParentFrame section{
+    padding:0;
+    margin:0;
+    width:100%;
+   
+    flex-direction: column;
+    align-items: center;
+
+}
+#jjjTextParentFrame section > :nth-child(odd){
+    background-color:rgb(63,64,68);
+    color:@colorSand;
+}
+#jjjTextParentFrame section > :nth-child(even){
+    background-color: @colorSand;
+    color:rgb(63,64,68);;
+}
+
+
+#jjjTextParentFrame section > div.jjjSubContent:nth-of-type(odd) .jjjSubContentItems {
+    padding-right:40em;
+    align-items: flex-start;
+   text-align: start;
+  }
+
+  #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(even) .jjjSubContentItems {
+    text-align: end;
+    
+
+    align-items: flex-end;
+    padding-left:40em;
+  }
+
+  #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(odd)::after{
+    content: "";
+    position: absolute;
+    
+    pointer-events: none;
+    width:100%;
+    
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.0) 100%);
+
+    height:100%;
+    left:0;
+    top:0;
+    
+    z-index:5;
+
+
+  }
+
+  #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(even)::after{
+    content: "";
+    position: absolute;   
+    pointer-events: none;
+    width:100%;
+    
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.0) 100%);
+
+    height:100%;
+   right:0;
+   top:0;
+    
+    z-index:5;
+
+
+  }
+
+
+  @media screen and (max-width:1350px){
+    #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(odd)::after{
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.3) 100%);
+         }
+         #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(even)::after{
+        background: linear-gradient(to left, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 100%);
+        }
+
+  }
+
+
+
+
+ #jjjTextParentFrame section > div.jjjSubContent:first-child {
+   padding-top:3em;
+ }
+
+
+
+.jjjSubContent{
+    
+    min-height:30em;
+    height:calc(100vh / 2);
+    width:100%;
+    max-width:2000px;
+    display:flex;
+    justify-content: center;
+    margin-top:0.3em;
+    padding:1em;
+    flex-grow:1;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    position:relative;
+    
+}
+.jjjSubContentItems h1,h2,h3,h4,h5,h6{
+    margin-bottom: 0;
+   
+    font-size:4rem;
+    font-weight:700;
+    z-index:6;
+}
+.jjjSubContentItems p{
+ 
+    font-size:2rem;
+    z-index:6;
+}
+
+.jjjSubContentItems{
+   width:50em;
+    flex-grow:1;
+    max-width:1500px;
+    display:flex;
+    flex-direction: column;
+    padding-left:1em;
+    padding-right:1em;
+    position:relative;
+}
+
+.jjjSubContentItemsButtons{
+    z-index:6;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.jjjSubContentItemsButtons >*{
+    
+    padding:1em;
+    border:2px double white;
+    white-space:nowrap;
+    border-radius: 5px 5px 5px 5px;
+    cursor:pointer;
+}
+
+
+
+
+#jjjTextParentFrame section > div.jjjSubContent:nth-of-type(odd) .jjjSubContentItems .jjjSubContentItemsButtons button{
+    background-color:rgba(@colorSand,1);
+    color:rgba(63,64,68,1);
+    margin-right:1em;
+   }
+
+   #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(odd) .jjjSubContentItems .jjjSubContentItemsButtons button:hover{
+    background-color:rgba(@colorSand,0.5);
+    
+    
+   }
+
+   #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(even) .jjjSubContentItems .jjjSubContentItemsButtons button{
+  
+    margin-left:1em;
+    background-color:rgba(63,64,68,1);
+    color:rgba(@colorSand,1);
+
+   }
+   #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(even) .jjjSubContentItems .jjjSubContentItemsButtons button:hover{
+  
+   
+    background-color:rgba(63,64,68,0.5);
+   
+
+   }
+
+   ///////////////////////////////////Same but for links <a>
+   #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(odd) .jjjSubContentItems .jjjSubContentItemsButtons a{
+    background-color:rgba(@colorSand,1);
+    color:rgba(63,64,68,1);
+    margin-right:1em;
+   }
+
+   #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(odd) .jjjSubContentItems .jjjSubContentItemsButtons a:hover{
+    background-color:rgba(@colorSand,0.5);
+    
+    
+   }
+
+   #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(even) .jjjSubContentItems .jjjSubContentItemsButtons a{
+  
+    margin-left:1em;
+    background-color:rgba(63,64,68,1);
+    color:rgba(@colorSand,1);
+
+   }
+   #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(even) .jjjSubContentItems .jjjSubContentItemsButtons a:hover{
+  
+   
+    background-color:rgba(63,64,68,0.5);
+   
+
+   }
+
+/*==========================Sections to be hidden ==============*/
+
+
+#jjjGaming,
+#jjjHobby,
+#jjjWork{
+    display:none;
+}
+
+
+
+
+#jjjAboutMe{
+    display:flex;
+}
+
+
+/*======================================Unique colors if full images=====================*/
+#jjjGaming p{
+    color:@colorSand;
+}
+
+#jjjGaming h1,h2,h3,h4,h5,h6{
+    color:white;
+}
+
+#jjjTextParentFrame #jjjGaming > div.jjjSubContent:nth-of-type(odd)::after{
+    content: "";
+    position: absolute;
+    
+    pointer-events: none;
+    width:100%;
+    
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.0) 100%);
+
+    height:100%;
+    left:0;
+    top:0;
+    
+    z-index:5;
+
+
+  }
+
+  #jjjTextParentFrame #jjjGaming > div.jjjSubContent:nth-of-type(even)::after{
+    content: "";
+    position: absolute;   
+    pointer-events: none;
+    width:100%;
+    
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.0) 100%);
+
+    height:100%;
+   right:0;
+   top:0;
+    
+    z-index:5;
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+/*==========================Links for backgrounds ================================================================================*/
+
+#jjjWelcomeText{
+    background-image:url(../../images/Balasis/myPage/AboutMe/welcome.png);  
+
+}
+#jjjPetDiv{
+    background-image:url(../../images/Balasis/myPage/AboutMe/welcomeUpsideDown.png);   
+}
+#jjjFinally .jjjSubContentItems{
+    background-image:url(../../images/Balasis/myPage/AboutMe/thanksForReading.gif);
+    background-size:contain;
+    background-position:0% 100%;
+    background-repeat:no-repeat;
+}
+
+#jjjAboutMeText .jjjSubContentItems{
+    background-image:url(../../images/Balasis/myPage/AboutMe/ForTextBorderGreyAlt.png); 
+    background-size:auto 70%;
+    background-position:0% 85%; 
+    background-repeat:no-repeat;
+}
+
+
+
+
+
+
+
+
+#jjjPreviewGames{
+    background-image:url(../../images/Balasis/myPage/Gaming/previewHeader.png);
+    background-size:100% 100%;
+    
+    
+}
+
+#jjjEso{
+    background-image:url(../../images/Balasis/myPage/Gaming/Eso.jpg);
+    background-size:100% 100%;
+    
+    
+}
+
+
+
+#jjjArcheage{
+    background-image:url(../../images/Balasis/myPage/Gaming/Archeage.jpg);
+    background-size:100% 100%;
+    
+    
+}
+#jjjDivision2{
+    background-image:url(../../images/Balasis/myPage/Gaming/Division2.png);
+    background-size:100% 100%;
+    
+    
+}
+
+
+
+#jjjHobbyIntroBalance{
+    background-image:url(../../images/Balasis/myPage/Hobby/Balance.jpg);
+    background-size:100% 100%; 
+}
+
+#jjjCoding{
+    background-image:url(../../images/Balasis/myPage/Hobby/EatSleepCodeRepeat.png);
+    background-size:100% 100%;
+}
+
+#jjjTextParentFrame #jjjHobby > div.jjjSubContent:nth-of-type(2n) .jjjSubContentItems {
+    padding-left:1em;
+    align-items:center;
+}
+
+#jjjCoding .jjjSubContentItemsButtons{
+    margin-top:auto;
+    margin-bottom:2em;
+}
+
+#jjjCooking{
+    background-image:url(../../images/Balasis/myPage/Hobby/cooking.jpg);
+    background-size:100% 100%;
+}
+
+
+
+
+
+#jjjHobbyCookingAbsolute{
+    position:absolute;
+    right:5%;
+    bottom:-10%;
+    z-index:7;
+}
+
+#jjjCameras img{
+    position:absolute;
+    right:-19em;
+     top:-8em;
+    
+     height:15.5em;
+     width:15.5em;
+   max-height:35em;
+   max-width:35em;
+   z-index: 7;
+}
+
+
+
+#jjjDSCalarms img{
+    position:absolute;
+    left:0em;
+     bottom:-2.8em;
+    
+     height:27.5em;
+     width:27.5em;
+   max-height:35em;
+   max-width:35em;
+   z-index: 7;
+}
+
+#jjjPreviousWork img{
+    position:absolute;
+   right:5em;
+    top:calc(50% - 13em);
+  
+    height:26em;
+    width:26em;
+  max-height:35em;
+  max-width:35em;
+ z-index: 7;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:1350px){
+    #jjjPreviewGames{
+        background-image:url(../../images/Balasis/myPage/Gaming/previewHeaderSmaller.png);
+        background-size:100% 100%;
+        
+        
+    };
+    #jjjHobbyCookingAbsolute{
+        display:none;
+    }
+    #jjjPreviousWork img{
+        display:none;
+     
+    }
+    #jjjDSCalarms img{
+        display:none;
+     
+    }
+    #jjjCameras img{
+        display:none;
+    }
+}
+@media screen and (max-width:700px){
+    #jjjPreviewGames{
+        background-size:auto 100%;
+        background-position:0% 0%;
+    };
+    #jjjCoding .jjjSubContentItemsButtons{
+        flex-wrap: wrap;
+
+        
+    }
+    #jjjCoding .jjjSubContentItemsButtons button{
+        margin-top:1em;
+        
+        
+    }
+    
+
+
+
+}
+
+
+
+
+
+
+
+
+
+#jjjMergerHeaderBody{
+position:absolute;
+height:3em;
+width:100%;
+max-width:2000px;
+top:0;
+z-index:150;
+margin-left:auto;
+margin-right:auto;
+left:0;
+right:0;
+background-size:auto 100%;
+background-repeat: repeat-x;
+
+background-image:url(../../images/Balasis/myPage/merger.png);
+transform:rotate(180deg);
+
+}
+
+
+#jjjGoHomeSora {
+    position: absolute;
+    height: 3em;
+    width: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    top: 2vh;
+    left: 3vw;
+    font-size: 2em;
+    color: white;
+    white-space: nowrap;
+  
+    cursor: pointer;
+}
+
+#jjjGoHomeSora::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../images/Balasis/myPage/crown.png);
+    background-repeat: no-repeat;
+    background-size: 100% 60%;
+    transform-origin: center;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 3s ease; /* Add a smooth transition effect */
+}
+
+#jjjGoHomeSora:hover::before {
+    transform: perspective(1000px) rotateY(1800deg); /* Adjust the rotation angle as needed */
+}
+
+#jjjGoHomeSora:hover{
+    color:@colorSand;
+}
+
+
+
+#jjjYadaYada{
+    width:100%;
+    display:none;
+    flex-direction: column;
+    position: relative;
+    padding:0;
+    margin:0;
+    z-index:1;
+    margin-top:5em;
+    color:white;
+    
+}
+
+#jjjYadaYadaSection{
+    display:flex;
+    padding: 0;
+    margin: 0;
+    min-height:100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    max-width:2000px;
+}
+#jjjYadaYadaSectionInner{
+    text-align:center;
+    display:flex;
+    padding-left:1em;
+    padding-right:1em;
+    max-width:1500px;
+    overflow:hidden;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jjjYadaYadaSubContentItems h1,h2,h3,h4,h5,h6{
+    margin-bottom: 0;
+   
+    font-size:4rem;
+    font-weight:700;
+    z-index:6;
+}
+.jjjYadaYadaSubContentItems p{
+ 
+    font-size:2rem;
+    z-index:6;
+}
+.jjjYadaYadaSubContentItemsButtons{
+    margin-top:5em;
+}
+
+#jjjYadaYadaSubContentItemsProjects{
+display:flex;
+justify-content:space-between;
+width:100%;
+margin-top:1em;
+margin-bottom:1em;
+}
+
+#jjjComputerArchitectureProject{
+width:35%;
+display:flex;
+flex-direction: column;
+align-items: center;
+}
+#jjjDatabaseSystemsProject{
+    width:35%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    #jjjYadaYadaSubContentItemsProjects a{
+        
+        color:white;
+       
+        border-radius:0px 0px 10px 10px;
+        border:1px solid white;
+        margin-bottom:2em;
+        padding-top:0.2em;
+        width:100%;
+        height:2em;
+    }
+
+    #jjjYadaYadaSubContentItemsProjects a:hover{
+        color:orange;
+    }
+#jjjYadaYadaSubContentItemsProjects img{
+    width:100%;
+    height:15em;
+    border:10px double white;
+    cursor:pointer;
+}
+#jjjYadaYadaSubContentItemsProjects img:hover{
+  //  box-shadow:0px -10px 8px 5px white;
+    filter: drop-shadow(5px -5px 5px rgba(255, 255, 255, 0.5));
+}
+
+
+
+
+
+@media screen and (max-width:1350px){
+    #jjjComputerArchitectureProject {
+        width:65%;
+
+    }
+    #jjjDatabaseSystemsProject {
+        width:65%;
+
+    }
+
+    
+
+    #jjjYadaYadaSubContentItemsProjects{
+        flex-direction: column;
+        align-items:center;
+        justify-content:flex-start;
+    }
+
+
+
+    #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(odd) .jjjSubContentItems {
+       padding-left:1em;
+       padding-right:1em;
+      align-items: center;
+       text-align: justify;
+      }
+    
+      #jjjTextParentFrame section > div.jjjSubContent:nth-of-type(even) .jjjSubContentItems {
+        padding-left:1em;
+        padding-right:1em;
+      align-items: center;
+      text-align: justify;
+      }
+      .jjjSubContent{
+        height:fit-content;
+        background-size:100% 100%;
+        background-repeat:no-repeat;
+        background-position:center center;
+        padding-bottom:2em;
+      }
+ 
+
+      
+      #jjjFinally .jjjSubContentItems{
+        background-image:none;
+       
+        
+    }
+    #jjjAboutMeText .jjjSubContentItems{
+        background-image:none;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1000px){
+    #jjjParentOfCircles{
+        transform:scale(0.8);
+
+    }
+    #jjjGoHomeSora {
+        transform:scale(0.8);
+    }
+    .jjjTextInside{
+        font-size:1.2em;
+        white-space: nowrap;
+
+       }
+
+}
+
+
+@media screen and (max-width:700px){
+    #jjjParentOfCircles{
+        transform:scale(0.7);
+    }
+       h1,h2,h3,h4,h5,h6{
+        font-size:3rem;
+       }
+       p{
+        font-size:1rem;
+       }
+       .jjjTextInside{
+        font-size:1.2em;
+        white-space: nowrap;
+
+       }
+
+}
+
+
+
+
+
+
+
+
+
+//================================================================from master .less in order to delete the import...start indipedent....
+
+
+//The following less file holds all the variables for colors,font families e.t.c
+//and it has been imported in every other less file (john.less,iro.less e.t.c)
+
+//Also note that the import at these files is being located at the bottom in
+//order to protect our members from overwriting by mistake any basic(html,body e.t.c) css code.
+
+//Note also that the variables of less can be called in their css even if they are being
+//located on the bottom of their css.
+
+//colors:
+
+
+@colorDarkGreen: rgb(136, 171, 142);
+
+@colorLightGreen: rgb(175, 200, 173);
+
+@colorSand: rgb(238, 231, 218);
+
+@colorCreme: rgb(242, 241, 235);
+
+
+//Fonts
+
+//FontFamilies
+@fontFamilyHeader: Helvetica, Arial;
+
+@fontFamilyMainText: Helvetica, Arial;
+
+@fontFamilyTitle: Helvetica, Arial;
+
+//FontSizes
+
+@fontSizeMainText: 16px;
+
+@fontSizeTitles: 30px;
+
+
+//Body,Html,headerNav and footer layout
+
+
+html{
+    height:100%;
+    width:100%;
+
+}
+html,body{
+    padding:0;
+    margin:0;
+
+}
+*{box-sizing: border-box;}
+body{
+    min-height:100%;
+   
+}
+#header_nav{
+
+}
+// Footer
+
+.flex-container-footer{
+    display: flex;
+    flex-direction: row;
+    background-color: @colorLightGreen;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:40px;
+}
+
+.flex-container-footer div{
+    margin:15px;
+}
+
+.flex-container-footer a:link{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.flex-container-footer a:hover{
+    color: @colorDarkGreen !important;
+    text-decoration: underline;
+    
+}
+
+.flex-container-footer a:visited{
+    text-decoration: none;
+    color: black;
+}
+
