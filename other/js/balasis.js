@@ -5,6 +5,8 @@
 
 
     document.addEventListener("DOMContentLoaded",function(){
+ if (document.getElementById('jHomePageIdentifier') !== null){     
+        
         /*
         const imagesOfHomePageMenu=document.getElementsByClassName("jHomepageMenuImg");
         for (let i=0;i<imagesOfHomePageMenu.length;i++){
@@ -272,7 +274,7 @@ if (jRouletaExclude.length<=8){
 
 
 
-
+}//The if to protect the page...
 
 
 
@@ -286,7 +288,7 @@ if (jRouletaExclude.length<=8){
 
 
 
- 
+ if (document.getElementById('jjMiniQuizBody')!==null){
 
 
 
@@ -1067,10 +1069,10 @@ function jjNextIt(){
 
 
 
+}
 
 
-})
 
 
 
-})();
+})})();
