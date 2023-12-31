@@ -449,7 +449,7 @@ animation-name:jjBarMinusForNum;
 
     display:flex;
 flex-direction: row;
-width: calc(50% - 2em);
+width: calc(50% - 1.9em);
 height:3em;
 position:absolute;
 top:0;
@@ -618,7 +618,7 @@ z-index:100;
     padding-bottom:2vh;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
     #jjScoreTable{
         width:calc(65% - 4em);
         margin-top:3em;
@@ -640,7 +640,7 @@ z-index:100;
 
 
     #jjMiniQuizAssistButtons{
-        width:calc(65% - 2em);
+        width:calc(65% - 1.9em);
 
     }
     .jjhighlightMessage{
@@ -653,9 +653,9 @@ z-index:100;
         bottom:0.1em;
     }
     #jjMiniQuizFrame{
-        padding:5em;
-        width:80%;
-        height:80vh;
+        padding-top:2em;
+        width:65%;
+        height:85vh;
     }
     #jjClearLocalStorageButton{
         bottom:8em;
@@ -675,14 +675,25 @@ z-index:100;
     }
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 750px) {
+
+
+
+  }
+
+
+
+  @media screen and (max-width: 450px) {
     #jjMiniQuizFrame{
-        padding:1em;
+        padding-top:4em;
         width:100%;
         overflow-x:hidden;
         overflow-y:auto;
         scrollbar-width: thin;
+        height:85vh;
+        margin-bottom:auto;
     }
+   
     #jjQuizGoHome{
         right:0.5em;
         bottom:1em;
@@ -695,7 +706,9 @@ z-index:100;
         width:100%;
 
     }
-    
+    #jjQuizLoadingBorderBarMovingTimer{
+        font-size:3.5em;
+    }
 
   
   #jjScoreTable{
@@ -712,5 +725,18 @@ z-index:100;
 }
 
 }
+
+
+
+@media screen and (max-width: 325px) {
+    #jjMiniQuizFrame,#jjMiniQuizAssistButtons,#jjClearLocalStorageButton,#jjScoreTable,#jjQuizLoadingBorderBarMovingTimer,#jjQuizLoadingBorder{
+        transform: scalex(0.5);
+    font-size: 0.5rem;
+    }
+
+
+}
+
+
 //=======================END of your CSS code==================//
 @import "master.less";
