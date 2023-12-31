@@ -50,7 +50,8 @@
             this.style.display="none"; 
             this.parentNode.parentNode.parentNode.querySelector("h2").style.width="100%";
         })
-    }  
+    }
+      
             //IMG previewer
 const jImg = document.getElementsByClassName('clickable-jImgBored');
 const prev = document.getElementById('HomePageImgPreview');
@@ -275,7 +276,7 @@ if (jRouletaExclude.length<=8){
 
 
 
-})
+})})
 
 
 (function() {
