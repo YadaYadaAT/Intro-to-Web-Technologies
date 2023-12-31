@@ -1,271 +1,383 @@
-
-
 (function() {
 
-
-
     document.addEventListener("DOMContentLoaded",function(){
-        /*
-        const imagesOfHomePageMenu=document.getElementsByClassName("jHomepageMenuImg");
-        for (let i=0;i<imagesOfHomePageMenu.length;i++){
-            if (imagesOfHomePageMenu[i].style.cssFloat=="right"){
-                imagesOfHomePageMenu[i].classList.add("jAddPaddingLeftToImg");
-               
-            }else{
-                imagesOfHomePageMenu[i].classList.add("jAddPaddingRightToImg");
+
+
+
+        //Preview Image....I just took the same I made for the home page and replaced
+        //some variable names.
+        const jjjImg = document.getElementsByClassName('jjjclickableImage');
+        const jjjprev = document.getElementById('jjjHomePageImgPreview');
+        const jjjImgIn = document.getElementById('jjjHomePageImgPreviewIn');
+        // I add to each one of the images the listener
+        for (p=0;p<jjjImg.length;p++){
+            jjjImg[p].addEventListener('click', jjjhandleImageClick);
+        }
+
+
+        function jjjhandleImageClick(event) {
+            event.stopPropagation();
+            let jjjgetTheSrc=this.getAttribute('data-src');
+            let jjjgetTheDescription=this.getAttribute('data-description');
+            jjjImgIn.setAttribute("src",jjjgetTheSrc);
+        
+            document.getElementById("jjjHomePageImgPreviewInDescription").innerHTML=jjjgetTheDescription;
+            jjjprev.style.display = 'block';
+            document.addEventListener('click', jjjhandleOutsideClickOnce);
+        
+            function jjjhandleOutsideClickOnce() {
+                jjjImgIn.setAttribute("src","#");
+                document.getElementById("jjjHomePageImgPreviewInDescription").innerHTML=" ";
+                jjjprev.style.display = 'none';
+                document.removeEventListener('click', jjjhandleOutsideClickOnce);
             }
-        }*/
-    
+        }
 
-   //Setting the listener to the ReadMores. Expanding the divs of their parents.
 
-    const ReadMores=document.getElementsByClassName("jHomePageReadMore");
-    const HomePageMiniHolder=document.getElementsByClassName("jHomePageMinimizerHolder");
-    const HomePageMini=document.getElementsByClassName("jHomePageMinimizer");
-
-    for(let e=0;e<HomePageMini.length;e++){
-        HomePageMini[e].addEventListener("click",function(){            
-            this.parentNode.parentNode.classList.remove("jHomePageMenuItemAddHeight");
-            this.parentNode.parentNode.querySelector(".jHomePageMenuItemContent").classList.add("jHomePageMenuItemContentFog");
-            this.parentNode.style.display="none"; 
-            this.parentNode.parentNode.querySelector(".jHomePageReadMore").style.display="flex";
-            this.parentNode.parentNode.scrollIntoView({ behavior: 'smooth' });
-            this.parentNode.parentNode.querySelector("h2").style.width="70%";
+        //Scroll back into view ..into the fakeHeader...
+        document.getElementById('jjjScrollBackToTop').addEventListener('click',()=>{
+            document.getElementById('jjjFakeHeader').scrollIntoView({behavior: 'smooth'});
         })
-    }
-    for(let k=0;k<ReadMores.length;k++){
-        ReadMores[k].addEventListener("click",function(){
-            for (let qq=0;qq<HomePageMini.length;qq++){
+
+
+
+
+
+
+
+        let jjjDisplayNoneSwapElements=document.getElementsByClassName('jjjTextElementToHide');
+
+
+    /*==========================First Set of Circles(outer)===========================*/
+            let jjjCurrentRotatePosition='rotate(0deg)';
+            let jjjcounterRotate;
+            let jjjZeroThisBecauseIcant=0;
+            let jjjMakeItTwoSeven=270;
+            let jjjLoadingSafety=false;
+            let jjjToolWheels=document.getElementsByClassName('jjjCircleFrameToolWheel');
+            let jjjToolWheelsRot=document.getElementsByClassName('jjjCircleFrameToolWheelRot');
+            let jjjouterDecoration=document.getElementById('jjjouterDecoration');
+
+            let jjjCircleFrameCounterRotate=document.getElementsByClassName('jjjCircleFrameCounterRotate');
+
+            let jjjHobbyListener= document.getElementById('jjjCircleFrame1');
+            let jjjGamingListener=document.getElementById('jjjCircleFrame2');
+            let jjjAboutMeListener= document.getElementById('jjjCircleFrame3');
+            let jjjWorkListener= document.getElementById('jjjCircleFrame4');
+
+            jjjHobbyListener.addEventListener('click',function(){
+                        jjjRotate(this,180);
+                    }
+                );
+                jjjGamingListener.addEventListener('click',function(){
+                    jjjRotate(this,90);
+                }
+            );
+            jjjAboutMeListener.addEventListener('click',function(){
+                jjjRotate(this,0);
+            }
+            );
+            jjjWorkListener.addEventListener('click',function(){
+                jjjRotate(this,270);
+            }
+            );
+
+        
+
+
+        function jjjRotate(jjjTar,rotateValue){
+            if(jjjLoadingSafety==false){
+             if (jjjTar.parentNode.style.transform!=="rotate("+rotateValue+"deg)"){  
+                jjjLoadingSafety=true;
                 
-                HomePageMini[qq].parentNode.parentNode.classList.remove("jHomePageMenuItemAddHeight");
-                HomePageMini[qq].parentNode.parentNode.querySelector(".jHomePageMenuItemContent").classList.add("jHomePageMenuItemContentFog");
-                HomePageMini[qq].parentNode.style.display="none"; 
-                HomePageMini[qq].parentNode.parentNode.querySelector(".jHomePageReadMore").style.display="flex";
-                HomePageMini[qq].parentNode.parentNode.querySelector("h2").style.width="70%";
+                //counter rotate the holder of all tools
+               // document.getElementById('jjjToolsWrapperCounterRotate').style.transform="rotate(-"+rotateValue+"deg)";
+
+                //rotate the tools
+                for (let k=0;k<jjjToolWheels.length;k++){
+
+                    jjjToolWheels[k].style.transform="rotate("+rotateValue+"deg)";
+                    
+                }
+                for (let q=0;q<jjjToolWheelsRot.length;q++){
+
+                    jjjToolWheelsRot[q].style.transform="rotate(-"+rotateValue+"deg)";
+                    
+                }
+                
+            //Resetting animations..
+            jjjTar.parentNode.style.transition="transform 2s cubic-bezier(0.45, 0, 0.35, 1)";
+            for (let i=0;i<jjjCircleFrameCounterRotate.length;i++){
+                jjjCircleFrameCounterRotate[i].style.transition="transform 2s cubic-bezier(0.45, 0, 0.35, 1)";
             }
-            this.parentNode.parentNode.parentNode.classList.add("jHomePageMenuItemAddHeight");           
-            this.parentNode.parentNode.parentNode.querySelector(".jHomePageMenuItemContent").classList.remove("jHomePageMenuItemContentFog");
-            this.parentNode.parentNode.parentNode.querySelector(".jHomePageMinimizerHolder").style.display="flex";
-            this.parentNode.parentNode.parentNode.scrollIntoView({ behavior: 'smooth' });
-            this.style.display="none"; 
-            this.parentNode.parentNode.parentNode.querySelector("h2").style.width="100%";
+
+
+
+            if (jjjCurrentRotatePosition=='rotate(0deg)' && rotateValue==270){
+                jjjouterDecoration.classList.remove('jjjchosenCircle');
+                //Here I change the values for animation...then I reset for the next time. So it wont go anticlockwise from 270->0
+                rotateValue=-90;
+                jjjcounterRotate=90;
+                jjjTar.parentNode.style.transform="rotate("+rotateValue+"deg)";
+                for (let i=0;i<jjjCircleFrameCounterRotate.length;i++){
+                    jjjCircleFrameCounterRotate[i].style.transform="rotate("+jjjcounterRotate+"deg)";
+                }
+               
+                //I put a delay to let the animation end before I reset
+                setTimeout(function(){  jjjouterDecoration.classList.add('jjjchosenCircle');  } ,50);
+
+
+                setTimeout(function(){
+                    jjjTar.parentNode.style.transition="none";
+                    jjjTar.parentNode.style.transform="rotate("+jjjMakeItTwoSeven+"deg)";
+                    jjjcounterRotate=-270;
+                    for (let i=0;i<jjjCircleFrameCounterRotate.length;i++){
+                        jjjCircleFrameCounterRotate[i].style.transition="none";
+                        jjjCircleFrameCounterRotate[i].style.transform="rotate("+jjjcounterRotate+"deg)";                        
+                         rotateValue='rotate(270deg)';
+                        jjjCurrentRotatePosition= rotateValue;
+                        jjjLoadingSafety=false;
+                      
+                    }
+                } ,2010)
+                
+                
+
+               
+
+
+            }else if(jjjCurrentRotatePosition=='rotate(270deg)' && rotateValue==0){
+                jjjouterDecoration.classList.remove('jjjchosenCircle');
+                rotateValue=360;
+                jjjcounterRotate=-360;
+                jjjTar.parentNode.style.transform="rotate("+rotateValue+"deg)";
+                for (let l=0;l<jjjCircleFrameCounterRotate.length;l++){
+                    jjjCircleFrameCounterRotate[l].style.transform="rotate("+jjjcounterRotate+"deg)";
+                }
+
+                setTimeout(function(){  jjjouterDecoration.classList.add('jjjchosenCircle');  } ,50);
+
+              
+
+                setTimeout(function(){
+                jjjTar.parentNode.style.transition="none";
+                jjjTar.parentNode.style.transform="rotate("+jjjZeroThisBecauseIcant+"deg)";
+
+                for (let i=0;i<jjjCircleFrameCounterRotate.length;i++){
+                    jjjCircleFrameCounterRotate[i].style.transition="none";
+                    jjjCircleFrameCounterRotate[i].style.transform="rotate("+jjjcounterRotate+"deg)";
+                    rotateValue='rotate(0deg)';
+                    jjjCurrentRotatePosition= rotateValue;
+    
+                    jjjcounterRotate=0;
+                    jjjLoadingSafety=false;
+                  
+                }
+
+                 } ,2010)
+                
+            
+                
+
+
+            }else{
+                jjjouterDecoration.classList.remove('jjjchosenCircle');
+                jjjTar.parentNode.style.transform="rotate("+rotateValue+"deg)";
+                let jjjNeedThisPlz=jjjTar.parentNode.style.transform;
+                jjjCurrentRotatePosition=jjjNeedThisPlz;
+
+                jjjcounterRotate="-"+rotateValue;
+            for (let s=0;s<jjjCircleFrameCounterRotate.length;s++){
+                jjjCircleFrameCounterRotate[s].style.transform="rotate("+jjjcounterRotate+"deg)";
+            }
+           
+
+            setTimeout(function(){  jjjouterDecoration.classList.add('jjjchosenCircle');  } ,50);  
+            setTimeout(function(){
+            jjjLoadingSafety=false;
+           
+                   }
+                          ,2010)
+            }
+               
+               
+
+            let jjjHobbyListener= document.getElementById('jjjCircleFrame1');
+            let jjjGamingListener=document.getElementById('jjjCircleFrame2');
+            let jjjAboutMeListener= document.getElementById('jjjCircleFrame3');
+            let jjjWorkListener= document.getElementById('jjjCircleFrame4');
+
+
+
+
+            setTimeout(function(){
+        if (jjjTar==jjjAboutMeListener){
+            for (let m=0;m<jjjDisplayNoneSwapElements.length;m++){
+                jjjDisplayNoneSwapElements[m].style.display="none";
+            }
+
+            document.getElementById('jjjAboutMe').style.display="flex";
+
+
+
+        }else if(jjjTar==jjjGamingListener){
+
+            for (let m=0;m<jjjDisplayNoneSwapElements.length;m++){
+                jjjDisplayNoneSwapElements[m].style.display="none";
+            }
+            document.getElementById('jjjGaming').style.display="flex";
+
+
+
+
+        }else if(jjjTar==jjjHobbyListener){
+
+            for (let m=0;m<jjjDisplayNoneSwapElements.length;m++){
+                jjjDisplayNoneSwapElements[m].style.display="none";
+            }
+            document.getElementById('jjjHobby').style.display="flex";
+
+
+
+
+        }else if(jjjTar==jjjWorkListener){
+
+            for (let m=0;m<jjjDisplayNoneSwapElements.length;m++){
+                jjjDisplayNoneSwapElements[m].style.display="none";
+            }
+            document.getElementById('jjjWork').style.display="flex";
+        }
+            }
+              ,2010);
+
+
+
+
+
+
+
+           
+             }
+         }
+        }
+
+
+
+
+
+        /*==========================Second Set of Circles(inner)===========================*/
+
+        let jjjSCircleFrameFirstCircleCounterRotate=document.getElementsByClassName('jjjCircleFrameFirstCircleCounterRotate');
+        let jjjSouterDecoration=document.getElementById('jjjUpperPick');
+       
+        document.getElementById('jjjCircleFrameFirstCircle1').addEventListener('click',function(){
+            let jjjWhoAsks=this;
+            jjjSRotate(jjjWhoAsks,180);
         })
-    }  
-            //IMG previewer
-const jImg = document.getElementsByClassName('clickable-jImgBored');
-const prev = document.getElementById('HomePageImgPreview');
-const jImgIn = document.getElementById('HomePageImgPreviewIn');
-// I add to each one of the images the listener
-for (p=0;p<jImg.length;p++){
-    jImg[p].addEventListener('click', handleImageClick);
-}
+        document.getElementById('jjjCircleFrameFirstCircle2').addEventListener('click',function(){
+            let jjjWhoAsks=this;
+            jjjSRotate(jjjWhoAsks,0);
+        })
 
-//Here I get the src attribute of image and place it to my viewer
-//in the same time I add also the event for it to close
-//on the next click..that way you dont have to let it
-//out leading to triggering with each click for no reason.
-function handleImageClick(event) {
-    event.stopPropagation();
-    let getTheSrc=this.getAttribute('src');
-    let getTheDescription=this.getAttribute('data-description');
-    jImgIn.setAttribute("src",getTheSrc);
-
-    document.getElementById("HomePageImgPreviewInDescription").innerHTML=getTheDescription;
-    prev.style.display = 'block';
-    document.addEventListener('click', handleOutsideClickOnce);
-
-    function handleOutsideClickOnce() {
-        jImgIn.setAttribute("src","#");
-        document.getElementById("HomePageImgPreviewInDescription").innerHTML=" ";
-        prev.style.display = 'none';
-        document.removeEventListener('click', handleOutsideClickOnce);
-    }
-}
+        let jjjSloadingProtection=false;
+        function jjjSRotate(jjjWhoAsks,jjjSrotation){ 
 
 
 
-//Fun facts text triggering...
-//Since we dont have a back end available and we only have
-//few I am intending to use javascript variables for it..
-//(Yea I know we could pull from text files using javascript but why
-//bother only for a few lines...)
-//We also haven't created a folder for txt's in our
-//github repo structure.. ^^ so yea another excuse..
-const JfunFactsArray=[
-    "Fashion-forward Insects: Praying mantises are the undercover agents of the insect world, rocking incredible camouflage outfits to blend in with their surroundings. Talk about the ultimate fashionistas!",
-    "Mantis Munchies: These nimble ninjas have mastered the art of surprise attacks, snatching their insect snacks with moves that would make a ninja jealous. Watch out, bugs – the mantis is coming for dinner!",
-    "Mantis Matchmakers: When it comes to love, praying mantises have a quirky dating scene. Sometimes, the female gets a bit peckish after a romantic rendezvous. It's like a bizarre dinner date where dessert might be the date itself!",
-    "Eye on the Prize: With eyes that can do a full 360-degree spin, mantises have eyes everywhere! They're like the insect version of your mom making sure you don't sneak cookies before dinner.",
-    "Eggcellent Parenting: Moms-to-be in the mantis world create tiny egg cases called oothecas. It's like a mantis maternity ward, with each case holding the promise of future little bug-hunters.",
-    "Mantis Makeovers: Praying mantises know how to shed their skin like pros. It's like their version of a spa day – molting to reveal a brand-new look. Move over, runway models; mantises are the true fashion chameleons!",
-    "Ambidextrous Avengers: Mantises are the true multitaskers of the insect realm. They can catch prey with either hand – or, uh, foreleg. It's like having dual-wielding superheroes in the garden!",
-    "Twist and Shout: Forget the exorcist  mantises are the head-spinning champs of the bug world. They can rotate their heads almost 180 degrees. It's like they're saying, 'What's up, bugs? I'm watching you!'",
-    "Garden Guardians: If your garden had a superhero squad, mantises would be the first pick. They're like tiny green guardians, patrolling the plants and keeping pesky bugs in check. Gardeners, rejoice!"
-      ];
-     
+            for (let k=0;k<jjjToolWheels.length;k++){
 
+                jjjToolWheels[k].style.transform="rotate("+jjjSrotation+"deg)";
+                
+            }
+            for (let q=0;q<jjjToolWheelsRot.length;q++){
 
-document.getElementById("jChatMantisImg").addEventListener("click",jSendText);
-
-let jRouletaExclude=[];
-let jShowingTheEnd=false;
-function jSendText(){
-
-  
-//here
-        //My first job is to generate a random number so I will use it to pick
-        //one fun fact from the array....
-        function Jjrandom(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
-          }        
-
-//I create an array and start fullfling and comparing each time...
-    let jRouletaBegin=Jjrandom(0,8);
-   
-
-if (jRouletaExclude.length<=8){
-
-    while(jRouletaExclude.includes(jRouletaBegin)){
-        jRouletaBegin=Jjrandom(0,8);
-    }
-    jRouletaExclude.push(jRouletaBegin);
-    
-    jNoSameGeneratorTwice=jRouletaBegin;
-    
-    //I gate the date here
-    let jTimeNow=new Date();
-    let jDateNoww=jTimeNow.getDate()+":"+jTimeNow.getMonth()+":"+jTimeNow.getFullYear();
-
-    let jAddTheZero=jTimeNow.getHours()<10?'0'+jTimeNow.getHours():jTimeNow.getHours();
-
-    
-
-    let jAddTheZeroMinutes=jTimeNow.getMinutes()<10?'0'+jTimeNow.getMinutes():jTimeNow.getMinutes();
-
-   
-
-    let jClockNow=jAddTheZero+":"+jAddTheZeroMinutes;
-  
-
-    let jAmOrPmSign=jTimeNow.getHours()>=12?' PM' :' AM';
-    
-    
-   let jFullTime=jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign ;
-   //Adding the name and I will combine these two since it will go to the same div.
-   let jMantiseName="<b>Wordy Mantis</b>";
-   let jNameAndDate=jMantiseName+" "+jFullTime;
-
-   
-   //Top div is ready...lets make the bottom now that holds the text
-   let jTopDiv=document.createElement("div");
-   jTopDiv.innerHTML=jNameAndDate;
-   jTopDiv.setAttribute("class","jTopDiv");
-
-   //Here it is...
-   let jnewFunFact=document.createElement("p");
-   jnewFunFact.setAttribute("class","jGeneratedChatMessage");
-   jnewFunFact.textContent=JfunFactsArray[jNoSameGeneratorTwice];
-
-   //Lets combine them since it will be on a div with column flex...
-   let jProfileAndFunFactDiv=document.createElement("div");
-   jProfileAndFunFactDiv.appendChild(jTopDiv);
-   jProfileAndFunFactDiv.appendChild(jnewFunFact);
-   jProfileAndFunFactDiv.setAttribute("class","jProfileAndFunFactDiv");
-
-//Now lets create the last div that it will hold the profile Image(it will be
-//on the background url in the css..we will just give it a class)
-    let jProfileImageDiv=document.createElement("div");
-    jProfileImageDiv.setAttribute("class","jGeneratedChatDivPic");
-
-  //The Final that holds everything...
-  let jnewFunFactDiv=document.createElement("div");
-  jnewFunFactDiv.setAttribute("class","jGeneratedChatDiv");
-  jnewFunFactDiv.appendChild(jProfileImageDiv);
-  jnewFunFactDiv.appendChild(jProfileAndFunFactDiv);
-   
+                jjjToolWheelsRot[q].style.transform="rotate(-"+jjjSrotation+"deg)";
+                
+            }
 
 
 
 
-    document.getElementById('jhomePageFunFactsText').appendChild(jnewFunFactDiv);
 
-    
-   document.getElementById("jhomePageFunFactsText").scrollTop=document.getElementById("jhomePageFunFactsText").scrollHeight;
-    
-}else{
+            if (jjjSloadingProtection==false){
+                    if (jjjWhoAsks.parentNode.style.transform!=="rotate("+jjjSrotation+"deg)"){
+                jjjSloadingProtection=true;
+                jjjSouterDecoration.classList.remove('jjjChosenAnimationSmall');
 
-            ///LAST CREATION HERE IN  IF to tell him a thanks for reading
-    if (jShowingTheEnd==false){
-                      //I gate the date here
-    let jTimeNow=new Date();
-    let jDateNoww=jTimeNow.getDate()+":"+jTimeNow.getMonth()+":"+jTimeNow.getFullYear();
-    
-    let jAddTheZero=jTimeNow.getHours()<10?'0'+jTimeNow.getHours():jTimeNow.getHours();
-
-    let jAddTheZeroMinutes=jTimeNow.getMinutes()<10?'0'+jTimeNow.getMinutes():jTimeNow.getMinutes();
-
-  
-
-    let jClockNow=jAddTheZero+":"+jAddTheZeroMinutes;
-    
-    let jAmOrPmSign=jTimeNow.getHours()>=12?' PM' :' AM';
-    
-    
-   let jFullTime=jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign ;
-   //Adding the name and I will combine these two since it will go to the same div.
-   let jMantiseName="<b>Wordy Mantis</b>";
-   let jNameAndDate=jMantiseName+" "+jFullTime;
-
-   
-   //Top div is ready...lets make the bottom now that holds the text
-   let jTopDiv=document.createElement("div");
-   jTopDiv.innerHTML=jNameAndDate;
-   jTopDiv.setAttribute("class","jTopDiv");
-
-   //Here it is...
-   let jnewFunFact=document.createElement("p");
-   jnewFunFact.setAttribute("class","jGeneratedChatMessage");
-   jnewFunFact.textContent="You read them all. Thanks for your time!";
-
-   //Lets combine them since it will be on a div with column flex...
-   let jProfileAndFunFactDiv=document.createElement("div");
-   jProfileAndFunFactDiv.appendChild(jTopDiv);
-   jProfileAndFunFactDiv.appendChild(jnewFunFact);
-   jProfileAndFunFactDiv.setAttribute("class","jProfileAndFunFactDiv");
-
-//Now lets create the last div that it will hold the profile Image(it will be
-//on the background url in the css..we will just give it a class)
-    let jProfileImageDiv=document.createElement("div");
-    jProfileImageDiv.setAttribute("class","jGeneratedChatDivPic");
-
-  //The Final that holds everything...
-  let jnewFunFactDiv=document.createElement("div");
-  jnewFunFactDiv.setAttribute("class","jGeneratedChatDiv");
-  jnewFunFactDiv.appendChild(jProfileImageDiv);
-  jnewFunFactDiv.appendChild(jProfileAndFunFactDiv);
-   
+                   
 
 
+                const jjjElements = document.getElementsByClassName('jjjSmoky');
+                const jjjDuration = 4000; 
+                const jjjIntervalTime = 500; 
 
 
-    document.getElementById('jhomePageFunFactsText').appendChild(jnewFunFactDiv);
-    jShowingTheEnd=true;  
-  
-   document.getElementById("jhomePageFunFactsText").scrollTop=document.getElementById("jhomePageFunFactsText").scrollHeight;
-    
+                for (const jjjElement of jjjElements) {
+                const jjjrandomOpacity = Math.random();
+                jjjElement.style.opacity = jjjrandomOpacity;
+                }
+
+                const jjjopacityInterval = setInterval(() => {
+                for (const jjjElement of jjjElements) {
+                    //parseFloats convert string to number
+                    const jjjcurrentOpacity = parseFloat(jjjElement.style.opacity) || 0;
+                    const jjjnewOpacity = Math.max(0, jjjcurrentOpacity - 0.1);
+                    jjjElement.style.opacity = jjjnewOpacity;
+                }
+                }, jjjIntervalTime);
+
+                setTimeout(() => {
+                clearInterval(jjjopacityInterval); 
+                for (const jjjElement of jjjElements) {
+                    const jjjrandomOpacity = Math.random();
+                    jjjElement.style.opacity = 0;
+                    }
+                }, jjjDuration);
+
+            jjjWhoAsks.parentNode.style.transform="rotate("+jjjSrotation+"deg)";   
+              setTimeout(function(){  jjjSouterDecoration.classList.add('jjjChosenAnimationSmall');  } ,50);
+                jjjScounterRotate="-"+jjjSrotation;
+                document.getElementById('jjjCircleFrameFirstCircleCenterTool').style.transform="rotate(-"+jjjSrotation+"deg)"; 
+            for (let i=0;i<jjjSCircleFrameFirstCircleCounterRotate.length;i++){
+                jjjSCircleFrameFirstCircleCounterRotate[i].style.transform="rotate("+jjjScounterRotate+"deg)";
+            }   
+            setTimeout(function(){
+                jjjSloadingProtection=false;
+            },2001);
+
+            if (jjjSrotation==180){
+                document.getElementById('jjjTextParentFrame').style.marginLeft="4001px";
+                document.getElementById('jjjHalfForPick').style.transform="rotate(-900deg)";
+                document.getElementById('jjjFakeHeader').style.backgroundColor="white";
+
+                document.getElementById('jjjcustomStyles').textContent ='#jjjGoHomeSora::before { background-image: url(../../images/Balasis/myPage/crownblack.png); }';
+                document.getElementById('jjjGoHomeSora').style.color="black";
+               setTimeout(function(){ 
+                  document.getElementById('jjjTextParentFrame').style.display="none";
+                  document.getElementById('jjjYadaYada').style.display="flex";
+                  document.getElementById('jjjYadaYada').scrollIntoView({behavior: 'smooth'})
+            },2000);
+            }else{ 
+                document.getElementById('jjjGoHomeSora').style.color="white";
+                document.getElementById('jjjcustomStyles').textContent ="";
+            document.getElementById('jjjYadaYada').style.display="none";
+            document.getElementById('jjjTextParentFrame').style.display="flex";
+            document.getElementById('jjjFakeHeader').style.backgroundColor="";
+              setTimeout(function(){ 
+                document.getElementById('jjjTextParentFrame').style.marginLeft="";
+                document.getElementById('jjjHalfForPick').style.transform="rotate(0deg)";
+               
+           },1100);
+            }
+            
 
 
+        }
+
+        } 
 
 
-    }// the end of IF here
-
-
-
-
-}   
-    
-    
-}
+        }
 
 
 
@@ -275,7 +387,9 @@ if (jRouletaExclude.length<=8){
 
 
 
-})
+
+    })
 
 
-})(); 
+
+})();
