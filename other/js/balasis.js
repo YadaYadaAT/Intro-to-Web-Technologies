@@ -32,7 +32,7 @@
             this.parentNode.style.display="none"; 
             this.parentNode.parentNode.querySelector(".jHomePageReadMore").style.display="flex";
             this.parentNode.parentNode.scrollIntoView({ behavior: 'smooth' });
-            this.parentNode.parentNode.querySelector("h2").style.width="70%";
+            this.parentNode.parentNode.querySelector("h2").parentNode.classList.remove("jHomePageReadMoreWidthIt");
         })
     }
     for(let k=0;k<ReadMores.length;k++){
@@ -43,14 +43,14 @@
                 HomePageMini[qq].parentNode.parentNode.querySelector(".jHomePageMenuItemContent").classList.add("jHomePageMenuItemContentFog");
                 HomePageMini[qq].parentNode.style.display="none"; 
                 HomePageMini[qq].parentNode.parentNode.querySelector(".jHomePageReadMore").style.display="flex";
-                HomePageMini[qq].parentNode.parentNode.querySelector("h2").style.width="70%";
+                HomePageMini[qq].parentNode.parentNode.querySelector("h2").parentNode.classList.remove("jHomePageReadMoreWidthIt");
             }
             this.parentNode.parentNode.parentNode.classList.add("jHomePageMenuItemAddHeight");           
             this.parentNode.parentNode.parentNode.querySelector(".jHomePageMenuItemContent").classList.remove("jHomePageMenuItemContentFog");
             this.parentNode.parentNode.parentNode.querySelector(".jHomePageMinimizerHolder").style.display="flex";
             this.parentNode.parentNode.parentNode.scrollIntoView({ behavior: 'smooth' });
             this.style.display="none"; 
-            this.parentNode.parentNode.parentNode.querySelector("h2").style.width="100%";
+            this.parentNode.parentNode.parentNode.querySelector("h2").parentNode.classList.add("jHomePageReadMoreWidthIt");
         })
     }
       
@@ -153,9 +153,9 @@ if (jRouletaExclude.length<=8){
     let jAmOrPmSign=jTimeNow.getHours()>=12?' PM' :' AM';
     
     
-   let jFullTime=jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign ;
+   let jFullTime="<p>"+jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign+"</p>" ;
    //Adding the name and I will combine these two since it will go to the same div.
-   let jMantiseName="<b>Wordy Mantis</b>";
+   let jMantiseName="<p><b>Wordy Mantis</b></p>";
    let jNameAndDate=jMantiseName+" "+jFullTime;
 
    
@@ -214,9 +214,9 @@ if (jRouletaExclude.length<=8){
     let jAmOrPmSign=jTimeNow.getHours()>=12?' PM' :' AM';
     
     
-   let jFullTime=jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign ;
+   let jFullTime="<p>"+jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign+"</p>" ;
    //Adding the name and I will combine these two since it will go to the same div.
-   let jMantiseName="<b>Wordy Mantis</b>";
+   let jMantiseName="<p><b>Wordy Mantis</b></p>";
    let jNameAndDate=jMantiseName+" "+jFullTime;
 
    
