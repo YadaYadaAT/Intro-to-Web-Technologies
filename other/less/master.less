@@ -90,9 +90,7 @@ nav{
     justify-content: space-around;
     width: 100%;
 }
-.flex-container div{
-    
-}
+
 
 
 #block-main-menu a:link{
@@ -114,7 +112,7 @@ nav{
 #menu_item_resources{
     padding-top: 60px;
 }
-#menu_item_faq{
+.dropdown{
     padding-top: 60px;
 }
 #menu_item_about{
@@ -122,6 +120,41 @@ nav{
 }
 #menu_item_home img{
     top: 0;
+}
+
+//following is for the dropdown menus in the navbar
+
+.drop-option{
+    color: @colorCreme;
+    background-color: transparent;
+    text-decoration: none;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: @colorLightGreen;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a{
+    padding: 12px 12px;
+    display: block;
+    background-color: @colorLightGreen;
+}
+.dropdown-content a:hover{
+    background-color: @colorDarkGreen;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
 }
 
 //Landing Image
