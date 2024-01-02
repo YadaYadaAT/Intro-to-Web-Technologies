@@ -1082,14 +1082,171 @@ function jjNextIt(){
 
 
 (function() {
-
+   
     document.addEventListener("DOMContentLoaded",function(){
         if (document.getElementById('jSpSpeciesIdentifier') !== null){     
             
 
 
+            //GrabElementsList
+            const jSpbar=document.getElementsByClassName('jSpbar');
+            const jSpSpeciesMenuAnchor=document.getElementsByClassName('jSpSpeciesMenuAnchor');
+            const jSpSubSpeciesMenuContent=document.getElementsByClassName('jSpSubSpeciesMenuContent');
+            const jSpItems=document.getElementsByClassName('jSpItems');
+            const jSpSubSpeciesClassForFunction=document.getElementsByClassName('jSpSubSpeciesClassForFunction');
+
+            for (let i=0;i<jSpbar.length;i++){
+                
+                let percentage=jSpbar[i].querySelector(".jSppercentage").innerHTML;
+               jSpbar[i].querySelector(".jSppercentage").style.height="calc("+percentage+" + 1.5em)";
+               let recognize=jSpbar[i].querySelector("label").innerHTML;
+               switch(recognize){
+                case "Mantidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(82,112,31)";
+                    jSpbar[i].querySelector("label").style.color="rgb(82,112,31)";
+                    break;
+                case "Hymenopodidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(237, 185, 67)";
+                    jSpbar[i].querySelector("label").style.color="rgb(237, 185, 67)";
+                    break;
+                case "Empusidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(206,149,178)";
+                    jSpbar[i].querySelector("label").style.color="rgb(206,149,178)";
+                    break;
+                case "Liturgusidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(173,182,117)";
+                    jSpbar[i].querySelector("label").style.color="rgb(173,182,117)";
+                    break;
+                case "Deroplatyidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(244,99,35)";
+                    jSpbar[i].querySelector("label").style.color="rgb(244,99,35)";
+                    break;
+                case "Phyllocranidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(225,197,149)";
+                    jSpbar[i].querySelector("label").style.color="rgb(225,197,149)";
+                    break;
+                case "Gonypetidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(119,109,123)";
+                    jSpbar[i].querySelector("label").style.color="rgb(119,109,123)";
+                    break;
+                    default:
+                        jSpbar[i].querySelector("label").style.color="black";
 
 
+               }
+
+
+            }
+
+
+
+
+            for (let i=0;i<jSpSpeciesMenuAnchor.length;i++){
+                jSpSpeciesMenuAnchor[i].addEventListener('click',function(){
+                    
+                    let jSpICalled=this;
+                    jSpChooseSpecies(jSpICalled);
+                })
+            }
+            
+
+            function jSpChooseSpecies(jSpWhoCalled){
+                let theElementToBeSeen=document.getElementById("jSpSubSpeciesMenu"+jSpWhoCalled.id.charAt(jSpWhoCalled.id.length - 1)  );
+                let theElementToBeScaled=document.getElementById("jSPMainMenu"+jSpWhoCalled.id.charAt(jSpWhoCalled.id.length - 1)  );
+                let parentDiv = document.getElementById('jSpSubSpeciesMenu0');
+                let classToRemove = 'jSpInitiateDisplay';
+                let children = parentDiv.children;
+                for (let i = 0; i < children.length; i++) {
+                children[i].classList.remove(classToRemove);
+                }
+
+
+            if (!theElementToBeSeen.classList.contains('jSpClassForChosenOne')){
+                document.getElementById('jSPMainMenuFrameMantis').style.display="initial";
+                for (let i=0;i<jSpSubSpeciesMenuContent.length;i++){
+                    jSpSubSpeciesMenuContent[i].classList.remove('jSpClassForChosenOne');
+                }
+                for (let i=0;i<jSpItems.length;i++){
+                    jSpItems[i].classList.remove('jSpClassForChosenOne');
+                }
+                for (let i=0;i<jSpSubSpeciesClassForFunction.length;i++){
+                    jSpSubSpeciesClassForFunction[i].classList.remove('jSpSubSpeciesClassForFunctionScale');
+
+                }
+
+
+
+            
+
+                theElementToBeSeen.classList.add('jSpClassForChosenOne');
+             
+                theElementToBeSeen.querySelector('.jSpSubSpeciesMenuContent').classList.add('jSpClassForChosenOne');
+                theElementToBeSeen.querySelector('.jSpSubSpeciesMenuContent').scrollTop=0;
+                theElementToBeScaled.classList.add('jSpSubSpeciesClassForFunctionScale');
+                switch(theElementToBeSeen.id){
+
+                    case "jSpSubSpeciesMenu1":
+                        document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                        "../images/Balasis/Species/Mantidae.png");
+                        break;
+                    case "jSpSubSpeciesMenu2":
+                        document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                        "../images/Balasis/Species/Hymenopodidae.png");
+                        break;
+                        
+                    case "jSpSubSpeciesMenu3":
+                        document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                        "../images/Balasis/Species/Empusidae.png");
+                        break;
+                    case "jSpSubSpeciesMenu4":
+                        document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                        "../images/Balasis/Species/Liturgusidae.png");
+                        break;
+                        
+                    case "jSpSubSpeciesMenu5":
+                    document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                    "../images/Balasis/Species/Deroplatyidae.png");
+                    break;
+
+                    case "jSpSubSpeciesMenu6":
+                    document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                    "../images/Balasis/Species/Phyllocranidae.png");
+                    break;
+
+                    case "jSpSubSpeciesMenu7":
+                    document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                    "../images/Balasis/Species/Gonypetidae.png");
+                    break;
+                    default :
+                        document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                        "../images/Balasis/Species/mantisiumChatBoxReverse.png");
+
+
+                }
+
+            }else{
+
+
+                for (let i=0;i<jSpSubSpeciesMenuContent.length;i++){
+                    jSpSubSpeciesMenuContent[i].classList.remove('jSpClassForChosenOne');
+                }
+                for (let i=0;i<jSpItems.length;i++){
+                    jSpItems[i].classList.remove('jSpClassForChosenOne');
+                }
+                for (let i=0;i<jSpSubSpeciesClassForFunction.length;i++){
+                    jSpSubSpeciesClassForFunction[i].classList.remove('jSpSubSpeciesClassForFunctionScale');
+
+                }
+                document.getElementById('jSpSubSpeciesMenu0').classList.add('jSpClassForChosenOne');
+                document.getElementById('jSpSubSpeciesMenuTitle0').classList.add('jSpClassForChosenOne');
+                document.getElementById('jSpSubSpeciesMenuText0').classList.add('jSpClassForChosenOne');
+                document.getElementById('jSPMainMenuFrameMantis').style.display="none";
+
+
+
+            }
+
+    }
 
 
 

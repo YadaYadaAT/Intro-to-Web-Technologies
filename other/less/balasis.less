@@ -1506,52 +1506,429 @@ padding-top:0.5em;
 
 
 ///////Main page here,,,,
+.jSpItems{
+    display:none;
+    flex-direction: column;
+    position:relative;
+    align-items: center;
+    height:100%;
+    width:100%;
+}
 
+.jSpSubSpeciesMenuContent{
+    
+    flex-grow:1;
+    display:none;
+    padding-left:calc(20% + 2em);
+    background-color:white;
+    margin-top:4em;
+    padding-top:2em;
+    padding-right:2em;
+    text-indent: 3em;
+    line-height: 1.5;
+    overflow: auto; 
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent; 
+    -ms-overflow-style: none; 
+    width:100%;
+    overflow-x:hidden;
+   flex-direction: column;
+   padding-bottom:6em;
+}
+
+
+.jSpSubSpeciesMenuContent:not(.jSpClassForNotBefore)::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6em;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0.9) 76%, rgba(255, 255, 255, 0.7) 100%);
+    pointer-events: none;
+  }
+
+
+.jSpSubSpeciesMenuContent :first-child::first-letter{
+   font-size:150%;
+   
+}
+
+
+.jSpSubSpeciesMenuContent p{
+text-indent: 3em;
+}
+
+.jSpSubSpeciesMenuContent p:first{
+    text-indent: 3em;
+    }
+
+#jSpMainToCenterFrame{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+   margin-top:12em;
+}
 #jSpMainFrame{
  display:flex;
  width:100%;
+ max-width:3000px;
  position:relative;
-min-height:30em;
+height:30em;
+
 justify-content: center;
-margin-bottom:8em;
+margin-bottom:12em;
 }
 #jSPMainMenuFrameCenterPurpose{
-    height:100%;
+    margin-left:-10%;
+    width:20%;
     display:flex;
     flex-direction: column;
-    background-color:orange;//deleteMe
+    align-items:center;
     position:relative;
+    
 }
 #jSPMainMenuFrame{
+    
+    width:100%;
+    height:70%;
     display:flex;
     flex-direction: column;
-    position:relative;
-    align-self:center;
-    background-color:blue;//deleteMe
+    position:absolute;
+   bottom:0;
+    margin-left:100%;
+   // border-top:1px solid black;
+   // border-bottom:1px solid black;
+   // overflow:hidden;
+}
+#jSPMainMenuFrameMantis{
+    position:absolute;
+    top:-34%;
+    right:0;
+    
+    z-index:30;
+    height:34%;
+    width:auto;
+    max-width:50%;
 
 }
+
+
+
+.jSpSubSpeciesClassForFunction{
+flex-grow:1;
+display:flex;
+justify-content: center;
+align-items:center;
+//border:1px solid black;
+
+z-index:20;
+cursor: pointer;
+//transition:300ms linear;
+}
+.jSpSubSpeciesClassForFunction:hover{
+transform:scale(1.05);
+z-index: 25;
+
+}
+.jSpSubSpeciesClassForFunctionScale{
+    transform:scale(1.1);
+    z-index:26;
+    
+}
+
+
+
+#jSPMainMenuFrame{
+    font-weight: bold;
+    color:white;
+}
+
+
+
+.jSpSubSpeciesMenuCommon1{
+    background-color:rgb(82,112,31);
+    
+    
+}
+.jSpSubSpeciesMenuCommon2{
+    background-color:@colorFlowerOrange;
+    
+}
+.jSpSubSpeciesMenuCommon3{
+    background-color:rgb(206,149,178);
+    
+}
+.jSpSubSpeciesMenuCommon4{
+    background-color:rgb(173,182,117);
+    
+}
+.jSpSubSpeciesMenuCommon5{
+    background-color:rgb(244,99,35);
+    
+}
+.jSpSubSpeciesMenuCommon6{
+    background-color:rgb(225,197,149);
+    
+}
+.jSpSubSpeciesMenuCommon7{
+    background-color:rgb(119,109,123);
+    
+}
+
+#jSpSubSpeciesMenuTitle0 span:nth-child(1) {
+    color: rgb(82,112,31); 
+  }
+  #jSpSubSpeciesMenuTitle0 span:nth-child(2) {
+    color: @colorFlowerOrange; 
+  }
+  #jSpSubSpeciesMenuTitle0 span:nth-child(3) {
+    color: rgb(206,149,178); 
+  }
+  #jSpSubSpeciesMenuTitle0 span:nth-child(4) {
+    color: rgb(173,182,117); 
+  }
+  #jSpSubSpeciesMenuTitle0 span:nth-child(5) {
+    color: rgb(244,99,35); 
+  }
+  #jSpSubSpeciesMenuTitle0 span:nth-child(6) {
+    color: rgb(225,197,149); 
+  }
+  #jSpSubSpeciesMenuTitle0 span:nth-child(7) {
+    color: rgb(119,109,123); 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #jSpContent{
     display:flex;
     flex-direction: column;
     position:relative;
-    background-color:pink;//deleteMe
+    
     align-items: center;
-
+    width:50%;
+   
 }
 //which has the :
-#jSpItems{
-    display:flex;
-    flex-direction: column;
-    position:relative;
-    align-items: center;
-}
 
-#jSpSubSpeciesMenuTitle{
+
+.jSpSubSpeciesMenuTitle{
     text-align: center; 
+    font-size:@fontSizeTitles;
+    display:none;
+    align-items: center;
+    flex-shrink:0;
+    font-weight: bold;
+    color:white;
+    min-height:3em;
+    cursor:pointer;
+    width:100%;
+    justify-content:center;
+
+}
+
+.jSpInitiateDisplay{
+    display:flex;
+}
+
+.jSpSubSpeciesMenuTitle:not(.jSpClassForNotBefore):hover{
+    opacity:0.5;
 }
 
 
+.jSpClassForChosenOne{
+    display:flex;
+}
+
+#jSpSubSpeciesMenu0{
+    background-color:initial;
+}
+
+
+#jSpSubSpeciesMenuTitle0{
+    text-align:center;
+    font-weight:bold;
+    min-height:initial;
+    letter-spacing: 25px;
+    cursor:initial;
+}
+#jSpSubSpeciesMenuTitle0 span{
+    display: inline-block;
+}
+
+
+
+#jSpSubSpeciesMenuText0{
+    position:absolute;
+    flex-grow:0;
+    width:100%;
+    height:46.6%;
+    bottom:11.7%;
+   border-radius: 10px 10px 10px 10px;
+  overflow:hidden;
+  padding-top:0.5em;
+}
+
+#jSpchartTitle{
+    position:absolute;
+    margin-left:auto;
+    margin-right:auto;
+    left:0;
+    right:0;
+    top:0.5em;
+    font-weight:bold;
+    font-size:2em;
+    color:black;
+    font-style:italic;
+    width: fit-content;
+}
+
+
+
+.jSpchart {
+    position:relative;
+    width: 60%;
+    max-width: 3000px;
+    background-color: #fff;
+   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display:flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height:30em;
+    margin-bottom:12em;
+  }
+
+  .jSpbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:100%;
+    justify-content: flex-end;
+  }
+
+  .jSpbar label {
+    text-align: center;
+
+   
+  }
+
+  .jSpbar .jSppercentage {
+    margin-top:auto;
+    margin-bottom:1em;
+   
+    height: 30px;
+    padding-top:1em;
+    padding-bottom:1.5em;
+    color: #fff;
+    text-align: center;
+   
+    width:3em;
+  }
+
+  .jSppercentage::before{
+    height:100%;
+    width:100%;
+    position:absolute;
+    background-color:black;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    box-shadow:0px 0px 10px rgba(255,255,255,0.5)
+  }
+
+
+
+  @media screen and (max-width:1100px){
+    .jSpchart {width:80%;}
+
+  }
+
+
+
+
+
+
+
+
+@media screen and (max-width:900px){
+
+    #jSpMainFrame{ height:fit-content;
+       
+    }
+
+    .jSpchart {width:100%;
+        border-radius:0px 0px 0px 0px;
+    }
+
+    .jSpSubSpeciesMenuContent{
+        flex-grow:1;
+        margin-top:initial;
+        padding-top:initial;
+        padding-left:10%;
+        max-height:25em;
+        
+    }
+    #jSpContent{
+        width:100%;
+       
+    }
+   
+    #jSpSubSpeciesMenu0{display:none}
+
+
+
+    #jSPMainMenuFrameCenterPurpose{
+        display:none;
+    }
+    #jSpSubSpeciesMenuTitle1,
+    #jSpSubSpeciesMenuTitle2,
+    #jSpSubSpeciesMenuTitle3,
+    #jSpSubSpeciesMenuTitle4,
+    #jSpSubSpeciesMenuTitle5,
+    #jSpSubSpeciesMenuTitle6,
+    #jSpSubSpeciesMenuTitle7{
+        display:flex;
+    }
+    #jSpSubSpeciesMenu1,
+    #jSpSubSpeciesMenu2,
+    #jSpSubSpeciesMenu3,
+    #jSpSubSpeciesMenu4,
+    #jSpSubSpeciesMenu5,
+    #jSpSubSpeciesMenu6,
+    #jSpSubSpeciesMenu7{
+        display:flex;
+    }
+}
+
+
+@media screen and (max-width:650px){
+ 
+
+      .jSpbar label{
+      white-space: nowrap;
+      width:2em;         /* No wrapping */
+      overflow: hidden;            /* Hide overflowing content */
+      text-overflow: ellipsis;
+
+      }
+}
 
 //==============================================================================================================//
 //========================= Imports Should be only master.less here   ==========================================//
