@@ -76,14 +76,15 @@ body{
     margin-left: auto;
     left:0;
     right:0;
-    width: fit-content;
+    // width: fit-content;
 }
 nav{
     position: relative;
     display: block;
     // font-weight: bold;
     font-family: @fontFamilyHeader;
-    width: 1200px;
+    max-width: 1200px;
+    width: 80%;
 }
 .flex-container-navbar{
     display: flex;
@@ -109,11 +110,19 @@ nav{
 #menu_item_gallery{
     padding-top: 60px;
 }
+#menu_item_home{
+    position: absolute;
+}
+//need to make this work without padding - for now it will do but remember to fix!
 #menu_item_resources{
     padding-top: 60px;
+    padding-right:400px;
+    position:relative;
 }
 .dropdown{
+    position: relative;
     padding-top: 60px;
+    padding-left: 400PX;
 }
 #menu_item_about{
     padding-top: 60px;
@@ -121,6 +130,7 @@ nav{
 #menu_item_home img{
     top: 0;
 }
+
 
 //following is for the dropdown menus in the navbar
 
@@ -137,23 +147,32 @@ nav{
     display: inline-block;
 }
 
-.dropdown-content{
+.dropdown-cont{
     display: none;
     position: absolute;
-    background-color: @colorLightGreen;
     min-width: 140px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-.dropdown-content a{
+.dropdown-cont ul{
+    list-style-type: none;
+    padding-top: 10px;
+    padding-left: 0;
+    margin: 0;
+}
+.dropdown-cont li{
     padding: 12px 12px;
     display: block;
     background-color: @colorLightGreen;
 }
-.dropdown-content a:hover{
+.dropdown-cont li:hover{
     background-color: @colorDarkGreen;
 }
-.dropdown:hover .dropdown-content{
+#resourceList a:link{
+    color:black;
+    font-weight: bold;
+}
+.dropdown:hover .dropdown-cont{
     display: block;
 }
 
