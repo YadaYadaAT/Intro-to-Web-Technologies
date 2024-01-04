@@ -15,11 +15,11 @@
     .container {
       width: 100%;
       padding: 0px;
-      background-color: orange; /* Orange background */
+      background-color: orange; 
       border-radius: 5px;
     
-      color: white; /* Text color */
-      text-align: center; /* Center align text */
+      color: white; 
+      text-align: center; 
     }
   </style>
 </head>
