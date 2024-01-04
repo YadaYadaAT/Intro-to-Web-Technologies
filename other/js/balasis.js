@@ -1076,3 +1076,329 @@ function jjNextIt(){
 
 
 })})();
+
+
+
+
+
+
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+
+
+(function() {
+
+    document.addEventListener("DOMContentLoaded",function(){
+   
+   
+   
+    if (document.getElementById('jjjBehaviorBody')!==null){
+   
+
+
+   
+        const jjjGPage1=document.getElementById('jjjGPage1');
+        const jjjBehDaPages=document.getElementsByClassName('jjjBehRotateMePlease');
+        const jjjBehbookTop=document.getElementsByClassName('jjjBehbookTop')[0];
+        const jjjBehcardBottom=document.getElementsByClassName('jjjBehcardBottom')[0];
+
+
+        const jjjPullAllow=document.getElementById('jjjPullAllow');
+        const jjjRotate=document.getElementById('jjjRotate');
+      
+        let  jjjAllowPull=false;
+        
+        let jjjOffsetX, jjjOffsetY, jjjIsDragging ;
+
+        jjjPullAllow.addEventListener('click',function(){
+            jjjAunlockPull();
+        
+        });
+       
+       
+
+
+       function jjjAunlockPull(){
+           
+            jjjAllowPull=true;
+            jjjPullListener();
+           
+        }
+
+      
+
+
+        function  jjjPullListener(){
+
+       
+            if(jjjAllowPull){
+       
+        
+        jjjBookWrapper.addEventListener('mousedown', function (e) {
+
+           jjjOffsetX, jjjOffsetY, jjjIsDragging = false;
+
+            let jjjBookWrapper = document.getElementById('jjjBookWrapper');
+
+
+            // Prevent unwanted browser behavior
+            e.preventDefault();
+        
+            // Save the initial mouse position relative to the div
+            jjjOffsetX = e.clientX - jjjBookWrapper.getBoundingClientRect().left;
+            jjjOffsetY = e.clientY - jjjBookWrapper.getBoundingClientRect().top;
+        
+            // Change the appearance while dragging
+            jjjBookWrapper.style.opacity = '0.5';
+        
+            jjjIsDragging = true;
+            console.log(jjjIsDragging);
+            // Add event listeners to the document for better responsiveness
+            document.addEventListener('mousemove', jjjhandleMouseMove);
+            document.addEventListener('mouseup', jjjhandleMouseUp);
+        }) ;
+        
+    }
+       
+        
+        function jjjhandleMouseMove(e) {
+            if(jjjAllowPull){
+                console.log(jjjAllowPull);
+            if (jjjIsDragging) {
+                // Update the position of the div based on the mouse movement
+                jjjBookWrapper.style.left = e.clientX - jjjOffsetX + 'px';
+                jjjBookWrapper.style.top = e.clientY - jjjOffsetY + 'px';
+            }
+
+
+        }
+        }
+        
+        function jjjhandleMouseUp() {
+            if(jjjAllowPull){
+
+            // Reset appearance and dragging state
+            jjjBookWrapper.style.opacity = '1';
+            jjjIsDragging = false;
+        
+            // Remove the event listeners after the drag operation is complete
+            document.removeEventListener('mousemove', jjjhandleMouseMove);
+            document.removeEventListener('mouseup', jjjhandleMouseUp);
+        }
+
+
+    }
+
+
+        }
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+     
+            
+            
+            
+            
+            
+                for (let i=0;i<jjjBehDaPages.length;i++){
+              jjjBehDaPages[i].addEventListener('click',function(){
+                 let WhoAsks=this;
+            
+                  jjjjrotateIt(WhoAsks);
+                                      });
+            
+                                                     }
+            
+            
+            
+                
+               function jjjjrotateIt(asksWho){
+               
+            
+            
+            
+            
+                  if (!asksWho.classList.contains("jjjBehClassRotateOrNot")){
+            
+            
+                    for (let i = 0; i < jjjBehDaPages.length; i++) {
+                        jjjBehDaPages[i].style.zIndex = 25;
+                      }
+                      if(  asksWho.previousElementSibling !== null ){
+                      asksWho.previousElementSibling.style.zIndex = 28;
+                    }
+            
+                    if(asksWho.nextElementSibling !== null ){
+                      asksWho.nextElementSibling.style.zIndex = 28;
+                    }
+                     
+                      asksWho.style.zIndex = 30;
+                     
+                    asksWho.classList.add("jjjBehClassRotateOrNot");
+            
+            
+            
+                    for (let i = 0; i < jjjBehDaPages.length; i++) {
+                      if (jjjBehDaPages[i].classList.contains('jjjBehClassRotateOrNot') && jjjBehDaPages[i].id!=="jjjGPage1"){
+                        setTimeout(function(){
+                          jjjBehDaPages[i].querySelector('.jjjCleanTheMess').classList.add('jjjDisplayThemNot');
+                        },900);
+                        
+                      }else{
+                        jjjBehDaPages[i].querySelector('.jjjCleanTheMess').classList.remove('jjjDisplayThemNot');
+                      }            
+            
+                      }
+            
+            
+                     
+                  }else{
+            
+                    for (let i = 0; i < jjjBehDaPages.length; i++) {
+                        jjjBehDaPages[i].style.zIndex = 25;
+                      }
+                      if(  asksWho.previousElementSibling !== null ){
+                      asksWho.previousElementSibling.style.zIndex = 28;
+                    }
+            
+                    if(asksWho.nextElementSibling !== null ){
+                      asksWho.nextElementSibling.style.zIndex = 28;
+                    }
+                     asksWho.style.zIndex = 30;
+                     asksWho.querySelector('.jjjCleanTheMess').classList.remove('jjjDisplayThemNot');
+                      asksWho.classList.remove("jjjBehClassRotateOrNot");           
+            
+                  }             
+               
+                }
+            
+            
+
+                jjjGPage1.addEventListener('click',()=>{
+              if (jjjGPage1.classList.contains('jjjBehClassRotateOrNot')){
+                jjjBehbookTop.style.borderTopColor="transparent";
+                jjjBehcardBottom.style.borderTopColor="transparent";
+              }else{
+                setTimeout(function(){
+                  jjjBehbookTop.style.borderTopColor="orange";
+                jjjBehcardBottom.style.borderTopColor="orange";
+            
+                },900)
+             
+              }
+            })
+
+
+
+
+
+
+            document.getElementById('jjjSideBtn').addEventListener('click',function (){ jjjC_jjjSideBtn()} );
+            document.getElementById('jjjBackBtn').addEventListener('click',function (){jjjC_jjjBackBtn()} );
+            document.getElementById('jjjFrontBtn').addEventListener('click', function (){ jjjC_jjjFrontBtn()});
+            document.getElementById('jjjResetBtn').addEventListener('click',function () {jjjC_jjjResetBtn()});
+    
+    
+    
+            const jjjC_book = document.getElementById('jjjBehflipper');
+            let jjjC_rotation = 0;
+        
+            function jjjC_jjjSideBtn() {
+                jjjC_rotation = "rotateY(70deg) rotateX(-65deg) translateZ(10em)";
+                jjjC_applyRotation(jjjC_rotation);
+            }
+        
+            function jjjC_jjjBackBtn() {
+                jjjC_rotation = "rotateY(160deg) rotateX(-70deg) translateZ(10em)";
+                jjjC_applyRotation(jjjC_rotation);
+            }
+        
+            function jjjC_jjjFrontBtn() {
+                jjjC_rotation = "rotateY(0deg) rotateX(-80deg) translateZ(10em)";
+                jjjC_applyRotation(jjjC_rotation);
+            }
+        
+            function jjjC_jjjResetBtn() {
+                jjjC_rotation = "rotateY(0deg) rotateX(0deg) translateZ(10em)";
+    
+                for (let i = 0; i < jjjBehDaPages.length; i++) {
+                    jjjBehDaPages[i].style.zIndex = 25;
+                    jjjBehDaPages[i].classList.remove('jjjBehClassRotateOrNot');
+                    setTimeout(function(){
+                        jjjBehbookTop.style.borderTopColor="orange";
+                      jjjBehcardBottom.style.borderTopColor="orange";
+                  
+                      },900);
+                }
+
+
+
+
+
+                
+                jjjC_applyRotation(jjjC_rotation);
+            }
+        
+            function jjjC_applyRotation(val) {
+                jjjC_book.style.transform = val;
+            }
+            
+        
+           
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+    })})();
