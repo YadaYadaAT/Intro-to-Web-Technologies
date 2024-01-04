@@ -1,10 +1,15 @@
-//navbar corrections for this page 
-main{
-    background-color: @colorLightGreen;
-}
+//navbar and footer corrections for this page 
+
 #menu_item_gallery{
     color: black;
 }
+
+footer{
+    height:100%;
+    position: relative;
+    bottom:0;
+}
+
 
 //about page - yellow block (short introduction of the team)
 
@@ -13,6 +18,7 @@ main{
     background-color: @colorFlowerOrange;
     position: relative;
     top: 15em;
+    text-align: center;
 }
 h2{
     position: relative;
@@ -21,24 +27,26 @@ h2{
 }
 .images-wrapper{
     position: relative;
-    top: 17em;
+    top: 14em;
     display: flex;
     flex-direction: column;
+    row-gap: 5em;
     flex-wrap:wrap;
 }
+
 //flip cards for each of the team members
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+
 .flip-card {
     background-color: transparent;
     width: 300px;
     height: 300px;
     border-radius: 50%;
     border: 1px solid white;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px; 
   }
   
-  /* This container is needed to position the front and back side */
+  
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -49,7 +57,7 @@ h2{
     transform-style: preserve-3d;
   }
   
-  /* Do an horizontal flip when you move the mouse over the flip box container */
+ 
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
@@ -59,7 +67,7 @@ h2{
     border-radius: 50%;
     object-fit: cover;
   }
-  /* Position the front and back side */
+  
   .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
@@ -69,19 +77,34 @@ h2{
     backface-visibility: hidden;
   }
   
-  /* Style the front side (fallback if image is missing) */
+
   .flip-card-front {
     background-color: #bbb;
     color: black;
   }
   
-  /* Style the back side */
+ 
   .flip-card-back {
     text-align: center;
     padding: 50px 0;
     background-color: @colorFlowerOrange;
     color: white;
     transform: rotateY(180deg);
+  }
+
+  .flip-card-back h1{
+    color:#5e4910;
+  }
+
+  .flip-card-back a:link{
+    color:#a0a0a0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+
+  #giorgos{
+    margin-bottom: 20em;
   }
   
 //positioning of the flex items (images and the text to accompany them)

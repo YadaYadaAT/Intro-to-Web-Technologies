@@ -3,6 +3,12 @@
     <head>
         <link rel="stylesheet/less" type="text/css" href="../other/less/ververaki.less">
         <script type="text/javascript" src="../other/js/less.js"></script>
+        <script>    
+        document.addEventListener("DOMContentLoaded",function(){
+            fetch("footer.html")
+            .then(response=>response.text())
+            .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("afterend",html)})
+        })</script>
     </head>
     <body>
         <main>
@@ -54,6 +60,8 @@
                 <p>We are YadaYada: a team of junior developers with a strong passion for programming.</p> 
             
                 <p>We love to familiarize ourselves with new technologies and undertake any task assigned to us with the utmost respect and enthusiasm!</p>
+
+                <p>In this page, you will find the personal pages for each of us. Feel free to read them and learn more about the individual people who are part of this team!</p>
             </div>
             
             <h2>THE TEAM</h2> 
@@ -117,8 +125,9 @@
                     </div>
                 </div>
             </div>
+            
         </main>
-        <!--footer here-->
+           
     </body>
 
 </html>
