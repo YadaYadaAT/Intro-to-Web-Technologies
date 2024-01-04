@@ -108,23 +108,21 @@ nav{
     opacity: 1;
 }
 #menu_item_gallery{
+    font-family: 'Montserrat';
     padding-top: 60px;
 }
 #menu_item_home{
+    font-family: 'Montserrat';
     position: absolute;
 }
-//need to make this work without padding - for now it will do but remember to fix!
-#menu_item_resources{
-    padding-top: 60px;
-    padding-right:400px;
-    position:relative;
-}
 .dropdown{
+    font-family: 'Montserrat';
     position: relative;
     padding-top: 60px;
-    padding-left: 400PX;
+    margin: auto;
 }
 #menu_item_about{
+    font-family: 'Montserrat';
     padding-top: 60px;
 }
 #menu_item_home img{
@@ -145,6 +143,7 @@ nav{
 .dropdown {
     position: relative;
     display: inline-block;
+    width: fit-content;
 }
 
 .dropdown-cont{
@@ -169,7 +168,7 @@ nav{
     background-color: @colorDarkGreen;
 }
 #resourceList a:link{
-    color:black;
+    color:@colorCreme;
     font-weight: bold;
 }
 .dropdown:hover .dropdown-cont{
@@ -238,7 +237,7 @@ nav{
     padding-top: 0.5em;
 }
 //'toggle dark mode' dropdown - currently not functional
-.dropdown {
+.dropdownGear {
     position: absolute;
     display: inline-block;
 }  
