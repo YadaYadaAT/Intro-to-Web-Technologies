@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta>
+  <title>FAQ</title>
+  <style>
+    body {
+      font-family: Arial;
+      line-height: 1;
+      margin: 30px;
+    }
+
+    .faq {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .faq ol {
+      list-style: none;
+      padding-left: 10;
+    }
+
+    .faq li {
+      counter-increment: item;
+      margin-bottom: 30px;
+    }
+
+    .faq li .question {
+      font-weight: bold;
+    }
+     .faq li .answer {
+      display: none;
+      margin-left: 20px;
+    
+    }
+    .faq li .number::before {
+      content: counter(item) ".";
+    }
+
+    .faq li .question:hover {
+      cursor: pointer;
+    }
+
+    .faq li .question.active {
+    }
+  </style>
+</head>
+<body>
+  <h1>FAQ</h1>
+  <div class="faq">
+    <ol>
+      <li>
+        <h3 class="question number">Question </h3>
+      </li>
+      <li>
+        <h3 class="question number">Question </h3>
+      </li>
+      <li>
+        <h3 class="question number">Question</h3> 
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
