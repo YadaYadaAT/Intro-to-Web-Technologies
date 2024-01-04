@@ -1115,17 +1115,17 @@ function jjNextIt(){
         const jjjBehcardBottom=document.getElementsByClassName('jjjBehcardBottom')[0];
 
 
-        const jjjPullAllow=document.getElementById('jjjPullAllow');
+        //const jjjPullAllow=document.getElementById('jjjPullAllow');
         const jjjRotate=document.getElementById('jjjRotate');
       
         let  jjjAllowPull=false;
         
         let jjjOffsetX, jjjOffsetY, jjjIsDragging ;
 
-        jjjPullAllow.addEventListener('click',function(){
+     /*   jjjPullAllow.addEventListener('click',function(){
             jjjAunlockPull();
         
-        });
+        });*/
        
        
 
@@ -1335,64 +1335,137 @@ function jjNextIt(){
             document.getElementById('jjjBackBtn').addEventListener('click',function (){jjjC_jjjBackBtn()} );
             document.getElementById('jjjFrontBtn').addEventListener('click', function (){ jjjC_jjjFrontBtn()});
             document.getElementById('jjjResetBtn').addEventListener('click',function () {jjjC_jjjResetBtn()});
-    
+            document.getElementById('jjjReadBtn').addEventListener('click',function () {jjjC_jjjReadBtn()});
     
     
             const jjjC_book = document.getElementById('jjjBehflipper');
             let jjjC_rotation = 0;
         
             function jjjC_jjjSideBtn() {
-                jjjC_rotation = "rotateY(70deg) rotateX(-65deg) translateZ(10em)";
+                jjjC_rotation = "rotateY(70deg) rotateX(-65deg) translateZ(4.5em)";
                 jjjC_applyRotation(jjjC_rotation);
             }
         
             function jjjC_jjjBackBtn() {
-                jjjC_rotation = "rotateY(160deg) rotateX(-70deg) translateZ(10em)";
+                jjjC_rotation = "rotateY(160deg) rotateX(-70deg) translateZ(4.5em)";
                 jjjC_applyRotation(jjjC_rotation);
             }
         
             function jjjC_jjjFrontBtn() {
-                jjjC_rotation = "rotateY(0deg) rotateX(-80deg) translateZ(10em)";
+                jjjC_rotation = "rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
+                jjjC_applyRotation(jjjC_rotation);
+            }
+            function jjjC_jjjReadBtn() {
+                jjjC_rotation = "rotateY(15deg) rotateX(-80deg) translateZ(4.5em)";
                 jjjC_applyRotation(jjjC_rotation);
             }
         
-            function jjjC_jjjResetBtn() {
-                jjjC_rotation = "rotateY(0deg) rotateX(0deg) translateZ(10em)";
-    
-                for (let i = 0; i < jjjBehDaPages.length; i++) {
-                    jjjBehDaPages[i].style.zIndex = 25;
-                    jjjBehDaPages[i].classList.remove('jjjBehClassRotateOrNot');
-                    setTimeout(function(){
-                        jjjBehbookTop.style.borderTopColor="orange";
-                      jjjBehcardBottom.style.borderTopColor="orange";
-                  
-                      },900);
-                }
-
-
-
-
-
-                
-                jjjC_applyRotation(jjjC_rotation);
-            }
+          
         
+
+
+
+
+
             function jjjC_applyRotation(val) {
                 jjjC_book.style.transform = val;
             }
             
         
            
+        let jjjBookEnviroment=document.getElementById('jjjBookEnviroment');
+        let jjjGetMeToBookEnviroment=document.getElementById('jjjGetMeToBookEnviroment');
+        jjjGetMeToBookEnviroment.addEventListener('click',function(){
+            jjjBehExtent();
+
+        });
+
+        function jjjBehExtent(){
+            document.getElementsByClassName('jjjjarrowTopBtnn')[0].style.display="none";
+            document.getElementsByClassName('jjjjarrowOff')[0].style.display="flex";
+           
+            document.getElementById('jjjBehaviorMain').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('jjjHandlerMenu').style.display="flex";
+            document.getElementById('jjjBookEnviromentTableEffect').classList.add('jjjBookEnviromentTableEffectAdd');
+         
+            jjjC_book.style.transform ="rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
+           
+            document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.transform="rotateY(0deg) rotateX(0deg)";
+            document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.bottom="-16em";
+            document.getElementById('jjjWelcomeText').style.marginTop="18em";
+            setTimeout(function(){
+            let jjjRotateMenuButtons= document.getElementsByClassName('jjjRotateMenuButtons');
+            for (let i=0;i<jjjRotateMenuButtons.length;i++){
+                jjjRotateMenuButtons[i].classList.add('jjjRotateMenuButtonsExtent')
+            }
+        },1480); 
+
+
+
+            setTimeout(function(){
+                jjjC_book.style.transform ="rotateY(15deg) rotateX(-80deg) translateZ(4.5em) translateX(-9.5em)";
+               
+            },2600);
+
+       
+          
+        }   
+
+
+        function jjjC_jjjResetBtn() {
+            document.getElementsByClassName('jjjjarrowOff')[0].style.display="none";
+            document.getElementsByClassName('jjjjarrowTopBtnn')[0].style.display="flex";
+
+            jjjC_rotation = "rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
+            jjjC_applyRotation(jjjC_rotation);
+
+            setTimeout(function(){
+            jjjC_rotation = "rotateY(0deg) rotateX(0deg) translateZ(4.5em)";
+
+
+
+            for (let i = 0; i < jjjBehDaPages.length; i++) {
+                jjjBehDaPages[i].style.zIndex = 25;
+                jjjBehDaPages[i].classList.remove('jjjBehClassRotateOrNot');
+                setTimeout(function(){
+                    jjjBehbookTop.style.borderTopColor="rgb(237, 185, 67)";
+                  jjjBehcardBottom.style.borderTopColor="rgb(237, 185, 67)";
+              
+                  },900);
+            }
+
+
+
+
+
+            document.getElementById('jjjBookEnviromentTableEffect').classList.remove('jjjBookEnviromentTableEffectAdd');
+         
+           
+           jjjC_applyRotation(jjjC_rotation);
+            document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.transform="rotateX(-90deg)";
+            document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.bottom="";
+            document.getElementById('jjjWelcomeText').style.marginTop="initial";
+            setTimeout(function(){
+            let jjjRotateMenuButtons= document.getElementsByClassName('jjjRotateMenuButtons');
+            for (let i=0;i<jjjRotateMenuButtons.length;i++){
+                jjjRotateMenuButtons[i].classList.remove('jjjRotateMenuButtonsExtent')
+            }
+        },620); 
+
+
+
+
+
+
+
+
+                 },2000)
+
+            
+            
+        }
+
         
-
-
-
-
-
-
-
-
-
 
 
 
