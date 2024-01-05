@@ -2221,23 +2221,53 @@ border-bottom-right-radius:0px 0px;
     margin-bottom:0.2em;
 }
 
-@media screen and (max-width:900px){
-
-
+#SmallScreenSizeOnly{
+    display:none;
+    flex-direction:column;
+    align-items: center;
+    width:100%;
+}
+.MiniVersionClassBoringText h5,h6{
+font-size:2.2em;
+text-align: center;
+}
+.MiniVersionClassBoringText{
+color:black;
+margin-top:1em;
+padding:1em;
+font-size:2em;
+display:flex;
+justify-content: center;
+flex-direction: column;
 }
 
-@media screen and (max-width:600px){
-    #jjjBookWrapper{
-        transform:scale(0.6);
-        bottom:3em;
-        left:9em;
-        z-index: 100;
-       
-    }
-    #jjjBehflipper{
-        transform:translateX(-2em);
-    }
+.MiniVersionClassBoringText .jjjPageNumberClass{
+width:100%;
+
 }
+.MiniVersionClassBoringText:nth-child(even) {
+    background-color:white; 
+    
+}
+.MiniVersionClassBoringText img{
+    width:70%;
+align-self: center;
+    height:12em;
+}
+
+.MiniVersionClassBoringText:nth-child(odd) {
+    background-color:@colorCreme; 
+}
+@media screen and (max-width:1200px){
+    #jjjBookEnviroment{display:none;}
+    #jjjHandlerMenu{display:none;}
+    #jjjGetMeToBookEnviroment{display:none;}
+    #jjjResetBtn{display:none;}
+
+    #SmallScreenSizeOnly{display:flex;}
+}
+
+
 
 
 
