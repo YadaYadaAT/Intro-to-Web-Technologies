@@ -1471,42 +1471,45 @@ z-index:100;
 display:flex;
 justify-content: center;
 width: 100%;
-height:50em;
+height:75%;
 align-self: flex-end;
 perspective: 50em;
 perspective-origin: 50% 100%;
 position:absolute;
-overflow: hidden;
+
 }
 
 .jjjjcardItem{
- height:10em;
- width:8em;
+ aspect-ratio: 1;
+ width:50% ;
  background-color:white;
  
 }
 
 
 .jjjjcardHolder{
-    display:grid;
-   
+        display:grid;
+  
+      
+
+
     grid-template-columns:repeat(6,1fr);
-
+   
+    align-items: center;
+    justify-items: center;
+    align-content: space-around;
     justify-content: space-around;
-
-    align-content:space-around;
-
     background-color:black;
     border:2em solid orange;
     transform-origin:50% 100%;
-    transform:rotateX(15deg) translateZ(2.3em);
+    transform:rotateX(5deg) translateZ(4.3em);
    height:100%;
    width:86%;
    transform-style: preserve-3d;
  
     color:white;
     position:relative;
-    bottom:-1em;
+    bottom:0;
 }
 
 .jjjjcardHolder:hover{

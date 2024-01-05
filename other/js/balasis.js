@@ -1176,4 +1176,82 @@ alert(releaseHide.length);
 
 
 
-}*/
+}
+
+
+
+
+
+
+function go(){
+var radar="positive";
+
+for (var h=0;h<boxess.length;h++){
+if (boxess[h].children[countdownFinal].style.backgroundColor=="black"){
+  var radar="negative";
+}
+
+
+
+}
+
+
+
+if (radar=="negative"){
+  alert('fill the squares with colors to continue');  
+}else if ((countdownFinal>0) && (radar="positive")){
+for (var ha=0;ha<boxess.length;ha++){
+if (boxess[ha].children[countdownFinal].style.backgroundColor==boxess[ha].children[0].style.backgroundColor){
+  boxess[ha].children[countdownFinal].innerHTML="<img src='images/crown.png'>";
+
+}
+}
+
+
+
+countdownFinal=countdownFinal-1;
+begone=countdownFinal+1;
+document.getElementsByClassName("velos")[0].children[begone].innerHTML="";
+document.getElementsByClassName("velos")[0].children[countdownFinal].innerHTML="<img src='images/bugshand.png'>";
+
+  for (var q=0;q<boxess.length;q++){
+
+  var divs=boxess[q].children;
+   for (var s=0;s<divs.length;s++){
+
+    if(s==countdownFinal){
+
+      divs[s].style.pointerEvents="auto";
+       divs[s].style.boxShadow="0px 0px 15px white";
+    }else{
+      divs[s].style.pointerEvents="none";
+      divs[s].style.boxShadow="inherit";
+    }
+
+  }
+}
+}
+
+
+return countdownFinal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
