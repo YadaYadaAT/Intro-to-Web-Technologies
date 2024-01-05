@@ -1497,7 +1497,8 @@ z-index:100;
  
    width:80%;
    overflow: hidden;
-    
+    font-size:1.5em;
+
 
 }
 
@@ -1510,7 +1511,8 @@ z-index:100;
     cursor:pointer;
     height:100%;
     background-color:@colorLightGreen;
-    color:@colorSand;
+    color:white;
+    font-size:1.2em;
 }
 .jjjRotateMenuButtons:hover{
     background-color:@colorLightGreen;
@@ -1524,7 +1526,7 @@ z-index:100;
 #jjjBookEnviroment{
     width:100%;
     height:fit-content;
-    min-height:20em;
+    min-height:26em;
     background-color:@colorCreme;
     display:flex;
     justify-content: center;
@@ -1539,7 +1541,7 @@ z-index:100;
 
 #jjjBookWrapper{
     position:absolute;
-    bottom:7em;
+    bottom:8.7em;
     margin-left:auto;
     margin-right:auto;
     left:0;
@@ -1592,7 +1594,7 @@ z-index:100;
     
     z-index:4;
     
-    font-size:15pt;
+    font-size:19pt;
     perspective: none;
     width:20em;
    
@@ -1664,7 +1666,9 @@ align-items: center;
 #jjjBehaviorBody br{
     display:none;
 }
-
+#jjjBehaviorMain br{
+    display:initial;
+}
 #jjjjDescription{
     width:100%;
     text-align:justify;
@@ -1726,8 +1730,20 @@ align-items: center;
 
 
 
-
-
+#jjjClickOnTheBook{
+   
+    opacity:0.7;
+    position:absolute;
+    right:-1.5em;
+    display:flex;
+    align-self:flex-end;
+    font-size:1em;
+    color:white;
+   width:6em;
+   text-align:left;
+   z-index:100;
+   top:-6em;
+}
 
 
 
@@ -2105,7 +2121,7 @@ border-bottom-right-radius:0px 0px;
   height:100%;
   width:100%;
   flex-direction: column;
-  margin-top:10em;
+  margin-top:13em;
   box-shadow:0px -10px solid rgb(83,16,59);;
  
 }
@@ -2159,7 +2175,11 @@ border-bottom-right-radius:0px 0px;
     text-align:center;
     padding-top:1em;
 }
-
+#jjjToBeContinued{
+    position:absolute;
+    bottom:-8.5em;
+    right:-10.5em;
+}
 
 .jjjClassForThePages{
     height:100%;
@@ -2167,9 +2187,9 @@ border-bottom-right-radius:0px 0px;
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-bottom:2em
+    padding-bottom:2em;
 }
-.jjjClassForThePages p{font-size:12pt;font-family:@fontSizeMainText;font-size:@fontSizeMainText; padding-left:1em;padding-right:1em ;text-align: justify;text-indent: 2em;}
+.jjjClassForThePages p{font-size:0.85em;font-family:@fontSizeMainText; padding-left:1em;padding-right:1em ;text-align: justify;text-indent: 2em;}
 .jjjClassForThePages h6{
     width:100%;
     font-family:@fontFamilyTitle;

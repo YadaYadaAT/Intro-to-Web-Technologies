@@ -1137,35 +1137,37 @@ function jjNextIt(){
            
         }
 
-      
+       
+        
 
-
-        function  jjjPullListener(){
+        let jjjBookWrapper = document.getElementById('jjjBehflipper');
+        
+        function  jjjPullListener(e){
 
        
             if(jjjAllowPull){
        
         
         jjjBookWrapper.addEventListener('mousedown', function (e) {
-
+            e.preventDefault();
            jjjOffsetX, jjjOffsetY, jjjIsDragging = false;
 
-            let jjjBookWrapper = document.getElementById('jjjBookWrapper');
+           
+         
 
-
-            // Prevent unwanted browser behavior
-            e.preventDefault();
+           
+           
         
-            // Save the initial mouse position relative to the div
-            jjjOffsetX = e.clientX - jjjBookWrapper.getBoundingClientRect().left;
-            jjjOffsetY = e.clientY - jjjBookWrapper.getBoundingClientRect().top;
-        
-            // Change the appearance while dragging
-            jjjBookWrapper.style.opacity = '0.5';
+     
+           jjjOffsetX = (e.clientX - document.getElementsByClassName('jjjBehbookBack')[0].getBoundingClientRect().left)+240;
+           jjjOffsetY =(e.clientY - document.getElementsByClassName('jjjBehbookBack')[0].getBoundingClientRect().top)+240;
+          
+         
+           
         
             jjjIsDragging = true;
-            console.log(jjjIsDragging);
-            // Add event listeners to the document for better responsiveness
+           
+           
             document.addEventListener('mousemove', jjjhandleMouseMove);
             document.addEventListener('mouseup', jjjhandleMouseUp);
         }) ;
@@ -1175,11 +1177,14 @@ function jjNextIt(){
         
         function jjjhandleMouseMove(e) {
             if(jjjAllowPull){
-                console.log(jjjAllowPull);
+                
             if (jjjIsDragging) {
-                // Update the position of the div based on the mouse movement
-                jjjBookWrapper.style.left = e.clientX - jjjOffsetX + 'px';
+                
+               
+             
+             let jjjjseeMe=   jjjBookWrapper.style.left = e.clientX - jjjOffsetX + 'px';
                 jjjBookWrapper.style.top = e.clientY - jjjOffsetY + 'px';
+             
             }
 
 
@@ -1248,16 +1253,17 @@ function jjNextIt(){
                                                      }
             
             
-            
+            let jjjjSafetyLoadPage=false;
                 
                function jjjjrotateIt(asksWho){
                
+                
             
             
             
-            
-                  if (!asksWho.classList.contains("jjjBehClassRotateOrNot")){
-            
+                  if (!asksWho.classList.contains("jjjBehClassRotateOrNot") && jjjjSafetyLoadPage==false){
+                    jjjjSafetyLoadPage=true;
+                    setTimeout(function(){ jjjjSafetyLoadPage=false; },1000);
             
                     for (let i = 0; i < jjjBehDaPages.length; i++) {
                         jjjBehDaPages[i].style.zIndex = 25;
@@ -1288,10 +1294,12 @@ function jjNextIt(){
             
                       }
             
-            
+                      document.getElementById('jjjClickOnTheBook').style.display="none";
                      
                   }else{
-            
+                    if (jjjjSafetyLoadPage==false){
+                    jjjjSafetyLoadPage=true;
+                    setTimeout(function(){ jjjjSafetyLoadPage=false; },1000);
                     for (let i = 0; i < jjjBehDaPages.length; i++) {
                         jjjBehDaPages[i].style.zIndex = 25;
                       }
@@ -1307,7 +1315,7 @@ function jjNextIt(){
                       asksWho.classList.remove("jjjBehClassRotateOrNot");           
             
                   }             
-               
+                      }
                 }
             
             
@@ -1350,14 +1358,19 @@ function jjNextIt(){
                 jjjC_rotation = "rotateY(160deg) rotateX(-70deg) translateZ(4.5em)";
                 jjjC_applyRotation(jjjC_rotation);
             }
-        
+        //I have swapped front and read names in html..be aware..the read is the front and front is the read..
             function jjjC_jjjFrontBtn() {
                 jjjC_rotation = "rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
                 jjjC_applyRotation(jjjC_rotation);
+
+                if (!document.getElementById('jjjCleanTheMessFirst').parentNode.classList.contains('jjjBehClassRotateOrNot')){
+                setTimeout(function(){ document.getElementById('jjjCleanTheMessFirst').click();},2000);
+            }
             }
             function jjjC_jjjReadBtn() {
                 jjjC_rotation = "rotateY(15deg) rotateX(-80deg) translateZ(4.5em)";
                 jjjC_applyRotation(jjjC_rotation);
+                
             }
         
           
@@ -1381,9 +1394,13 @@ function jjNextIt(){
         });
 
         function jjjBehExtent(){
+         
             document.getElementsByClassName('jjjjarrowTopBtnn')[0].style.display="none";
             document.getElementsByClassName('jjjjarrowOff')[0].style.display="flex";
-           
+            document.getElementById('jjjClickOnTheBook').style.display="flex";
+            jjjAllowPull=true;
+            jjjPullListener();
+
             document.getElementById('jjjBehaviorMain').scrollIntoView({ behavior: 'smooth' });
             document.getElementById('jjjHandlerMenu').style.display="flex";
             document.getElementById('jjjBookEnviromentTableEffect').classList.add('jjjBookEnviromentTableEffectAdd');
@@ -1407,8 +1424,11 @@ function jjNextIt(){
                
             },2600);
 
-       
-          
+         
+            setTimeout(function(){
+             
+               
+            },5000);
         }   
 
 
