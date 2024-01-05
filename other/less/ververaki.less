@@ -1,13 +1,59 @@
 //navbar and footer corrections for this page 
 
+main{
+  width: 100%;
+  height: 100%;
+  background-color: @colorCreme;
+}
+
 #menu_item_gallery{
     color: black;
 }
 
 footer{
     height:100%;
-    position: relative;
+    // position: relative;
     bottom:0;
+}
+
+.footer_wrapper_about{
+  background-color: @colorLightGreen;
+  font-family: 'Montserrat';
+  position: relative;
+  font-size: 15px;
+  bottom: 0;
+  height: 15em;
+  width: 100%;
+  padding-left: 15%;
+}
+
+#block-main-menu-about a:link{
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  opacity: 0.7;
+}
+#block-main-menu-about a:hover{
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 1;
+}
+
+#block-main-menu-about a:visited{
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.drop-option-about{
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 
@@ -17,21 +63,23 @@ footer{
     width: 100%;
     background-color: @colorFlowerOrange;
     position: relative;
-    top: 15em;
+    top: 20em;
     text-align: center;
 }
 h2{
     position: relative;
-    top: 10.5em;
+    top: 15.5em;
     text-align: center;
 }
 .images-wrapper{
     position: relative;
+    height: 100%;
+    width: 100%;
     top: 14em;
-    display: flex;
-    flex-direction: column;
-    row-gap: 5em;
-    flex-wrap:wrap;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+    row-gap: 2em;
 }
 
 //flip cards for each of the team members
@@ -102,7 +150,9 @@ h2{
     text-underline-offset: 3px;
   }
 
-
+  #iro{
+    margin-top: 15em;
+  }
   #giorgos{
     margin-bottom: 20em;
   }
@@ -111,7 +161,15 @@ h2{
 
 .images-wrapper #john, #iro, #anastasia, #giorgos{
     padding: 2em;
+    width: fit-content;
+    height: fit-content;
 }
+
+#john{
+  margin-top: 15em;
+}
+
+
 
 //=======================END of your CSS code==================//
 @import "master.less";
