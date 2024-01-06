@@ -137,7 +137,17 @@ if (jRouletaExclude.length<=8){
     
     //I gate the date here
     let jTimeNow=new Date();
-    let jDateNoww=jTimeNow.getDate()+":"+jTimeNow.getMonth()+":"+jTimeNow.getFullYear();
+
+
+    let jjjFixedday = jTimeNow.getDate().toString().padStart(2, '0');
+    let jjjFixedmonth = (jTimeNow.getMonth() + 1).toString().padStart(2, '0');
+    let jjjFixedyear = jTimeNow.getFullYear();
+    
+    let jDateNoww = jjjFixedday + "/" + jjjFixedmonth + "/" + jjjFixedyear;
+
+
+
+    
 
     let jAddTheZero=jTimeNow.getHours()<10?'0'+jTimeNow.getHours():jTimeNow.getHours();
 
