@@ -1,7 +1,7 @@
-//=======================Begin of your CSS code================//
-
+<!DOCTYPE html>
+<html>
 <head>
-<meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .accordion {
   background-color: #ffeeee;
@@ -37,7 +37,5 @@
 </style>
 </head>
 <body>
-
-
-//=======================END of your CSS code==================//
-@import "master.less";
+</body>
+</html>

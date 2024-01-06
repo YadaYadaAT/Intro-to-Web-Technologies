@@ -1,5 +1,3 @@
-//=======================Begin of your CSS code================//
-
 <head>
 <meta>
 <style>
@@ -37,7 +35,3 @@
 </style>
 </head>
 <body>
-
-
-//=======================END of your CSS code==================//
-@import "master.less";
