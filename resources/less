@@ -1,6 +1,7 @@
 <style>
     h2 {
-      background-color:orange;
+      background-color:#c9e4cacolorFlowerOrange: rgb(237, 185, 67);
+ ;
       color: white;
       padding: 10px;
       border-radius: 5px;
