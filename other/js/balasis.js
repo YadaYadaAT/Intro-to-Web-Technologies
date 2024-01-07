@@ -1609,6 +1609,7 @@ let jjjjgameEnded=false;
         jjjjQuiztimer=0;
         jjjjQuiztimerMinutes=0;
         jjjjQuiztimerShow=0;
+        jjjjgameEnded=false;
 
         document.getElementById('jjjjCardTimerText').innerText=jjjjQuiztimerShow;
         jjjjGameSetUp();

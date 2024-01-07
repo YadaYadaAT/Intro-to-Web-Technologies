@@ -1569,33 +1569,42 @@ background-size:100% 100%;
    border-radius: 10px 10px 10px 10px;
    padding:0.5em;
     cursor:pointer;
+    margin-top:1em;
 }
 #jjjResetMiniGameTable:hover{
     opacity:0.9;
 }
 #jjjjSTimeTable{
     text-align: center;
+   /* column-count: 2; 
+    column-gap: 20px;*/
+    
 }
 #jjjjTableFrame h1,h2,h3,h4,h5,h6{
-    color:white;
+    color:@colorFlowerOrange;
   text-align: center;
+  margin:1em;
 }
 #jjjjTableFrame{
     top:50%;
     left:50%;
-
+   
     display:none;
     justify-content: center;
     align-items: center;
     position:absolute;
     flex-direction: column;
-    max-height:90vh;
+   
+   
     transform: rotateX(5deg) translateZ(4.3em) translateX(-50%) translateY(-50%);
     color:white;
-    font-size:3em;
+    font-size:2.5em;
 }
 
-
+#jjjjSTimeTable p{
+margin-bottom:0;
+margin-top:0.3em;
+}
 
 .jjjjcardHolder{
     user-drag: none; 
@@ -1843,6 +1852,37 @@ width:100%;
         margin-bottom:1em;
         
     }
+    #jjjjCardTimer{
+        top:0em;
+    
+        height:8em;
+       
+        width:20em;
+        border:0.5em solid rgb(77, 47, 12);
+     
+    }
+    
+    
+    #jjjjCardTimerText{
+    color:white;
+    font-size:5em;
+    
+    
+    }
+    
+    
+    #jjjjCardTimer::before{
+        content:"";
+    position:absolute;
+    top:-3em;
+    bottom:-5em;
+    left:-4em;
+    right:-2em;
+    
+    }
+
+
+
 
 
 }
@@ -1855,7 +1895,35 @@ width:100%;
         margin-right:2em;
         margin-bottom:2em;
     }
+      
+#jjjjCardTimer{
+    top:10em;
 
+    height:10em;
+   
+    width:20em;
+    border:0.5em solid rgb(77, 47, 12);
+ 
+}
+
+
+#jjjjCardTimerText{
+color:white;
+font-size:5em;
+
+
+}
+
+
+#jjjjCardTimer::before{
+    content:"";
+position:absolute;
+top:-3em;
+bottom:-5em;
+left:-4em;
+right:-2em;
+
+}
 
 }
 
@@ -1879,7 +1947,10 @@ width:100%;
         margin-top:21em;
 
     }
+    #jjjjTableFrame{
+        font-size:2.5em;
 
+    }
     
 #jjjjCardTimer{
     top:-8em;
@@ -1925,7 +1996,7 @@ right:-2em;
         margin-top:21em;
 
     }
-
+  
     #jjjjCardTimer{
         top:-10em;
     
@@ -1994,9 +2065,11 @@ right:-2em;
     }
     .jjjPerspectIt{
         margin-top:21em;
-
+        font-size:10px;
     }
-
+    #jjjjTableFrame{
+        font-size:1.7em;
+    }
     #jjjjCardTimer{
         top:-8em;
         position:absolute;
