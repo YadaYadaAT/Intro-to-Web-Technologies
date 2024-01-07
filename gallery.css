@@ -15,8 +15,8 @@ body {
   max-width: 600px;
   margin: auto;
   text-align: center;
+  margin: 100px auto 20px;
  
-  top: 0;
 }
 
 #gallery img {
@@ -73,9 +73,13 @@ margin: 0 10px 10px;
 .read-more {
   display: block;
   margin-top: 8px;
-  color: #0066cc; 
+  color: #f8f8f8; 
   text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 .read-more:hover {
   text-decoration: underline;
+  opacity: 1;
+  color: #ffffff;
 }
