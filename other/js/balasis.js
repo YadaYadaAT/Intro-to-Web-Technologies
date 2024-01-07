@@ -1180,7 +1180,7 @@ let jjjjgameEnded=false;
            
             jjjjSTopScores.forEach((jjjjSScore, index) => {
                 let jjjjSScoreElement = document.createElement('p');
-                jjjjSScoreElement.textContent = `${index + 1}. ${jjjjSScore} seconds`;
+                jjjjSScoreElement.textContent = `${jjjjSScore} seconds`;
                 jjjjSTimeTable.appendChild(jjjjSScoreElement);
             });
         }
@@ -1599,7 +1599,7 @@ let jjjjgameEnded=false;
     
            
             jjjjcardItems[i].removeAttribute('style');
-            jjjjcardItems[i].querySelector('jjjcardItemFront').removeAttribute('style');
+            jjjjcardItems[i].querySelector('.jjjcardItemFront').removeAttribute('style');
             while (jjjjcardItems[i].classList.length > 1) {
                 
                 jjjjcardItems[i].classList.remove(jjjjcardItems[i].classList.item(1));
