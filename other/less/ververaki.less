@@ -31,7 +31,8 @@ footer{
   color: black;
   background-color: transparent;
   text-decoration: none;
-  opacity: 0.7;
+  opacity: 1;
+  font-weight: bold;
 }
 #block-main-menu-about a:hover{
   color: black;
@@ -45,30 +46,43 @@ footer{
   color: black;
   background-color: transparent;
   text-decoration: none;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .drop-option-about{
   color: black;
   background-color: transparent;
   text-decoration: none;
-  opacity: 0.7;
+  opacity: 1;
   cursor: pointer;
+}
+
+//bar in between nav and content
+
+.bar-between{
+  border-bottom: 6px solid @colorDarkGreen;
+  border-radius: 8%;
+  width: 50%;
+  position: absolute;
+  bottom: -10em;
 }
 
 
 //about page - yellow block (short introduction of the team)
 
 .yada-wrapper{
+    
     width: 100%;
-    background-color: @colorFlowerOrange;
+    background-color: @colorLightGreen;
     position: relative;
-    top: 20em;
+    margin-top: 25em;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 h2{
     position: relative;
-    top: 15.5em;
+    margin-top: 2em;
     text-align: center;
 }
 .images-wrapper{
