@@ -76,23 +76,23 @@ body{
     margin-left: auto;
     left:0;
     right:0;
-    width: fit-content;
+    // width: fit-content;
 }
 nav{
-    position: relative;
+    // position: absolute;
+    // top: 2em;
     display: block;
-    // font-weight: bold;
+    font-weight: bold;
     font-family: @fontFamilyHeader;
-    width: 1200px;
+    max-width: 1200px;
+    width: 80%;
 }
 .flex-container-navbar{
     display: flex;
     justify-content: space-around;
     width: 100%;
 }
-.flex-container div{
-    
-}
+
 
 
 #block-main-menu a:link{
@@ -108,20 +108,81 @@ nav{
     text-underline-offset: 3px;
     opacity: 1;
 }
+#block-main-menu a:visited{
+    color: @colorCreme;
+    background-color: transparent;
+    text-decoration: none;
+    opacity: 0.7;
+}
 #menu_item_gallery{
+    font-family: 'Montserrat';
     padding-top: 60px;
 }
-#menu_item_resources{
-    padding-top: 60px;
+#menu_item_home{
+    font-family: 'Montserrat';
+    position: absolute;
 }
-#menu_item_faq{
+.dropdown{
+    font-family: 'Montserrat';
+    position: relative;
     padding-top: 60px;
+    margin: auto;
 }
 #menu_item_about{
+    font-family: 'Montserrat';
     padding-top: 60px;
 }
 #menu_item_home img{
     top: 0;
+}
+
+
+//following is for the dropdown menus in the navbar
+
+.drop-option{
+    color: @colorCreme;
+    background-color: transparent;
+    text-decoration: none;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+}
+
+.dropdown-cont{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-cont ul{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+.dropdown-cont li{
+    padding: 12px 12px;
+    display: block;
+    background-color: @colorLightGreen;
+}
+.dropdown-cont li:hover{
+    background-color: @colorDarkGreen;
+}
+#resourceList a:link{
+    color:@colorCreme;
+    font-weight: bold;
+}
+#otherList a:link{
+    color:@colorCreme;
+    font-weight: bold;
+}
+.dropdown:hover .dropdown-cont{
+    display: block;
 }
 
 //Landing Image
@@ -131,6 +192,37 @@ nav{
     height: 100%;
     object-fit: fill;
     position: relative;
+}
+
+//Navbar for phone:
+//styling of burger menu
+#burger-menu {
+    width: 50px;
+    height: 50px;
+    display: block;
+    border: none;
+    padding: 0px;
+    margin: 20px;
+    background: linear-gradient(
+      to bottom, 
+      @colorFlowerOrange, @colorFlowerOrange 20%, 
+      transparent 20%, transparent 40%, 
+      @colorFlowerOrange 40%, @colorFlowerOrange 60%, 
+      transparent 60%, transparent 80%, 
+      @colorFlowerOrange 80%, @colorFlowerOrange 100%
+    );
+}
+
+#burger-menu #side-menu-phone {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 100%;
+    height: 100%;
+    background-color: #3D0E61;
+    padding: 0px 10px;
+    box-sizing: border-box;
 }
 
 // Footer
@@ -186,7 +278,7 @@ nav{
     padding-top: 0.5em;
 }
 //'toggle dark mode' dropdown - currently not functional
-.dropdown {
+.dropdownGear {
     position: absolute;
     display: inline-block;
 }  
@@ -204,7 +296,7 @@ nav{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }  
-.dropdown:hover .dropdown-content {
+.dropdownGear:hover .dropdown-content {
     display: block;
     height: 2.2em;
 }
@@ -223,6 +315,7 @@ nav{
 .columnTwo a:visited, .meetTheTeam a:visited, .columnFour a:visited{
     color: black;
     text-decoration: none;
+    
 }
 .columnTwo a:hover, .meetTheTeam a:hover, .columnFour a:hover{
     color: rgb(124, 126, 123); 
