@@ -1591,7 +1591,7 @@ let jjjjgameEnded=false;
         while (id--) {
             window.clearTimeout(id);
         }
-    
+        
        
         for (let i = 0; i < jjjjcardItems.length; i++) {
           
@@ -1602,6 +1602,7 @@ let jjjjgameEnded=false;
            
             jjjjcardItems[i].removeAttribute('style');
         }
+        jjjjtimerIsOn=false;
         jjjjQuiztimer=0;
         jjjjQuiztimerMinutes=0;
         jjjjQuiztimerShow=0;
