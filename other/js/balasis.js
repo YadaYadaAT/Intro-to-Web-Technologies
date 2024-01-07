@@ -1595,17 +1595,21 @@ let jjjjgameEnded=false;
        
         for (let i = 0; i < jjjjcardItems.length; i++) {
           
-            while (jjjjcardItems[i].classList.length > 1) {
-                jjjjcardItems[i].classList.remove(jjjjcardItems[i].classList.item(1));
-            }
+            
     
            
             jjjjcardItems[i].removeAttribute('style');
+            jjjjcardItems[i].querySelector('jjjcardItemFront').removeAttribute('style');
+            while (jjjjcardItems[i].classList.length > 1) {
+                
+                jjjjcardItems[i].classList.remove(jjjjcardItems[i].classList.item(1));
+            }
         }
         jjjjtimerIsOn=false;
         jjjjQuiztimer=0;
         jjjjQuiztimerMinutes=0;
         jjjjQuiztimerShow=0;
+
         document.getElementById('jjjjCardTimerText').innerText=jjjjQuiztimerShow;
         jjjjGameSetUp();
     }
