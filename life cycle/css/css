@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html 
+<head>
+  <style>
+    body {
+      margin: 60;
+      padding: 100;
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+    }
+
+    .container {
+      width: 100%;
+      padding: 0px;
+      background-color: orange; 
+      border-radius: 5px;
+    
+      color: white; 
+      text-align: center; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Life Cycle</h1>
+  </div>
+</body>
+</html>
+
+// εχω μπερδευτει με το λεσσ το εκανα εδω μια να δουμε πως φαινεται και θα το συνεχισω
