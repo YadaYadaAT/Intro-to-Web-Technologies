@@ -2,12 +2,87 @@
 <html>
 <head>
   <link rel="stylesheet/less" type="text/css" href="../other/less/kouridaki.less">
+  <link rel="stylesheet/less" type="text/css" href="../other/less/ververaki.less">
   <script type="text/javascript" src="../other/js/less.js"></script>
   
 
 </head>
-<body>
-
+<body id="bodyFAQ">
+  <div id="navbar_wrapper">
+  
+    <button class="hamburger">
+      <i class="menuIcon fa-solid fa-bars fa-2xl"></i>
+      <i class="closeIcon fa-solid fa-xmark fa-xl"></i>
+    </button>
+    <ul class="menu">
+      <li><a class="menuItem" href="#">Gallery</a></li>
+      <li>
+        <div class="menuItem" id="info" onclick="dropInfo();">Info</div>
+        <div id="info-content">
+          <ul class="infoList">
+            <li><a href="/html/species.html">Species</a></li>
+            <li><a href="/html/behavior.html">Behavior</a></li>
+            <li><a href="/html/lifeCycle.html">Life Cycle</a></li>
+            <li><a href="/html/habitats.html">Habitats</a></li>
+            <li><a href="/html/care.html">Care</a></li>
+          </ul>
+        </div>
+      </li>
+      
+      <li>
+        <div class="menuItem" id="resource" onclick="dropResources();">Resources</div>
+        <div id="resources-content">
+          <ul class="resourcesList">
+            <li><a href="#">Our Sources</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a class="menuItem" href="/html/aboutPage.html">About us</a></li>
+    </ul>
+  
+  
+    <nav id="block-main-menu-about">
+      <div class="flex-container-navbar">
+  
+        <div id="menu_item_gallery">
+          <a href="/html/gallery.html" target="_blank">GALLERY</a>
+        </div>
+        <div class="dropdown">
+          <div class="drop-option-about">INFO</div>
+          <div class="dropdown-cont">
+            <ul id="otherList">
+              <li><a href="/html/species.html">Species</a></li>
+              <li><a href="/html/behavior.html">Behavior</a></li>
+              <li><a href="/html/lifeCycle.html">Life Cycle</a></li>
+              <li><a href="/html/habitats.html">Habitats</a></li>
+              <li><a href="/html/care.html">Care</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="menu_item_home">
+          <a href="/index.html">
+            <img src="../images/Ververaki/logoNoBGHELP.png">
+          </a>
+        </div>
+        <div class="dropdown">
+          <div class="drop-option-about">RESOURCES</div>
+          <div class="dropdown-cont">
+            <ul id="resourceList">
+              <li><a href="/resources" target="_blank" id="sourcesOption">Our Sources</a></li>
+              <li><a href="/faq" target="_blank" id="faqOption">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="menu_item_about">
+          <a href="/html/aboutPage.html" target="_blank">ABOUT US</a>
+        </div>
+  
+      </div>
+  
+    </nav>
+  </div>
+<div class="faq-content">
 <h2 class="orange-text">Below are 10 commonly asked questions about praying mantises. </h2>
 
 <button class="accordion">1. What do praying mantises eat?</button>
@@ -71,7 +146,8 @@
   <p class="orange-paragraph">Praying mantises, in general, are not considered endangered. However, like many insects, they may face threats from habitat loss, pesticide use, and other environmental changes. Certain species may be more vulnerable than others.
  </p>
 </div>
-
+</div>
+<script src="../other/js/ververaki.js"></script>
 <script src="../other/js/kouridaki.js"></script>
 </body>
 </html>

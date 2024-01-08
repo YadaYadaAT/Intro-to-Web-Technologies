@@ -187,6 +187,14 @@ nav{
     color:@colorCreme;
     font-weight: bold;
 }
+#resourceList a:visited{
+    color:@colorCreme;
+    font-weight: bold;
+}
+#otherList a:visited{
+    color:@colorCreme;
+    font-weight: bold;
+}
 .dropdown:hover .dropdown-cont{
     display: block;
 }
@@ -204,8 +212,12 @@ nav{
 //styling of burger menu
 
 
-.infoList li{
+.infoList li, .resourcesList li{
     margin: 10px 0;
+}
+
+.infoList, .resourcesList{
+    list-style-type: none;
 }
 #info-content, #resources-content{
     display: none;
@@ -213,7 +225,7 @@ nav{
 }
 
 #info-content a:link{
-    color: @colorSand;
+    color: white;
     text-decoration: none;
 }
 
@@ -227,7 +239,7 @@ nav{
 }
 
 #resources-content a:link{
-    color: @colorSand;
+    color: white;
     text-decoration: none;
 }
 
@@ -236,13 +248,13 @@ nav{
 }
 
 #resources-content a:visited{
-    color: white;
+    color: solid white;
     text-decoration: none;
 }
 
 .hamburger{
     display:none;
-    position: absolute;
+    position: fixed;
     z-index: 100;
     top: 1rem;
     left: 1rem;
@@ -261,7 +273,7 @@ nav{
     display: block;
     margin: 2rem 4rem;
     font-size: 1.8rem;
-    color: @colorSand;
+    color: white;
     text-decoration: none;
     cursor: pointer;
   }
@@ -284,7 +296,7 @@ nav{
     z-index: 99;
     background: @colorFlowerOrange;
     opacity: 0.7;
-    color: @colorSand;
+    color: white;
     list-style: none;
     padding-top: 4rem;
     margin-top: -2em;
@@ -397,11 +409,21 @@ nav{
     padding-right: 5px;
 }
 
+//
+
+.faq-content{
+   display: block;
+   position:relative;
+   top: 15em;
+}
 
 // responsiveness
 
 @media screen and (max-width: 65em) {
 
+    #block-main-menu-about{
+        display: none;
+    }
 
     #block-main-menu{
         display: none;
