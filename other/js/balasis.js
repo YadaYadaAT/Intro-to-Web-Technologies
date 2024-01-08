@@ -1087,6 +1087,433 @@ function jjNextIt(){
 
 })})();
 
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+
+
+
+
+
+(function() {
+
+
+    document.addEventListener("DOMContentLoaded",function(){
+   
+   
+   
+    if (document.getElementById('jjjBehaviorBody')!==null){
+   
+
+
+   
+        const jjjGPage1=document.getElementById('jjjGPage1');
+        const jjjBehDaPages=document.getElementsByClassName('jjjBehRotateMePlease');
+        const jjjBehbookTop=document.getElementsByClassName('jjjBehbookTop')[0];
+        const jjjBehcardBottom=document.getElementsByClassName('jjjBehcardBottom')[0];
+
+
+        //const jjjPullAllow=document.getElementById('jjjPullAllow');
+        const jjjRotate=document.getElementById('jjjRotate');
+      
+        let  jjjAllowPull=false;
+        
+        let jjjOffsetX, jjjOffsetY, jjjIsDragging ;
+
+     /*   jjjPullAllow.addEventListener('click',function(){
+            jjjAunlockPull();
+        
+        });*/
+       
+       
+
+
+       function jjjAunlockPull(){
+           
+            jjjAllowPull=true;
+            jjjPullListener();
+           
+        }
+
+       
+        
+
+        let jjjBookWrapper = document.getElementById('jjjBehflipper');
+        
+        function  jjjPullListener(e){
+
+       
+            if(jjjAllowPull){
+       
+        
+        jjjBookWrapper.addEventListener('mousedown', function (e) {
+            e.preventDefault();
+           jjjOffsetX, jjjOffsetY, jjjIsDragging = false;
+
+           
+         
+
+           
+           
+        
+     
+           jjjOffsetX = (e.clientX - document.getElementsByClassName('jjjBehbookBack')[0].getBoundingClientRect().left)+240;
+           jjjOffsetY =(e.clientY - document.getElementsByClassName('jjjBehbookBack')[0].getBoundingClientRect().top)+240;
+          
+         
+           
+        
+            jjjIsDragging = true;
+           
+           
+            document.addEventListener('mousemove', jjjhandleMouseMove);
+            document.addEventListener('mouseup', jjjhandleMouseUp);
+        }) ;
+        
+    }
+       
+        
+        function jjjhandleMouseMove(e) {
+            if(jjjAllowPull){
+                
+            if (jjjIsDragging) {
+                
+               
+             
+             let jjjjseeMe=   jjjBookWrapper.style.left = e.clientX - jjjOffsetX + 'px';
+                jjjBookWrapper.style.top = e.clientY - jjjOffsetY + 'px';
+             
+            }
+
+
+        }
+        }
+        
+        function jjjhandleMouseUp() {
+            if(jjjAllowPull){
+
+            // Reset appearance and dragging state
+            jjjBookWrapper.style.opacity = '1';
+            jjjIsDragging = false;
+        
+            // Remove the event listeners after the drag operation is complete
+            document.removeEventListener('mousemove', jjjhandleMouseMove);
+            document.removeEventListener('mouseup', jjjhandleMouseUp);
+        }
+
+
+    }
+
+
+        }
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+     
+            
+            
+            
+            
+            
+                for (let i=0;i<jjjBehDaPages.length;i++){
+              jjjBehDaPages[i].addEventListener('click',function(){
+                 let WhoAsks=this;
+            
+                  jjjjrotateIt(WhoAsks);
+                                      });
+            
+                                                     }
+            
+            
+            let jjjjSafetyLoadPage=false;
+                
+               function jjjjrotateIt(asksWho){
+               
+                
+            
+            
+            
+                  if (!asksWho.classList.contains("jjjBehClassRotateOrNot") && jjjjSafetyLoadPage==false){
+                    jjjjSafetyLoadPage=true;
+                    setTimeout(function(){ jjjjSafetyLoadPage=false; },1000);
+            
+                    for (let i = 0; i < jjjBehDaPages.length; i++) {
+                        jjjBehDaPages[i].style.zIndex = 25;
+                      }
+                      if(  asksWho.previousElementSibling !== null ){
+                      asksWho.previousElementSibling.style.zIndex = 28;
+                    }
+            
+                    if(asksWho.nextElementSibling !== null ){
+                      asksWho.nextElementSibling.style.zIndex = 28;
+                    }
+                     
+                      asksWho.style.zIndex = 30;
+                     
+                    asksWho.classList.add("jjjBehClassRotateOrNot");
+            
+            
+            
+                    for (let i = 0; i < jjjBehDaPages.length; i++) {
+                      if (jjjBehDaPages[i].classList.contains('jjjBehClassRotateOrNot') && jjjBehDaPages[i].id!=="jjjGPage1"){
+                        setTimeout(function(){
+                          jjjBehDaPages[i].querySelector('.jjjCleanTheMess').classList.add('jjjDisplayThemNot');
+                        },900);
+                        
+                      }else{
+                        jjjBehDaPages[i].querySelector('.jjjCleanTheMess').classList.remove('jjjDisplayThemNot');
+                      }            
+            
+                      }
+            
+                      document.getElementById('jjjClickOnTheBook').style.display="none";
+                     
+                  }else{
+                    if (jjjjSafetyLoadPage==false){
+                    jjjjSafetyLoadPage=true;
+                    setTimeout(function(){ jjjjSafetyLoadPage=false; },1000);
+                    for (let i = 0; i < jjjBehDaPages.length; i++) {
+                        jjjBehDaPages[i].style.zIndex = 25;
+                      }
+                      if(  asksWho.previousElementSibling !== null ){
+                      asksWho.previousElementSibling.style.zIndex = 28;
+                    }
+            
+                    if(asksWho.nextElementSibling !== null ){
+                      asksWho.nextElementSibling.style.zIndex = 28;
+                    }
+                     asksWho.style.zIndex = 30;
+                     asksWho.querySelector('.jjjCleanTheMess').classList.remove('jjjDisplayThemNot');
+                      asksWho.classList.remove("jjjBehClassRotateOrNot");           
+            
+                  }             
+                      }
+                }
+            
+            
+
+                jjjGPage1.addEventListener('click',()=>{
+              if (jjjGPage1.classList.contains('jjjBehClassRotateOrNot')){
+                jjjBehbookTop.style.borderTopColor="transparent";
+                jjjBehcardBottom.style.borderTopColor="transparent";
+              }else{
+                setTimeout(function(){
+                  jjjBehbookTop.style.borderTopColor="orange";
+                jjjBehcardBottom.style.borderTopColor="orange";
+            
+                },900)
+             
+              }
+            })
+
+
+
+
+
+
+            document.getElementById('jjjSideBtn').addEventListener('click',function (){ jjjC_jjjSideBtn()} );
+            document.getElementById('jjjBackBtn').addEventListener('click',function (){jjjC_jjjBackBtn()} );
+            document.getElementById('jjjFrontBtn').addEventListener('click', function (){ jjjC_jjjFrontBtn()});
+            document.getElementById('jjjResetBtn').addEventListener('click',function () {jjjC_jjjResetBtn()});
+            document.getElementById('jjjReadBtn').addEventListener('click',function () {jjjC_jjjReadBtn()});
+    
+    
+            const jjjC_book = document.getElementById('jjjBehflipper');
+            let jjjC_rotation = 0;
+        
+            function jjjC_jjjSideBtn() {
+                jjjC_rotation = "rotateY(70deg) rotateX(-65deg) translateZ(4.5em)";
+                jjjC_applyRotation(jjjC_rotation);
+            }
+        
+            function jjjC_jjjBackBtn() {
+                jjjC_rotation = "rotateY(160deg) rotateX(-70deg) translateZ(4.5em)";
+                jjjC_applyRotation(jjjC_rotation);
+            }
+        //I have swapped front and read names in html..be aware..the read is the front and front is the read..
+            function jjjC_jjjFrontBtn() {
+                jjjC_rotation = "rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
+                jjjC_applyRotation(jjjC_rotation);
+
+                if (!document.getElementById('jjjCleanTheMessFirst').parentNode.classList.contains('jjjBehClassRotateOrNot')){
+                setTimeout(function(){ document.getElementById('jjjCleanTheMessFirst').click();},2000);
+            }
+            }
+            function jjjC_jjjReadBtn() {
+                jjjC_rotation = "rotateY(15deg) rotateX(-80deg) translateZ(4.5em)";
+                jjjC_applyRotation(jjjC_rotation);
+                
+            }
+        
+          
+        
+
+
+
+
+
+            function jjjC_applyRotation(val) {
+                jjjC_book.style.transform = val;
+            }
+            
+        
+           
+        let jjjBookEnviroment=document.getElementById('jjjBookEnviroment');
+        let jjjGetMeToBookEnviroment=document.getElementById('jjjGetMeToBookEnviroment');
+        jjjGetMeToBookEnviroment.addEventListener('click',function(){
+            jjjBehExtent();
+
+        });
+
+        function jjjBehExtent(){
+           
+            document.getElementsByClassName('jjjjarrowTopBtnn')[0].classList.add('jjjjDisplayNotMeDude');
+            document.getElementsByClassName('jjjjarrowOff')[0].classList.add('jjjjDisplayMeDude');
+          
+            document.getElementById('jjjClickOnTheBook').style.display="flex";
+
+
+           
+            document.getElementById('jjjHandlerMenu').classList.add('jjjjDisplayMeDude');
+
+            document.getElementById('jjjBehaviorMain').scrollIntoView({ behavior: 'smooth' });
+           
+            document.getElementById('jjjBookEnviromentTableEffect').classList.add('jjjBookEnviromentTableEffectAdd');
+         
+            jjjC_book.style.transform ="rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
+           
+            document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.transform="rotateY(0deg) rotateX(0deg)";
+            document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.bottom="-16em";
+            document.getElementById('jjjWelcomeText').style.marginTop="18em";
+            setTimeout(function(){
+            let jjjRotateMenuButtons= document.getElementsByClassName('jjjRotateMenuButtons');
+            for (let i=0;i<jjjRotateMenuButtons.length;i++){
+                jjjRotateMenuButtons[i].classList.add('jjjRotateMenuButtonsExtent')
+            }
+        },1480); 
+
+
+
+            setTimeout(function(){
+                jjjC_book.style.transform ="rotateY(15deg) rotateX(-80deg) translateZ(4.5em) translateX(-9.5em)";
+               
+            },2600);
+
+         
+            setTimeout(function(){
+             
+               
+            },5000);
+        }   
+
+
+        function jjjC_jjjResetBtn() {
+
+
+           
+            document.getElementsByClassName('jjjjarrowOff')[0].classList.remove('jjjjDisplayMeDude');
+            
+           
+            document.getElementsByClassName('jjjjarrowTopBtnn')[0].classList.remove('jjjjDisplayNotMeDude');
+
+
+            jjjC_rotation = "rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
+            jjjC_applyRotation(jjjC_rotation);
+
+            setTimeout(function(){
+            jjjC_rotation = "rotateY(0deg) rotateX(0deg) translateZ(4.5em)";
+
+
+
+            for (let i = 0; i < jjjBehDaPages.length; i++) {
+                jjjBehDaPages[i].style.zIndex = 25;
+                jjjBehDaPages[i].classList.remove('jjjBehClassRotateOrNot');
+                setTimeout(function(){
+                    jjjBehbookTop.style.borderTopColor="rgb(237, 185, 67)";
+                  jjjBehcardBottom.style.borderTopColor="rgb(237, 185, 67)";
+              
+                  },900);
+            }
+
+
+
+
+
+            document.getElementById('jjjBookEnviromentTableEffect').classList.remove('jjjBookEnviromentTableEffectAdd');
+         
+           
+           jjjC_applyRotation(jjjC_rotation);
+            document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.transform="rotateX(-90deg)";
+            document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.bottom="";
+            document.getElementById('jjjWelcomeText').style.marginTop="initial";
+            setTimeout(function(){
+            let jjjRotateMenuButtons= document.getElementsByClassName('jjjRotateMenuButtons');
+            for (let i=0;i<jjjRotateMenuButtons.length;i++){
+                jjjRotateMenuButtons[i].classList.remove('jjjRotateMenuButtonsExtent')
+            }
+        },620); 
+
+
+
+
+
+
+
+
+                 },2000)
+
+            
+            
+        }
+
+        
+
+
+
+
+
+    }
+
+
+    })})();
+
 
 
 
