@@ -196,6 +196,13 @@ nav{
     color:@colorCreme;
     font-weight: bold;
 }
+
+#otherList a, #resourceList a{
+    display:block;
+    width: 100%;
+    height: 100%;
+    padding: 12px 12px;
+}
 .dropdown:hover .dropdown-cont{
     display: block;
 }
@@ -229,7 +236,6 @@ nav{
 }
 #info-content, #resources-content{
     display: none;
-    pointer-events: auto;
 }
 
 #info-content a:link{
@@ -246,6 +252,15 @@ nav{
     text-decoration: none;
 }
 
+#resources-content ul{
+    list-style-type: none;
+    
+}
+
+#resources-content li{
+    padding: 12px 12px;
+}
+
 #resources-content a:link{
     color: white;
     text-decoration: none;
@@ -256,7 +271,7 @@ nav{
 }
 
 #resources-content a:visited{
-    color: solid white;
+    color: white;
     text-decoration: none;
 }
 

@@ -66,29 +66,29 @@ window.onload = () => {
   };
 
 
-  //make a function that accepts the url of the page, parses it to get the path
-  // and then finds which of the list items in header contains that path (parse from <li> to </li>)
-  // use #ids on the list items to be able to change => color: orange; on the list item that matches the search
+//   //make a function that accepts the url of the page, parses it to get the path
+//   // and then finds which of the list items in header contains that path (parse from <li> to </li>)
+//   // use #ids on the list items to be able to change => color: orange; on the list item that matches the search
 
 
-  //get current path
-  const currentPath = window.location.pathname;
+//   //get current path
+//   const currentPath = window.location.pathname;
 
-  //create a dummy dom element and pass the html string to it (the entire list of paths)
+//   //create a dummy dom element and pass the html string to it (the entire list of paths)
 
-  var dummyList = document.createElement('html');
-  dummyList.innerHTML = "<div id='info-content'> <ul class='infoList'> <li><a href='html/species.html' id='speciesInList'>Species</a></li> <li><a href='html/behavior.html' id='behaviorInList'>Behavior</a></li> <li><a href='html/lifeCycle.html' id='lifeCycleInList'>Life Cycle</a></li> <li><a href='html/habitats.html' id='habitatsInList'>Habitats</a></li> <li><a href='html/care.html' id='careInList'>Care</a></li> </ul> </div></li> <li><div class='menuItem' id='resource' onclick='dropResources();'>Resources</div> <div id='resources-content'> <ul> <li><a href='html/resources.html' id='resourcesInList'>Our Sources</a></li> <li><a href='html/faq.html' id='faqInList'>FAQ</a></li> </ul> </div> </li>"
+//   var dummyList = document.createElement('html');
+//   dummyList.innerHTML = "<div id='info-content'> <ul class='infoList'> <li><a href='html/species.html' id='speciesInList'>Species</a></li> <li><a href='html/behavior.html' id='behaviorInList'>Behavior</a></li> <li><a href='html/lifeCycle.html' id='lifeCycleInList'>Life Cycle</a></li> <li><a href='html/habitats.html' id='habitatsInList'>Habitats</a></li> <li><a href='html/care.html' id='careInList'>Care</a></li> </ul> </div></li> <li><div class='menuItem' id='resource' onclick='dropResources();'>Resources</div> <div id='resources-content'> <ul> <li><a href='html/resources.html' id='resourcesInList'>Our Sources</a></li> <li><a href='html/faq.html' id='faqInList'>FAQ</a></li> </ul> </div> </li>"
 
-  //parse the list items 
-  dummyList.getElementsByTagName(' a ').getAttribute("href");
+//   //parse the list items 
+//   dummyList.getElementsByTagName(' a ').getAttribute("href");
 
-  //create a list to put all the items in
+//   //create a list to put all the items in
 
-  hrefList = 
+//   hrefList = 
 
-  //iterate through all the items in the list and check for the paths to match 
-for (i in hrefList) {
-  if (currentPath === hrefList[i]){
-    document.getElementById().style.color("orange")
-  };
-}
+//   //iterate through all the items in the list and check for the paths to match 
+// for (i in hrefList) {
+//   if (currentPath === hrefList[i]){
+//     document.getElementById().style.color("orange")
+//   };
+// }
