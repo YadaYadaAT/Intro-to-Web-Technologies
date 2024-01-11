@@ -48,3 +48,19 @@ var images = [
   window.onload = function() {
     showSlide(currentSlide);
   };
+
+
+  
+  document.addEventListener("DOMContentLoaded",function(){
+
+    setTimeout(function(){
+      if (document.getElementById('checkingJS') !== null){  
+        console.log('here');
+        document.getElementById('checkingJS').scrollIntoView();
+  
+      }
+    },100);
+
+   
+
+    });

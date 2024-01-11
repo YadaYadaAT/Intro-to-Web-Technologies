@@ -1439,7 +1439,7 @@ function jjNextIt(){
            
             document.getElementsByClassName('jjjjarrowTopBtnn')[0].classList.add('jjjjDisplayNotMeDude');
             document.getElementsByClassName('jjjjarrowOff')[0].classList.add('jjjjDisplayMeDude');
-          
+            document.getElementById('jjjChangeswitchIt').style.color="black";
             document.getElementById('jjjClickOnTheBook').style.display="flex";
 
 
@@ -1481,7 +1481,7 @@ function jjNextIt(){
 
 
         function jjjC_jjjResetBtn() {
-            
+            document.getElementById('jjjChangeswitchIt').style.color="orange";
            document.getElementById('jjjBookWrapper').classList.remove('jjjBookWrapperMoveRemove');
            
             document.getElementsByClassName('jjjjarrowOff')[0].classList.remove('jjjjDisplayMeDude');
