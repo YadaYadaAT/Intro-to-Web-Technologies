@@ -5,6 +5,9 @@ body{
 .aboutMain{
     width: 100%;
 }
+.aboutContent h2{
+    color: rgb(163, 113, 121);
+}
 
 .innerWidth{
     width: 80%;
@@ -30,21 +33,43 @@ body{
     left: 0;
 }
 
+.sectionTitle p{
+    padding: 20px;
+}
+
 //rows and columns for flexbox
 
 .row{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    padding:20px;
 }
 
+.row-no-change{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding:20px;
+}
 .columnLg{
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
+    padding-left: 20px;
 }
 
+.columnLg p:last-child{
+    margin-bottom: 0;
+}
+
+.column-li{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
 .columnSm{
     display: flex;
     flex-direction: wrap;
@@ -52,20 +77,97 @@ body{
     flex: 1;
 }
 
+.columnXsIcons{
+    display: flex;
+    flex-direction: wrap;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+
 //img scaling
 
 .mainImg{
-    max-width: 100%;
-    min-width: 30%;
+    // max-width: 100%;
     // height: auto;
     vertical-align: middle;
     overflow: clip;
     overflow-clip-margin: content-box;
-    
+    padding: 30px;
+    background-image: url(../../images/Ververaki/flipIro.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
 }
 
-.mainImg img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+// .mainImg img{
+//     max-height: 461px;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: contain;
+// }
+
+//list styling arrows
+
+.column-li ul {
+    list-style-type:none;
+}
+
+.aboutList li{
+    position:relative;
+    padding-bottom: 10px;
+}
+.aboutList li::before{
+    content: '';
+    position: absolute;
+    border-right:2px solid rgb(163, 113, 121);
+    border-bottom:2px solid rgb(163, 113, 121);
+    width:10px;
+    height:10px;
+    top: calc(50% - 4px);
+    left: -20px;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+//icons boxes styling inhobbies section
+
+.iconsBox{
+    padding: 30px;
+    width:100%;
+}
+
+//cs interests section 
+
+//add a bg color to the entire section
+
+.section-bg{
+    background-color: rgba(255, 216, 222, 0.568);
+}
+
+.skillsList li::after{
+    content: "";
+    position: relative;
+    display: block;
+    width: 80%;
+    height: 10px;
+    background: rgb(163, 113, 121);
+    bottom: 0;
+    left: 0;
+}
+
+.skillsList li{
+    font-weight: bolder;
+    font-size: larger;
+    padding-bottom: 10px;
+}
+
+//////////////////////////////
+
+
+@media screen and (max-width: 70em){
+    .row {
+        flex-direction: column;
+        align-items: center;
+
+    }
 }
