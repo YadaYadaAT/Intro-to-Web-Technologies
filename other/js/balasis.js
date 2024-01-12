@@ -211,14 +211,15 @@ if (jRouletaExclude.length<=8){
     if (jShowingTheEnd==false){
                       //I gate the date here
     let jTimeNow=new Date();
-    let jDateNoww=jTimeNow.getDate()+":"+jTimeNow.getMonth()+":"+jTimeNow.getFullYear();
+
+
+    let jDateNoww=jTimeNow.getDate().toString().padStart(2, '0')+":"+(jTimeNow.getMonth() + 1).toString().padStart(2, '0')+":"+jTimeNow.getFullYear();
     
     let jAddTheZero=jTimeNow.getHours()<10?'0'+jTimeNow.getHours():jTimeNow.getHours();
 
     let jAddTheZeroMinutes=jTimeNow.getMinutes()<10?'0'+jTimeNow.getMinutes():jTimeNow.getMinutes();
 
   
-
     let jClockNow=jAddTheZero+":"+jAddTheZeroMinutes;
     
     let jAmOrPmSign=jTimeNow.getHours()>=12?' PM' :' AM';
