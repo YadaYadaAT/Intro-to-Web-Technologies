@@ -1,3 +1,5 @@
+
+
 var images = [
     { src: "../images/Kokkinos/image4.jpg", caption: "A tan mantis stands alert, a silent sentinel in its sandy domain." },
     { src: "../images/Kokkinos/image5.jpg", caption: "A green mantis rests on a gentle hand, a meeting of nature and humanity." },
@@ -44,14 +46,18 @@ var images = [
     showSlide(currentSlide + step);
   }
   
-  
+  /*
   window.onload = function() {
-    showSlide(currentSlide);
-  };
+ //I moved the showSlide to the listener instead of here because it conflicts with the window.onload of iro's
+ which is needed for the nav
+  };*/
 
 
   
   document.addEventListener("DOMContentLoaded",function(){
+
+    showSlide(currentSlide);
+
 
     setTimeout(function(){
       if (document.getElementById('checkingJS') !== null){  
