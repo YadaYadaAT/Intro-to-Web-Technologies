@@ -2159,6 +2159,123 @@ function jjNextIt(){
             const jSpItems=document.getElementsByClassName('jSpItems');
             const jSpSubSpeciesClassForFunction=document.getElementsByClassName('jSpSubSpeciesClassForFunction');
 
+
+
+
+
+
+          
+function jSpapplyStylesToBars() {
+    for (let i = 0; i < jSpbar.length; i++) {
+        let percentageElement = jSpbar[i].querySelector(".jSppercentage");
+        let recognize = jSpbar[i].querySelector("label").innerHTML;
+
+        let percentage = parseInt(percentageElement.innerHTML);
+
+        percentageElement.style.height = "0";
+        percentageElement.style.transition = "height 1s ease";
+
+        function animateCounter(counter) {
+            jSpbar[i].querySelector(".jSppercentage").textContent = counter + "%";
+            jSpbar[i].querySelector(".jSppercentage").style.height = "calc(" + counter + "% + 1.5em)";
+
+            if (counter < percentage) {
+                setTimeout(function(){
+                    requestAnimationFrame(() => animateCounter(counter + 1));
+                },150);
+               
+            }
+        }
+
+
+
+
+        switch (recognize) {
+            case "Mantidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(82,112,31)";
+                jSpbar[i].querySelector("label").style.color = "rgb(82,112,31)";
+                animateCounter(0);
+                break;
+            case "Hymenopodidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(237, 185, 67)";
+                jSpbar[i].querySelector("label").style.color = "rgb(237, 185, 67)";
+                animateCounter(0);
+                break;
+            case "Empusidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(206,149,178)";
+                jSpbar[i].querySelector("label").style.color = "rgb(206,149,178)";
+                animateCounter(0);
+                break;
+            case "Liturgusidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(173,182,117)";
+                jSpbar[i].querySelector("label").style.color = "rgb(173,182,117)";
+                animateCounter(0);
+                break;
+            case "Deroplatyidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(244,99,35)";
+                jSpbar[i].querySelector("label").style.color = "rgb(244,99,35)";
+                animateCounter(0);
+                break;
+            case "Phyllocranidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(225,197,149)";
+                jSpbar[i].querySelector("label").style.color = "rgb(225,197,149)";
+                animateCounter(0);
+                break;
+            case "Gonypetidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(119,109,123)";
+                jSpbar[i].querySelector("label").style.color = "rgb(119,109,123)";
+                animateCounter(0);
+                break;
+            default:
+                jSpbar[i].querySelector("label").style.color = "black";
+        }
+
+      
+
+    }
+}
+
+
+const jSkobserver = new IntersectionObserver((entries, jSkobserver) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            
+            jSpapplyStylesToBars();
+            
+            jSkobserver.disconnect();
+        }
+    });
+}, { threshold: 1.0 }); 
+
+
+const jSpchart = document.querySelector('.jSpchart');
+if (jSpchart) {
+    jSkobserver.observe(jSpchart);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*
+
             for (let i=0;i<jSpbar.length;i++){
                 
                 let percentage=jSpbar[i].querySelector(".jSppercentage").innerHTML;
@@ -2201,6 +2318,14 @@ function jjNextIt(){
 
 
             }
+
+*/
+
+
+
+
+
+
 
 
 
