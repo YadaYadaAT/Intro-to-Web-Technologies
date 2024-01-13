@@ -347,6 +347,7 @@ body{
 //rows and columns for flexbox
 
 .row{
+    flex-shrink: 0;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -646,6 +647,17 @@ overflow-y:auto;
     align-items: center;
     margin-right: 30px;
     box-shadow:3px 3px 3px 3px rgb(163, 113, 121);
+}
+
+///fade - in animations for the different sections
+
+.fade-in-anim{
+    animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 //////////////////////////////REACTIVITY//////////////////////////
 
