@@ -1,7 +1,391 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     box-sizing: border-box;
     font-family: Montserrat;
+    padding:0;
+    margin:0;
 }
+///
+
+.iroHideOrNot{
+    top:0;
+    bottom:0;
+    left:0;
+    width:300px;
+    background-color:rgb(163, 113, 121);
+    position:fixed;
+    display:flex;
+    overflow-y: auto;
+    padding:30px;
+    padding-top:45px;
+    padding-bottom:0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    transition:0.5s ease-in-out;
+    z-index: 150;
+    }
+    
+    .iroButtonForHideOrNot{
+        display:none;
+        justify-content: center;
+    align-items: center;
+    position:fixed;
+    right:20px;
+    top:15px;
+    font-size:32px;
+    
+    
+    
+    }
+    #iroButtonForHideOrNot_Show{
+    display:flex;
+    height:100%;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(20,157,176);
+    color:white;
+    padding:10px;
+    cursor:pointer;
+    border-radius: 50%;
+    }
+    
+    
+    #iroButtonForHideOrNot_Hide{
+    display:none;
+        color:white;
+        border-radius: 50%;
+        cursor:pointer;
+        padding:10px;
+        height:100%;
+        width:100%;
+        display:none;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(20,157,176);
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    #iroMainMenu{
+    position:relative;
+    width:100%;
+    height:100%;
+    }
+    
+    
+    
+    
+    
+    #iroPhotoDiv{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width:100%;
+    }
+    
+    #iroPhotoImageMyName{
+        color:white;
+        font-size:32px;
+        font-weight:bold;
+        text-align: center;
+        width:100%;
+        margin-top:10px;
+        margin-bottom:10px;
+        
+    }
+    #iroPhotoImageDiv{
+        width:55%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border:7px solid rgb(161, 124, 130);
+        background-image: url("../../images/Ververaki/flipIro.png");
+        background-size:100% 100%;
+        display:flex;
+        justify-content: center;
+    }
+    
+    
+    #iroNavList{
+        width:100%;
+        color:white;
+        list-style-type: none;
+    }
+    
+    
+    
+    #iroSocialMedia{
+       
+        width:100%;
+        display:flex;
+        justify-content: space-between;
+    }
+    #iroSocialMedia div{
+        margin-left:10px;
+        margin-right:10px;
+    border-radius:50%;
+    width:35px;
+    height:35px;
+    transition:500ms linear;
+    
+    }
+    
+    #iroSocialMedia a{
+    text-decoration: none;
+    height:100%;
+    width:100%;
+    display:flex;
+    color:#a8a9b4;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color:rgb(161, 124, 130) ;
+    }
+    
+    
+    #iroSocialMedia div:first-child{
+        margin-left:0px;
+    }
+    
+    
+    #iroNavList{
+    
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        margin-top:40px;
+    }
+    
+    #iroNavList li{
+    display:flex;
+    align-items: center;
+    padding-top:25px;
+    padding-bottom:25px;
+    color:#a8a9b4;
+    cursor:pointer;
+    width:100%;
+    }
+    
+    #iroNavList li:hover{
+    color:rgb(20,157,176);
+    }
+    
+    #iroNavList li:hover span{
+    color:white;
+    }
+    #iroNavList span{
+        padding-left:10px;
+    }
+    
+    #iroCopyrights{
+    position:absolute;
+    bottom:0;
+    background-color:rgb(163, 113, 121);
+    padding:25px;
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    color:white;
+    justify-content: space-around;
+    }
+    #iroCopyrights__Copyright{
+    
+    }
+    #iroCopyrights__MyName{
+    margin-top:5px;
+    }
+    #iroCopyrights__MyName span{
+    color:rgb(20,157,176);
+    }
+    
+    
+    
+    .iroContentWrapper{
+        transition:200ms linear;
+    padding-left:300px;
+    }
+    
+    
+    
+    
+    
+    
+    #iroFirstSectionImage{
+        height:100vh;
+        width:100%;
+        background-image:url("../../images/Ververaki/personalLandImg.JPG");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    
+    
+    
+    
+    #iroGallery{
+        margin-top:1em;
+        width:100%;
+        display:flex;
+        flex-wrap: wrap;
+        min-height:600px;
+        justify-content: space-between;
+        padding-left:10%;
+    }
+    
+    .iroGalleryItem{
+      
+    margin:2.5%;
+    margin-left:0%;
+    margin-right:10%;
+    width:300px;
+    display:flex;
+    height:300px;
+    
+    overflow:hidden;
+    }
+    
+    .iroGalleryItemDesIsOn{
+    width:100%;
+    height:300px;
+    
+    }
+    
+    .galleryItemTitle{
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    
+    
+    .iroGalleryImage img{
+        position:relative;
+        height:300px;
+    width:300px;
+       transition:none;
+       z-index:10;
+       object-fit: cover;
+    }
+    
+    .iroGalleryImageDescriptionOn img{
+        height:300px;
+    width:300px;
+    }
+    
+    
+    
+    
+    .iroGalleryItemDescription{
+        display:flex;
+    flex-grow:1;
+    height:100%;
+    text-wrap: wrap;
+    overflow:hidden;
+    padding:20px;
+    margin-left:-75%;
+    background-color:bisque;
+    }
+    
+    
+    
+    .iroGalleryItemDescriptionOn{
+    display:flex;
+    margin-left:0;
+    flex-shrink:0;
+    
+    overflow:initial;
+    }
+    
+    .iroGalleryItemDescriptionContent{
+        width: calc(100% - 300px);
+        text-align: center;
+    }
+    
+    
+    
+    
+    
+    .IroTypingEffect{
+        display:flex;
+        flex-direction: column;
+        font-size:5em;
+       width:500px;
+       color:white;
+       margin-top:2.5em;
+       margin-left:2.5em;
+    }
+    
+    
+    .IroGeneratedContent{
+        display:flex;
+       
+    }
+    
+    .IroGeneratedContentIm{
+        
+    }
+    
+    .IroGeneratedContentImWrapper{
+        display:flex;
+        font-size:0.5em;
+    }
+    
+    
+    .theSlashEffect {
+        min-height: 2em;
+        font-size:0.5em;
+       
+        animation-name: theSlashEffectc;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        display: flex;
+        color: white;
+    
+    }
+    #generatedTextHere{
+        word-wrap: none;
+        white-space: nowrap;
+        transition:300ms linear;
+        margin-left:20px;
+    }
+
+    @keyframes theSlashEffectc {
+        0% {
+            opacity: 1;  
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;  
+        }
+    }
+
+    ////
 .aboutMain{
     width: 100%;
 }
@@ -10,9 +394,13 @@ body{
 }
 
 .innerWidth{
-    width: 80%;
+    width: 100%;
 }
  //styling of title and underline
+
+ .sectionTitle{
+    padding-left: 20px;
+ }
 .sectionTitle h2{
     font-size: 32px;
     font-weight: bold;
@@ -168,6 +556,26 @@ body{
     .row {
         flex-direction: column;
         align-items: center;
+
+    }
+
+    .iroContentWrapper{
+        transition:600ms linear;
+    padding-left:initial;
+}
+
+    .iroHideOrNot{
+        left:-300px;
+    }
+    .iroHideMainMenuClass{
+        left:-300px;
+    }
+
+    .iroShowMainMenuClass{
+    left:0;
+}
+    .iroButtonForHideOrNot{
+        display:flex;
 
     }
 }
