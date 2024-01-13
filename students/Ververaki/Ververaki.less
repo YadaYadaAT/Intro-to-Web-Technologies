@@ -152,7 +152,7 @@ body{
     height:100%;
     width:100%;
     display:flex;
-    color:#a8a9b4;
+    color:rgb(201, 200, 200);
     justify-content: center;
     align-items: center;
     border-radius: 50%;
@@ -180,7 +180,7 @@ body{
     align-items: center;
     padding-top:25px;
     padding-bottom:25px;
-    color:#a8a9b4;
+    color: rgb(201, 200, 200);
     cursor:pointer;
     width:100%;
     }
@@ -649,10 +649,15 @@ overflow-y:auto;
     box-shadow:3px 3px 3px 3px rgb(163, 113, 121);
 }
 
+///fix the map positioning
+
+
+
+
 ///fade - in animations for the different sections
 
 .fade-in-anim{
-    animation: fadeIn 2.5s;
+    animation: fadeIn 1.5s;
     animation-iteration-count: 1;
 }
 
@@ -707,5 +712,16 @@ overflow-y:auto;
         background-position:initial;
         height:580px;
         // background-size:80% 100%;
+    }
+
+    .IroTypingEffect{
+        font-size: 3em;
+        margin-top: initial;
+        margin-left: initial;
+        width: 300px;
+    }
+    .map-wrapper{
+        width: 100%;
+        overflow: hidden;
     }
 }
