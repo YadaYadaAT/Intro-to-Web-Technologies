@@ -3109,6 +3109,62 @@ right:-2em;
 
 //The viewer as always here
 
+.jSpchartQuite {
+    position: relative;
+    width: 60%;
+    max-width: 3000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-style: italic;
+   
+    line-height: 1.5;
+  
+    color: #555;
+    margin-top:5em;
+    margin-bottom:15em;
+    font-size: 1.2em;
+  }
+
+
+
+  .jSpchartQuite span:nth-child(1) {
+    color: rgb(82, 112, 31);
+  }
+  
+  .jSpchartQuite span:nth-child(2) {
+    color: var(--colorFlowerOrange);
+  }
+  
+  .jSpchartQuite span:nth-child(3) {
+    color: rgb(206, 149, 178);
+  }
+  
+  .jSpchartQuite span:nth-child(4) {
+    color: rgb(173, 182, 117);
+  }
+  
+  .jSpchartQuite span:nth-child(5) {
+    color: rgb(244, 99, 35);
+  }
+  
+  .jSpchartQuite span:nth-child(6) {
+    color: rgb(225, 197, 149);
+  }
+  
+  .jSpchartQuite span:nth-child(7) {
+    color: rgb(119, 109, 123);
+  }
+
+
+
+
+
+
+
 #jSPHomePageImgPreview{
     z-index:500;
     position:fixed;
@@ -3236,7 +3292,7 @@ text-indent: 3em;
 height:30em;
 
 justify-content: center;
-margin-bottom:12em;
+margin-bottom:18em;
 }
 #jSPMainMenuFrameCenterPurpose{
     margin-left:-10%;
@@ -3458,11 +3514,12 @@ z-index: 25;
 
 
 .jSpchart {
+
+
     position:relative;
     width: 60%;
     max-width: 3000px;
-    background-color: #fff;
-   
+    background-color: #fff;   
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     display:flex;
@@ -3472,6 +3529,8 @@ z-index: 25;
     margin-bottom:12em;
     
   }
+
+
 
   .jSpbar {
     display: flex;
@@ -3517,7 +3576,7 @@ z-index: 25;
 
   @media screen and (max-width:68.75em){
     .jSpchart {width:80%;}
-
+    .jSpchartQuite{width:80%;}
   }
 
 
@@ -3529,9 +3588,12 @@ z-index: 25;
 
 @media screen and (max-width:56.25em){
 
-    #jSpMainFrame{ height:fit-content;
-       
-    }
+    #jSpMainFrame{ height:fit-content;}
+
+    .jSpchartQuite{width:100%;
+        border-radius:0px 0px 0px 0px;}
+
+
 
     .jSpchart {width:100%;
         border-radius:0px 0px 0px 0px;
