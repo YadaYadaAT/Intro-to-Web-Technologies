@@ -336,7 +336,7 @@ nav{
 //margin-top for every column to control where it sits in the background
 //maybe add a line in between? 
 .columnOne, .columnFive{
-    margin-top:11em;
+    margin-top:10em;
 }
 .columnTwo{
     margin-top: 8.2em;
@@ -351,10 +351,7 @@ nav{
     padding-top: 0.5em;
 }
 //'toggle dark mode' dropdown - currently not functional
-.dropdownGear {
-    position: absolute;
-    display: inline-block;
-}  
+
 .dropdown-content {
     display: none;
     position: relative;
@@ -373,6 +370,12 @@ nav{
     display: block;
     height: 2.2em;
 }
+
+.columnFive{
+    display:flex;
+    flex-direction: column;
+}
+
 .columnFive a:link{
     color: black;
     text-decoration: none;
