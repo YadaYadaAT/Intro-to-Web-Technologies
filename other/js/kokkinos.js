@@ -56,17 +56,18 @@ var images = [
   
   document.addEventListener("DOMContentLoaded",function(){
 
-    showSlide(currentSlide);
+   
 
 
     setTimeout(function(){
       if (document.getElementById('checkingJS') !== null){  
-        console.log('here');
+       
         document.getElementById('checkingJS').scrollIntoView();
   
       }
     },100);
 
-   
-
+    if (document.getElementById('gallery')!==null){
+    showSlide(currentSlide);
+  }
     });
