@@ -1292,7 +1292,7 @@ function jjNextIt(){
             
                   if (!asksWho.classList.contains("jjjBehClassRotateOrNot") && jjjjSafetyLoadPage==false){
                     jjjjSafetyLoadPage=true;
-                    setTimeout(function(){ jjjjSafetyLoadPage=false; },1000);
+                    setTimeout(function(){ jjjjSafetyLoadPage=false; },5000);
             
                     for (let i = 0; i < jjjBehDaPages.length; i++) {
                         jjjBehDaPages[i].style.zIndex = 25;
