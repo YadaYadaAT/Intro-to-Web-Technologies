@@ -37,6 +37,10 @@ const about = document.getElementsByClassName('introduction');
 
 aboutSection[0].addEventListener('click', function() {
     about[0].scrollIntoView({behavior: 'smooth'})
+    about[0].querySelector(".row").classList.add("fade-in-anim");
+    setTimeout(function() {
+        about[0].querySelector(".row").classList.remove("fade-in-anim");
+    },2500);
 });
 
 const homeSection = document.getElementsByClassName('homeSection');
@@ -52,6 +56,10 @@ const links = document.getElementsByClassName('links');
 
 linksSection[0].addEventListener('click', function() {
     links[0].scrollIntoView({behavior:'smooth'})
+    links[0].querySelector("#iroGallery").classList.add("fade-in-anim");
+    setTimeout(function() {
+        links[0].querySelector("#iroGallery").classList.remove("fade-in-anim");
+    },2500);
 });
 
 const contactSection = document.getElementsByClassName('contactSection');
@@ -59,6 +67,10 @@ const contact = document.getElementsByClassName('contact');
 
 contactSection[0].addEventListener('click', function(){
     contact[0].scrollIntoView({behavior:'smooth'})
+    contact[0].querySelector(".row").classList.add("fade-in-anim");
+    setTimeout(function() {
+        contact[0].querySelector(".row").classList.remove("fade-in-anim");
+    },2500);
 });
 
 

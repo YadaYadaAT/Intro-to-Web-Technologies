@@ -204,12 +204,12 @@ body{
     display:flex;
     flex-direction: column;
     width:100%;
-    align-items: center;
+    align-items: start;
     color:white;
     justify-content: space-around;
     }
     #iroCopyrights__Copyright{
-    
+    text-align: start;
     }
     #iroCopyrights__MyName{
     margin-top:5px;
@@ -652,7 +652,8 @@ overflow-y:auto;
 ///fade - in animations for the different sections
 
 .fade-in-anim{
-    animation: fadeIn 5s;
+    animation: fadeIn 2.5s;
+    animation-iteration-count: 1;
 }
 
 @keyframes fadeIn {
@@ -705,6 +706,6 @@ overflow-y:auto;
     .mainImg{
         background-position:initial;
         height:580px;
-        background-size:80% 100%;
+        // background-size:80% 100%;
     }
 }
