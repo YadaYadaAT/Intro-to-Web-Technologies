@@ -1292,11 +1292,16 @@ function jjNextIt(){
             
                   if (!asksWho.classList.contains("jjjBehClassRotateOrNot") && jjjjSafetyLoadPage==false){
                     jjjjSafetyLoadPage=true;
-                    setTimeout(function(){ jjjjSafetyLoadPage=false; },5000);
+                    setTimeout(function(){ jjjjSafetyLoadPage=false; },1200);
             
                     for (let i = 0; i < jjjBehDaPages.length; i++) {
                         jjjBehDaPages[i].style.zIndex = 25;
                       }
+
+
+                     
+
+
                       if(  asksWho.previousElementSibling !== null ){
                       asksWho.previousElementSibling.style.zIndex = 28;
                     }
