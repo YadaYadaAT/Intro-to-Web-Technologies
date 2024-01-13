@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a6d6ba659c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet/css" type="text/css" href="./ververaki.css">
+   
+    
+    
+    <title>holder</title>
+  
+<style>
+
+
+body{
+    
+}
+
+.iroHideOrNot{
+top:0;
+bottom:0;
+left:0;
+width:300px;
+background-color:rgb(4,11,20);
+position:fixed;
+display:flex;
+overflow-y: auto;
+padding:30px;
+padding-top:45px;
+padding-bottom:0;
+display:flex;
+flex-direction: column;
+align-items: center;
+transition:0.5s ease-in-out;
+}
+
+.iroButtonForHideOrNot{
+    display:none;
+    justify-content: center;
+align-items: center;
+position:fixed;
+right:20px;
+top:15px;
+font-size:32px;
+
+
+
+}
+#iroButtonForHideOrNot_Show{
+display:flex;
+height:100%;
+width:100%;
+justify-content: center;
+align-items: center;
+background-color:rgb(20,157,176);
+color:white;
+padding:10px;
+cursor:pointer;
+border-radius: 50%;
+}
+
+
+#iroButtonForHideOrNot_Hide{
+display:none;
+    color:white;
+    border-radius: 50%;
+    cursor:pointer;
+    padding:10px;
+    height:100%;
+    width:100%;
+    display:none;
+justify-content: center;
+align-items: center;
+background-color:rgb(20,157,176);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#iroMainMenu{
+position:relative;
+width:100%;
+height:100%;
+}
+
+
+
+
+
+#iroPhotoDiv{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+}
+
+#iroPhotoImageMyName{
+    color:white;
+    font-size:32px;
+    font-weight:bold;
+    text-align: center;
+    width:100%;
+    margin-top:10px;
+    margin-bottom:10px;
+    
+}
+#iroPhotoImageDiv{
+    width:55%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border:7px solid rgb(44,47,63);
+    background-image: url("flipIro.png");
+    background-size:100% 100%;
+    display:flex;
+    justify-content: center;
+}
+
+
+#iroNavList{
+    width:100%;
+    color:white;
+    list-style-type: none;
+}
+
+
+
+#iroSocialMedia{
+   
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+#iroSocialMedia div{
+    margin-left:10px;
+    margin-right:10px;
+border-radius:50%;
+width:35px;
+height:35px;
+transition:500ms linear;
+
+}
+
+#iroSocialMedia a{
+text-decoration: none;
+height:100%;
+width:100%;
+display:flex;
+color:#a8a9b4;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+background-color:rgb(44,47,63) ;
+}
+
+
+#iroSocialMedia div:first-child{
+    margin-left:0px;
+}
+
+
+#iroNavList{
+
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin-top:40px;
+}
+
+#iroNavList li{
+display:flex;
+align-items: center;
+padding-top:25px;
+padding-bottom:25px;
+color:#a8a9b4;
+cursor:pointer;
+width:100%;
+}
+
+#iroNavList li:hover{
+color:rgb(20,157,176);
+}
+
+#iroNavList li:hover span{
+color:white;
+}
+#iroNavList span{
+    padding-left:10px;
+}
+
+#iroCopyrights{
+position:absolute;
+bottom:0;
+background-color:rgb(4,11,20);
+padding:25px;
+display:flex;
+flex-direction: column;
+width:100%;
+align-items: center;
+color:white;
+justify-content: space-around;
+}
+#iroCopyrights__Copyright{
+
+}
+#iroCopyrights__MyName{
+margin-top:5px;
+}
+#iroCopyrights__MyName span{
+color:rgb(20,157,176);
+}
+
+
+
+.iroContentWrapper{
+    transition:200ms linear;
+padding-left:300px;
+}
+
+
+
+
+
+
+#iroFirstSectionImage{
+    height:100vh;
+    width:100%;
+    background-image:url("boxedIro.JPG");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+#iroGallery{
+    margin-top:1em;
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    min-height:600px;
+    justify-content: space-between;
+    padding-left:10%;
+}
+
+.iroGalleryItem{
+  
+margin:2.5%;
+margin-left:0%;
+margin-right:10%;
+width:300px;
+display:flex;
+height:300px;
+
+overflow:hidden;
+}
+
+.iroGalleryItemDesIsOn{
+width:100%;
+height:300px;
+
+}
+
+
+
+
+.iroGalleryImage img{
+    position:relative;
+    height:300px;
+width:300px;
+   transition:none;
+   z-index:10;
+}
+
+.iroGalleryImageDescriptionOn img{
+    height:300px;
+width:300px;
+}
+
+
+
+
+.iroGalleryItemDescription{
+    display:flex;
+flex-grow:1;
+height:100%;
+
+overflow:hidden;
+padding:20px;
+margin-left:-75%;
+background-color:bisque;
+}
+
+
+
+.iroGalleryItemDescriptionOn{
+display:flex;
+margin-left:0;
+flex-shrink:0;
+
+overflow:initial;
+}
+
+.iroGalleryItemDescriptionContent{
+    width:100%;
+    text-align: center;
+}
+
+
+
+
+
+.IroTypingEffect{
+    display:flex;
+    flex-direction: column;
+    font-size:5em;
+   width:500px;
+   color:white;
+   margin-top:2.5em;
+   margin-left:2.5em;
+}
+
+
+.IroGeneratedContent{
+    display:flex;
+   
+}
+
+.IroGeneratedContentIm{
+    
+}
+
+.IroGeneratedContentImWrapper{
+    display:flex;
+    font-size:0.5em;
+}
+
+
+.theSlashEffect {
+    min-height: 2em;
+    font-size:0.5em;
+   
+    animation-name: theSlashEffectc;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    display: flex;
+    color: white;
+
+}
+#generatedTextHere{
+    word-wrap: none;
+    white-space: nowrap;
+    transition:300ms linear;
+    margin-left:20px;
+}
+
+
+
+@keyframes theSlashEffectc {
+    0% {
+        opacity: 1;  
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;  
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:70em) {
+    .iroContentWrapper{
+        transition:600ms linear;
+padding-left:initial;
+}
+
+    .iroHideOrNot{
+        left:-300px;
+    }
+    .iroHideMainMenuClass{
+        left:-300px;
+    }
+
+    .iroShowMainMenuClass{
+    left:0;
+}
+    .iroButtonForHideOrNot{
+        display:flex;
+
+    }
+
+
+}
+
+
+</style>
+
+
+    <meta name="Description" content="Explore the captivating world of mantis species  from their intricate anatomy 
+    to unique hunting tactics. Discover the diversity of these remarkable insects, their habitats, and the 
+    importance of conservation. Immerse yourself in the beauty and complexity of mantises with our in-depth exploration">
+
+
+    <meta charset="utf-8">
+ 
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta name="keywords" content="Mantises, Mantises Species, Mantises lifespan">
+ 
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="mask-icon" href="path/to/mask-icon.svg" color="#000000">
+
+ 
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/YadaYadaTest.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="436">
+    <meta property="og:image:height" content="228">
+    <meta property="og:description" content="Learn all about Mantises in our beautiful website">
+
+
+
+</head>
+<body>
+<div class="iroButtonForHideOrNot">
+    <div id="iroButtonForHideOrNot_Show"><i class="fa-solid fa-burger"></i></div>
+    <div id="iroButtonForHideOrNot_Hide"> <i class="fa-solid fa-circle-xmark"></i></div>
+</div>
+<header class="iroHideOrNot">
+    <div id="iroMainMenu">
+        <div id="iroPhotoDiv">
+            <div id="iroPhotoImageDiv"></div>
+            <div id="iroPhotoImageMyName">Iro Ververaki</div>
+        </div>
+        <div id="iroSocialMedia">
+            <div><a href=""><i class="fa-brands fa-facebook"></i> </a></div>              
+            <div><a href=""><i class="fa-brands fa-linkedin"></i></a></div>
+            <div><a href=""><i class="fa-brands fa-discord"></i></a></div>
+            <div><a href=""><i class="fa-brands fa-instagram"></i></a></div>
+
+        </div>
+
+        <nav id="iroNavList">
+            <li class=""><i class="fa-solid fa-house"></i><span>Home</span></li>
+            <li class=""><i class="fa-solid fa-user"></i><span>About</span></li>
+            <li class=""><i class="fa-solid fa-link"></i><span>Links</span></li>
+            <li class=""><i class="fa-solid fa-phone"></i><span>Contact</span></li>
+            
+        </nav>
+        <div id="iroCopyrights">
+            <div id="iroCopyrights__Copyright"><i class="fa-regular fa-copyright"></i> Copyright changeThis</div>
+            <div id="iroCopyrights__MyName">Designed by <span>Iro Ververaki</span></div>
+        </div>
+    </div>
+
+</header>
+
+
+    
+
+
+<main class="iroPageMain">
+
+    <section id="iroFirstSectionImage">
+
+        <div class="IroTypingEffect">
+            <div class="IroTypingEffectName">Iro Ververaki</div>
+            <div class="IroGeneratedContent">
+                <div class="IroGeneratedContentImWrapper">
+                        <div class="IroGeneratedContentIm">I am </div>
+                        <div id="generatedTextHere"></div> 
+                 </div>
+          <div class="theSlashEffect">|</div>
+            </div>
+        </div>
+        
+        </section>
+
+  <div class="iroContentWrapper">
+
+
+<section id="iroGallery">
+
+<div class="iroGalleryItem">
+<div class="iroGalleryImage">
+    <img src="./boxedIro.JPG" alt="">
+</div>
+<div class="iroGalleryItemDescription">
+   <div class="iroGalleryItemDescriptionContent">Lets see</div>
+</div>
+</div>
+
+<div class="iroGalleryItem">
+<div class="iroGalleryImage">
+    <img src="./boxedIro.JPG" alt="">
+</div>
+<div class="iroGalleryItemDescription"></div>
+</div>
+
+<div class="iroGalleryItem">
+<div class="iroGalleryImage">
+    <img src="./boxedIro.JPG" alt="">
+</div>
+<div class="iroGalleryItemDescription"></div>
+</div>
+
+<div class="iroGalleryItem">
+<div class="iroGalleryImage">
+    <img src="./boxedIro.JPG" alt="">
+</div>
+<div class="iroGalleryItemDescription"></div>
+</div>
+
+<div class="iroGalleryItem">
+<div class="iroGalleryImage">
+    <img src="./boxedIro.JPG" alt="">
+</div>
+<div class="iroGalleryItemDescription"></div>
+</div>
+
+
+
+
+<div class="iroGalleryItem">
+<div class="iroGalleryImage">
+    <img src="./boxedIro.JPG" alt="">
+</div>
+<div class="iroGalleryItemDescription"></div>
+</div>
+
+</section>
+
+
+</div>
+</main>
+
+
+
+<footer>
+
+
+</footer>
+
+
+
+
+<script>
+//======================================Gallery======================================//
+const iroGalleryItem=document.getElementsByClassName('iroGalleryItem');
+
+for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
+    iroGalleryItem[iroGal].addEventListener('click',function(){
+        let giveHimTheThis=this;
+        openGalDescription(giveHimTheThis);
+    })
+}
+
+  function openGalDescription(IamTheOne){
+   
+    for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
+    iroGalleryItem[iroGal].classList.remove('iroGalleryItemDesIsOn');
+    iroGalleryItem[iroGal].querySelector('.iroGalleryImage').classList.remove('iroGalleryImageDescriptionOn');
+    iroGalleryItem[iroGal].querySelector('.iroGalleryItemDescription').classList.remove('iroGalleryItemDescriptionOn');
+        }
+
+        IamTheOne.classList.add('iroGalleryItemDesIsOn');
+        IamTheOne.querySelector('.iroGalleryImage').classList.add('iroGalleryImageDescriptionOn');
+        IamTheOne.querySelector('.iroGalleryItemDescription').classList.add('iroGalleryItemDescriptionOn');
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//========================================Button Hide or show====================================//
+
+const iroShowButton=document.getElementById('iroButtonForHideOrNot_Show');
+const iroHideButton=document.getElementById('iroButtonForHideOrNot_Hide');
+const iroHeader=document.getElementsByClassName('iroHideOrNot')[0];
+
+iroShowButton.addEventListener('click',function(){
+    showMainMenu();
+})
+iroHideButton.addEventListener('click',function(){
+    hideMainMenu();
+})
+
+
+    function  showMainMenu(){
+        iroShowButton.style.display="none";
+        iroHideButton.style.display="flex";
+
+        iroHeader.classList.remove('iroHideMainMenuClass');
+        iroHeader.classList.add('iroShowMainMenuClass');
+
+    }
+
+
+
+
+  function   hideMainMenu(){
+    iroHideButton.style.display="none";
+    iroShowButton.style.display="flex";
+
+    iroHeader.classList.remove('iroShowMainMenuClass');
+    iroHeader.classList.add('iroHideMainMenuClass');
+    }
+
+
+//========================================type effect====================================//
+//vale edw tis protaseis sou...
+
+let sentencesOfTypeEffect=[
+    " drunk",
+    " not going to answer that",
+    " all that"
+]
+
+let counterOfSentences=0;
+let currentSentence;
+let i=0;
+
+function typeIt(){  
+    
+    
+currentSentence=sentencesOfTypeEffect[counterOfSentences];
+
+                                    //allakse to 150 sto xrono pou theleis gia na grafei ana char...
+let repeatIt=setInterval(generateItYourWay,150);   
+
+function generateItYourWay(){
+    
+    document.getElementsByClassName('theSlashEffect')[0].style.animationName="none";
+    document.getElementById('generatedTextHere').textContent+= currentSentence.charAt(i);    
+     i++;    
+    if (i==currentSentence.length){
+        clearInterval(repeatIt);
+        i=0;
+        document.getElementsByClassName('theSlashEffect')[0].style.animationName="theSlashEffectc";
+        deleteIt();
+    }
+
+}
+
+
+
+
+function deleteIt(){
+    setTimeout(function(){
+  
+        document.getElementsByClassName('theSlashEffect')[0].style.animationName="none";
+      let typedTextToBeDeleted=document.getElementById('generatedTextHere').textContent.length;
+   
+      let DeleteForNew= setInterval(function(){       
+  
+      document.getElementById('generatedTextHere').textContent= document.getElementById('generatedTextHere').textContent.slice(0,-1);    
+      typedTextToBeDeleted=typedTextToBeDeleted-1;
+      if (typedTextToBeDeleted==0){
+        
+        
+        clearInterval(DeleteForNew);
+        document.getElementsByClassName('theSlashEffect')[0].style.animationName="theSlashEffectc";   
+        counterOfSentences=counterOfSentences+1;
+         if (counterOfSentences==(sentencesOfTypeEffect.length)){
+         counterOfSentences=0;
+         }
+         
+         typeIt();
+    
+    }
+             //allakse to 25 sto xrono pou theleis na svinei to deuterolepto...
+         },25);  
+             },4000);
+
+}
+
+}
+
+
+typeIt();
+
+
+
+</script>
+</body>
+
+</html>
