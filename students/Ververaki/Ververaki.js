@@ -24,12 +24,7 @@ for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
 
 //===========================scroll to section======================================================//
 
-// function scrollToSection(sectionClass){
-//     var scrollTarget = document.getElementsByClassName(sectionClass);
-//     if (scrollTarget) {
-//         scrollTarget.scrollIntoView({behavior: 'smooth'});
-//     }
-// }
+//=========================contains fade-in animation functions===============================//
 
 
 const aboutSection = document.getElementsByClassName('aboutSection');
@@ -73,6 +68,25 @@ contactSection[0].addEventListener('click', function(){
     },1500);
 });
 
+
+//========================================scroll to top===============================================//
+
+let topButton = document.getElementById("topBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction(){
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        topButton.style.display = "block";
+    } else {
+        topButton.style.display = "none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 
 
 
