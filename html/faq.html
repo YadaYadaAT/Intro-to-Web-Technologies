@@ -10,11 +10,18 @@
   <script type="text/javascript" src="../other/js/less.js"></script>
 
   <title>FAQ</title>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("footer.html")
+        .then(response => response.text())
+        .then(html => { document.getElementsByTagName("main")[0].insertAdjacentHTML("afterend", html) })
+    })
+  </script>
 
 </head>
 
 <body id="bodyFAQ">
+
 
   <div class="imgbox">
     <div class="aClassName"><span class="aClassNameFontIt">FAQ</span></div>
@@ -93,6 +100,7 @@
 </div>
 
 
+<main>
   <div class="faq-content">
     <h2 class="orange-text">Below are 10 commonly asked questions about praying mantises. </h2>
 
@@ -169,8 +177,15 @@
       </p>
     </div>
   </div>
+
+
+
+</main>
   <script src="../other/js/ververaki.js"></script>
   <script src="../other/js/kouridaki.js"></script>
+
+
+
 </body>
 
 </html>
