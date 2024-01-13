@@ -1562,14 +1562,19 @@ z-index:100;
 #jjjBookWrapper{
     position:absolute;
     bottom:8.7em;
-    margin-left:auto;
-    margin-right:auto;
-    left:0;
-    right:0;
+
+   
     width:fit-content;
-    transform-origin:0% 0%;
-    
-  
+    transform-origin:50% 50%;
+    z-index: 5;
+    transition:2600ms linear;
+    }
+
+    .jjjBookWrapperClassMargins{
+        left:50%;
+    transform:translateX(-50%);
+        
+       
     }
     
 .jjjBookEnviromentTableEffect{
@@ -2296,7 +2301,66 @@ align-self: center;
     display:flex;
 }
 
-@media screen and (max-width:75em){
+
+
+
+
+
+
+
+/*
+.jjjjvariemeTheeMouV2{
+    transform:rotateY(0deg) rotateX(-90deg) translateZ(4.5em);
+}
+
+.jjjjvariemeTheeMou{
+    transform:rotateY(15deg) rotateX(-80deg) translateZ(4.5em) translateX(-9.5em);
+}*/
+
+
+
+
+.jjjBookWrapperMoveRemove{
+    left:calc(50% + +10em);
+    transform:translateX(-50%) ;
+   
+}
+
+
+
+@media screen and (max-width:100em){
+ 
+    
+    
+
+   
+.jjjBookWrapperMoveRemove{
+    left:calc(50% + +10em);
+    transform:translateX(-50%) ;
+   
+}
+
+
+}
+
+
+@media screen and (max-width:85em){
+ 
+    
+    
+
+   
+    .jjjBookWrapperMoveRemove{
+      //  left:calc(50% + -10em);
+        left:calc(50% + 12em );
+        transform:translateX(-50%) ;
+       right:initial;
+    }
+    
+    
+    }
+
+@media screen and (max-width:80em){
     #jjjBookEnviroment{display:none;}
     #jjjHandlerMenu{display:none;}
     #jjjGetMeToBookEnviroment{display:none;}

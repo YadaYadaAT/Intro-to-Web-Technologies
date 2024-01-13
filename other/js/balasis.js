@@ -1384,21 +1384,28 @@ function jjNextIt(){
             let jjjC_rotation = 0;
         
             function jjjC_jjjSideBtn() {
+
                 jjjC_rotation = "rotateY(70deg) rotateX(-65deg) translateZ(4.5em)";
                 jjjC_applyRotation(jjjC_rotation);
+
             }
         
             function jjjC_jjjBackBtn() {
+                document.getElementById('jjjBookWrapper').classList.remove('jjjBookWrapperMoveRemove');
                 jjjC_rotation = "rotateY(160deg) rotateX(-70deg) translateZ(4.5em)";
-                jjjC_applyRotation(jjjC_rotation);
+                jjjC_book.style.transform = jjjC_rotation;
+
             }
         //I have swapped front and read names in html..be aware..the read is the front and front is the read..
             function jjjC_jjjFrontBtn() {
+
                 jjjC_rotation = "rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
                 jjjC_applyRotation(jjjC_rotation);
 
+
                 if (!document.getElementById('jjjCleanTheMessFirst').parentNode.classList.contains('jjjBehClassRotateOrNot')){
                 setTimeout(function(){ document.getElementById('jjjCleanTheMessFirst').click();},2000);
+                
             }
             }
             function jjjC_jjjReadBtn() {
@@ -1415,6 +1422,7 @@ function jjNextIt(){
 
 
             function jjjC_applyRotation(val) {
+                document.getElementById('jjjBookWrapper').classList.add('jjjBookWrapperMoveRemove');
                 jjjC_book.style.transform = val;
             }
             
@@ -1442,8 +1450,11 @@ function jjNextIt(){
            
             document.getElementById('jjjBookEnviromentTableEffect').classList.add('jjjBookEnviromentTableEffectAdd');
          
-            jjjC_book.style.transform ="rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
-           
+           jjjC_book.style.transform ="rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
+             
+           //  jjjC_book.classList.add('jjjjvariemeTheeMouV2');
+
+
             document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.transform="rotateY(0deg) rotateX(0deg)";
             document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.bottom="-16em";
             document.getElementById('jjjWelcomeText').style.marginTop="18em";
@@ -1457,8 +1468,8 @@ function jjNextIt(){
 
 
             setTimeout(function(){
-                jjjC_book.style.transform ="rotateY(15deg) rotateX(-80deg) translateZ(4.5em) translateX(-9.5em)";
-               
+               jjjC_book.style.transform ="rotateY(15deg) rotateX(-80deg) translateZ(4.5em) translateX(-9.5em)";
+            
             },2600);
 
          
@@ -1470,8 +1481,8 @@ function jjNextIt(){
 
 
         function jjjC_jjjResetBtn() {
-
-
+            
+           document.getElementById('jjjBookWrapper').classList.remove('jjjBookWrapperMoveRemove');
            
             document.getElementsByClassName('jjjjarrowOff')[0].classList.remove('jjjjDisplayMeDude');
             
@@ -1480,11 +1491,13 @@ function jjNextIt(){
 
 
             jjjC_rotation = "rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
-            jjjC_applyRotation(jjjC_rotation);
-
+            //jjjC_book.classList.remove('jjjjvariemeTheeMou');
+           // jjjC_applyRotation(jjjC_rotation);
+            jjjC_book.style.transform =jjjC_rotation;
             setTimeout(function(){
-            jjjC_rotation = "rotateY(0deg) rotateX(0deg) translateZ(4.5em)";
 
+            jjjC_rotation = "rotateY(0deg) rotateX(0deg) translateZ(4.5em)";
+          //  jjjC_book.classList.remove('jjjjvariemeTheeMouV2');
 
 
             for (let i = 0; i < jjjBehDaPages.length; i++) {
@@ -1504,7 +1517,8 @@ function jjNextIt(){
             document.getElementById('jjjBookEnviromentTableEffect').classList.remove('jjjBookEnviromentTableEffectAdd');
          
            
-           jjjC_applyRotation(jjjC_rotation);
+           //jjjC_applyRotation(jjjC_rotation);
+           jjjC_book.style.transform =jjjC_rotation;
             document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.transform="rotateX(-90deg)";
             document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.bottom="";
             document.getElementById('jjjWelcomeText').style.marginTop="initial";
@@ -1517,14 +1531,14 @@ function jjNextIt(){
 
 
 
-
+       
 
 
 
 
                  },2000)
 
-            
+                
             
         }
 
