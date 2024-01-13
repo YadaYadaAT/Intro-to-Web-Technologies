@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+    <!--Change the "../other/less/my.less" with yours ..for example "../other/less/john.less" -->
+    <link rel="stylesheet/less" type="text/css" href="Ververaki.less">
+    <script src="https://kit.fontawesome.com/a6d6ba659c.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script type="text/javascript" src="../../other/js/less.js"></script>
+
+
+    <!--Change to title of your page-->
+    <title>Iro</title>
+    <!--Change the content tag to the description of this current page-->
+    <meta name="Description" content="My personal HTML page.">
+
+
+    <!--Do Not Change. Sets the charset that it will be saved and informs the browser about it...google about charset if you are interested for more-->
+    <meta charset="utf-8">
+    <!--Do Not Change. Sets the width of your page depening of the devices width, also initial zoom of your page when loaded; default is (initial-scale=1)-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--Do Not Change. keywords to provide info for web crawlers...although they don't seem to care about the tag much... -->
+    <meta name="keywords" content="Mantises, Mantises Species, Mantises lifespan">
+    <!--Do not Change.Icon of the page-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!--Do not Change.Mask-Icon of the page, replaces the icon when tab pinned-->
+    <link rel="mask-icon" href="path/to/mask-icon.svg" color="#000000">
+
+    <!--Do not Change. Og ...basically how page appears on social media as link . Its what it shows for example when you post a link on Discord or Viber-->
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/YadaYadaTest.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="436">
+    <meta property="og:image:height" content="228">
+    <meta property="og:description" content="Learn all about Mantises in our beautiful website">
+    <!--Do not Change. The Script for less.js that converts are less file into css in runtime-->
+
+    <!--Do not Change. The Script that it gets the HeaderNav and the Footer to the current page. Will propably be deleted after production-->
+    <!--Do not Change. Disables page view if javascript is disabled on browser-->
+    <noscript>
+        <style type="text/css">
+            body * {
+                display: none;
+            }
+
+            html {
+                height: 100%;
+                width: 100%;
+            }
+
+            body {
+                min-height: 100%;
+                background-image: url(images/NOjavascript.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-color: white;
+                background-size: 100% 100%;
+            }
+        </style>
+    </noscript>
+</head>
+
+
+<body>
+    <!-- scroll to top button -->
+
+    <button onclick="topFunction()" id="topBtn" title="Go to Top"><i class="fa-solid fa-angle-up fa-xl"></i></button>
+
+    <!-- open or hide side menu button -->
+    <div class="iroButtonForHideOrNot">
+        <div id="iroButtonForHideOrNot_Show"><i class="fa-solid fa-burger"></i></div>
+        <div id="iroButtonForHideOrNot_Hide"> <i class="fa-solid fa-circle-xmark"></i></div>
+    </div>
+    <!-- side menu -->
+    <header class="iroHideOrNot">
+        <div id="iroMainMenu">
+            <div id="iroPhotoDiv">
+                <div id="iroPhotoImageDiv"></div>
+                <div id="iroPhotoImageMyName">Iro Ververaki</div>
+            </div>
+            <div id="iroSocialMedia">
+                <div><a href=""><i class="fa-brands fa-facebook"></i> </a></div>
+                <div><a href=""><i class="fa-brands fa-linkedin"></i></a></div>
+                <div><a href=""><i class="fa-brands fa-discord"></i></a></div>
+                <div><a href=""><i class="fa-brands fa-instagram"></i></a></div>
+
+            </div>
+
+            <nav id="iroNavList">
+                <li class="homeSection"><i class="fa-solid fa-house navListScroll"></i><span>Home</span></li>
+                <li class="aboutSection"><i class="fa-solid fa-user navListScroll"></i><span>About</span></li>
+                <li class="linksSection"><i class="fa-solid fa-link navListScroll"></i><span>Links</span></li>
+                <li class="contactSection"><i class="fa-solid fa-phone navListScroll"></i><span>Contact</span></li>
+
+            </nav>
+            <div id="iroCopyrights">
+                <div id="iroCopyrights__Copyright"><i class="fa-regular fa-copyright"></i>AthTech 2024</div>
+                <div id="iroCopyrights__MyName">Designed by <span>Iro Ververaki</span></div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- main img and text in the middle/typewriter effect -->
+    <main class="iroPageMain">
+        <section id="iroFirstSectionImage">
+
+            <div class="IroTypingEffect">
+                <div class="IroTypingEffectName">Iro Ververaki</div>
+                <div class="IroGeneratedContent">
+                    <div class="IroGeneratedContentImWrapper">
+                        <div class="IroGeneratedContentIm">I am </div>
+                        <div id="generatedTextHere"></div>
+                    </div>
+                    <div class="theSlashEffect">|</div>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="iroContentWrapper">
+
+
+
+            
+
+            <!-- sections -->
+
+            <div class="aboutMain">
+                <div class="innerWidth">
+                    <!-- start of the main about me section -->
+                    <section class="introduction">
+                        <div class="sectionTitle">
+                            <h2>About</h2>
+                            <p>I grew up in the suburbs of Heraklion, Crete, and moved to Athens when I turned 18 to
+                                work in the
+                                theater while studying Archaeology at the National and Kapodistrian University of
+                                Athens.</p>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="columnXsIcons">
+                                <div class="mainImg">
+                                    <!-- <img src="../../images/Ververaki/flipIro.png"> -->
+                                </div>
+                            </div>
+                            <div class="columnLg">
+                                <div class="aboutContent">
+                                    <h2>Computer Science Student</h2>
+                                    <p>I am currently studying Computer Science in Athens Tech College, Athens. Quite a
+                                        jump in
+                                        professions!</p>
+                                    <div class="row-no-change">
+                                        <div class="column-li">
+                                            <ul class="aboutList">
+                                                <li>Name: Iro Ververaki</li>
+                                                <li>Birthday: 21 March 1998</li>
+                                                <li>Past Studies: History and Archaeology</li>
+                                                <li>Current Studies: Computer Science</li>
+                                            </ul>
+                                        </div>
+                                        <div class="column-li">
+                                            <ul class="aboutList">
+                                                <li>Email: aververaki@athtech.gr</li>
+                                                <li>Profession: Actress, Bartender</li>
+                                                <li>Location: Athens, Greece</li>
+                                                <li>Semester: First</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p>After the COVID-19 pandemic, I built my very first PC and re-discovered my love
+                                        for
+                                        gaming and tech. I became increasingly interested in online competitive shooters
+                                        like
+                                        Valorant, and spent a lot of my time playing those. I realised that gaming was a
+                                        part of
+                                        me that I wasn't willing to let go, and thus decided to re-design my life to
+                                        accommodate
+                                        for that passion. That's how I first decided to mess around with programming.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="personalInfo">
+                        <!-- end of the main about me section -->
+                        <!-- start of the personal info section -->
+                        <div class="container">
+                            <!-- start of hobbies section -->
+                            <div class="sectionTitle">
+                                <h2>Hobbies</h2>
+                                <p>Ever since then, I've learned a great deal, and so I decided to pursue a career in
+                                    software
+                                    and tech. Even though I'm spending a lot of my time training to be a great
+                                    developer, I
+                                    still haven't forgotten about my hobbies:</p>
+                            </div>
+                            <div class="row-no-change">
+                                <div class="columnXsIcons">
+                                    <div class="iconsBox">
+                                        <i class="fa-solid fa-gamepad fa-2xl" style="color: #dd9dda;"></i>
+                                        <p>I love competitive video games</p>
+                                    </div>
+                                </div>
+                                <div class="columnXsIcons">
+                                    <div class="iconsBox">
+                                        <i class="fa-solid fa-masks-theater fa-2xl" style="color: #dd9dda;"></i>
+                                        <p>..performing in the theater</p>
+                                    </div>
+                                </div>
+                                <div class="columnXsIcons">
+                                    <div class="iconsBox">
+                                        <i class="fa-solid fa-book fa-2xl" style="color: #dd9dda;"></i>
+                                        <p>..reading and writing</p>
+                                    </div>
+                                </div>
+                                <div class="columnXsIcons">
+                                    <div class="iconsBox">
+                                        <i class="fa-solid fa-bowl-food fa-2xl" style="color: #dd9dda;"></i>
+                                        <p>..and cooking yummy meals!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- end of hobbies section -->
+                    <!-- start of cs interests section -->
+                    <section id="csInterests" class="csInterests section-bg">
+                        <div class="container">
+                            <div class="sectionTitle">
+                                <h2>Computer Science</h2>
+                                <p>Apart from a working knowledge of Python and JavaScript, I'm interested in learning
+                                    many
+                                    things in my computer science journey. I'd like to one day be a great software
+                                    developer and
+                                    I'm especially interested in leading teams and projects! Below are a few of the
+                                    things I am
+                                    most interested in learning:</p>
+                            </div>
+                            <div class="row-no-change">
+                                <div class="column-li">
+                                    <div class="skills">
+                                        <ul class="skillsList">
+                                            <li>Java</li>
+                                            <li>C#</li>
+                                            <li>HTML/CSS</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="column-li">
+                                    <div class="skills">
+                                        <ul class="skillsList">
+                                            <li>Machine Learning</li>
+                                            <li>Angular</li>
+                                            <li>TypeScript</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- end of cs interests section -->
+                    <!-- start of links section (several links about my interests) -->
+                    <section class="links">
+                        <div class="container">
+                            <div class="sectionTitle">
+                                <h2>Links</h2>
+                                <p>Below are a few links to my favorite games and interests!</p>
+                            </div>
+                        </div>
+
+
+
+                        <section id="iroGallery">
+
+                            <div class="iroGalleryItem">
+                                <div class="iroGalleryImage">
+                                    <img src="../../images/Ververaki/val.jpg" alt="valorant">
+                                </div>
+                                <div class="iroGalleryItemDescription">
+                                    <div class="iroGalleryItemDescriptionContent">
+                                        <p class="galleryItemTitle">Valorant</p>
+                                        <div class="galleryItemDescription">The first FPS game I ever played and my introduction to competitive gaming. This game is very special to me and was the beginning of a journey that involves tech and IT just as much as gaming.</div>
+                                        <br><br><br>
+                                        <button id="pageGoTo">
+                                            <a href="https://playvalorant.com/en-gb/" target="_blank">Go to Page.</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="iroGalleryItem">
+                                <div class="iroGalleryImage">
+                                    <img src="../../images/Ververaki/cs.jpg" alt="cs">
+                                </div>
+                                <div class="iroGalleryItemDescription">
+                                    <div class="iroGalleryItemDescriptionContent">
+                                        <p class="galleryItemTitle">Counter-Strike</p>
+                                        <div class="galleryItemDescription">
+                                            I've also been having a lot of fun learning Counter Strike lately. I love the process of learning and improving in a new game.</div>
+                            
+                                        <br><br><br>
+                                        <button id="pageGoTo">
+                                            <a href="https://www.counter-strike.net" target="_blank">Go to Page.</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="iroGalleryItem">
+                                <div class="iroGalleryImage">
+                                    <img src="../../images/Ververaki/theater.jpg" alt="theater">
+                                </div>
+                                <div class="iroGalleryItemDescription">
+                                    <div class="iroGalleryItemDescriptionContent"><p class="galleryItemTitle">Theater</p><div class="galleryItemDescription">My dream of being an actress is what got me to Athens in the first place. I was lucky enough to perform in some great shows in my first few years here, and meet a lot of the people who shaped my personality growing up. My goal was to be accepted into the Greek National Theater Drama School, however, due to some personal issues that arose after the COVID-19 pandemic, that never came to fruition. I haven't given up on pursuing my acting dreams though!</div><br><br><br><button id="pageGoTo"><a href="https://www.n-t.gr" target="_blank">Go to Page.</a></button></div>
+                                </div>
+                            </div>
+
+                            <div class="iroGalleryItem">
+                                <div class="iroGalleryImage">
+                                    <img src="../../images/Ververaki/brushes.jpg" alt="painting">
+                                </div>
+                                <div class="iroGalleryItemDescription">
+                                    <div class="iroGalleryItemDescriptionContent"><p class="galleryItemTitle">Art</p><div class="galleryItemDescription">This one is very sentimental. For most of my childhood and teenage years, I attended art classes at a private institution. The connections I made there and the knowledge I acquired follow me to this day. This place shaped me as a person, and I will be eternally grateful that I was able to attend!</div><br><br><br><button id="pageGoTo"><a href="https://chalambalakis.eu" target="_blank">Go to Page.</a></button></div>
+                                </div>
+                            </div>
+
+                            <div class="iroGalleryItem">
+                                <div class="iroGalleryImage">
+                                    <img src="../../images/Ververaki/philosophy.jpg" alt="philosophy">
+                                </div>
+                                <div class="iroGalleryItemDescription">
+                                    <div class="iroGalleryItemDescriptionContent"><p class="galleryItemTitle">Philosophy</p><div class="galleryItemDescription">Philosophy is another pretty big interest of mine. Although I'm a pretty practical person, I will never turn down a good philosophical debate!</div><br><br><br><button id="pageGoTo"><a href="https://philpapers.org" target="_blank">Go to Page.</a></button></div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="iroGalleryItem">
+                                <div class="iroGalleryImage">
+                                    <img src="../../images/Ververaki/cooking.jpg" alt="cooking">
+                                </div>
+                                <div class="iroGalleryItemDescription">
+                                    <div class="iroGalleryItemDescriptionContent"><p class="galleryItemTitle">Cooking</p><div class="galleryItemDescription">Finally, I love to cook. I'm very interested in fine dining and I follow new technologies and cooking methods very closely. My favourite is Asian cuisine!</div><br><br><br><button id="pageGoTo"><a href="https://www.gordonramsay.com" target="_blank">Go to Page.</a></button></div>
+                                </div>
+                            </div>
+
+                        </section>
+
+
+                </div>
+                </section>
+                <!-- end of links section -->
+
+                <!-- start of contact section -->
+
+                <section class="contact section-bg">
+                    <div class="container">
+                        <div class="sectionTitle">
+                            <h2>Contact</h2>
+                            <p>My contact details.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="columnSm">
+                            <div class="contactInfo">
+                                <div class="address">
+                                    <div class="oneLine">
+                                        <div class="iconCircle">
+                                            <i class="fa-solid fa-location-pin fa-xl"></i>
+                                        </div>
+                                        <h4>Location:</h4>
+                                    </div>
+                                    <p>123 Yada Street, Athens, Greece</p>
+                                </div>
+                                <div class="email">
+                                    <div class="oneLine">
+                                        <div class="iconCircle">
+                                            <i class="fa-solid fa-envelope fa-xl"></i>
+                                        </div>
+                                        <h4>Email:</h4>
+                                    </div>
+                                    <p>aververaki@athtech.gr</p>
+                                </div>
+                                <div class="phone">
+                                    <div class="oneLine">
+                                        <div class="iconCircle">
+                                            <i class="fa-solid fa-phone fa-xl"></i>
+                                        </div>
+                                        <h4>Phone:</h4>
+                                    </div>
+                                    <p>+30 6943111405</p>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        <div class="columnSm">
+                            <h4>Spoiler alert:</h4>
+                            <p>...not my real address.</p>
+                            <div class="map-wrapper">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12580.306167987577!2d23.7369119!3d37.975343!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bd3f23106f35%3A0xd6eee05d0dfbca4d!2sHellenic%20Parliament!5e0!3m2!1sen!2sgr!4v1705167725995!5m2!1sen!2sgr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+
+                        </div>
+                    </div>
+
+                <!-- end of contact section -->
+            </div>
+        </div>
+
+
+
+
+
+
+        <!--Your writing stops here-->
+    </main>
+    <script src="Ververaki.js"></script>
+</body>
+
+</html>
