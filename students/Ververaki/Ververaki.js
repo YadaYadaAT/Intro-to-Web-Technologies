@@ -24,12 +24,42 @@ for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
 
 //===========================scroll to section======================================================//
 
-const navListScroll = document.getElementsByClassName('navListScroll');
+// function scrollToSection(sectionClass){
+//     var scrollTarget = document.getElementsByClassName(sectionClass);
+//     if (scrollTarget) {
+//         scrollTarget.scrollIntoView({behavior: 'smooth'});
+//     }
+// }
 
 
+const aboutSection = document.getElementsByClassName('aboutSection');
+const about = document.getElementsByClassName('introduction');
+
+aboutSection[0].addEventListener('click', function() {
+    about[0].scrollIntoView({behavior: 'smooth'})
+});
+
+const homeSection = document.getElementsByClassName('homeSection');
+const home = document.getElementsByClassName('iroPageMain');
+
+homeSection[0].addEventListener('click', function() {
+    home[0].scrollIntoView({ behavior: "smooth" })
+});
 
 
+const linksSection = document.getElementsByClassName('linksSection');
+const links = document.getElementsByClassName('links');
 
+linksSection[0].addEventListener('click', function() {
+    links[0].scrollIntoView({behavior:'smooth'})
+});
+
+const contactSection = document.getElementsByClassName('contactSection');
+const contact = document.getElementsByClassName('contact');
+
+contactSection[0].addEventListener('click', function(){
+    contact[0].scrollIntoView({behavior:'smooth'})
+});
 
 
 

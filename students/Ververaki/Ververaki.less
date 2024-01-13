@@ -8,7 +8,7 @@ body{
     padding:0;
     margin:0;
 }
-///
+// styling the burger button that shows the side menu when page is smaller 
 
 .iroHideOrNot{
     top:0;
@@ -37,7 +37,7 @@ body{
     right:20px;
     top:15px;
     font-size:32px;
-    
+    z-index: 100;
     
     
     }
@@ -47,7 +47,7 @@ body{
     width:100%;
     justify-content: center;
     align-items: center;
-    background-color:rgb(20,157,176);
+    background-color:rgb(216, 174, 181);
     color:white;
     padding:10px;
     cursor:pointer;
@@ -66,7 +66,7 @@ body{
         display:none;
     justify-content: center;
     align-items: center;
-    background-color:rgb(20,157,176);
+    background-color:rgb(216, 174, 181);
     
     }
     
@@ -79,7 +79,7 @@ body{
     
     
     
-    
+    //side menu styling, picture and links
     
     
     
@@ -215,10 +215,10 @@ body{
     margin-top:5px;
     }
     #iroCopyrights__MyName span{
-    color:rgb(20,157,176);
+    color:rgb(247, 191, 201);
     }
     
-    
+    //wraps the rest of the content not including the menu
     
     .iroContentWrapper{
         transition:200ms linear;
@@ -227,7 +227,7 @@ body{
     
     
     
-    
+    //MAIN IMAGE
     
     
     #iroFirstSectionImage{
@@ -245,88 +245,7 @@ body{
     
     
     
-    
-    
-    #iroGallery{
-        margin-top:1em;
-        width:100%;
-        display:flex;
-        flex-wrap: wrap;
-        min-height:600px;
-        justify-content: space-between;
-        padding-left:10%;
-    }
-    
-    .iroGalleryItem{
-      
-    margin:2.5%;
-    margin-left:0%;
-    margin-right:10%;
-    width:300px;
-    display:flex;
-    height:300px;
-    
-    overflow:hidden;
-    }
-    
-    .iroGalleryItemDesIsOn{
-    width:100%;
-    height:300px;
-    
-    }
-    
-    .galleryItemTitle{
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.3em;
-    }
-    
-    
-    .iroGalleryImage img{
-        position:relative;
-        height:300px;
-    width:300px;
-       transition:none;
-       z-index:10;
-       object-fit: cover;
-    }
-    
-    .iroGalleryImageDescriptionOn img{
-        height:300px;
-    width:300px;
-    }
-    
-    
-    
-    
-    .iroGalleryItemDescription{
-        display:flex;
-    flex-grow:1;
-    height:100%;
-    text-wrap: wrap;
-    overflow:hidden;
-    padding:20px;
-    margin-left:-75%;
-    background-color:bisque;
-    }
-    
-    
-    
-    .iroGalleryItemDescriptionOn{
-    display:flex;
-    margin-left:0;
-    flex-shrink:0;
-    
-    overflow:initial;
-    }
-    
-    .iroGalleryItemDescriptionContent{
-        width: calc(100% - 300px);
-        text-align: center;
-    }
-    
-    
-    
+    //typing effect for main page
     
     
     .IroTypingEffect{
@@ -460,7 +379,8 @@ body{
 }
 .columnSm{
     display: flex;
-    flex-direction: wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
     flex-basis: 100%;
     flex: 1;
 }
@@ -550,7 +470,184 @@ body{
     padding-bottom: 10px;
 }
 
-//////////////////////////////
+//gallery items styling in the links section
+    
+    
+#iroGallery{
+    margin-top:1em;
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    min-height:600px;
+    justify-content: space-between;
+    padding-left:10%;
+}
+
+.iroGalleryItem{
+  
+margin:2.5%;
+margin-left:0%;
+margin-right:10%;
+width:300px;
+display:flex;
+height:300px;
+cursor: pointer;
+overflow:hidden;
+}
+
+.iroGalleryItemDesIsOn{
+width:100%;
+height:300px;
+
+}
+
+.galleryItemTitle{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3em;
+    color:rgb(163, 113, 121);
+}
+
+
+.iroGalleryImage img{
+    position:relative;
+    height:300px;
+width:300px;
+   transition:none;
+   z-index:10;
+   object-fit: cover;
+}
+
+.iroGalleryImageDescriptionOn img{
+    height:300px;
+width:300px;
+}
+
+
+
+
+.iroGalleryItemDescription{
+    display:flex;
+flex-grow:1;
+height:100%;
+text-wrap: wrap;
+overflow:hidden;
+padding:20px;
+margin-left:-75%;
+background-color:rgba(255, 216, 222, 0.568);
+width: calc(100% - 300px);
+}
+
+
+
+.iroGalleryItemDescriptionOn{
+display:flex;
+margin-left:0;
+flex-shrink:0;
+overflow:initial;
+overflow-y:auto;
+// scrollbar-width: thin;
+}
+
+// .iroGalleryImageDescriptionOn::-webkit-scrollbar {
+//     width: 5px;
+// }
+
+
+
+.iroGalleryItemDescriptionContent{
+    width: 100%;
+    text-align: center;
+}
+
+//styling of button in each of the gallery items
+#pageGoTo{
+    padding: 1%;
+    background-color: rgba(218, 215, 215, 0.568);
+    border-color:rgba(199, 149, 157, 0.726);
+    box-shadow:rgb(163, 113, 121);
+    transition-duration: 0.4s;
+}
+
+#pageGoTo:hover{
+    background-color: transparent;
+}
+
+#pageGoTo a:link{
+    color: darkslategrey;
+    text-decoration: none;
+}
+
+#pageGoTo a:visited{
+    color: darkslategrey;
+    text-decoration: none;
+}
+
+//contact section styling
+
+
+//style the icons in the first column
+
+.iconCircle i{
+    color: rgb(216, 174, 181);
+}
+
+.address .iconCircle, h4{
+    padding: 0 5px;
+}
+
+.email .iconCircle, h4{
+    padding: 0 5px;
+}
+
+.phone .iconCircle, h4{
+    padding: 0 5px;
+}
+
+.address h4{
+    display: inline-block;
+}
+
+.contactInfo p{
+    padding-bottom: 40px;
+}
+
+.iconCircle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.iconCircle:hover i{
+    color: white;
+}
+
+.iconCircle:hover{
+    background-color: rgb(163, 113, 121);
+}
+
+.oneLine{
+    display: flex;
+    flex-direction: row;
+}
+
+.oneLine h4{
+    margin-left: 5px;
+}
+
+
+.contact .columnSm{
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    box-shadow:3px 3px 3px 3px rgb(163, 113, 121);
+}
+//////////////////////////////REACTIVITY//////////////////////////
 
 
 @media screen and (max-width: 70em){
@@ -584,6 +681,10 @@ body{
         width:100%;
        
        padding:0;
+    }
+    .columnXsIcons{
+        width:100%;
+        padding:0;
     }
     .columnLg{
         padding-left:initial;
