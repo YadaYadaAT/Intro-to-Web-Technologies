@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>  
+              
+       
+        <script src="https://kit.fontawesome.com/a6d6ba659c.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet/less" type="text/css" href="../other/less/balasis.less">
+        <link rel="stylesheet/less" type="text/css" href="../other/less/ververaki.less">
+        <link rel="stylesheet/less" type="text/css" href="../other/less/master.less">
+        
+   
+        <title>Behavior</title>
+        <!--Change the content tag to the description of this current page-->
+        <meta name="Description" content="Welcome to our fascinating exploration of the enchanting world of mantises!
+         Discover the intricate dance of these remarkable creatures as they navigate their lives with grace and precision.
+          From their captivating courtship rituals to the artistry of their hunting techniques, delve into the captivating 
+          realm of mantis behavior. Join us on a journey to appreciate the beauty and intelligence that these extraordinary
+           insects bring to the natural world. Whether you're a curious observer or a seasoned enthusiast,
+            let the wonders of mantis behavior unfold before you, showcasing the delicate balance of nature's masterpiece">
+
+
+        <!--Do Not Change. Sets the charset that it will be saved and informs the browser about it...google about charset if you are interested for more-->
+        <meta charset="utf-8">
+        <!--Do Not Change. Sets the width of your page depening of the devices width, also initial zoom of your page when loaded; default is (initial-scale=1)-->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <!--Do Not Change. keywords to provide info for web crawlers...although they don't seem to care about the tag much... -->
+        <meta name="keywords" content="Mantises, Mantises Species, Mantises lifespan">
+        <!--Do not Change.Icon of the page-->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!--Do not Change.Mask-Icon of the page, replaces the icon when tab pinned-->
+        <link rel="mask-icon" href="path/to/mask-icon.svg" color="#000000">
+
+        <!--Do not Change. Og ...basically how page appears on social media as link . Its what it shows for example when you post a link on Discord or Viber-->
+        <meta property="og:url" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="images/YadaYadaTest.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="436">
+        <meta property="og:image:height" content="228">
+        <meta property="og:description" content="Learn all about Mantises in our beautiful website">
+        <!--Do not Change. The Script for less.js that converts are less file into css in runtime-->
+        <script src="../other/js/less.js"></script>
+        <!--Do not Change. The Script that it gets the HeaderNav and the Footer to the current page. Will propably be deleted after production-->
+        <script>
+            
+            document.addEventListener("DOMContentLoaded",function(){
+                fetch("footer.html")
+                .then(response=>response.text())
+                .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("afterend",html)})
+            })
+        </script>
+        
+        <!--Do not Change. Disables page view if javascript is disabled on browser-->
+        <noscript>
+         <style type="text/css">    	
+         body *{display:none;}
+         html{height:100%;width:100%;}
+         body{min-height:100%;background-image:url(images/NOjavascript.png);background-position:center;background-repeat:no-repeat;background-color:white;background-size:100% 100%;}
+         </style>         
+        </noscript>
+    </head>
+
+
+    <body id="jjjBehaviorBody">
+     
+        
+
+        <div class="imgbox">
+            <img class="center-fit" src="../images/Ververaki/mantide-religiosa.jpg">
+        </div>
+    <div id="navbar_wrapper">
+            
+                  <button class="hamburger">
+                    <i class="menuIcon fa-solid fa-bars fa-2xl"></i>
+                    <i class="closeIcon fa-solid fa-xmark fa-xl"></i>
+                  </button>
+                  <ul class="menu">
+                    <li><a class="menuItem" href="./gallery.html">Gallery</a></li>
+                    <li><div class="menuItem" id="info" onclick="dropInfo();">Info</div>
+                            <div id="info-content">
+                                    <ul class="infoList">
+                                    <li><a href="./species.html">Species</a></li>
+                                    <li><a href="./behavior.html">Behavior</a></li>
+                                    <li><a href="./lifeCycle.html">Life Cycle</a></li>
+                                    <li><a href="./habitats.html">Habitats</a></li>
+                                    <li><a href="./care.html">Care</a></li>
+                                    </ul>
+                            </div></li>
+                    <li><div class="menuItem" id="resource" onclick="dropResources();">Resources</div>
+                            <div id="resources-content">
+                                    <ul>
+                                            <li><a href="./resources.html">Our Sources</a></li>
+                                            <li><a href="./faq.html">FAQ</a></li>
+                                    </ul>
+                            </div>
+                    </li>
+                    <li><a class="menuItem" href="./aboutPage.html">About us</a></li>
+                  </ul>
+                  
+    
+            <nav id="block-main-menu">
+                    <div class="flex-container-navbar">
+                            
+                                    <div id="menu_item_gallery">
+                                            <a href="./gallery.html">GALLERY</a>
+                                    </div>
+                                    <div class="dropdown">
+                                            <div class="drop-option">INFO</div>
+                                            <div class="dropdown-cont">
+                                                    <ul id="otherList">
+                                                            <li><a href="./species.html">Species</a></li>
+                                                            <li><a href="./behavior.html">Behavior</a></li>
+                                                            <li><a href="./lifeCycle.html">Life Cycle</a></li>
+                                                            <li><a href="./habitats.html">Habitats</a></li>
+                                                            <li><a href="./care.html">Care</a></li>
+                                                    </ul>
+                                            </div>
+                                    </div>
+                                    <div id="menu_item_home">
+                                            <a href="../index.html">
+                                                    <img src="../images/Ververaki/logoNoBGHELP.png">
+                                            </a>
+                                    </div>
+                                    <div class="dropdown">
+                                            <div class="drop-option">RESOURCES</div>
+                                            <div class="dropdown-cont">
+                                                    <ul id="resourceList">
+                                                            <li><a href="./resources.html"  id="sourcesOption">Our Sources</a></li>
+                                                            <li><a href="./faq.html" id="faqOption">FAQ</a></li>
+                                                    </ul>
+                                            </div>
+                                    </div>
+                                    <div id="menu_item_about">
+                                            <a href="./aboutPage.html" >ABOUT US</a>
+                                    </div>
+                            
+                    </div>
+    
+            </nav>
+    </div>
+
+        <main id="jjjBehaviorMain">
+            <div id="jjjHandlerMenu" class="jjjjPasalimata">
+                <!--<button id="jjjPullAllow">Pull</button>-->
+               
+                    
+                        <button class="jjjRotateMenuButtons" id="jjjSideBtn">Side</button>                
+                        <button class="jjjRotateMenuButtons" id="jjjBackBtn">Back</button>
+                        <button class="jjjRotateMenuButtons" id="jjjReadBtn">Front</button> <!--I swapped them but keep the same functionality..dont get confused with id names.-->  
+                        <button class="jjjRotateMenuButtons" id="jjjFrontBtn">Read</button>
+                                            
+                        
+                        
+                    
+               
+                </div>
+
+
+
+
+        <div id="jjjBookEnviroment">
+
+
+                    <div class="jjjBookEnviromentTableEffect" id="jjjBookEnviromentTableEffect">
+                        
+                    </div>
+        
+                    <div id="jjjBookWrapper"  class="jjjBookWrapperClassMargins">
+                        <div id="jjjWrapTheInnerWithOuter">
+                            
+                            
+                        
+                        
+                        
+                            <div class="jjjBehflipper" id="jjjBehflipper">
+
+                            
+
+                            
+                            <div class="jjjBehcardFront">
+                                <div class="jjjGodIamSoTiredMakeItWork" id="jjjWhateverYouSay">
+
+
+
+                                <div id="jjjGPageLast" class="jjjBehRotateMePlease">
+                                    <div class="jjjCleanTheMessBack">
+                                    <div class="">Hey you are not supposed to see my uglyness(if you see then
+                                        i failed to hide it )
+                                    </div>
+                                    </div>                                      
+                                    <div class="jjjCleanTheMess">
+                                    <div class="jjjClassForThePages" id="jjjToBeContinued">To be continued...</div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div  class="jjjBehRotateMePlease">
+                                    <div class="jjjCleanTheMessBack">
+                                    <div class="jjjClassForThePages">
+                                        <h6>Conclusion</h6>
+                                        <p>Observing the behavior of mantises unveils a rich tapestry of instincts,
+                                             strategies, and adaptations. These remarkable insects showcase the
+                                              beauty and complexity of the natural world, inviting us to appreciate 
+                                              the marvels that unfold within the microcosm of the mantis kingdom.</p>
+
+
+                                        <span class="jjjPageNumberClass">6</span>
+                                    </div>
+                                    </div>
+                                    <div class="jjjCleanTheMess">
+                                    <div class="jjjClassForThePages">
+                                        <h6>Life Cycle and Molting</h6>
+                                        <p>Understanding the life cycle of mantises reveals a series of molts,
+                                             where they shed their exoskeleton to accommodate growth. Molting 
+                                             is a vital process that allows mantises to adapt to their changing
+                                              environment and ensure their continued survival.</p>
+
+                                        <p>Throughout their life, mantises undergo several molts, each stage marked
+                                             by a transformation in appearance and behavior. This cyclical process
+                                              is essential for their development from nymph to adult.</p>
+                                        
+
+                                        <span class="jjjPageNumberClass">5</span>
+                                    </div>
+                                    </div>
+                                    </div>                               
+
+
+                                <div id="jjjGPag3" class="jjjBehRotateMePlease">
+                                    <div class="jjjCleanTheMessBack">
+                                    <div class="jjjClassForThePages">
+                                        <h6>Courtship Rituals</h6>
+                                        <p>Mantis courtship is a captivating display of intricate movements and behaviors. 
+                                            The male approaches the female cautiously, often bringing a gift, such as a tasty insect. 
+                                            The courtship ritual involves careful positioning and rhythmic movements.</p>
+
+                                        <p>If successful, mating occurs, and the female may consume the male afterward.
+                                             This unique behavior, known as sexual cannibalism, adds a layer of complexity
+                                              to the reproductive strategies of mantises.</p>
+
+                                        <span class="jjjPageNumberClass">4</span>
+                                    </div>
+                                    </div>
+                                    <div class="jjjCleanTheMess">
+                                    <div class="jjjClassForThePages">
+                                        <h6>Camouflage and Mimicry</h6>
+                                        <p>One of the remarkable aspects of mantis behavior is their ability 
+                                            to camouflage and mimic their surroundings. Some mantis species resemble flowers,
+                                             leaves, or even twigs, allowing them to blend seamlessly into their environment.</p>
+
+                                        <p>This camouflage serves a dual purpose—it helps them ambush unsuspecting prey,
+                                             and it acts as a defense mechanism against potential predators. The art of
+                                              mimicry in mantises showcases the intricacies of their evolutionary adaptations.</p>
+
+                                        <span class="jjjPageNumberClass">3</span>
+                                    </div>
+                                    </div>
+                                    </div> 
+                        
+
+
+                                <div id="jjjGPage2" class="jjjBehRotateMePlease">
+                                    <div class="jjjCleanTheMessBack ">
+                                    <div class="jjjClassForThePages ">
+                                        <h6>Hunting Techniques</h6>
+                                        <p>Mantises are skilled predators that employ various hunting techniques to capture their prey.
+                                             Their most distinctive feature is their powerful front legs, equipped with spines and adapted
+                                              for seizing and gripping their victims with precision.</p>
+
+                                        <p>These ambush predators patiently wait for their prey, using their excellent
+                                             vision and agility to strike with lightning speed. Their hunting prowess
+                                              is a testament to their adaptability and survival instincts in the insect kingdom.</p>
+
+
+                                        <span class="jjjPageNumberClass">2</span>
+                                    </div>
+                                    </div>
+                                    <div class="jjjCleanTheMess ">
+                                    <div class="jjjClassForThePages" id="jjjjspecialCase"><h6>
+                                        The Intricate World of Mantis Behavior                              
+                                    </h6>
+                                    <img src="../images/Balasis/Behavior/UglyFour.jpg" alt="">
+                                    <p>Mantises, also known as praying mantises, are captivating insects with a fascinating
+                                         array of behaviors. Let's delve into the details of their behavior and discover
+                                          the marvels of the mantis world.</p>
+                                          <span class="jjjPageNumberClass">1</span>
+                                </div>
+                                    </div>
+                                    </div> 
+
+                                    
+                                    
+                                    <div id="jjjGPage1" class="jjjBehRotateMePlease">
+                                        <div class="jjjCleanTheMessBack" id="jjjCleanTheMessBackFirst">
+                                        <div class="jjjSkGoldenit">YadaYada</div>
+                                        </div>                                      
+                                        <div class="jjjCleanTheMess"  id="jjjCleanTheMessFirst">
+                                        <div id="jjjHeaderOfTheBook">
+                                            <h3>Mantises</h3>
+                                            <h4>The Enigmatic World of Mantis Behavior</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div> 
+                            
+
+                            
+
+                            <div class="jjjBehbookBack">
+                                <div class="jjjBehshowPlease" id="jjjjJustApplyThem"><h5>Introduction to Web technologies</h5>
+                                    <p>The producer of this 3d book model is brought to you by YadaYada. Feel free to not
+                                        even read a page since its only here for the effects. Have a nice day examiner.
+                                    </p>
+                                </div>      
+                            </div>
+                            <div class="jjjBehbookSide">
+                                <div class="jjjBehshowPlease jjjBookSideTexty">Yada Yada</div>      
+                            </div>
+
+                            <div class="jjjBehcardBottom">
+                                <div class="filler" id="jjjBesaveMe"></div>
+                            <div class="jjjbottomLines"><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+                                <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+                                <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+                                <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr></div> 
+                            </div>
+
+
+                            <div class="jjjBehbookTop">
+                                <div class="jjjbottomLines"><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+                                <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+                                <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+                                <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr></div> 
+                            </div>
+                            
+
+                        </div>
+
+
+                        </div>
+                </div>
+                   
+                    <div class="jjjIneedOneMoreForEffect"></div>
+                    
+                </div>
+               
+         </div>
+                    
+         <div id="jjjWelcomeText">
+            <div id="jjjWelcomeTextHolder">
+                <div id="jjjWelcomeTextHolderTitleAndButton">
+                   
+            <h2>The Enigmatic World of Mantis Behavior</h2>                 
+            <button class="jjjjarrowTopBtnn" id="jjjGetMeToBookEnviroment">&#9652;</button>
+            <button class="jjjjarrowOff" id="jjjResetBtn">&#9662;
+
+                <div id="jjjClickOnTheBook">Click <br><br> on the book!</div>
+            </button>
+                    </div>
+            <div id="jjjjDescription">
+                <p>
+                Unveiling the intricate dance of mantis behaviors,
+                 where stealth meets strategy in the world of these fascinating creatures.
+                <span id="jjjChangeswitchIt" style="color:orange;font-weight: bold;">Click on the button top right </span> and start your journey by reading our book.
+                </p></div>
+        </div>
+        <div id="SmallScreenSizeOnly">
+
+                <section class="MiniVersionClassBoringText">
+                  
+                 
+                    <h6>
+                        The Intricate World of Mantis Behavior                              
+                    </h6>
+                    <img src="../images/Balasis/Behavior/UglyFour.jpg" alt="">
+                    <p>Mantises, also known as praying mantises, are captivating insects with a fascinating
+                         array of behaviors. Let's delve into the details of their behavior and discover
+                          the marvels of the mantis world.</p>
+                 </section>      
+
+
+                 <section  class="MiniVersionClassBoringText">
+                       
+                    <h6>Hunting Techniques</h6>
+                    <p>Mantises are skilled predators that employ various hunting techniques to capture their prey.
+                            Their most distinctive feature is their powerful front legs, equipped with spines and adapted
+                            for seizing and gripping their victims with precision.</p>
+    
+                    <p>These ambush predators patiently wait for their prey, using their excellent
+                            vision and agility to strike with lightning speed. Their hunting prowess
+                            is a testament to their adaptability and survival instincts in the insect kingdom.</p>
+                    </section>
+
+                    <section  class="MiniVersionClassBoringText">
+                       
+                        <h6>Camouflage and Mimicry</h6>
+                        <p>One of the remarkable aspects of mantis behavior is their ability 
+                            to camouflage and mimic their surroundings. Some mantis species resemble flowers,
+                            leaves, or even twigs, allowing them to blend seamlessly into their environment.</p>
+    
+                        <p>This camouflage serves a dual purpose—it helps them ambush unsuspecting prey,
+                            and it acts as a defense mechanism against potential predators. The art of
+                            mimicry in mantises showcases the intricacies of their evolutionary adaptations.</p>
+                        </section>
+
+
+                        <section  class="MiniVersionClassBoringText">
+                          
+    
+                            <h6>Courtship Rituals</h6>
+                            <p>Mantis courtship is a captivating display of intricate movements and behaviors. 
+                                The male approaches the female cautiously, often bringing a gift, such as a tasty insect. 
+                                The courtship ritual involves careful positioning and rhythmic movements.</p>
+        
+                            <p>If successful, mating occurs, and the female may consume the male afterward.
+                                    This unique behavior, known as sexual cannibalism, adds a layer of complexity
+                                    to the reproductive strategies of mantises.</p>
+
+                            </section>
+
+                            <section  class="MiniVersionClassBoringText">
+                             
+                                <h6>Life Cycle and Molting</h6>
+                                <p>Understanding the life cycle of mantises reveals a series of molts,
+                                    where they shed their exoskeleton to accommodate growth. Molting 
+                                    is a vital process that allows mantises to adapt to their changing
+                                    environment and ensure their continued survival.</p>
+            
+                                <p>Throughout their life, mantises undergo several molts, each stage marked
+                                    by a transformation in appearance and behavior. This cyclical process
+                                    is essential for their development from nymph to adult.</p>
+                                </section>
+                            <section  class="MiniVersionClassBoringText">            
+                            
+                            
+                                <h6>Conclusion</h6>
+                                <p>Observing the behavior of mantises unveils a rich tapestry of instincts,
+                                    strategies, and adaptations. These remarkable insects showcase the
+                                    beauty and complexity of the natural world, inviting us to appreciate 
+                                    the marvels that unfold within the microcosm of the mantis kingdom.</p>
+
+                                </section>
+        </div>
+        
+        
+         </div>
+
+           <div id="jjjRealBooksSection">
+            <div class="jjjRealBooksSectionChildTitle">
+                YadaYada also recommends
+            </div>
+            <div class="jjjRealBooksSectionChild">
+                <div class="jjjBookContainer">
+                    <img class="jjjBookImage" src="../images/Balasis/Behavior/keepingThePrayingMantis.jpg" alt="keepingThePrayingMantis.jpg">
+                    <p>"Keeping The Praying Mantis"</p>
+                    <a class="jjjBookLink" href="https://www.libristo.gr/el/bivlio/keeping-the-praying-mantis-mantodean
+                    -captive-biology-reproduction-and-husbandry_12402243?gclid=Cj0KCQiAhomtBhDgARIsABcaYylOd3_dhb90PaP4L
+                    jZyuztt11oMKpEZsssejfaiDSedvRikXA7D37EaArEtEALw_wcB" target="_blank">Buy Now</a>
+                </div>
+    
+                <div class="jjjBookContainer">
+                    <img class="jjjBookImage" src="../images/Balasis/Behavior/prayingMantisesAsPets.jpg" alt="prayingMantisesAsPets.jpg">
+                    <p>"Praying Mantises as Pets"</p>
+                    <a class="jjjBookLink" href="https://www.libristo.gr/el/bivlio/praying-
+                    mantis-praying-mantises-as-pets-praying-mantis-owners-manual_21143601?
+                    gclid=Cj0KCQiAhomtBhDgARIsABcaYynjdQGYeBkrNmWC0SfFa7dRxeH_RQMu9S--
+                    OQAavk1Fr9orZGxSmE0aAjzbEALw_wcB" target="_blank">Buy Now</a>
+                </div>
+    
+                <div class="jjjBookContainer">
+                    <img class="jjjBookImage" src="../images/Balasis/Behavior/AnAugmentedReality.jpg" alt="Praying Mantises: An Augmented Reality">
+                    <p>"Praying Mantises: An Augmented Reality"</p>
+                    <a class="jjjBookLink" href="https://www.libristo.gr/el/bivlio/praying-mantises-
+                    an-augmented-reality-experience_32940145?_gl=1*19j3se9*_up*MQ..&gclid=Cj0KCQiAhom
+                    tBhDgARIsABcaYynjdQGYeBkrNmWC0SfFa7dRxeH_RQMu9S--OQAavk1Fr9orZGxSmE0aAjzbEALw_wcB" target="_blank">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+
+        </main>   
+        <script src="../other/js/ververaki.js"></script>
+        <script src="../other/js/balasis.js"></script>
+    </body>
+
+</html>

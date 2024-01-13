@@ -5,6 +5,8 @@
 
 
     document.addEventListener("DOMContentLoaded",function(){
+ if (document.getElementById('jHomePageIdentifier') !== null){     
+        console.log('hello');
         /*
         const imagesOfHomePageMenu=document.getElementsByClassName("jHomepageMenuImg");
         for (let i=0;i<imagesOfHomePageMenu.length;i++){
@@ -30,7 +32,7 @@
             this.parentNode.style.display="none"; 
             this.parentNode.parentNode.querySelector(".jHomePageReadMore").style.display="flex";
             this.parentNode.parentNode.scrollIntoView({ behavior: 'smooth' });
-            this.parentNode.parentNode.querySelector("h2").style.width="70%";
+            this.parentNode.parentNode.querySelector("h2").parentNode.classList.remove("jHomePageReadMoreWidthIt");
         })
     }
     for(let k=0;k<ReadMores.length;k++){
@@ -41,14 +43,14 @@
                 HomePageMini[qq].parentNode.parentNode.querySelector(".jHomePageMenuItemContent").classList.add("jHomePageMenuItemContentFog");
                 HomePageMini[qq].parentNode.style.display="none"; 
                 HomePageMini[qq].parentNode.parentNode.querySelector(".jHomePageReadMore").style.display="flex";
-                HomePageMini[qq].parentNode.parentNode.querySelector("h2").style.width="70%";
+                HomePageMini[qq].parentNode.parentNode.querySelector("h2").parentNode.classList.remove("jHomePageReadMoreWidthIt");
             }
             this.parentNode.parentNode.parentNode.classList.add("jHomePageMenuItemAddHeight");           
             this.parentNode.parentNode.parentNode.querySelector(".jHomePageMenuItemContent").classList.remove("jHomePageMenuItemContentFog");
             this.parentNode.parentNode.parentNode.querySelector(".jHomePageMinimizerHolder").style.display="flex";
             this.parentNode.parentNode.parentNode.scrollIntoView({ behavior: 'smooth' });
             this.style.display="none"; 
-            this.parentNode.parentNode.parentNode.querySelector("h2").style.width="100%";
+            this.parentNode.parentNode.parentNode.querySelector("h2").parentNode.classList.add("jHomePageReadMoreWidthIt");
         })
     }
       
@@ -135,7 +137,17 @@ if (jRouletaExclude.length<=8){
     
     //I gate the date here
     let jTimeNow=new Date();
-    let jDateNoww=jTimeNow.getDate()+":"+jTimeNow.getMonth()+":"+jTimeNow.getFullYear();
+
+
+    let jjjFixedday = jTimeNow.getDate().toString().padStart(2, '0');
+    let jjjFixedmonth = (jTimeNow.getMonth() + 1).toString().padStart(2, '0');
+    let jjjFixedyear = jTimeNow.getFullYear();
+    
+    let jDateNoww = jjjFixedday + "/" + jjjFixedmonth + "/" + jjjFixedyear;
+
+
+
+    
 
     let jAddTheZero=jTimeNow.getHours()<10?'0'+jTimeNow.getHours():jTimeNow.getHours();
 
@@ -151,9 +163,9 @@ if (jRouletaExclude.length<=8){
     let jAmOrPmSign=jTimeNow.getHours()>=12?' PM' :' AM';
     
     
-   let jFullTime=jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign ;
+   let jFullTime="<p>"+jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign+"</p>" ;
    //Adding the name and I will combine these two since it will go to the same div.
-   let jMantiseName="<b>Wordy Mantis</b>";
+   let jMantiseName="<p><b>Wordy Mantis</b></p>";
    let jNameAndDate=jMantiseName+" "+jFullTime;
 
    
@@ -199,22 +211,23 @@ if (jRouletaExclude.length<=8){
     if (jShowingTheEnd==false){
                       //I gate the date here
     let jTimeNow=new Date();
-    let jDateNoww=jTimeNow.getDate()+":"+jTimeNow.getMonth()+":"+jTimeNow.getFullYear();
+
+
+    let jDateNoww=jTimeNow.getDate().toString().padStart(2, '0')+":"+(jTimeNow.getMonth() + 1).toString().padStart(2, '0')+":"+jTimeNow.getFullYear();
     
     let jAddTheZero=jTimeNow.getHours()<10?'0'+jTimeNow.getHours():jTimeNow.getHours();
 
     let jAddTheZeroMinutes=jTimeNow.getMinutes()<10?'0'+jTimeNow.getMinutes():jTimeNow.getMinutes();
 
   
-
     let jClockNow=jAddTheZero+":"+jAddTheZeroMinutes;
     
     let jAmOrPmSign=jTimeNow.getHours()>=12?' PM' :' AM';
     
     
-   let jFullTime=jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign ;
+   let jFullTime="<p>"+jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign+"</p>" ;
    //Adding the name and I will combine these two since it will go to the same div.
-   let jMantiseName="<b>Wordy Mantis</b>";
+   let jMantiseName="<p><b>Wordy Mantis</b></p>";
    let jNameAndDate=jMantiseName+" "+jFullTime;
 
    
@@ -272,11 +285,25 @@ if (jRouletaExclude.length<=8){
 
 
 
+}//The if to protect the page...
+
+
+
+})})();
 
 
 
 
-})})
+
+
+
+
+
+
+
+
+
+
 
 
 (function() {
@@ -285,7 +312,7 @@ if (jRouletaExclude.length<=8){
 
 
 
- 
+ if (document.getElementById('jjMiniQuizBody')!==null){
 
 
 
@@ -1066,10 +1093,1392 @@ function jjNextIt(){
 
 
 
+}
 
 
-})
 
 
 
-})();
+})})();
+
+
+
+
+
+
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+//======================================            Behavior page        ================================================//
+
+
+
+
+
+(function() {
+
+
+    document.addEventListener("DOMContentLoaded",function(){
+   
+   
+   
+    if (document.getElementById('jjjBehaviorBody')!==null){
+   
+
+
+   
+        const jjjGPage1=document.getElementById('jjjGPage1');
+        const jjjBehDaPages=document.getElementsByClassName('jjjBehRotateMePlease');
+        const jjjBehbookTop=document.getElementsByClassName('jjjBehbookTop')[0];
+        const jjjBehcardBottom=document.getElementsByClassName('jjjBehcardBottom')[0];
+
+
+        //const jjjPullAllow=document.getElementById('jjjPullAllow');
+        const jjjRotate=document.getElementById('jjjRotate');
+      
+        let  jjjAllowPull=false;
+        
+        let jjjOffsetX, jjjOffsetY, jjjIsDragging ;
+
+     /*   jjjPullAllow.addEventListener('click',function(){
+            jjjAunlockPull();
+        
+        });*/
+       
+       
+
+/*
+       function jjjAunlockPull(){
+           
+            jjjAllowPull=true;
+            jjjPullListener();
+           
+        }
+
+       
+        
+
+        let jjjBookWrapper = document.getElementById('jjjBehflipper');
+        
+        function  jjjPullListener(e){
+
+       
+            if(jjjAllowPull){
+       
+        
+        jjjBookWrapper.addEventListener('mousedown', function (e) {
+            e.preventDefault();
+           jjjOffsetX, jjjOffsetY, jjjIsDragging = false;
+
+           
+         
+
+           
+           
+        
+     
+           jjjOffsetX = (e.clientX - document.getElementsByClassName('jjjBehbookBack')[0].getBoundingClientRect().left)+240;
+           jjjOffsetY =(e.clientY - document.getElementsByClassName('jjjBehbookBack')[0].getBoundingClientRect().top)+240;
+          
+         
+           
+        
+            jjjIsDragging = true;
+           
+           
+            document.addEventListener('mousemove', jjjhandleMouseMove);
+            document.addEventListener('mouseup', jjjhandleMouseUp);
+        }) ;
+        
+    }
+       
+        
+        function jjjhandleMouseMove(e) {
+            if(jjjAllowPull){
+                
+            if (jjjIsDragging) {
+                
+               
+             
+             let jjjjseeMe=   jjjBookWrapper.style.left = e.clientX - jjjOffsetX + 'px';
+                jjjBookWrapper.style.top = e.clientY - jjjOffsetY + 'px';
+             
+            }
+
+
+        }
+        }
+        
+        function jjjhandleMouseUp() {
+            if(jjjAllowPull){
+
+            // Reset appearance and dragging state
+            jjjBookWrapper.style.opacity = '1';
+            jjjIsDragging = false;
+        
+            // Remove the event listeners after the drag operation is complete
+            document.removeEventListener('mousemove', jjjhandleMouseMove);
+            document.removeEventListener('mouseup', jjjhandleMouseUp);
+        }
+
+
+    }
+
+
+        }
+
+
+
+            */
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+     
+            
+            
+            
+            
+            
+                for (let i=0;i<jjjBehDaPages.length;i++){
+              jjjBehDaPages[i].addEventListener('click',function(){
+                 let WhoAsks=this;
+            
+                  jjjjrotateIt(WhoAsks);
+                                      });
+            
+                                                     }
+            
+            
+            let jjjjSafetyLoadPage=false;
+                
+               function jjjjrotateIt(asksWho){
+               
+                
+            
+            
+            
+                  if (!asksWho.classList.contains("jjjBehClassRotateOrNot") && jjjjSafetyLoadPage==false){
+                    jjjjSafetyLoadPage=true;
+                    setTimeout(function(){ jjjjSafetyLoadPage=false; },1200);
+            
+                    for (let i = 0; i < jjjBehDaPages.length; i++) {
+                        jjjBehDaPages[i].style.zIndex = 25;
+                      }
+
+
+                     
+
+
+                      if(  asksWho.previousElementSibling !== null ){
+                      asksWho.previousElementSibling.style.zIndex = 28;
+                    }
+            
+                    if(asksWho.nextElementSibling !== null ){
+                      asksWho.nextElementSibling.style.zIndex = 28;
+                    }
+                     
+                      asksWho.style.zIndex = 30;
+                     
+                    asksWho.classList.add("jjjBehClassRotateOrNot");
+            
+            
+            
+                    for (let i = 0; i < jjjBehDaPages.length; i++) {
+                      if (jjjBehDaPages[i].classList.contains('jjjBehClassRotateOrNot') && jjjBehDaPages[i].id!=="jjjGPage1"){
+                        setTimeout(function(){
+                          jjjBehDaPages[i].querySelector('.jjjCleanTheMess').classList.add('jjjDisplayThemNot');
+                        },900);
+                        
+                      }else{
+                        jjjBehDaPages[i].querySelector('.jjjCleanTheMess').classList.remove('jjjDisplayThemNot');
+                      }            
+            
+                      }
+            
+                      document.getElementById('jjjClickOnTheBook').style.display="none";
+                     
+                  }else{
+                    if (jjjjSafetyLoadPage==false){
+                    jjjjSafetyLoadPage=true;
+                    setTimeout(function(){ jjjjSafetyLoadPage=false; },1000);
+                    for (let i = 0; i < jjjBehDaPages.length; i++) {
+                        jjjBehDaPages[i].style.zIndex = 25;
+                      }
+                      if(  asksWho.previousElementSibling !== null ){
+                      asksWho.previousElementSibling.style.zIndex = 28;
+                    }
+            
+                    if(asksWho.nextElementSibling !== null ){
+                      asksWho.nextElementSibling.style.zIndex = 28;
+                    }
+                     asksWho.style.zIndex = 30;
+                     asksWho.querySelector('.jjjCleanTheMess').classList.remove('jjjDisplayThemNot');
+                      asksWho.classList.remove("jjjBehClassRotateOrNot");           
+            
+                  }             
+                      }
+                }
+            
+            
+
+                jjjGPage1.addEventListener('click',()=>{
+              if (jjjGPage1.classList.contains('jjjBehClassRotateOrNot')){
+                jjjBehbookTop.style.borderTopColor="transparent";
+                jjjBehcardBottom.style.borderTopColor="transparent";
+              }else{
+                setTimeout(function(){
+                  jjjBehbookTop.style.borderTopColor="orange";
+                jjjBehcardBottom.style.borderTopColor="orange";
+            
+                },900)
+             
+              }
+            })
+
+
+
+
+
+
+            document.getElementById('jjjSideBtn').addEventListener('click',function (){ jjjC_jjjSideBtn()} );
+            document.getElementById('jjjBackBtn').addEventListener('click',function (){jjjC_jjjBackBtn()} );
+            document.getElementById('jjjFrontBtn').addEventListener('click', function (){ jjjC_jjjFrontBtn()});
+            document.getElementById('jjjResetBtn').addEventListener('click',function () {jjjC_jjjResetBtn()});
+            document.getElementById('jjjReadBtn').addEventListener('click',function () {jjjC_jjjReadBtn()});
+    
+    
+            const jjjC_book = document.getElementById('jjjBehflipper');
+            let jjjC_rotation = 0;
+        
+            function jjjC_jjjSideBtn() {
+
+                jjjC_rotation = "rotateY(70deg) rotateX(-65deg) translateZ(4.5em)";
+                jjjC_applyRotation(jjjC_rotation);
+
+            }
+        
+            function jjjC_jjjBackBtn() {
+                document.getElementById('jjjBookWrapper').classList.remove('jjjBookWrapperMoveRemove');
+                jjjC_rotation = "rotateY(160deg) rotateX(-70deg) translateZ(4.5em)";
+                jjjC_book.style.transform = jjjC_rotation;
+
+            }
+        //I have swapped front and read names in html..be aware..the read is the front and front is the read..
+            function jjjC_jjjFrontBtn() {
+
+                jjjC_rotation = "rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
+                jjjC_applyRotation(jjjC_rotation);
+
+
+                if (!document.getElementById('jjjCleanTheMessFirst').parentNode.classList.contains('jjjBehClassRotateOrNot')){
+                setTimeout(function(){ document.getElementById('jjjCleanTheMessFirst').click();},2000);
+                
+            }
+            }
+            function jjjC_jjjReadBtn() {
+                jjjC_rotation = "rotateY(15deg) rotateX(-80deg) translateZ(4.5em)";
+                jjjC_applyRotation(jjjC_rotation);
+                
+            }
+        
+          
+        
+
+
+
+
+
+            function jjjC_applyRotation(val) {
+                document.getElementById('jjjBookWrapper').classList.add('jjjBookWrapperMoveRemove');
+                jjjC_book.style.transform = val;
+            }
+            
+        
+           
+        let jjjBookEnviroment=document.getElementById('jjjBookEnviroment');
+        let jjjGetMeToBookEnviroment=document.getElementById('jjjGetMeToBookEnviroment');
+        jjjGetMeToBookEnviroment.addEventListener('click',function(){
+            jjjBehExtent();
+
+        });
+
+        function jjjBehExtent(){
+           
+            document.getElementsByClassName('jjjjarrowTopBtnn')[0].classList.add('jjjjDisplayNotMeDude');
+            document.getElementsByClassName('jjjjarrowOff')[0].classList.add('jjjjDisplayMeDude');
+            document.getElementById('jjjChangeswitchIt').style.color="black";
+            document.getElementById('jjjClickOnTheBook').style.display="flex";
+
+
+           
+            document.getElementById('jjjHandlerMenu').classList.add('jjjjDisplayMeDude');
+
+            document.getElementById('jjjBehaviorMain').scrollIntoView({ behavior: 'smooth' });
+           
+            document.getElementById('jjjBookEnviromentTableEffect').classList.add('jjjBookEnviromentTableEffectAdd');
+         
+           jjjC_book.style.transform ="rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
+             
+           //  jjjC_book.classList.add('jjjjvariemeTheeMouV2');
+
+
+            document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.transform="rotateY(0deg) rotateX(0deg)";
+            document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.bottom="-16em";
+            document.getElementById('jjjWelcomeText').style.marginTop="18em";
+            setTimeout(function(){
+            let jjjRotateMenuButtons= document.getElementsByClassName('jjjRotateMenuButtons');
+            for (let i=0;i<jjjRotateMenuButtons.length;i++){
+                jjjRotateMenuButtons[i].classList.add('jjjRotateMenuButtonsExtent')
+            }
+        },1480); 
+
+
+
+            setTimeout(function(){
+               jjjC_book.style.transform ="rotateY(15deg) rotateX(-80deg) translateZ(4.5em) translateX(-9.5em)";
+            
+            },2600);
+
+         
+            setTimeout(function(){
+             
+               
+            },5000);
+        }   
+
+
+        function jjjC_jjjResetBtn() {
+            document.getElementById('jjjChangeswitchIt').style.color="orange";
+           document.getElementById('jjjBookWrapper').classList.remove('jjjBookWrapperMoveRemove');
+           
+            document.getElementsByClassName('jjjjarrowOff')[0].classList.remove('jjjjDisplayMeDude');
+            
+           
+            document.getElementsByClassName('jjjjarrowTopBtnn')[0].classList.remove('jjjjDisplayNotMeDude');
+
+
+            jjjC_rotation = "rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
+            //jjjC_book.classList.remove('jjjjvariemeTheeMou');
+           // jjjC_applyRotation(jjjC_rotation);
+            jjjC_book.style.transform =jjjC_rotation;
+            setTimeout(function(){
+
+            jjjC_rotation = "rotateY(0deg) rotateX(0deg) translateZ(4.5em)";
+          //  jjjC_book.classList.remove('jjjjvariemeTheeMouV2');
+
+
+            for (let i = 0; i < jjjBehDaPages.length; i++) {
+                jjjBehDaPages[i].style.zIndex = 25;
+                jjjBehDaPages[i].classList.remove('jjjBehClassRotateOrNot');
+                setTimeout(function(){
+                    jjjBehbookTop.style.borderTopColor="rgb(237, 185, 67)";
+                  jjjBehcardBottom.style.borderTopColor="rgb(237, 185, 67)";
+              
+                  },900);
+            }
+
+
+
+
+
+            document.getElementById('jjjBookEnviromentTableEffect').classList.remove('jjjBookEnviromentTableEffectAdd');
+         
+           
+           //jjjC_applyRotation(jjjC_rotation);
+           jjjC_book.style.transform =jjjC_rotation;
+            document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.transform="rotateX(-90deg)";
+            document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.bottom="";
+            document.getElementById('jjjWelcomeText').style.marginTop="initial";
+            setTimeout(function(){
+            let jjjRotateMenuButtons= document.getElementsByClassName('jjjRotateMenuButtons');
+            for (let i=0;i<jjjRotateMenuButtons.length;i++){
+                jjjRotateMenuButtons[i].classList.remove('jjjRotateMenuButtonsExtent')
+            }
+        },620); 
+
+
+
+       
+
+
+
+
+                 },2000)
+
+                
+            
+        }
+
+        
+
+
+
+
+
+    }
+
+
+    })})();
+
+
+
+
+
+
+
+
+
+
+    (function() {
+
+
+    document.addEventListener("DOMContentLoaded",function(){
+
+        if (document.getElementById('jjjjMiniGameIdentifier') !== null){    
+       
+       
+       
+       
+       
+          
+       
+       
+       
+       function jjjjGameSetUp(){
+       
+       
+       
+       
+       
+       let jjjjcardItem=document.getElementsByClassName("jjjjcardItem");
+       let jjjjCardclasses=Array(
+       "Empusidae","Empusidae","Empusidae",
+       "Mantidae","Mantidae","Mantidae",
+       "Phyllocranidae","Phyllocranidae","Phyllocranidae",
+       "Beauty","Beauty","Beauty",
+       "AquaMantis","AquaMantis","AquaMantis",
+       "funnySayings","funnySayings","funnySayings"
+       );
+       
+       for (p=0;p<jjjjcardItem.length;p++){
+         let getit=jjjjCardclasses[Math.floor(Math.random() * jjjjCardclasses.length)];
+       
+         jjjjcardItem[p].classList.add(getit);
+         jjjjCardclasses.splice(jjjjCardclasses.indexOf(getit),1);
+       
+       
+       
+        }
+       
+       let jjjCardsFunnySayingsUrl=Array(
+           "bamboo.jpg",
+           "getALife.jpg",
+           "iAmRightHere.jpg",
+           "LetTheStressBegin.jpg",
+           "meAlwaysRight.jpg",
+           "ReallyFunny.jpg",
+       );
+       
+       
+       
+       let jjjjRandomFunny=jjjCardsFunnySayingsUrl[Math.floor(Math.random() * jjjCardsFunnySayingsUrl.length)];
+       
+       setTimeout(function(){
+         let  jjjjQfunnySayings=document.getElementsByClassName('funnySayings');
+           for (p=0;p<jjjjQfunnySayings.length;p++){
+               jjjjQfunnySayings[p].querySelector('.jjjcardItemFront').style.backgroundImage="url(../images/Balasis/miniGame/funnySayings/"+jjjjRandomFunny;
+           }
+       
+       },10);
+       
+       
+       
+       
+       
+       }
+           
+       
+       
+       jjjjGameSetUp();
+       
+       
+       let jjjjgameEnded=false;
+       
+               //ok ..this is a tricky one because animations of rotation get interuppted with animation of hover(keyframe animation)
+               //in each one of these I need to first add the clicked element to an array (jjjcardiflipped) then
+               //disactivate his animation..then add the rotation...then check if matches or it has to be flipped again
+               //and in case it doesnt match add back the animation with a delay though to have time for the flip to take place..again..
+               //so setTimeout = animation time of flip...
+       
+       
+               function jjjjSDisplayTopScores() {
+                       
+                   let jjjjSTopScores = JSON.parse(localStorage.getItem('jjjjSTopScores')) || [];
+               
+                  
+                   let jjjjSTimeTable = document.getElementById('jjjjSTimeTable');
+               
+                  
+                   jjjjSTimeTable.innerHTML = '<h5>Top 10 Times</h5>';
+               
+                  
+                   jjjjSTopScores.forEach((jjjjSScore, index) => {
+                       let jjjjSScoreElement = document.createElement('p');
+                       jjjjSScoreElement.textContent = `${jjjjSScore} seconds`;
+                       jjjjSTimeTable.appendChild(jjjjSScoreElement);
+                   });
+               }
+       
+       
+               function jjjjclearJjjjSTopScores() {
+                   if (localStorage.getItem('jjjjSTopScores')) {
+                       localStorage.removeItem('jjjjSTopScores');
+                   }
+                    jjjjSDisplayTopScores();
+               }
+       
+               jjjjSDisplayTopScores();
+       
+       
+               let jjjScoresMiniGame=document.getElementById('jjjScoresMiniGame');
+               let  jjjShowMiniGamee=document.getElementById('jjjShowMiniGame');
+              jjjScoresMiniGame.addEventListener('click',function(){
+               jjjjShowTheScores();
+           });
+       
+           function jjjShowMiniGame(){
+               if ( jjjjgameEnded==true){
+                   jjjjResetMiniGameLet();
+               }
+       
+               document.getElementById('jjjShowMiniGame').style.display="none";
+               document.getElementById('jjjScoresMiniGame').style.display="flex";        
+               document.getElementsByClassName('jjjjcardHolder')[0].style.display="grid";
+               document.getElementById('jjjjTableFrame').style.display="none"; 
+              document.getElementById('jjjjCardTimer').style.display="flex";
+       
+              
+           }
+       
+       
+               jjjShowMiniGamee.addEventListener('click',function(){
+                   jjjShowMiniGame();
+                   
+               });
+       
+       
+              
+       
+               function jjjjShowTheScores(){
+                   if ( jjjjgameEnded==true){
+                       jjjjResetMiniGameLet();
+                   }
+                   jjjjSDisplayTopScores();
+                   document.getElementById('jjjjCardTimer').style.display="none";
+                   document.getElementById('jjjScoresMiniGame').style.display="none";
+                   document.getElementById('jjjShowMiniGame').style.display="flex";           
+                   document.getElementsByClassName('jjjjcardHolder')[0].style.display="none";
+                   document.getElementById('jjjjTableFrame').style.display="flex"; 
+               }
+       
+       
+       
+            
+              
+               document.getElementById('jjjResetMiniGameTable').addEventListener('click',function(){
+                   jjjjclearJjjjSTopScores();
+               });
+       
+       
+       
+           let jjjjcardItems = document.getElementsByClassName('jjjjcardItem');
+           let jjjCardiFlipped = [];
+           let jjjjloadSafety=false;
+           let jjjjtimerIsOn=false;
+           let jjjjQuiztimer=0;
+          
+          
+                   let jjjjQuiztimerMinutes=0;
+       
+       
+       
+       
+       
+       
+       
+           for (let i = 0; i < jjjjcardItems.length; i++) {
+               jjjjcardItems[i].addEventListener('click', function (e) {
+                   e.preventDefault();
+               if (jjjjloadSafety==false){
+                   jjjjloadSafety=true;
+                   
+       
+       
+                   if (jjjCardiFlipped.length === 0) {
+       
+                     
+       
+                       jjjCardiFlipped.push(jjjjcardItems[i]);
+                       if (jjjjtimerIsOn==false){
+                       jjjjStartCardGameTimer();
+                   }
+       
+                       for (let j = 0; j < jjjjcardItems.length; j++) {
+                           if (jjjCardiFlipped.includes(jjjjcardItems[j])) {
+                               jjjjcardItems[j].style.animationPlayState = 'paused';
+                               jjjjcardItems[j].style.animationName = 'none';
+                           } else {
+                               jjjjcardItems[j].style.animationPlayState = '';
+                               jjjjcardItems[j].style.animationName = 'jjjhoverAnimation';
+                           }
+                       }
+       
+                       setTimeout(function(){
+                           jjjjcardItems[i].classList.add('jjjcardItemRotated');
+                     },50);
+       
+                       
+       
+                       
+                     } else if (jjjCardiFlipped.length === 1) {
+                       jjjCardiFlipped.push(jjjjcardItems[i]);
+       
+                       for (let j = 0; j < jjjjcardItems.length; j++) {
+                           if (jjjCardiFlipped.includes(jjjjcardItems[j])) {
+                               jjjjcardItems[j].style.animationPlayState = 'paused';
+                               jjjjcardItems[j].style.animationName = 'none';
+                               
+                           } else {
+                               jjjjcardItems[j].style.animationPlayState = '';
+                               jjjjcardItems[j].style.animationName = 'jjjhoverAnimation';
+                           }
+                       }
+       
+                       setTimeout(function(){
+                       jjjjcardItems[i].classList.add('jjjcardItemRotated');
+                     },50);
+                       
+                       if (jjjCardiFlipped[0].classList[1] === jjjCardiFlipped[1].classList[1]) {
+                           
+       
+       
+       
+       
+                       }
+                       
+                    
+       
+       
+                     } else if ((jjjCardiFlipped.length === 2)  ) {
+       
+                       if (jjjCardiFlipped.length<3){
+                      
+       
+                       jjjCardiFlipped.push(jjjjcardItems[i]);
+       
+       
+                       for (let j = 0; j < jjjjcardItems.length; j++) {
+                           if (jjjCardiFlipped.includes(jjjjcardItems[j])) {
+                               jjjjcardItems[j].style.animationPlayState = 'paused';
+                               jjjjcardItems[j].style.animationName = 'none';
+                           } else {
+                               jjjjcardItems[j].style.animationPlayState = '';
+                               jjjjcardItems[j].style.animationName = 'jjjhoverAnimation';
+                           }
+                       }
+       
+                       setTimeout(function(){
+                       jjjjcardItems[i].classList.add('jjjcardItemRotated');
+       
+                     },50);
+       
+                   
+                       if (jjjCardiFlipped[0].classList[1] === jjjCardiFlipped[1].classList[1] &&
+                           jjjCardiFlipped[1].classList[1] === jjjCardiFlipped[2].classList[1]) {
+       
+                           // Code to execute when cards match (for 3 cards)
+                         
+       
+                          
+                           setTimeout(function(){ 
+       
+                           jjjCardiFlipped[0].classList.add('jjjcardItemRotatedRemoved');
+                           jjjCardiFlipped[1].classList.add('jjjcardItemRotatedRemoved');                  
+                           jjjCardiFlipped[2].classList.add('jjjcardItemRotatedRemoved');
+                           let jjjjOnlyOnceCheck=true;
+                           for (let j = 0; j < jjjjcardItems.length; j++) {
+                               if (!jjjjcardItems[j].classList.contains('jjjcardItemRotatedRemoved')) {
+                                   jjjjOnlyOnceCheck=false;                            
+                               }
+                           }
+                           jjjjgameEnded=jjjjOnlyOnceCheck;
+                         
+       
+                           setTimeout(function () {
+                           if( document.getElementsByClassName('jjjjcardHolder')[0].classList.contains('jjjjcardHolderCorrect')){
+                          document.getElementsByClassName('jjjjcardHolder')[0].classList.remove('jjjjcardHolderCorrect');
+                                }
+       
+                        if( document.getElementsByClassName('jjjjcardHolder')[0].classList.contains('jjjjcardHolderFalse')){
+                           document.getElementsByClassName('jjjjcardHolder')[0].classList.remove('jjjjcardHolderFalse');
+                        }
+       
+                          document.getElementsByClassName('jjjjcardHolder')[0].classList.add('jjjjcardHolderCorrect');
+       
+       
+                          setTimeout(function(){
+                           if( document.getElementsByClassName('jjjjcardHolder')[0].classList.contains('jjjjcardHolderCorrect')){
+                               document.getElementsByClassName('jjjjcardHolder')[0].classList.remove('jjjjcardHolderCorrect');
+                                     }
+            
+                           },2100);
+                       }, 500);
+       
+       
+       
+                               setTimeout(function(){
+                                   jjjCardiFlipped = [];
+                               },10);
+                         
+       
+                     
+                                },1500);
+       
+       
+                       } else {
+       
+                           setTimeout(function () {
+                               if( document.getElementsByClassName('jjjjcardHolder')[0].classList.contains('jjjjcardHolderCorrect')){
+                                   document.getElementsByClassName('jjjjcardHolder')[0].classList.remove('jjjjcardHolderCorrect');
+                                         }
+                
+                                 if( document.getElementsByClassName('jjjjcardHolder')[0].classList.contains('jjjjcardHolderFalse')){
+                                    document.getElementsByClassName('jjjjcardHolder')[0].classList.remove('jjjjcardHolderFalse');
+                                 }
+                
+                                   document.getElementsByClassName('jjjjcardHolder')[0].classList.add('jjjjcardHolderFalse');
+                
+                
+                                   setTimeout(function(){
+                                    if( document.getElementsByClassName('jjjjcardHolder')[0].classList.contains('jjjjcardHolderFalse')){
+                                        document.getElementsByClassName('jjjjcardHolder')[0].classList.remove('jjjjcardHolderFalse');
+                                              }
+                     
+                                    },2100);
+           
+                                   }, 500);
+                         
+       
+                         
+                           setTimeout(function () {
+                             
+       
+                           
+       
+                              
+                              
+                               for (let j = 0; j < jjjjcardItems.length; j++) {
+                                   if (jjjCardiFlipped.includes(jjjjcardItems[j])) {
+                                       jjjjcardItems[j].style.animationPlayState = 'paused';
+                                       jjjjcardItems[j].style.animationName = 'none';
+                                   } else {
+                                       jjjjcardItems[j].style.animationPlayState = '';
+                                       jjjjcardItems[j].style.animationName = 'jjjhoverAnimation';
+                                   }
+                               }
+       
+                               setTimeout(function(){
+                                   for (let j = 0; j < jjjCardiFlipped.length; j++) {
+                                       jjjCardiFlipped[j].classList.remove('jjjcardItemRotated');
+                                   }
+                                   jjjCardiFlipped = [];
+                               },50)
+                               
+       
+       
+                              
+       
+       
+       
+                           }, 1500);
+       
+                        
+       
+       
+                       }
+       
+       
+       
+       
+       
+       
+                 
+       
+       
+       
+       
+       
+                   }
+                 
+       
+       
+                     
+       
+                   }
+       
+       
+       
+                   setTimeout(function(){ 
+                       jjjjloadSafety=false;
+                   },20)
+       
+                   }
+       
+                   
+                   function jjjjSSaveTopScores(jjjjSScore) {              
+                       let jjjjSTopScores = JSON.parse(localStorage.getItem('jjjjSTopScores')) || [];   
+                       jjjjSTopScores.push(jjjjSScore);
+                       jjjjSTopScores.sort((a, b) => b - a);
+                       jjjjSTopScores = jjjjSTopScores.slice(0, 10);
+                       localStorage.setItem('jjjjSTopScores', JSON.stringify(jjjjSTopScores));
+                   }
+       
+                  
+               
+       
+       
+       
+       
+       
+       
+       
+       
+                   function jjjjStartCardGameTimer(){
+       
+                       jjjjtimerIsOn=true;
+                       jjjjCountDownInterval=setInterval(function(){
+       
+                           if (jjjjQuiztimerMinutes == 0){
+                               if (jjjjQuiztimer<10){
+                                   jjjjQuiztimerShow="0"+jjjjQuiztimer;
+                               }else{
+                                   jjjjQuiztimerShow=jjjjQuiztimer;
+                               }
+                       
+                       }else{
+                           if (jjjjQuiztimer<10){
+                               jjjjQuiztimerShow="0"+jjjjQuiztimer;
+                           }else{
+                               jjjjQuiztimerShow=jjjjQuiztimer;
+                           }
+       
+                           jjjjQuiztimerShow=jjjjQuiztimerMinutes + " : " + jjjjQuiztimer;
+                       }
+                       
+                           document.getElementById('jjjjCardTimerText').innerText=jjjjQuiztimerShow;
+       
+                           
+                          
+                           
+                               if (jjjjgameEnded==true){      
+                                                                 
+                                 jjjjSSaveTopScores(jjjjQuiztimerShow);
+                                 setTimeout(function(){
+       
+                                   setTimeout(function(){
+                                   jjjjSDisplayTopScores() ; 
+                               },20);
+                                   jjjScoresMiniGame.click();
+       
+                                 },50)
+                               
+                                 clearInterval(jjjjCountDownInterval);    
+                               
+                                 
+                              }
+       
+                              jjjjQuiztimer=jjjjQuiztimer+1;
+       
+                              if (jjjjQuiztimer==60){
+                                jjjjQuiztimerMinutes=jjjjQuiztimerMinutes+1;
+                                jjjjQuiztimer=0;       
+                              }
+       
+                           }   ,1000);
+                   }
+                   
+       
+               });
+           }
+       
+       
+       
+       
+       
+       
+       
+       
+       
+                    
+                        function jjjjResetMiniGameLet() {
+                            
+                            if (typeof jjjjCountDownInterval !== 'undefined') {
+                                clearInterval(jjjjCountDownInterval);
+                            }
+                        
+                            
+                            jjjCardiFlipped = [];
+                        
+                        
+                            let id = window.setTimeout(function() {}, 0);
+                            while (id--) {
+                                window.clearTimeout(id);
+                            }
+                            
+                            
+                            for (let i = 0; i < jjjjcardItems.length; i++) {
+                                
+                                
+                        
+                                
+                                jjjjcardItems[i].removeAttribute('style');
+                                jjjjcardItems[i].querySelector('.jjjcardItemFront').removeAttribute('style');
+                                while (jjjjcardItems[i].classList.length > 1) {
+                                    
+                                    jjjjcardItems[i].classList.remove(jjjjcardItems[i].classList.item(1));
+                                }
+                            }
+
+
+                            jjjjtimerIsOn=false;
+                            jjjjQuiztimer=0;
+                            jjjjQuiztimerMinutes=0;
+                            jjjjQuiztimerShow=0;
+                            jjjjgameEnded=false;
+                    
+                            document.getElementById('jjjjCardTimerText').innerText=jjjjQuiztimerShow;
+                            jjjjGameSetUp();
+                        }
+       
+       
+       
+       
+       
+       
+                    document.getElementById('jjjResetMiniGame').addEventListener('click',function(){
+                        jjjjResetMiniGameLet();
+                    });    
+       
+       
+    
+       
+       }
+       
+       
+       })})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function() {
+   
+    document.addEventListener("DOMContentLoaded",function(){
+        if (document.getElementById('jSpSpeciesIdentifier') !== null){     
+            
+
+
+            //GrabElementsList
+            const jSpbar=document.getElementsByClassName('jSpbar');
+            const jSpSpeciesMenuAnchor=document.getElementsByClassName('jSpSpeciesMenuAnchor');
+            const jSpSubSpeciesMenuContent=document.getElementsByClassName('jSpSubSpeciesMenuContent');
+            const jSpItems=document.getElementsByClassName('jSpItems');
+            const jSpSubSpeciesClassForFunction=document.getElementsByClassName('jSpSubSpeciesClassForFunction');
+
+
+
+
+
+
+          
+function jSpapplyStylesToBars() {
+    for (let i = 0; i < jSpbar.length; i++) {
+        let percentageElement = jSpbar[i].querySelector(".jSppercentage");
+        let recognize = jSpbar[i].querySelector("label").innerHTML;
+
+        let percentage = parseInt(percentageElement.innerHTML);
+
+        percentageElement.style.height = "0";
+        percentageElement.style.transition = "height 1s ease";
+
+        function animateCounter(counter) {
+            jSpbar[i].querySelector(".jSppercentage").textContent = counter + "%";
+            jSpbar[i].querySelector(".jSppercentage").style.height = "calc(" + counter + "% + 1.5em)";
+
+            if (counter < percentage) {
+                setTimeout(function(){
+                    requestAnimationFrame(() => animateCounter(counter + 1));
+                },150);
+               
+            }
+        }
+
+
+
+
+        switch (recognize) {
+            case "Mantidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(82,112,31)";
+                jSpbar[i].querySelector("label").style.color = "rgb(82,112,31)";
+                animateCounter(0);
+                break;
+            case "Hymenopodidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(237, 185, 67)";
+                jSpbar[i].querySelector("label").style.color = "rgb(237, 185, 67)";
+                animateCounter(0);
+                break;
+            case "Empusidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(206,149,178)";
+                jSpbar[i].querySelector("label").style.color = "rgb(206,149,178)";
+                animateCounter(0);
+                break;
+            case "Liturgusidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(173,182,117)";
+                jSpbar[i].querySelector("label").style.color = "rgb(173,182,117)";
+                animateCounter(0);
+                break;
+            case "Deroplatyidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(244,99,35)";
+                jSpbar[i].querySelector("label").style.color = "rgb(244,99,35)";
+                animateCounter(0);
+                break;
+            case "Phyllocranidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(225,197,149)";
+                jSpbar[i].querySelector("label").style.color = "rgb(225,197,149)";
+                animateCounter(0);
+                break;
+            case "Gonypetidae":
+                jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(119,109,123)";
+                jSpbar[i].querySelector("label").style.color = "rgb(119,109,123)";
+                animateCounter(0);
+                break;
+            default:
+                jSpbar[i].querySelector("label").style.color = "black";
+        }
+
+      
+
+    }
+}
+
+
+const jSkobserver = new IntersectionObserver((entries, jSkobserver) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            
+            jSpapplyStylesToBars();
+            
+            jSkobserver.disconnect();
+        }
+    });
+}, { threshold: 1.0 }); 
+
+
+const jSpchart = document.querySelector('.jSpchart');
+if (jSpchart) {
+    jSkobserver.observe(jSpchart);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*
+
+            for (let i=0;i<jSpbar.length;i++){
+                
+                let percentage=jSpbar[i].querySelector(".jSppercentage").innerHTML;
+               jSpbar[i].querySelector(".jSppercentage").style.height="calc("+percentage+" + 1.5em)";
+               let recognize=jSpbar[i].querySelector("label").innerHTML;
+               switch(recognize){
+                case "Mantidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(82,112,31)";
+                    jSpbar[i].querySelector("label").style.color="rgb(82,112,31)";
+                    break;
+                case "Hymenopodidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(237, 185, 67)";
+                    jSpbar[i].querySelector("label").style.color="rgb(237, 185, 67)";
+                    break;
+                case "Empusidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(206,149,178)";
+                    jSpbar[i].querySelector("label").style.color="rgb(206,149,178)";
+                    break;
+                case "Liturgusidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(173,182,117)";
+                    jSpbar[i].querySelector("label").style.color="rgb(173,182,117)";
+                    break;
+                case "Deroplatyidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(244,99,35)";
+                    jSpbar[i].querySelector("label").style.color="rgb(244,99,35)";
+                    break;
+                case "Phyllocranidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(225,197,149)";
+                    jSpbar[i].querySelector("label").style.color="rgb(225,197,149)";
+                    break;
+                case "Gonypetidae":
+                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(119,109,123)";
+                    jSpbar[i].querySelector("label").style.color="rgb(119,109,123)";
+                    break;
+                    default:
+                        jSpbar[i].querySelector("label").style.color="black";
+
+
+               }
+
+
+            }
+
+*/
+
+
+
+
+
+
+
+
+
+
+            for (let i=0;i<jSpSpeciesMenuAnchor.length;i++){
+                jSpSpeciesMenuAnchor[i].addEventListener('click',function(){
+                    
+                    let jSpICalled=this;
+                    jSpChooseSpecies(jSpICalled);
+                })
+            }
+            
+
+            function jSpChooseSpecies(jSpWhoCalled){
+                let theElementToBeSeen=document.getElementById("jSpSubSpeciesMenu"+jSpWhoCalled.id.charAt(jSpWhoCalled.id.length - 1)  );
+                let theElementToBeScaled=document.getElementById("jSPMainMenu"+jSpWhoCalled.id.charAt(jSpWhoCalled.id.length - 1)  );
+                let parentDiv = document.getElementById('jSpSubSpeciesMenu0');
+                let classToRemove = 'jSpInitiateDisplay';
+                let children = parentDiv.children;
+                for (let i = 0; i < children.length; i++) {
+                children[i].classList.remove(classToRemove);
+                }
+
+
+            if (!theElementToBeSeen.classList.contains('jSpClassForChosenOne')){
+                document.getElementById('jSPMainMenuFrameMantis').style.display="initial";
+                for (let i=0;i<jSpSubSpeciesMenuContent.length;i++){
+                    jSpSubSpeciesMenuContent[i].classList.remove('jSpClassForChosenOne');
+                }
+                for (let i=0;i<jSpItems.length;i++){
+                    jSpItems[i].classList.remove('jSpClassForChosenOne');
+                }
+                for (let i=0;i<jSpSubSpeciesClassForFunction.length;i++){
+                    jSpSubSpeciesClassForFunction[i].classList.remove('jSpSubSpeciesClassForFunctionScale');
+
+                }
+
+
+
+            
+
+                theElementToBeSeen.classList.add('jSpClassForChosenOne');
+             
+                theElementToBeSeen.querySelector('.jSpSubSpeciesMenuContent').classList.add('jSpClassForChosenOne');
+                theElementToBeSeen.querySelector('.jSpSubSpeciesMenuContent').scrollTop=0;
+                theElementToBeScaled.classList.add('jSpSubSpeciesClassForFunctionScale');
+                switch(theElementToBeSeen.id){
+
+                    case "jSpSubSpeciesMenu1":
+                        document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                        "../images/Balasis/Species/Mantidae.png");
+                        break;
+                    case "jSpSubSpeciesMenu2":
+                        document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                        "../images/Balasis/Species/Hymenopodidae.png");
+                        break;
+                        
+                    case "jSpSubSpeciesMenu3":
+                        document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                        "../images/Balasis/Species/Empusidae.png");
+                        break;
+                    case "jSpSubSpeciesMenu4":
+                        document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                        "../images/Balasis/Species/Liturgusidae.png");
+                        break;
+                        
+                    case "jSpSubSpeciesMenu5":
+                    document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                    "../images/Balasis/Species/Deroplatyidae.png");
+                    break;
+
+                    case "jSpSubSpeciesMenu6":
+                    document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                    "../images/Balasis/Species/Phyllocranidae.png");
+                    break;
+
+                    case "jSpSubSpeciesMenu7":
+                    document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                    "../images/Balasis/Species/Gonypetidae.png");
+                    break;
+                    default :
+                        document.getElementById('jSPMainMenuFrameMantis').setAttribute('src',
+                        "../images/Balasis/Species/mantisiumChatBoxReverse.png");
+
+
+                }
+
+            }else{
+
+
+                for (let i=0;i<jSpSubSpeciesMenuContent.length;i++){
+                    jSpSubSpeciesMenuContent[i].classList.remove('jSpClassForChosenOne');
+                }
+                for (let i=0;i<jSpItems.length;i++){
+                    jSpItems[i].classList.remove('jSpClassForChosenOne');
+                }
+                for (let i=0;i<jSpSubSpeciesClassForFunction.length;i++){
+                    jSpSubSpeciesClassForFunction[i].classList.remove('jSpSubSpeciesClassForFunctionScale');
+
+                }
+                document.getElementById('jSpSubSpeciesMenu0').classList.add('jSpClassForChosenOne');
+                document.getElementById('jSpSubSpeciesMenuTitle0').classList.add('jSpClassForChosenOne');
+                document.getElementById('jSpSubSpeciesMenuText0').classList.add('jSpClassForChosenOne');
+                document.getElementById('jSPMainMenuFrameMantis').style.display="none";
+
+
+
+            }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+        }
+    })  })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

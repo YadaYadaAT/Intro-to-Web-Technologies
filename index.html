@@ -5,7 +5,9 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <script src="https://kit.fontawesome.com/a6d6ba659c.js" crossorigin="anonymous"></script>        
         <link rel="stylesheet/less" type="text/css" href="other/less/balasis.less">
-        <title></title>
+        <link rel="stylesheet/less" type="text/css" href="other/less/ververaki.less">
+        <link rel="stylesheet/less" type="text/css" href="other/less/master.less">
+        <title>Home</title>
         <meta name="Description" content="changeThisToTheDescription">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -20,17 +22,14 @@
         <meta property="og:image:height" content="228">
         <meta property="og:description" content="Learn all about Mantises in our beautiful website">
         <script type="text/javascript" src="other/js/less.js"></script>
-        <script>document.addEventListener("DOMContentLoaded",function(){
-                        fetch("html/headerNav.html")
-                        .then(response=>response.text())
-                        .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("beforebegin",html)})
-                    })        
+        <script>   
                     document.addEventListener("DOMContentLoaded",function(){
                         fetch("html/footer.html")
                         .then(response=>response.text())
                         .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("afterend",html)})
                     })
         </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="other/js/ververaki.js"></script>
         <script src="other/js/balasis.js" ></script>              
         <!--the following informs the visitor that our site is not viewable in case the browser has disabled javascript-->
@@ -45,9 +44,92 @@
 
 
     
-    <body>
+    <body id="jHomePageIdentifier">
+        <div id="HomePageImgPreview">
+            <div id="HomePageImgPreviewFrame">
 
-        <main>
+            
+            <img id="HomePageImgPreviewIn" src="" alt="Previewd Image">
+            <div id="HomePageImgPreviewInDescription"></div>
+            </div>
+        </div>
+        <div class="imgbox">
+            <img class="center-fit" src="images/Ververaki/landingplusplus.jpg">
+        </div>
+    <div id="navbar_wrapper">
+            
+                  <button class="hamburger">
+                    <i class="menuIcon fa-solid fa-bars fa-2xl"></i>
+                    <i class="closeIcon fa-solid fa-xmark fa-xl"></i>
+                  </button>
+                  <ul class="menu">
+                    <li><a class="menuItem" href="html/gallery.html">Gallery</a></li>
+                    <li><div class="menuItem" id="info" onclick="dropInfo();">Info</div>
+                            <div id="info-content">
+                                    <ul class="infoList">
+                                    <li><a href="html/species.html" id="speciesInList">Species</a></li>
+                                    <li><a href="html/behavior.html" id="behaviorInList">Behavior</a></li>
+                                    <li><a href="html/lifeCycle.html" id="lifeCycleInList">Life Cycle</a></li>
+                                    <li><a href="html/habitats.html" id="habitatsInList">Habitats</a></li>
+                                    <li><a href="html/care.html" id="careInList">Care</a></li>
+                                    </ul>
+                            </div></li>
+                    <li><div class="menuItem" id="resource" onclick="dropResources();">Resources</div>
+                            <div id="resources-content">
+                                    <ul class="resourcesList">
+                                            <li><a href="html/resources.html" id="resourcesInList">Our Sources</a></li>
+                                            <li><a href="html/faq.html" id="faqInList">FAQ</a></li>
+                                    </ul>
+                            </div>
+                    </li>
+                    <li><a class="menuItem" href="html/aboutPage.html">About us</a></li>
+                  </ul>
+                  
+    
+            <nav id="block-main-menu">
+                    <div class="flex-container-navbar">
+                            
+                                    <div id="menu_item_gallery">
+                                            <a href="html/gallery.html" >GALLERY</a>
+                                    </div>
+                                    <div class="dropdown">
+                                            <div class="drop-option">INFO</div>
+                                            <div class="dropdown-cont">
+                                                    <ul id="otherList">
+                                                            <li><a href="html/species.html">Species</a></li>
+                                                            <li><a href="html/behavior.html">Behavior</a></li>
+                                                            <li><a href="html/lifeCycle.html">Life Cycle</a></li>
+                                                            <li><a href="html/habitats.html">Habitats</a></li>
+                                                            <li><a href="html/care.html">Care</a></li>
+                                                    </ul>
+                                            </div>
+                                    </div>
+                                    <div id="menu_item_home">
+                                            <a href="./index.html">
+                                                    <img src="images/Ververaki/logoNoBGHELP.png">
+                                            </a>
+                                    </div>
+                                    <div class="dropdown">
+                                            <div class="drop-option">RESOURCES</div>
+                                            <div class="dropdown-cont">
+                                                    <ul id="resourceList">
+                                                            <li><a href="html/resources.html"  id="sourcesOption">Our Sources</a></li>
+                                                            <li><a href="html/faq.html"  id="faqOption">FAQ</a></li>
+                                                    </ul>
+                                            </div>
+                                    </div>
+                                    <div id="menu_item_about">
+                                            <a href="html/aboutPage.html" >ABOUT US</a>
+                                    </div>
+                            
+                    </div>
+    
+            </nav>
+    </div>
+
+    
+        <main style="margin-top: 8em;">
+        
 
 
             
@@ -61,7 +143,7 @@
                               With over 2,400 known species worldwide, mantises exhibit fascinating
                                characteristics that set them apart in the insect world.
                             They boast elongated bodies, triangular heads, and distinctive forelegs
-                             adapted for hunting. Their compound eyes and swiveling heads make them adept hunters.                        
+                             adapted for hunting. <span class="kBrealBrCheat"></span>Their compound eyes and swiveling heads make them adept hunters.                        
                             These insects come in various colors and sizes, often blending seamlessly into their 
                             surroundings. Their iconic "prayer" pose is a defensive stance and a testament to their adaptability.
                             Mantises are exclusively carnivorous, preying on a variety of insects. Their diet may include flies,

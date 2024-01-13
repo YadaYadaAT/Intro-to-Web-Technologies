@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Details</title>
+
+
+    <script src="https://kit.fontawesome.com/a6d6ba659c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet/less" type="text/css" href="../other/less/kokkinoss.less">
+ <link rel="stylesheet/less" type="text/css" href="../other/less/master.less">
+    <script src="../other/js/less.js"></script>
+    
+
+    <script>
+            
+        document.addEventListener("DOMContentLoaded",function(){
+            fetch("footer.html")
+            .then(response=>response.text())
+            .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("afterend",html)})
+        })
+      </script>
+
+</head>
+<body>
+
+    <div class="imgbox">
+        <img class="center-fit" src="../images/Ververaki/Empusa_fasciata_redpit.jpg">
+    </div>
+    <div id="navbar_wrapper">
+        
+        <button class="hamburger">
+          <i class="menuIcon fa-solid fa-bars fa-2xl"></i>
+          <i class="closeIcon fa-solid fa-xmark fa-xl"></i>
+        </button>
+        <ul class="menu">
+          <li><a class="menuItem" href="./gallery.html">Gallery</a></li>
+          <li><div class="menuItem" id="info" onclick="dropInfo();">Info</div>
+                  <div id="info-content">
+                          <ul class="infoList">
+                          <li><a href="./species.html">Species</a></li>
+                          <li><a href="./behavior.html">Behavior</a></li>
+                          <li><a href="./lifeCycle.html">Life Cycle</a></li>
+                          <li><a href="./habitats.html">Habitats</a></li>
+                          <li><a href="./care.html">Care</a></li>
+                          </ul>
+                  </div></li>
+          <li><div class="menuItem" id="resource" onclick="dropResources();">Resources</div>
+                  <div id="resources-content">
+                          <ul>
+                                  <li><a href="./resources.html">Our Sources</a></li>
+                                  <li><a href="./faq.html">FAQ</a></li>
+                          </ul>
+                  </div>
+          </li>
+          <li><a class="menuItem" href="./aboutPage.html">About us</a></li>
+        </ul>
+        
+
+  <nav id="block-main-menu">
+          <div class="flex-container-navbar">
+                  
+                          <div id="menu_item_gallery">
+                                  <a href="./gallery.html" >GALLERY</a>
+                          </div>
+                          <div class="dropdown">
+                                  <div class="drop-option">INFO</div>
+                                  <div class="dropdown-cont">
+                                          <ul id="otherList">
+                                                  <li><a href="./species.html">Species</a></li>
+                                                  <li><a href="./behavior.html">Behavior</a></li>
+                                                  <li><a href="./lifeCycle.html">Life Cycle</a></li>
+                                                  <li><a href="./habitats.html">Habitats</a></li>
+                                                  <li><a href="./care.html">Care</a></li>
+                                          </ul>
+                                  </div>
+                          </div>
+                          <div id="menu_item_home">
+                                  <a href="../index.html">
+                                          <img src="../images/Ververaki/logoNoBGHELP.png">
+                                  </a>
+                          </div>
+                          <div class="dropdown">
+                                  <div class="drop-option">RESOURCES</div>
+                                  <div class="dropdown-cont">
+                                          <ul id="resourceList">
+                                                  <li><a href="./resources.html" id="sourcesOption">Our Sources</a></li>
+                                                  <li><a href="./faq.html"  id="faqOption">FAQ</a></li>
+                                          </ul>
+                                  </div>
+                          </div>
+                          <div id="menu_item_about">
+                                  <a href="./aboutPage.html">ABOUT US</a>
+                          </div>
+                  
+          </div>
+
+  </nav>
+</div>
+
+
+    <main  id="checkingJS" class="detailPageMain">
+
+    <div class="photo-detail-container">
+        <img src="../images/Kokkinos/image5.jpg" alt="Detailed Image" class="full-size-image">
+        <div class="photo-details">
+            <h2>Green Embrace</h2>
+<p>A tender moment shared between man and mantis. This photo celebrates the gentle side of these misunderstood creatures, often seen as fierce predators.</p>
+<p><strong>Did You Know?</strong> Praying mantises are one of the few insects capable of turning their heads to look over their shoulders.</p>
+<p><strong>Fascinating Fact:</strong> Their vibrant green hue is not just for camouflage; it's also a deterrent to predators searching for a meal.</p>
+
+
+            <a href="../images/Kokkinos/image5.jpg" download="Green Embrace">Download Image</a>
+        </div>
+    </div>
+
+
+
+    <div class="back-to-gallery">
+        <a href="gallery.html" class="back-button">Back to Gallery</a>
+    </div>
+
+</main>
+
+<script src="../other/js/kokkinos.js"></script>
+ <script src="../other/js/ververaki.js"></script>
+</body>
+
+
+</html>
