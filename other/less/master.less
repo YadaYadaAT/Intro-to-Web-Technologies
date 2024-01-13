@@ -324,7 +324,14 @@ nav{
     width: 100%;
 }
 
+footer{
+    border-top:15px groove @colorDarkGreen;
+    position:relative;
+}
+
 .footer_wrapper{
+    padding-bottom:3em;
+    
     background-color: @colorLightGreen;
     font-family: 'Montserrat';
     font-size: 15px;
@@ -341,11 +348,12 @@ nav{
 .columnTwo{
     margin-top: 8.2em;
 }
+
 .columnFour{
     margin-top: 8.2em;
 }
 .columnThree{
-    padding-bottom: 7em;
+    margin-top: 8.2em;
 }
 .athTechRow{
     padding-top: 0.5em;
@@ -371,6 +379,26 @@ nav{
     height: 2.2em;
 }
 
+.fixTheMonstrosity:first-child{
+    margin-bottom:15px;
+}
+
+.fixTheMonstrosity{
+    display:flex;
+    width:100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+.fixTheMonstrosity div{
+   padding-left:10px;
+}
+.fixTheMonstrosity a{
+    display:flex;
+    width:100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .columnFive{
     display:flex;
     flex-direction: column;
@@ -384,19 +412,24 @@ nav{
     color: black;
 }
 //link formatting for the rest of the links to different parts of the website +quiz 
-.columnTwo a:link, .meetTheTeam a:link, .columnFour a:link{
+.columnTwo a:link, .meetTheTeam a:link, .columnFour a:link, .columnThree a:link{
     color: black;
     text-decoration: none;
 }
-.columnTwo a:visited, .meetTheTeam a:visited, .columnFour a:visited{
+.columnTwo a:visited, .meetTheTeam a:visited, .columnFour a:visited,.columnThree a:visited{
     color: black;
     text-decoration: none;
     
 }
-.columnTwo a:hover, .meetTheTeam a:hover, .columnFour a:hover{
+.columnTwo a:hover, .meetTheTeam a:hover, .columnFour a:hover,.columnThree a:hover{
     color: rgb(124, 126, 123); 
     opacity: 0.6;
 }
+
+
+
+
+
 .dropdown-content i{
     background-color: rgba(146, 194, 152, 0.384);
     border:none;

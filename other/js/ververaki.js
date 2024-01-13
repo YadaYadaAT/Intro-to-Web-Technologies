@@ -1,6 +1,7 @@
 
 
 
+
 function changeIcon(anchor) {
     
     anchor.classList.toggle("fa-toggle-on");
@@ -92,3 +93,4 @@ window.onload = () => {
 //     document.getElementById().style.color("orange")
 //   };
 // }
+
