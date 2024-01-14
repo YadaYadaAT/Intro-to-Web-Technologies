@@ -1,4 +1,4 @@
-
+//function to make the flip cards in about page rotate on click (for smaller screens)
 
 let flipCard = document.getElementsByClassName("flip-card-inner");
 
@@ -30,6 +30,8 @@ function changeIcon(anchor) {
     anchor.classList.toggle("fa-toggle-on");
 }
 
+
+//this function drops the info list on the hamburger menu
 function dropInfo(){
 
     var anchor = document.getElementById("info-content");
@@ -47,6 +49,7 @@ function dropInfo(){
     
 };
 
+//this function drops the resources list on the hamburger menu
 function dropResources(){
   var anchor = document.getElementById("resources-content");
     if (anchor.style.display === "none" || anchor.style.display === "") {
@@ -64,18 +67,8 @@ function dropResources(){
     }
 };
 
-// function slideMenu(){
-//     var anchor = document.getElementById("sidebar-menu");
-//     if (anchor.style.visibility === "hidden") {
-//         anchor.style.visibility = "visible";
-//         anchor.style.left = "0";
-        
-//     } else {
-//         anchor.style.visibility = "hidden";
-//     }
-// }
 
-
+//shows or hides the hamburger menu
 
 
 window.onload = () => {
