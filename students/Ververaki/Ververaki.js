@@ -31,7 +31,7 @@ const aboutSection = document.getElementsByClassName('aboutSection');
 const about = document.getElementsByClassName('introduction');
 
 aboutSection[0].addEventListener('click', function() {
-    about[0].scrollIntoView({behavior: 'smooth'})
+    about[0].scrollIntoView({ behavior: 'smooth' });
     about[0].querySelector(".row").classList.add("fade-in-anim");
     setTimeout(function() {
         about[0].querySelector(".row").classList.remove("fade-in-anim");
