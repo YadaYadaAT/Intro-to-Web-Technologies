@@ -41,14 +41,7 @@
         <!--Do not Change. The Script for less.js that converts are less file into css in runtime-->
         <script src="../other/js/less.js"></script>
         <!--Do not Change. The Script that it gets the HeaderNav and the Footer to the current page. Will propably be deleted after production-->
-        <script>
-            
-            document.addEventListener("DOMContentLoaded",function(){
-                fetch("footer.html")
-                .then(response=>response.text())
-                .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("afterend",html)})
-            })
-        </script>
+       
         
         <!--Do not Change. Disables page view if javascript is disabled on browser-->
         <noscript>
@@ -483,7 +476,69 @@
         </div>
 
 
-        </main>   
+        </main>  
+              
+<footer>
+    <div class="footer_wrapper">
+     
+            <div class="footerRightsS"><!--divides the footer items into columns, check less-->
+                 <div class="footerRightsSContent">
+                   <div> <span>&#169;</span> 2023. All rights reserved.</div>
+                   <div> Athens Tech College</div>
+                </div>
+            </div>
+
+
+
+
+            <div class="footerMiddleWrapIt">
+            
+                <div class="footerMiddleWrapItContent1">
+                    <a href="./miniGame.html">Play a mini-game!</a>
+                </div>           
+          
+               <div class="footerMiddleWrapItContent2">
+                <a href="./worldMap.html">Try our interactive map</a>
+                 </div>
+           
+                <div class="footerMiddleWrapItContent3">
+                    <a href="./miniQuiz.html">Take a quick quiz</a>
+                </div>      
+
+            </div>
+
+
+
+            <div class="footerLinksWrapIt">
+                <div class="footerLinksWrapItContent">
+
+                        <div class="fixTheMonstrosity">                   
+                            <a href="https://github.com/YadaYadaAT">
+                                <i class="fa-brands fa-github fa-sm"></i>
+                                <div>Github</div>                            
+                                </a>
+                        </div>
+                
+                        <div class="fixTheMonstrosity">                        
+                            <i class="fa-solid fa-envelope fa-sm"></i>
+                            <div> yadayadaAt@gmail.com</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="column">
+                <div class="athTechRow">
+                    Athens Tech College.
+                </div>
+            </div>
+        </div> -->
+   
+</footer>
+        
+
+
+
         <script src="../other/js/ververaki.js"></script>
         <script src="../other/js/balasis.js"></script>
     </body>
