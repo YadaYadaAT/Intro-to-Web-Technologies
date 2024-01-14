@@ -9,6 +9,14 @@ for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
 }
 
   function openGalDescription(IamTheOne){
+
+    if (IamTheOne.classList.contains('iroGalleryItemDesIsOn')){
+        for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
+            iroGalleryItem[iroGal].classList.remove('iroGalleryItemDesIsOn');
+            iroGalleryItem[iroGal].querySelector('.iroGalleryImage').classList.remove('iroGalleryImageDescriptionOn');
+            iroGalleryItem[iroGal].querySelector('.iroGalleryItemDescription').classList.remove('iroGalleryItemDescriptionOn');
+                }
+    } else{
    
     for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
     iroGalleryItem[iroGal].classList.remove('iroGalleryItemDesIsOn');
@@ -19,6 +27,7 @@ for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
         IamTheOne.classList.add('iroGalleryItemDesIsOn');
         IamTheOne.querySelector('.iroGalleryImage').classList.add('iroGalleryImageDescriptionOn');
         IamTheOne.querySelector('.iroGalleryItemDescription').classList.add('iroGalleryItemDescriptionOn');
+    }
   }
 
 
@@ -31,7 +40,7 @@ const aboutSection = document.getElementsByClassName('aboutSection');
 const about = document.getElementsByClassName('introduction');
 
 aboutSection[0].addEventListener('click', function() {
-    about[0].scrollIntoView({ behavior: 'smooth' });
+    about[0].scrollIntoView({ behavior: 'smooth' })
     about[0].querySelector(".row").classList.add("fade-in-anim");
     setTimeout(function() {
         about[0].querySelector(".row").classList.remove("fade-in-anim");
@@ -127,8 +136,8 @@ iroHideButton.addEventListener('click',function(){
     }
 
 
-//========================================type effect====================================//
-//vale edw tis protaseis sou...
+//========================================typewriter effect====================================//
+
 
 let sentencesOfTypeEffect=[
     "Developer",
@@ -146,7 +155,7 @@ function typeIt(){
     
 currentSentence=sentencesOfTypeEffect[counterOfSentences];
 
-                                    //allakse to 150 sto xrono pou theleis gia na grafei ana char...
+                                    
 let repeatIt=setInterval(generateItYourWay,150);   
 
 function generateItYourWay(){
@@ -189,7 +198,7 @@ function deleteIt(){
          typeIt();
     
     }
-             //allakse to 25 sto xrono pou theleis na svinei to deuterolepto...
+             
          },40);  
              },4000);
 
