@@ -68,11 +68,20 @@ window.onload = () => {
       if (menu.classList.contains("showMenu")) {
         menu.classList.remove("showMenu");
         closeIcon.style.display = "none";
+
+        document.getElementsByClassName('menu')[0].classList.remove('showMenuOpacityChangeOnClick');
+        document.getElementById("resources-content").style.display="none";
+        document.getElementById("info-content").style.display="none";
+
         menuIcon.style.display = "block";
+
       } else {
         menu.classList.add("showMenu");
+
+
         closeIcon.style.display = "block";
         menuIcon.style.display = "none";
+
       }
     }
 
