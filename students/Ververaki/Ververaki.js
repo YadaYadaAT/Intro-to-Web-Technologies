@@ -1,34 +1,36 @@
 //======================================Gallery======================================//
-const iroGalleryItem=document.getElementsByClassName('iroGalleryItem');
 
-for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
-    iroGalleryItem[iroGal].addEventListener('click',function(){
-        let giveHimTheThis=this;
-        openGalDescription(giveHimTheThis);
-    })
-}
 
-  function openGalDescription(IamTheOne){
+    const iroGalleryItem=document.getElementsByClassName('iroGalleryItem');
 
-    if (IamTheOne.classList.contains('iroGalleryItemDesIsOn')){
-        for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
-            iroGalleryItem[iroGal].classList.remove('iroGalleryItemDesIsOn');
-            iroGalleryItem[iroGal].querySelector('.iroGalleryImage').classList.remove('iroGalleryImageDescriptionOn');
-            iroGalleryItem[iroGal].querySelector('.iroGalleryItemDescription').classList.remove('iroGalleryItemDescriptionOn');
-                }
-    } else{
-   
     for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
-    iroGalleryItem[iroGal].classList.remove('iroGalleryItemDesIsOn');
-    iroGalleryItem[iroGal].querySelector('.iroGalleryImage').classList.remove('iroGalleryImageDescriptionOn');
-    iroGalleryItem[iroGal].querySelector('.iroGalleryItemDescription').classList.remove('iroGalleryItemDescriptionOn');
-        }
-
-        IamTheOne.classList.add('iroGalleryItemDesIsOn');
-        IamTheOne.querySelector('.iroGalleryImage').classList.add('iroGalleryImageDescriptionOn');
-        IamTheOne.querySelector('.iroGalleryItemDescription').classList.add('iroGalleryItemDescriptionOn');
+        iroGalleryItem[iroGal].addEventListener('click',function(){
+            let giveHimTheThis=this;
+            openGalDescription(giveHimTheThis);
+        })
     }
-  }
+
+    function openGalDescription(IamTheOne){
+
+        if (IamTheOne.classList.contains('iroGalleryItemDesIsOn')){
+            for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
+                iroGalleryItem[iroGal].classList.remove('iroGalleryItemDesIsOn');
+                iroGalleryItem[iroGal].querySelector('.iroGalleryImage').classList.remove('iroGalleryImageDescriptionOn');
+                iroGalleryItem[iroGal].querySelector('.iroGalleryItemDescription').classList.remove('iroGalleryItemDescriptionOn');
+                    }
+        } else{
+    
+        for (let iroGal=0;iroGal<iroGalleryItem.length;iroGal++){
+        iroGalleryItem[iroGal].classList.remove('iroGalleryItemDesIsOn');
+        iroGalleryItem[iroGal].querySelector('.iroGalleryImage').classList.remove('iroGalleryImageDescriptionOn');
+        iroGalleryItem[iroGal].querySelector('.iroGalleryItemDescription').classList.remove('iroGalleryItemDescriptionOn');
+            }
+
+            IamTheOne.classList.add('iroGalleryItemDesIsOn');
+            IamTheOne.querySelector('.iroGalleryImage').classList.add('iroGalleryImageDescriptionOn');
+            IamTheOne.querySelector('.iroGalleryItemDescription').classList.add('iroGalleryItemDescriptionOn');
+        }
+    }
 
 
 //===========================scroll to section======================================================//
