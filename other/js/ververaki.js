@@ -10,7 +10,7 @@ function changeIcon(anchor) {
 function dropInfo(){
 
     var anchor = document.getElementById("info-content");
-    if (anchor.style.display === "none") {
+    if (anchor.style.display === "none" || anchor.style.display === "") {
         anchor.style.display = "block";
     } else {
         anchor.style.display = "none";
@@ -21,7 +21,7 @@ function dropInfo(){
 
 function dropResources(){
   var anchor = document.getElementById("resources-content");
-    if (anchor.style.display === "none") {
+    if (anchor.style.display === "none" || anchor.style.display === "") {
         anchor.style.display = "block";
     } else {
         anchor.style.display = "none";
