@@ -1,20 +1,24 @@
 //function to make the flip cards in about page rotate on click (for smaller screens)
 
 let flipCard = document.getElementsByClassName("flip-card-inner");
+console.log(flipCard);
 
 for (let flipCount = 0; flipCount < flipCard.length; flipCount++) {
   flipCard[flipCount].addEventListener('click', function(){
     let anchor = this; 
+    console.log(anchor);
     rotateFlipCard(anchor);
     
   })
 
 }
 function rotateFlipCard(className){
+
+  console.log(className);
   if (className.classList.contains('flipCardOnClick')){
-    className.classList.remove('flipCardOnClick')
+    className.classList.remove('flipCardOnClick');
   } else {
-    className.classList.add('flipCardOnClick')
+    className.classList.add('flipCardOnClick');
   }
 }
 
