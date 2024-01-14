@@ -22,13 +22,7 @@
         <meta property="og:image:height" content="228">
         <meta property="og:description" content="Learn all about Mantises in our beautiful website">
         <script type="text/javascript" src="other/js/less.js"></script>
-        <script>   
-                    document.addEventListener("DOMContentLoaded",function(){
-                        fetch("html/footer.html")
-                        .then(response=>response.text())
-                        .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("afterend",html)})
-                    })
-        </script>
+       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="other/js/ververaki.js"></script>
         <script src="other/js/balasis.js" ></script>              
@@ -467,5 +461,63 @@
 
 
         </main>
+        
+<footer>
+    <div class="footer_wrapper">
+     
+            <div class="footerRightsS"><!--divides the footer items into columns, check less-->
+                 <div class="footerRightsSContent">
+                   <div> <span>&#169;</span> 2023. All rights reserved.</div>
+                   <div> Athens Tech College</div>
+                </div>
+            </div>
+
+
+
+
+            <div class="footerMiddleWrapIt">
+            
+                <div class="footerMiddleWrapItContent1">
+                    <a href="./html/miniGame.html">Play a mini-game!</a>
+                </div>           
+          
+               <div class="footerMiddleWrapItContent2">
+                <a href="./html/worldMap.html">Try our interactive map</a>
+                 </div>
+           
+                <div class="footerMiddleWrapItContent3">
+                    <a href="./html/miniQuiz.html">Take a quick quiz</a>
+                </div>      
+
+            </div>
+
+
+
+            <div class="footerLinksWrapIt">
+                <div class="footerLinksWrapItContent">
+
+                        <div class="fixTheMonstrosity">                   
+                            <a href="https://github.com/YadaYadaAT">
+                                <i class="fa-brands fa-github fa-sm"></i>
+                                <div>Github</div>                            
+                                </a>
+                        </div>
+                
+                        <div class="fixTheMonstrosity">                        
+                            <i class="fa-solid fa-envelope fa-sm"></i>
+                            <div> yadayadaAt@gmail.com</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="column">
+                <div class="athTechRow">
+                    Athens Tech College.
+                </div>
+            </div>
+        </div> -->
+   
+</footer>
     </body>    
 </html>
