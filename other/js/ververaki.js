@@ -1,3 +1,26 @@
+
+
+let flipCard = document.getElementsByClassName("flip-card-inner");
+
+for (let flipCount = 0; flipCount < flipCard.length; flipCount++) {
+  flipCard[flipCount].addEventListener('click', function(){
+    let anchor = this; 
+    rotateFlipCard(anchor);
+    
+  })
+
+}
+function rotateFlipCard(className){
+  if (className.classList.contains('flipCardOnClick')){
+    className.classList.remove('flipCardOnClick')
+  } else {
+    className.classList.add('flipCardOnClick')
+  }
+}
+
+
+///////////////////////////
+
 if (document.querySelector(".hamburger")!==null){
 
 
