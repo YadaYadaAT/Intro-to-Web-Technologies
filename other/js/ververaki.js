@@ -12,8 +12,13 @@ function dropInfo(){
     var anchor = document.getElementById("info-content");
     if (anchor.style.display === "none" || anchor.style.display === "") {
         anchor.style.display = "block";
+        document.getElementsByClassName('menu')[0].classList.add('showMenuOpacityChangeOnClick');
     } else {
         anchor.style.display = "none";
+
+        if (!(document.getElementById("resources-content").style.display === "block")) {
+        document.getElementsByClassName('menu')[0].classList.remove('showMenuOpacityChangeOnClick');
+        }
     }
 
     
@@ -23,8 +28,16 @@ function dropResources(){
   var anchor = document.getElementById("resources-content");
     if (anchor.style.display === "none" || anchor.style.display === "") {
         anchor.style.display = "block";
+        document.getElementsByClassName('menu')[0].classList.add('showMenuOpacityChangeOnClick');
     } else {
         anchor.style.display = "none";
+
+        if (!(document.getElementById("info-content").style.display === "block")) {
+
+        document.getElementsByClassName('menu')[0].classList.remove('showMenuOpacityChangeOnClick');
+
+      }
+
     }
 };
 
