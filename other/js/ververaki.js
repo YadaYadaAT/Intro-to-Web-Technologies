@@ -95,7 +95,7 @@ window.onload = () => {
 // }
 
 ///======================================================world map=================================================///
-
+if (document.getElementById('iroWorldMapMain')!==null){
 
 
 let IroCurrentWidth = 100; // Initial width percentage
@@ -406,4 +406,4 @@ irotestPinElements.forEach(function (element) {
 });
 
 
-
+}
