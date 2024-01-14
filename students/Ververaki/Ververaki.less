@@ -42,15 +42,17 @@ body{
     background-color:rgb(163, 113, 121);
     position:fixed;
     display:flex;
-    overflow-y: auto;
+    overflow:hidden;
+    
     padding:30px;
     padding-top:45px;
-    padding-bottom:0;
+   
     display:flex;
     flex-direction: column;
     align-items: center;
     transition:0.5s ease-in-out;
     z-index: 150;
+    overflow-y: auto;
     }
     
     .iroButtonForHideOrNot{
@@ -111,7 +113,9 @@ body{
     #iroMainMenu{
     position:relative;
     width:100%;
-    height:100%;
+   
+    padding-bottom:70px;
+    
     }
     
     
@@ -221,13 +225,16 @@ body{
     }
     
     #iroCopyrights{
-    position:absolute;
+
+        z-index:100;
+    position:fixed;
+    width:270px;
     bottom:0;
     background-color:rgb(163, 113, 121);
     padding:25px;
     display:flex;
     flex-direction: column;
-    width:100%;
+   
     align-items: start;
     color:white;
     justify-content: space-around;
