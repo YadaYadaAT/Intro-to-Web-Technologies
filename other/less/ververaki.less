@@ -225,6 +225,1369 @@
 //   margin-top: 15em;
 // }
 
+//world map 
+
+
+#iroWorldMapMain{
+  width:100%;
+  height:100vh;
+  
+  display:flex;
+  position:relative;
+overflow: hidden;
+
+}
+
+
+#iroWorldMapMain *{
+  font-family:@fontFamilyHeader;
+}
+
+#iroWorldMapInfo::-webkit-scrollbar {
+  width:0.1em; 
+  height: 0.1em; 
+}
+
+
+
+#iroWorldMapInfo{
+  display:flex;
+flex-direction: column;
+align-self: center;
+overflow:auto;
+  position:relative;
+  width:40%;
+  height:100vh;
+ 
+ background-color: bisque;
+  border-right:2vw double rgb(54,70,51);
+  scrollbar-width: thin; 
+  -ms-overflow-style: none;  
+
+}
+#iroWorldMapScaleIt.grabbing {
+  cursor: grabbing;
+}
+
+.iroEffect{
+ animation-name:IroRunningOutOfVarNames;
+ animation-duration:3s;
+ animation-iteration-count: infinite;
+}
+
+@keyframes IroRunningOutOfVarNames{
+  0%{transform:scale(1.2);}
+  50%{transform:scale(1.0);}
+  100%{transform:scale(1.2);}
+
+}
+
+#iroWorldMapWrapper{
+  display:block;
+ 
+  position:relative;
+  
+  width:100%;
+  height:100%;
+
+  overflow: auto;
+
+}
+
+
+
+#iroWorldMapScaleIt::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar width */
+  height: 0; /* Remove scrollbar height */
+}
+
+#iroWorldMapScaleIt{
+ height:100%;
+ width:100%;
+ position:relative;
+ scrollbar-width: none; /* Firefox */
+ -ms-overflow-style: none;  /* IE 10+ */
+ overflow:auto;
+ transition: 1000ms linear;
+}
+
+#iroWorldMap{
+display:block;
+height:100%;
+width:100%;
+overflow:hidden;
+//transition:1000ms linear;
+
+position:absolute;
+background-image:url("../../images/Ververaki/worldMap/worldMap.jpg");
+background-size:100% 100%;
+background-position: center center;
+}
+
+.irotestPinn{
+
+  width: 0;
+  height: 0;
+ 
+  position: absolute;
+
+ // margin: -2.2em 0 0 -1.3em;
+  //  -webkit-box-shadow: -1px 1px 4px rgba(0, 0, 0, .5);
+  //  -moz-box-shadow: -1px 1px 4px rgba(0, 0, 0, .5);
+  //  box-shadow: -1px 1px 4px rgba(0, 0, 0, .5);
+}
+
+.irotestPin{
+
+  width: 0;
+  height: 0;
+ 
+  position: absolute;
+
+ // margin: -2.2em 0 0 -1.3em;
+  //  -webkit-box-shadow: -1px 1px 4px rgba(0, 0, 0, .5);
+  //  -moz-box-shadow: -1px 1px 4px rgba(0, 0, 0, .5);
+  //  box-shadow: -1px 1px 4px rgba(0, 0, 0, .5);
+}
+.nameItPinId{
+ 
+position:absolute;
+width:3vw;
+height:3vw;
+margin-left:-1.5vw;
+margin-top:-3.4vw;
+border:0.2vw solid transparent;
+transform:  rotateX(20deg)  rotateZ(-45deg);
+  transform-origin: 50% 50%;
+  border-radius: 50% 50% 50% 0;
+  overflow:hidden;
+ 
+}
+
+.iroRotateBack{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  justify-content:center;
+  align-items: center;
+    transform-origin: 50% 50%;
+    transform:rotateZ(45deg);
+    display:flex;
+  pointer-events: none;
+}
+
+.iroSomeTextHere{
+  margin-top:5em;
+}
+.iroSomeTextHere p{
+  margin-top:5em;
+  margin-left:-1.53em;
+  text-align: justify;
+  width: calc(100% + 1.53em);
+  text-indent: 3em;
+  font-size:@fontFamilyMainText;
+  line-height:1.6;
+  font-size:1.3em;
+  
+ padding:5em;
+
+}
+
+#iroWorldMapInfo p:nth-child(odd) {
+  background-color: white;
+  
+}
+
+
+.iroWorldMapInfoImageHolder{
+  width:80%;
+  aspect-ratio:2/1;
+}
+
+
+
+#iroYadaYadaPin .nameItPinId{
+  background-color:black;
+  color:white;
+  opacity:0.8;
+  
+}
+#iroYadaYadaPin{
+  left:56.6%;
+  top:28.8%;
+  
+}
+#iroPinYadaYadaText{
+  position:absolute;
+  left:-1em;
+  right:-1em;
+  font-size:0.8vw;
+  top:0;
+  bottom:0;
+  text-align:center;
+justify-content:center;
+align-items: center;
+  transform-origin: 50% 50%;
+  transform:rotateZ(45deg);
+  display:flex;
+  text-align:center;
+}
+
+
+
+
+.IroMantidae::before{
+  content:"";
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:-1.3vw;
+  right:-1.3vw;
+  
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-1vw;
+  animation-name:iroCirclePulseMantidae;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+@keyframes iroCirclePulseMantidae{
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    border:0.2vw solid green;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+    border:0.2vw solid @colorLightGreen;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1 ;
+    border:0.2vw solid green;
+  }
+}
+
+
+
+
+
+
+.IroHymenopodidae::before{
+  content:"";
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:-1.3vw;
+  right:-1.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-1vw;
+  animation-name:iroCirclePulseHymenopodidae;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+@keyframes iroCirclePulseHymenopodidae{
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    border:0.2vw solid @colorFlowerOrange;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+    border:0.2vw solid rgba(@colorFlowerOrange,0.8);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1 ;
+    border:0.2vw solid @colorFlowerOrange;
+  }
+}
+
+
+
+
+
+
+
+.IroEmpusidae::before{
+  content:"";
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:-1.3vw;
+  right:-1.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-1vw;
+  animation-name:iroCirclePulseEmpusidae;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+@keyframes iroCirclePulseEmpusidae{
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    border:0.2vw solid rgb(206,149,178);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+    border:0.2vw solid lightpink;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1 ;
+    border:0.2vw solid rgb(206,149,178);
+  }
+}
+
+
+
+
+
+
+.IroLiturgusidae::before{
+  content:"";
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:-1.3vw;
+  right:-1.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-1vw;
+  animation-name:iroCirclePulseLiturgusidae;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+@keyframes iroCirclePulseLiturgusidae{
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    border:0.2vw solid rgb(173,182,117);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+    border:0.2vw solid rgba(173,182,117,0.8);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1 ;
+    border:0.2vw solid rgb(173,182,117);
+  }
+}
+
+
+
+.IroDeroplatyidae::before{
+  content:"";
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:-1.3vw;
+  right:-1.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-1vw;
+  animation-name:iroCirclePulseDeroplatyidae;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+@keyframes iroCirclePulseDeroplatyidae{
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    border:0.2vw solid rgb(244,99,35);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+    border:0.2vw solid rgba(244,99,35,0.8);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1 ;
+    border:0.2vw solid rgb(244,99,35);
+  }
+}
+
+
+
+
+
+.IroPhyllocranidae::before{
+  content:"";
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:-1.3vw;
+  right:-1.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-1vw;
+  animation-name:iroCirclePulsePhyllocranidae;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+@keyframes iroCirclePulsePhyllocranidae{
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    border:0.2vw solid rgb(225,197,149);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+    border:0.2vw solid rgba(225,197,149,0.8);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1 ;
+    border:0.2vw solid rgb(225,197,149);
+  }
+}
+
+
+.IroGonypetidae::before{
+  content:"";
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:-1.3vw;
+  right:-1.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-1vw;
+  animation-name:iroCirclePulseGonypetidae;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+@keyframes iroCirclePulseGonypetidae{
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    border:0.2vw solid rgb(119,109,123);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+    border:0.2vw solid rgba(119,109,123,0.8);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1 ;
+    border:0.2vw solid rgb(119,109,123);
+  }
+}
+
+
+
+
+
+
+#iroHeader{
+  width:100%;
+  z-index: 100;
+  position:absolute;
+  display:flex;
+  justify-content: center;
+  padding:0.5vw;
+  font-size: 3.5vw;
+  font-style:italic;
+  font-weight: bold;
+  color:  bisque;
+  background: linear-gradient(to right, rgb(50,67,49) , rgb(177,156,110), rgb(25,60,100)); /* Gradient background */
+  box-shadow: 0px 4px 6vw 3vw rgba(0, 0, 0, 1); /* Subtle box shadow */
+  
+}
+
+#iroRotatingMantisWrapper{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  overflow:hidden;
+  z-index:50;
+  height:10vh;
+  background-color: rgb(54,70,51);
+  box-shadow: 0px -1vw 4vw 2vw #000000;
+}
+.iroRotatingMantisContent{
+ 
+  height:100%;
+  width:5%;
+  aspect-ratio: 1;
+  padding-top:0.1vw;
+  padding-bottom:0.1vw;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+ margin-left:18%;
+ margin-right:18%;
+}
+.iroRotatingMantisContent img{
+  height:100%;
+  width:100%;
+}
+#iroRotatingMantis{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width:200%;
+  height:100%;
+  animation: IroScrollingRolling 80s linear infinite;
+
+}
+
+    @keyframes IroScrollingRolling {
+      0% {
+        transform: translateX(-200%);
+      }
+      100% {
+        transform: translateX(200%);
+      }
+
+    }
+
+
+#Mantidae1 .nameItPinId:hover,
+#Mantidae2 .nameItPinId:hover,
+#Mantidae3 .nameItPinId:hover {
+  filter: brightness(130%) contrast(120%)  drop-shadow(0 0 8px green);
+  
+}
+.IroMantidae:hover::before{
+  animation-play-state: paused;
+  
+  border:0.2vw solid green;
+}
+
+
+#Mantidae1 .iroRotateBack,
+#Mantidae2 .iroRotateBack,
+#Mantidae3 .iroRotateBack {
+  background-image:url(../../images/Ververaki/worldMap/Mantidae.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+#Mantidae1 .nameItPinId,
+#Mantidae2 .nameItPinId,
+#Mantidae3 .nameItPinId {
+  background-color:green;
+  
+}
+
+
+
+
+#Hymenopodidae1 .nameItPinId:hover,
+#Hymenopodidae2 .nameItPinId:hover,
+#Hymenopodidae3 .nameItPinId:hover {
+  filter: brightness(130%) contrast(120%)  drop-shadow(0 0 8px  @colorFlowerOrange);
+}
+
+.IroHymenopodidae:hover::before{
+  animation-play-state: paused;
+  
+  border:0.2vw solid @colorFlowerOrange;
+}
+
+#Hymenopodidae1 .iroRotateBack,
+#Hymenopodidae2 .iroRotateBack,
+#Hymenopodidae3 .iroRotateBack {
+  background-image:url(../../images/Ververaki/worldMap/Hymenopodidae.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Hymenopodidae1 .nameItPinId,
+#Hymenopodidae2 .nameItPinId,
+#Hymenopodidae3 .nameItPinId {
+  background-color:@colorFlowerOrange;
+}
+
+
+
+
+
+#Empusidae1 .nameItPinId:hover,
+#Empusidae2 .nameItPinId:hover,
+#Empusidae3 .nameItPinId:hover {
+  filter: brightness(130%) contrast(120%)  drop-shadow(0 0 8px  rgb(206,149,178));
+
+}
+
+.IroEmpusidae:hover::before{
+  animation-play-state: paused;
+  
+  border:0.2vw solid rgb(206,149,178);
+}
+
+
+#Empusidae1 .iroRotateBack,
+#Empusidae2 .iroRotateBack,
+#Empusidae3 .iroRotateBack {
+  background-image:url(../../images/Ververaki/worldMap/Empusidae.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Empusidae1 .nameItPinId,
+#Empusidae2 .nameItPinId,
+#Empusidae3 .nameItPinId {
+  background-color:rgb(206,149,178);
+}
+
+
+#Liturgusidae1 .nameItPinId:hover,
+#Liturgusidae2 .nameItPinId:hover,
+#Liturgusidae3 .nameItPinId:hover {
+  filter: brightness(130%) contrast(120%)  drop-shadow(0 0 8px  rgb(173,182,117));
+
+}
+
+
+.IroLiturgusidae:hover::before{
+  animation-play-state: paused;
+  
+  border:0.2vw solid rgb(173,182,117);
+}
+
+
+#Liturgusidae1 .iroRotateBack,
+#Liturgusidae2 .iroRotateBack,
+#Liturgusidae3 .iroRotateBack {
+  background-image:url(../../images/Ververaki/worldMap/Liturgusidae.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#Liturgusidae1 .nameItPinId,
+#Liturgusidae2 .nameItPinId,
+#Liturgusidae3 .nameItPinId {
+  background-color: rgb(173,182,117);
+}
+
+
+
+#Deroplatyidae1 .nameItPinId:hover,
+#Deroplatyidae2 .nameItPinId:hover,
+#Deroplatyidae3  .nameItPinId:hover{
+  filter: brightness(130%) contrast(120%)  drop-shadow(0 0 8px  rgb(244,99,35));
+
+}
+
+
+.IroDeroplatyidae:hover::before{
+  animation-play-state: paused;
+  
+  border:0.2vw solid rgb(244,99,35);
+}
+
+#Deroplatyidae1 .iroRotateBack,
+#Deroplatyidae2 .iroRotateBack,
+#Deroplatyidae3  .iroRotateBack{
+  background-image:url(../../images/Ververaki/worldMap/Deroplatyidae.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Deroplatyidae1 .nameItPinId,
+#Deroplatyidae2 .nameItPinId,
+#Deroplatyidae3  .nameItPinId{
+  background-color:  rgb(244,99,35);
+}
+
+
+
+
+
+
+
+
+
+
+#Phyllocranidae1 .nameItPinId:hover,
+#Phyllocranidae2 .nameItPinId:hover,
+#Phyllocranidae3 .nameItPinId:hover {
+  filter: brightness(130%) contrast(120%)  drop-shadow(0 0 8px  rgb(225,197,149));
+
+}
+
+.IroPhyllocranidae:hover::before{
+  animation-play-state: paused;
+  
+  border:0.2vw solid  rgb(225,197,149);
+}
+
+#Phyllocranidae1 .iroRotateBack,
+#Phyllocranidae2 .iroRotateBack,
+#Phyllocranidae3 .iroRotateBack {
+  background-image:url(../../images/Ververaki/worldMap/Phyllocranidae.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Phyllocranidae1 .nameItPinId,
+#Phyllocranidae2 .nameItPinId,
+#Phyllocranidae3 .nameItPinId {
+  background-color:  rgb(225,197,149);
+}
+
+
+
+
+#Gonypetidae1 .nameItPinId:hover,
+#Gonypetidae2 .nameItPinId:hover,
+#Gonypetidae3 .nameItPinId:hover{
+  filter: brightness(130%) contrast(120%)  drop-shadow(0 0 8px  rgb(119,109,123));
+
+}
+
+
+.IroGonypetidae:hover::before{
+  animation-play-state: paused;
+  
+  border:0.2vw solid rgb(119,109,123);
+}
+
+
+#Gonypetidae1 .iroRotateBack,
+#Gonypetidae2 .iroRotateBack,
+#Gonypetidae3  .iroRotateBack{
+  background-image:url(../../images/Ververaki/worldMap/Gonypetidae.jpeg);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#Gonypetidae1 .nameItPinId,
+#Gonypetidae2 .nameItPinId,
+#Gonypetidae3  .nameItPinId{
+  background-color:   rgb(119,109,123);
+}
+
+
+
+
+
+
+#Mantidae1 {
+  /* Your styles for Mantidae1 ID here */
+  top: 27%;
+  left:23% ;
+}
+
+
+#Mantidae1:hover::after{
+  content:"Mantidae-USA";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+
+
+
+#Mantidae2 {
+  /* Your styles for Mantidae2 ID here */
+  top:53%;
+  left:32%;
+}
+#Mantidae2:hover::after{
+  content:"Mantidae-Brazil";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+
+
+
+
+#Mantidae3 {
+  /* Your styles for Mantidae3 ID here */
+  top:38%;
+  left:72%;
+}
+
+#Mantidae3:hover::after{
+  content:"Mantidae-India";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+
+#Hymenopodidae1 {
+  
+  top:47%;
+  left:53%;
+}
+#Hymenopodidae1:hover::after{
+  content:"Hymenopodidae-Cameroon";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+
+#Hymenopodidae2 {
+  
+  top:47.3%;
+  left:78.35%;
+}
+
+#Hymenopodidae2:hover::after{
+  content:"Hymenopodidae-Malaysia";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+#Hymenopodidae3 {
+ 
+  top:68.5%;
+  left:82.6%;
+}
+
+
+#Hymenopodidae3:hover::after{
+  content:"Hymenopodidae-Australia";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+
+
+#Empusidae1 {
+
+  top:65%;
+  left:58%;
+}
+#Empusidae1:hover::after{
+  content:"Empusidae-South Africa";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+#Empusidae2 {
+  /* Your styles for Empusidae2 ID here */
+  top:39%;
+  left:78%;
+}
+#Empusidae2:hover::after{
+  content:"Empusidae-Thailand";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+#Empusidae3 {
+  /* Your styles for Empusidae3 ID here */
+  top:28.3%;
+  left:48.8%;
+}
+#Empusidae3:hover::after{
+  content:"Empusidae-Spain";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+#Liturgusidae1 {
+ 
+  top:59%;
+  left:30%;
+}
+
+#Liturgusidae1:hover::after{
+  content:"Liturgusidae-Peru";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+#Liturgusidae2 {
+  /* Your styles for Liturgusidae2 ID here */
+  top:52%;
+  left:27.8%;
+}
+
+#Liturgusidae2:hover::after{
+  content:"Liturgusidae-Ecuador";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+#Liturgusidae3 {
+  
+  top:44%;
+  left:29.7%;
+}
+#Liturgusidae3:hover::after{
+  content:"Liturgusidae-Colombia";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+#Deroplatyidae1 {
+  
+  top:45.4%;
+  left:78%;
+}
+#Deroplatyidae1:hover::after{
+  content:"Deroplatyidae-Malaysia";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+#Deroplatyidae2 {
+ 
+  top:50.4%;
+  left:87%;
+}
+#Deroplatyidae2:hover::after{
+  content:"Deroplatyidae-Indonesia";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+#Deroplatyidae3 {
+  top:40%;
+  left:83.8%;
+}
+#Deroplatyidae3:hover::after{
+  content:"Deroplatyidae-Philippines";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+#Phyllocranidae1 {
+  /* Your styles for Phyllocranidae1 ID here */
+  top:46%;
+  left:84.7%;
+}
+#Phyllocranidae1:hover::after{
+  content:"Phyllocranidae-Philippines";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+
+#Phyllocranidae2 {
+  top:52.1%;
+  left:89.9%;
+}
+#Phyllocranidae2:hover::after{
+  content:"Phyllocranidae-Indonesia";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+
+#Phyllocranidae3 {
+   
+  top:43.4%;
+  left:77.5%;
+}
+#Phyllocranidae3:hover::after{
+  content:"Phyllocranidae-Malaysia";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+
+#Gonypetidae1 {
+  top:64.5%;
+  left:88.6%;
+}
+
+
+
+#Gonypetidae1:hover::after{
+  content:"Gonypetidae-Australia";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+
+
+
+#Gonypetidae2 {
+  top:54.2%;
+  left:89.6%;
+}
+
+#Gonypetidae2:hover::after{
+  content:"Gonypetidae-Papua";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+
+
+#Gonypetidae3 {
+  top:55%;
+  left:94.6%;
+}
+
+#Gonypetidae3:hover::after{
+  content:"Gonypetidae-Solomon Islands";
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  position: absolute;
+  top:1vw;
+  bottom:-1vw;
+  left:-5.3vw;
+  right:-5.3vw;
+  margin-left:-0.10vw;
+  border-radius: 50%;
+  transform:translateX(-15deg);
+  margin-bottom:-3vw;
+  pointer-events: none;
+}
+
+.irotestPinn:hover{
+  z-index:20;
+   cursor:pointer;
+   }
+ 
+   .irotestPinn:hover::after{
+     
+     transform:scale(1.1);
+     }
+
+
+
+.irotestPin:hover{
+ z-index:20;
+  cursor:pointer;
+  }
+
+  .irotestPin:hover::after{
+    
+    transform:scale(1.1);
+    }
+
+
+.iroWorldMapWrapForLater{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left:2em;
+  padding-right:2em;
+
+}
+.iroWorldMapInfoTitleHolder{
+  margin-top:3em;
+  text-align: center;
+  font-size:2.5em;
+  color:rgb(54,70,51);
+}
+
+#iroGoHome{
+  position:absolute;
+  left:1em;
+  height:100%;
+  display:flex;
+ color:beige;
+  text-decoration: none;
+  top:0;
+  cursor:pointer;
+}
+#iroGoHome:hover{
+transform:scale(1.1);
+}
+
+
+#iroScrollToTop{
+  display:none;
+  position:sticky;
+  width:1em;
+  height:1em;
+  left:0.5em;
+  top:25em;
+  margin-top:2em;
+  margin-bottom:2em;
+  border:1px solid rgb(54,70,51);
+  font-size:4.2em;
+  transition:500ms linear;
+  cursor: pointer;
+}
+#iroScrollToTop:hover{
+background-color:black;
+color:white;
+
+}
+
+.iroScrollToTopMakeRoom{
+  display:flex;
+}
+#iroScrollToTopWrapper{
+ 
+}
+
+
 
 //mobile responsiveness
 
@@ -239,6 +1602,20 @@
     justify-content: space-evenly;
     margin-top: 6em;
     margin-bottom: 6em;
+  }
+
+  .iroWorldMapWrapForLater{
+    flex-direction:column;
+    align-items:center;
+    justify-content:initial;
+    width:100%;
+  
+  }
+  .iroWorldMapWrapForLater img{
+  width:70%;
+  margin-left:auto;
+  margin-right:auto;
+  aspect-ratio: 2/1;
   }
 }
 
@@ -257,6 +1634,87 @@
       display:block;
   }
 }
+
+@media screen and (max-width:90em) {
+  #iroWorldMapMain{
+    flex-direction: column-reverse;
+    overflow:initial;
+    min-height:100vh;
+    height:initial;
+  
+  }
+
+  .iroWorldMapInfoTitleHolder{
+    margin-top:initial;
+    align-items: center;
+  }
+#iroScrollToTop{
+  display:flex;
+  
+  justify-content: center;
+  align-items: center;
+
+}
+
+  .iroWorldMapInfoImageHolder{
+    width:40%;
+    aspect-ratio:2/1;
+    background-color:rgba(0,0,0,1);
+    border:1em double rgb(54,70,51);
+  }
+  #iroWorldMapScaleIt{
+    min-height:46vw;
+    border-right: 1vw double #364633;
+    border-left: 1vw double #364633;
+  }
+
+  #iroRotatingMantisWrapper{
+    display:none;
+  }
+  #iroWorldMapWrapper{
+    flex-shrink: 0;
+    height:50%;
+    flex-grow:0;
+
+  }
+#iroWorldMapInfo{
+  height:initial;
+width:100%;
+overflow:initial;
+border-right: 1vw double #364633;
+border-left: 1vw double #364633;
+position:relative;
+padding-top:4em;
+min-height:55em;
+flex-direction: column;
+display:flex;
+flex-grow:1;
+}
+.iroWorldMapWrapForLater{
+  flex-direction: row;
+  margin-top:5em;
+  justify-content: space-around;
+
+}
+
+
+}
+
+
+
+@media screen and (max-width:40em) {
+
+
+ 
+  #iroWorldMapScaleIt{
+    min-height:100vw;
+  
+  }
+  
+  
+  }
+
+  @import "../../other/less/variables.less";
 
 //=======================END of your CSS code==================//
 @import "variables.less";
