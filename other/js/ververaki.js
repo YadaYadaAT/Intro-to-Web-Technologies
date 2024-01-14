@@ -1,4 +1,4 @@
-
+if (document.querySelector(".hamburger")!==null){
 
 
 
@@ -65,6 +65,26 @@ window.onload = () => {
 
     hamburger.addEventListener("click", toggleMenu);
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
 
 
 //   //make a function that accepts the url of the page, parses it to get the path
