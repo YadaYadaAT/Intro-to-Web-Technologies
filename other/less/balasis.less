@@ -573,6 +573,7 @@ height:auto;
     #jhomePageFunFacts{
         opacity:0;
         pointer-events: none;
+      
     }
 
 }
@@ -657,6 +658,18 @@ height:auto;
 
 }
 @media screen and (max-width:40.6em){
+    #HomePageImgPreview img{
+        width:100%;
+        aspect-ratio: 1;
+    }
+    #HomePageImgPreviewFrame {
+       
+        width:100%;
+        display:flex;
+       
+    }
+
+
     #jAboutMantises p{
         white-space: wrap;
         width:75%;
@@ -664,6 +677,13 @@ height:auto;
         column-gap: 30px;
         font-size:10pt;
     }
+
+#jhomePageFunFacts{
+    display:none;
+}
+.jfirstOfItsKind{
+    margin-top:initial;
+}
 }
 
 
@@ -1252,9 +1272,7 @@ z-index:100;
 
   }
 
-  #jjScoreTableAfter{
 
-  }
 
   #jjScoreTable tbody{
     position:relative;
@@ -1280,6 +1298,7 @@ z-index:100;
     position:relative;
     border-radius: 10px 10px 0px 0px;
     overflow:hidden;
+    overflow:auto;
     white-space: nowrap;
 }
 #jjScoreTable th{

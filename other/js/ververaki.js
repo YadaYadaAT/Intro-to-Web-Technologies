@@ -33,10 +33,15 @@ function changeIcon(anchor) {
 function dropInfo(){
 
     var anchor = document.getElementById("info-content");
-    if (anchor.style.display === "none") {
+    if (anchor.style.display === "none" || anchor.style.display === "") {
         anchor.style.display = "block";
+        document.getElementsByClassName('menu')[0].classList.add('showMenuOpacityChangeOnClick');
     } else {
         anchor.style.display = "none";
+
+        if (!(document.getElementById("resources-content").style.display === "block")) {
+        document.getElementsByClassName('menu')[0].classList.remove('showMenuOpacityChangeOnClick');
+        }
     }
 
     
@@ -44,10 +49,18 @@ function dropInfo(){
 
 function dropResources(){
   var anchor = document.getElementById("resources-content");
-    if (anchor.style.display === "none") {
+    if (anchor.style.display === "none" || anchor.style.display === "") {
         anchor.style.display = "block";
+        document.getElementsByClassName('menu')[0].classList.add('showMenuOpacityChangeOnClick');
     } else {
         anchor.style.display = "none";
+
+        if (!(document.getElementById("info-content").style.display === "block")) {
+
+        document.getElementsByClassName('menu')[0].classList.remove('showMenuOpacityChangeOnClick');
+
+      }
+
     }
 };
 
@@ -78,11 +91,20 @@ window.onload = () => {
       if (menu.classList.contains("showMenu")) {
         menu.classList.remove("showMenu");
         closeIcon.style.display = "none";
+
+        document.getElementsByClassName('menu')[0].classList.remove('showMenuOpacityChangeOnClick');
+        document.getElementById("resources-content").style.display="none";
+        document.getElementById("info-content").style.display="none";
+
         menuIcon.style.display = "block";
+
       } else {
         menu.classList.add("showMenu");
+
+
         closeIcon.style.display = "block";
         menuIcon.style.display = "none";
+
       }
     }
 
