@@ -1,8 +1,179 @@
-//=======================Begin of your CSS code================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+//========================================================This Less belongs to kokkinos==========================================//
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f7f7f7;
+
+}
+
+
+#gallery_Wrapper{
+display:flex;
+justify-content: center;
+width:100%;
+margin-top:20em;
+margin-bottom:20em;
+background-color:@colorSand;
+padding-top:10em;
+padding-bottom:10em;
+
+}
+.gallery-container {
+  position: relative;
+  width: 57.5em;
+  height:40em;
+  text-align: center;
 
 
 
 
+}
 
-//=======================END of your CSS code==================//
-@import "master.less";
+
+
+.galleryMainClass{
+  background-color:white;
+  display:flex;
+  flex-direction: column;
+
+}
+
+
+#gallery {
+  position: relative; 
+  height:100%;
+  width:100%;
+}
+
+
+
+
+#gallery img {
+  height:100%;
+  width: 100%;
+  display: none; 
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%); 
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+  background-color: rgba(0,0,0,0.5); 
+}
+
+.prev {
+  left: 0; 
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8); 
+}
+
+
+
+ 
+.caption {
+  color: #fff; 
+padding: 10px;
+position: absolute;
+bottom: 0; 
+left: 0; 
+width: calc(100% - 20px); 
+text-align: center;
+background-color: rgba(0, 0, 0, 0.7); 
+font-size: 1em; 
+box-sizing: border-box; 
+margin: 0 10px 10px; 
+}
+
+.read-more {
+  display: block;
+  margin-top: 8px;
+  color: #f8f8f8; 
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+.read-more:hover {
+  text-decoration: underline;
+  opacity: 1;
+  color: #ffffff;
+}
+
+
+@media screen and (max-width:93.7em){
+  #gallery_Wrapper{
+
+   
+    margin-top:20em;
+    margin-bottom:20em;
+   
+    padding-top:7.5em;
+    padding-bottom:7.5em;
+    
+
+    }
+    .gallery-container {
+    
+      width: 47.5em;
+      height:30em;  
+    
+      text-align: center;
+   
+    
+    
+    
+    }
+
+
+   
+
+}
+
+@media screen and (max-width:43.7em){
+
+  #gallery_Wrapper{
+
+   
+    margin-top:10em;
+    margin-bottom:10em;
+   
+    padding-top:7.5em;
+    padding-bottom:7.5em;
+    
+
+    }
+
+}
+@import "variables.less";

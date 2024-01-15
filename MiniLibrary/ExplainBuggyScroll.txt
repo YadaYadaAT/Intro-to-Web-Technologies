@@ -1,6 +1,0 @@
-Sadly if you set a function to trigger on scroll the window will get like 40 triggers per 1 wheel scroll...so it stacks like a query.
-To Avoid that you need to set a variable to turn true and false,a timer and the MOST IMPORTANT:clearTimeout(var of function as you see)
-to clear the stacked queue.
-
-The stopPropagation() method prevents propagation of the same event from being called.
-

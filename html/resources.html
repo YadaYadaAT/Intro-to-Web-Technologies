@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+  <!--Change the "../other/less/anastasia.less" with yours ..for example "../other/less/john.less" -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/a6d6ba659c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet/less" type="text/css" href="../other/less/kouridaki.less">
+  <link rel="stylesheet/less" type="text/css" href="../other/less/ververaki.less">
+  
+  <link rel="stylesheet/less" type="text/css" href="../other/less/master.less">
+  <!--Change to title of your page-->
+  <title>Resources</title>
+  <!--Change the content tag to the description of this current page-->
+  <meta name="Description" content="changeThisToTheDescription">
+
+
+
+  <!--Do Not Change. Sets the charset that it will be saved and informs the browser about it...google about charset if you are interested for more-->
+  <meta charset="utf-8">
+  <!--Do Not Change. Sets the width of your page depening of the devices width, also initial zoom of your page when loaded; default is (initial-scale=1)-->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!--Do Not Change. keywords to provide info for web crawlers...although they don't seem to care about the tag much... -->
+  <meta name="keywords" content="Mantises, Mantises Species, Mantises lifespan">
+  <!--Do not Change.Icon of the page-->
+  <link rel="icon" href="../images/LOGONOTEXT.ico" type="image/x-icon">
+  <!--Do not Change.Mask-Icon of the page, replaces the icon when tab pinned-->
+  <link rel="mask-icon" href="path/to/mask-icon.svg" color="#000000">
+
+  <!--Do not Change. Og ...basically how page appears on social media as link . Its what it shows for example when you post a link on Discord or Viber-->
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/YadaYadaTest.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="436">
+  <meta property="og:image:height" content="228">
+  <meta property="og:description" content="Learn all about Mantises in our beautiful website">
+  <!--Do not Change. The Script for less.js that converts are less file into css in runtime-->
+  <script src="../other/js/less.js"></script>
+  <!--Do not Change. The Script that it gets the HeaderNav and the Footer to the current page. Will propably be deleted after production-->
+ 
+  <!--Do not Change. Disables page view if javascript is disabled on browser-->
+  <noscript>
+    <style type="text/css">
+      body * {
+        display: none;
+      }
+
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        min-height: 100%;
+        background-image: url(images/NOjavascript.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: white;
+        background-size: 100% 100%;
+      }
+    </style>
+  </noscript>
+</head>
+
+
+<body>
+  <div class="imgbox">
+    <div class="aClassNameR"><span class="aClassNameFontItR">Our Sources</span></div>
+  </div>
+
+  <div id="navbar_wrapper">
+        
+    <button class="hamburger">
+      <i class="menuIcon fa-solid fa-bars fa-2xl"></i>
+      <i class="closeIcon fa-solid fa-xmark fa-xl"></i>
+    </button>
+    <!--ADDED alterHeightOfNavInThesePages id to refix height-->
+    <ul id="alterHeightOfNavInThesePages" class="menu">
+      <li><a class="menuItem" href="./gallery.html">Gallery</a></li>
+      <li><div class="menuItem" id="info" onclick="dropInfo();">Info</div>
+              <div id="info-content">
+                      <ul class="infoList">
+                      <li><a href="./species.html">Species</a></li>
+                      <li><a href="./behavior.html">Behavior</a></li>
+                      <li><a href="./lifeCycle.html">Life Cycle</a></li>
+                      <li><a href="./habitats.html">Habitats</a></li>
+                      <li><a href="./care.html">Care</a></li>
+                      </ul>
+              </div></li>
+              <li><a class="menuItem" href="../index.html">Home</a></li>
+      <li><div class="menuItem" id="resource" onclick="dropResources();">Resources</div>
+              <div id="resources-content">
+                      <ul class="resourcesList">
+                              <li><a href="./resources.html">Our Sources</a></li>
+                              <li><a href="./faq.html">FAQ</a></li>
+                      </ul>
+              </div>
+      </li>
+      <li><a class="menuItem" href="./aboutPage.html">About us</a></li>
+    </ul>
+    
+
+<nav id="block-main-menu">
+      <div class="flex-container-navbar">
+              
+                      <div id="menu_item_gallery">
+                              <a href="./gallery.html" >GALLERY</a>
+                      </div>
+                      <div class="dropdown">
+                              <div class="drop-option">INFO</div>
+                              <div class="dropdown-cont">
+                                      <ul id="otherList">
+                                              <li><a href="./species.html">Species</a></li>
+                                              <li><a href="./behavior.html">Behavior</a></li>
+                                              <li><a href="./lifeCycle.html">Life Cycle</a></li>
+                                              <li><a href="./habitats.html">Habitats</a></li>
+                                              <li><a href="./care.html">Care</a></li>
+                                      </ul>
+                              </div>
+                      </div>
+                      <div id="menu_item_home">
+                              <a href="../index.html">
+                                      <img src="../images/Ververaki/logoNoBGHELP.png">
+                              </a>
+                      </div>
+                      <div class="dropdown">
+                              <div class="drop-option">RESOURCES</div>
+                              <div class="dropdown-cont">
+                                      <ul id="resourceList">
+                                              <li><a href="./resources.html" id="sourcesOption">Our Sources</a></li>
+                                              <li><a href="./faq.html"  id="faqOption">FAQ</a></li>
+                                      </ul>
+                              </div>
+                      </div>
+                      <div id="menu_item_about">
+                              <a href="./aboutPage.html">ABOUT US</a>
+                      </div>
+              
+      </div>
+
+</nav>
+</div>
+  <main>
+
+    <div class="aContent">
+  <!-- <h1>Resources</h1>-->
+    <ul class="aFixResourceList">
+      <li class="aList">National Geographic Society [online - multiple sources]</li>
+      <li class="aList">Encyclopedia of Life [online - multiple sources]</li>
+      <li class="aList">Entomology Today [online - multiple sources]</li>
+      <li class="aList">Amateur Entomologists Society [online - multiple sources]</li>
+
+      <li class="aList">William D. Brown , Gregory A. Muntz, Alexander J. Ladowsk, “Low Mate Encounter Rate Increases
+        Male Risk Taking in a Sexually </li>
+      <li class="aList"> Cannibalistic Praying Mantis”, 2012. [E-Book] Available: journals.plos.org</li>
+      <li class="aList">J.C. O'hanlon, D. Li, Y. Norma-Rashid, “Coloration and Morphology of the Orchid Mantis Hymenopus
+        coronatus (Mantodea:
+        Hymenopodidae)”, 2013. [E-Book] Available: researchgate.net</li>
+      <li class="aList"> Christian J. Schwarz & Roger Roy, “The systematics of Mantodea revisited: an updated
+        classification incorporating multiple data sources
+        (Insecta: Dictyoptera)”, 2018. [E-Book] Available: researchgate.net</li>
+      <li class="aList"> Johns Hopkins University Press, “The praying mantids”, Baltimore, 1999.</li>
+      <li class="aList"> Capinera, John L., “Encyclopedia of Entomology”, Dordrecht: Kluwer Academic Publishers, 2008.
+      </li>
+      <li class="aList">Hurd, L. E., Eisenberg, R. M., Fagan, W. F., Tilmon, K. J., Snyder, W. E., Vandersall, K. S.,
+        Datz, S. G., Welch, J. D., "Cannibalism reverses
+        male-biased sex ratio in adult mantids: female strategy against food limitation?", 1994. [E-Book]. Available:
+        JSTOR</li>
+
+
+    </ul>
+  </div>
+  </main>
+
+
+           
+  <footer>
+    <div class="footer_wrapper">
+     
+            <div class="footerRightsS"><!--divides the footer items into columns, check less-->
+                 <div class="footerRightsSContent">
+                   <div> <span>&#169;</span> 2023. All rights reserved.</div>
+                   <div> Athens Tech College</div>
+                </div>
+            </div>
+
+
+
+
+            <div class="footerMiddleWrapIt">
+            
+                <div class="footerMiddleWrapItContent1">
+                    <a href="./miniGame.html">Play a mini-game!</a>
+                </div>           
+          
+               <div class="footerMiddleWrapItContent2">
+                <a href="./worldMap.html">Try our interactive map</a>
+                 </div>
+           
+                <div class="footerMiddleWrapItContent3">
+                    <a href="./miniQuiz.html">Take a quick quiz</a>
+                </div>      
+
+            </div>
+
+
+
+            <div class="footerLinksWrapIt">
+                <div class="footerLinksWrapItContent">
+
+                        <div class="fixTheMonstrosity">                   
+                            <a href="https://github.com/YadaYadaAT" target="_blank">
+                                <i class="fa-brands fa-github fa-sm"></i>
+                                <div>Github</div>                            
+                                </a>
+                        </div>
+                
+                        <div class="fixTheMonstrosity">                        
+                            <i class="fa-solid fa-envelope fa-sm"></i>
+                            <div> yadayadaAt@gmail.com</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="column">
+                <div class="athTechRow">
+                    Athens Tech College.
+                </div>
+            </div>
+        </div> -->
+   
+</footer>
+
+
+
+  <script src="../other/js/ververaki.js"></script>
+</body>
+
+</html>

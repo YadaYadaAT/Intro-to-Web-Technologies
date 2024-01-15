@@ -1,12 +1,3798 @@
+//=======================         John Balasis Stage 1 AthensTEch                                 ================//
+
+//=====================================================HOMEPAGE===================================================//
+//General settings to apply font families,colors e.t.c from master
+#jhomeMain{
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    
+}
+#jhomeMain h1{
+    font-family:@fontFamilyHeader;
+    font-size:@fontSizeTitles;
+    color:#232323;
+}
+#jhomeMain h2,
+#jhomeMain h3,
+#jhomeMain h4,
+#jhomeMain h5,
+#jhomeMain h6 {
+    font-family:@fontFamilyTitle;
+    font-size:@fontSizeTitles;
+    color:#232323;
+    }
+#jhomeMain p{
+    font-family:@fontFamilyMainText;
+    font-size:@fontSizeMainText;
+    line-height:1.5;
+   
+    color:#232323;
+}
+
+//==============================================================================================================//
+//===================================             HomePageImgPreview      ==========================================//
+
+#HomePageImgPreview{
+    z-index:500;
+    position:fixed;
+    display:none;
+    height:100vh;
+    width:100vw;
+    background-color:rgba(0,0,0,0.9);
+}
+
+
+#HomePageImgPreview img{
+    width:auto;
+    height:70vh;
+}
+
+
+
+#HomePageImgPreviewInDescription{
+    transition:100ms linear;
+    position:absolute;
+    bottom:0;
+    display:flex;
+    overflow:hidden;
+    height:0;
+    width:100%;
+    background-color:black;
+    color:White;
+    align-items:center;
+    justify-content:flex-start;
+    padding-left:1em;
+    padding-right:1em;
+   
+}
+
+#HomePageImgPreviewFrame{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    display:flex;
+    flex-direction:column;
+}
+
+
+
+#HomePageImgPreview img:hover + #HomePageImgPreviewInDescription{
+height:fit-content;
+padding-bottom:0.5em;
+padding-top:0.5em;
+
+}
+
+
+//==============================================================================================================//
+//===================================             jPhotoGallery      ==========================================//
+
+
+
+#jPhotoGallery{
+    display:flex;
+    width:50%;
+    height:20.5em;
+    
+    align-self:center;
+    overflow:hidden;
+    
+}
+
+#jPhotoGallery img{
+    width:100%;
+    height:100%;
+    padding:0.2em;
+}
+#jPhotoGallery img:hover{
+    border:6px solid @colorCreme;
+    cursor: pointer;
+}
+
+
+#jPhotoGalleryFirstFour{
+    display:flex;
+    width:80%;
+    height:100%;
+    flex-direction:column;
+}
+
+
+
+
+
+#jPhotoFirstTwoRow{
+    display:flex;    
+    height:50%;
+    width:100%;
+}
+#jPhotoFirstTwoRowOne{
+    width:70%;
+    height:100%;
+}
+#jPhotoFirstTwoRowTwo{
+    width:30%;
+    height:100%;
+}
+
+
+
+#jPhotoSecondTwoRow{
+    display:flex;    
+    height:50%;
+    width:100%;
+}
+#jPhotoSecondTwoRowOne{
+    width:30%;
+    height:100%;
+}
+#jPhotoSecondTwoRowTwo{
+    width:70%;
+    height:100%;
+}
+
+
+
+
+#jPhotoGalleryLastOne{
+    width:20%;
+    height:100%;
+
+}
+
+
+
+
+//==============================================================================================================//
+//===================================            jhomePageFunFacts       ==========================================//
+#jhomePageFunFacts{
+ display:flex;
+ border-radius: 7px 0px 0px 7px;
+    align-self:flex-end;
+     position: -webkit-sticky; /* Safari */
+    position:sticky;
+    top: calc(100vh - 40em);
+    border:none;
+    line-height:0;
+        height:40em;
+        width: 25%;
+        z-index: 40;
+        margin-bottom: -1em !important;
+}
+
+#jhomePageFunFacts img{
+    position:absolute;
+    bottom:0;
+    right:5%;
+    width:30%;
+    height:30%;
+    cursor: pointer;
+}
+#jhomePageFunFacts img:hover{
+    filter: drop-shadow(5px 5px 10px @colorFlowerOrange);
+}
+
+#jhomePageFunFacts h3{
+width:100%;
+text-align:center;
+font-family:Comic Sans MS, 'Times New Roman', Times, serif;
+font-size:@fontFamilyTitle;
+color:@colorMantisGreen;
+position:absolute;
+top:5%;
+z-index:10;
+}
+
+#jChatLoading{
+
+ width:1.2em;
+ height:1em;
+ position:absolute;
+ display:flex;
+ right:18%;
+ bottom:11em;
+ flex-direction: column;
+}
+
+
+@keyframes jLoadingChat{
+    0%{opacity:1;align-self:flex-start;}
+    10%{opacity:0.5;align-self:flex-start;}
+    20%{opacity:1;align-self:flex-start;}
+    25%{opacity:0.5;align-self:flex-start;}
+   50%{opacity:1;align-self:center;}
+   60%{opacity:0.5;align-self:center;}
+    70%{opacity:1;align-self:center;}
+    80%{opacity:0.5;align-self:flex-end;}
+    90%{opacity:1;align-self:flex-end;}
+    100%{opacity:1;align-self:flex-end;}
+    
+}
+
+
+#jChatLoadingBullets{
+    width:0.7em;
+    height:0.7em;
+    border-radius:50%;
+    background-color:@colorFlowerOrange;
+    animation:jLoadingChat 2s ease-in-out infinite;
+}
+
+#jhomePageFunFactsText{
+    display:flex;
+    position:absolute;
+    width:100%;
+    height:50%;
+    overflow-y:auto;
+    align-self:center;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    
+    flex-direction:column;
+   
+}
+
+#jhomePageFunFactsText>:first-child{
+
+    margin-top:auto;
+}
+
+#jhomePageFunFacts::before{
+    content:" ";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    pointer-events: none;
+    background: linear-gradient(to top, transparent 60%, @colorCreme 72%);
+    height:100%;
+    width:100%;
+    z-index:10;
+}
+
+
+#jhomePageFunFactsText::-webkit-scrollbar {
+    display: none;
+  }
+
+
+#jClickOnMeMessage{
+    position:absolute;
+    bottom:0em;
+    font-size:2em;
+    height:2em;
+    width:100%;
+    margin-left:10%;
+    text-align: left;
+    color:@colorFlowerOrange;
+}
+
+.jProfileAndFunFactDiv{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    padding-left:5em;
+}
+
+.jGeneratedChatDivPic{
+  width:4em;
+  height:4em;
+    position:absolute;
+    left:1em;
+    top:1em;
+  background-image:url('../../images/Balasis/chatyMantise.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  border-radius: 50%;
+  border:1px solid black;
+  
+
+
+}
+.jTopDiv{
+    color:black;
+}
+.jTopDiv p{
+    margin-bottom:0.5em;
+    min-height:0.5em;
+}
+.jGeneratedChatDivAccountInfo{
+ font-weight:bold;
+}
+.jGeneratedChatMessage{
+    line-height:1.5;
+   
+    text-indent:none;
+}
+
+.jGeneratedChatDiv{
+    color:black;
+    width:100%;
+    text-wrap: wrap;
+    border-radius: 10px 10px 10px 10px;
+    padding:1em;
+    display:flex;
+    position:relative;
+}
+/*
+#jChatMantisImg:hover + #jChatLoading {
+    display: flex;
+  }*/
+
+
+//==============================================================================================================//
+//===================================             Home Overview       ==========================================//
+//Couldnt find an easy alternative the way I structured
+//the page..so Instead of creating a mess with the divs
+//I decided to occupy the place that the fun fact div
+// gives with a margin-top:-35em. Well I assume
+//minus em is there for a reason.(not beautiful I admit).
+.jfirstOfItsKind{
+    margin-top:-38.5em;
+}
+
+#jHomePageAboutMantisesMenu{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position:relative;
+}
+#jHomePageAboutMantisesMenu section{
+margin-bottom:8em;  
+}
+
+.jHomePageMenuItemOverview{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    line-height:1.5;
+    background-color:@colorFlowerOrange;
+    padding:1em;
+    padding-top:0em;
+    align-items:center;
+    
+}
+.jHomePageMenuItemOverview h1{
+ text-align: center;
+ width:50%;
+ color:#232323;
+}
+.jHomePageMenuItemOverview p{
+    text-align: justify;
+    width:50%;
+    color:#232323;
+    text-indent: 50px;
+   }
+
+
+
+//==============================================================================================================//
+//==================================   Menu Inside (ReadMore/Minimize)  ========================================//
+
+
+
+
+
+.jHomePageMenuItem{
+    max-width: 130em;
+    margin-bottom:2.5em;
+    width:65%;
+    display:flex;
+    flex-wrap:nowrap;
+    height:20em;
+    border-radius:5px 5px 5px 5px;
+    position:relative;
+    
+   
+}
+
+.jHomePageMenuItem h2{
+    width:70%;
+   padding-top:0.5em;
+   padding-bottom:0.5em;
+    text-align: left;
+    padding-left:3em;
+    background-color:@colorFlowerOrange;
+    transition:600ms linear;
+    color:#232323;
+}
+
+
+
+
+.jHomePageMenuItem img{
+width:35%;
+height:auto;
+}
+.jHomePageMenuItemAddHeight{
+  height:auto;
+}
+
+
+
+.jHomePageMenuItem p{
+    line-height:1.5;
+    text-align:justify;
+  
+    
+}
+.jHomePageContentAndReadMoreHolder{
+    display:flex;
+    flex-direction:column;
+    width:90%;
+    position:relative;
+    flex-grow:0;
+    flex-shrink:0;
+}
+.jHomePageMenuItemContent{
+    flex-grow:1;
+    position:relative;
+    overflow:hidden;
+    margin-top:1em;
+    color:#232323;
+    
+}
+
+.jAddPaddingRightToImg{
+    padding-right:2em;
+}
+.jAddPaddingLeftToImg{
+    padding-left:2em;
+}
+
+
+.jHomePageMenuItemContentFog::before{
+    content:" ";
+    position:absolute;
+   width:100%;
+   height:100%;
+    background: linear-gradient(transparent 65%, @colorCreme 95%;);
+    bottom:0;
+    right:0;
+    left:0;
+   top:0;
+ 
+}
+.jHomePageMenuItemContentFog::after{
+    content:" ";
+    position:absolute;
+   width:100%;
+   height:50%;
+    bottom:0;
+    right:0;
+    left:0;
+   backdrop-filter: blur(1px);
+   z-index:10; 
+}
+
+.jHomePageMenuItemContent p{
+    padding-left:10em;
+    color:#232323;
+}
+
+
+.jHomePageReadMoreHolder{
+    bottom:-3em;
+    display:flex;
+    justify-content:flex-start;
+    position:absolute;
+    flex-shrink: 0;
+   padding-left:10em;
+}
+
+.jHomePageReadMore{
+    font-weight:bold;
+    background:none;
+    color:@colorCreme;
+    background-color:@colorFlowerOrange;
+    border:none;
+    font-weight:bold;
+    opacity: 1;
+    padding:0.5em;
+    font-size:1em;
+    transition: transform 0.3s ease-in-out;
+}
+
+.jHomePageReadMoreWidthIt{
+
+}
+
+.jHomePageReadMoreWidthIt h2{
+    width:100%;
+}
+
+.jHomePageReadMore:hover{
+    
+    cursor: pointer;
+    opacity:0.5;
+}
+.jHomePageMinimizerHolder{
+    margin-right:1em;
+    flex-grow:1;
+    position:relative;
+    display:none;
+    justify-content: center;
+ 
+}
+.jHomePageMinimizer{
+    position: -webkit-sticky; /* Safari */
+    position:sticky;
+    top:1em;
+    margin-bottom:2em;
+    height:3em;
+    width:3em;
+    background:none;
+    border:none;
+    border-collapse: collapse;
+    cursor: pointer;
+    font-weight:bold;
+    font-size:1em;
+    line-height:0;
+    
+}
+
+
+
+//==============================================================================================================//
+//===================================            Media Queries       ==========================================//
+
+
+
+
+@media screen and (max-width:93.7em){
+        #jhomePageFunFacts{
+            width:30em;
+        }
+
+}
+@media screen and (max-width:81.25em){
+    #jhomePageFunFacts{
+        opacity:0;
+        pointer-events: none;
+      
+    }
+
+}
+
+
+
+
+@media screen and (max-width:56.25em){
+
+   
+
+    .jHomePageMenuItemOverview{
+        width:100%;
+    }
+
+    .jHomePageMenuItem h2{
+        padding-left:initial;
+    }
+
+    .jHomePageReadMoreHolder {
+        padding-left:initial;
+    }
+    
+    .jHomePageContentAndReadMoreHolder{
+        width:100%;
+        display:flex;
+        align-items:center;
+
+    }
+    
+    .jHomePageMenuItemContent{
+        max-width:90%;
+
+    }
+
+    
+    .jHomePageMenuItem{
+        width:100%;
+    }
+
+    .jHomePageContentAndReadMoreHolder h2{
+        text-align: center;
+        width:100%;
+    }
+
+    
+
+    .jHomePageMinimizerHolder{
+        position:absolute;
+        left:0.5em;
+        height:100%;
+    }
+    .jHomePageMinimizer{
+        
+        position: sticky;
+        top: 0;
+        margin-bottom: 2em;
+        height: 3em;
+        width: 3em;
+        left:1em;
+       margin-top:1.4em;
+    }
+    .jHomePageMenuItemContent p{
+        padding-left:1em;
+        padding-right:1em;
+
+    }
+    #jPhotoGallery{
+        width:100%;
+        align-self:initial;
+    }
+    #jAboutMantises h1{
+        width:75%;
+    }
+    #jAboutMantises p{
+        width:75%;
+        column-count: 2; 
+        column-gap: 40px;
+    }
+   
+
+
+}
+@media screen and (max-width:40.6em){
+    #HomePageImgPreview img{
+        width:100%;
+        aspect-ratio: 1;
+    }
+    #HomePageImgPreviewFrame {
+       
+        width:100%;
+        display:flex;
+       
+    }
+
+
+    #jAboutMantises p{
+        white-space: wrap;
+        width:75%;
+        column-count: 2; 
+        column-gap: 30px;
+        font-size:10pt;
+    }
+
+#jhomePageFunFacts{
+    display:none;
+}
+.jfirstOfItsKind{
+    margin-top:initial;
+}
+}
+
+
+
+//==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================//
+//==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================////==============================================================================================================//
+//===================================            MINIQUIZ       ==========================================//
+
+
+
+
 //=======================Begin of your CSS code================//
 
 
 
 
 
+.jjexplainHighLight{
+    position:relative;
+    z-index: 9950 !important; 
+}
+.jjexplainHighLight::before {
+    content: '';
+    position: absolute;
+    border: 2px solid #fff !important; 
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    
+  }
+ 
+
+  .jjwholeShadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); 
+    z-index: 9900; 
+  }
+
+
+  .jjhighlightMessage{
+    display:flex;
+    background-color:white;
+    position:absolute;
+    top:25%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding:2em;
+    border-radius:10px 10px 10px 10px;
+    flex-direction: column;
+    
+    z-index:9990;
+  }
+
+  .jjhighlightMessage *{
+margin-top:1em;
+
+  }
 
 
 
 
-//=======================END of your CSS code==================//
-@import "master.less";
+
+
+#jjMiniQuizMain{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    position:relative;
+    min-height:100vh;
+    width:100vw;
+    background-image:url(../../images/Balasis/quizImages/backgroundd.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:10% 0%;
+}
+
+#jjMiniQuizMain h2{
+   
+}
+
+
+#jjMiniQuizFrame{
+    display:none;
+    flex-direction: column;    
+    width:50%;
+    position:relative;
+    overflow:hidden;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    padding-top:4em;
+    padding-bottom:2em;
+}
+
+
+#jjMiniQuizFrame *{
+    transition:150ms linear;
+}
+
+#jjMiniQuizImgHolder{
+    padding:1em;
+    padding-bottom:0;
+    width:100%;
+   height:60%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    position:relative;
+    
+   
+}
+#jjQuizImgPlaceHolder{
+    height:100%;
+    width:100%;
+    border:0.3em solid @colorLightGreen;
+    border-radius:10px 10px 10px 10px;
+    
+}
+
+#jjQuizGoHome{
+    position:absolute;
+    left:2em;
+    top:2em;
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+    width:4em;
+    height:4em;
+    cursor:pointer;
+    transition:500 linear;
+}
+#jjQuizGoHome img{
+    height:100%;
+    width:100%;
+    }
+
+
+#jjQuizGoHome:hover #jjQuizHomeOut{
+    opacity:1;
+    }
+
+#jjGoHomeYouReDrunk{
+    text-decoration: none;
+    color:inherit;
+}
+
+#jjWrapTheImage{
+    height:80%;
+    width:100%;
+    position:relative;
+}
+
+#jjQuizHome{
+   opacity:1;
+    height:100%;
+    width:100%;
+    position:absolute;
+    right:0;
+    top:0;
+    margin-left:auto;
+    margin-right:auto;
+    transition: opacity 0.5s linear;
+    z-index:5; 
+}
+#jjQuizHomeOut{
+    opacity:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    right:0;
+    top:0;
+    margin-left:auto;
+    margin-right:auto;
+    transition: opacity 0.5s linear; 
+    z-index:10;
+}
+#jjGoHomeText{
+    height:20%;
+    display:flex;
+    flex-shrink: 0;
+}
+
+
+
+
+#jjQuizQuestionPlaceholder{
+    width:100%;
+    padding:2em;
+    text-align: center;
+    font-size:1.2em;
+}
+
+#jjOptionsOfQuiz{
+    display:flex;
+    width:100%;
+
+}
+
+
+#jjMiniQuizContentLeftSide{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:50%;
+    padding-left:1em;
+    padding-right:1em;
+    }
+
+
+#jjMiniQuizContentRightSide{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:50%;
+    padding-left:1em;
+    padding-right:1em;
+    }
+
+
+   
+
+
+
+
+
+
+
+
+    .jjQuizOptionsInputs{
+        display:none;
+    }
+
+
+
+    .jjQuizRightAnswerAnimationClass{
+        animation-name:jjQuizRightAnswerAnimation;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes jjQuizRightAnswerAnimation{
+    0%{background-color:orange;}
+    10%{ background-color:white;}
+    20%{background-color:orange;}
+    30%{ background-color:white;}
+    50%{background-color:orange;}
+    75%{background-color:white;}
+    100%{background-color:orange;}
+    }
+
+
+
+
+
+
+    
+    .jjQuizOptionsInputsLabel{
+        padding:1em;
+        width:100%;
+        height:100%;
+        font-size:1.1em;
+        text-align:center;
+        cursor:pointer;
+        border:1px solid @colorSand;
+        transition:200ms linear;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:1em;
+        animation-duration:3s;
+    }
+    .jjQuizOptionsInputsLabel:hover{
+    
+    background-color:@colorLightGreen;
+    }
+
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.jjPauseTheQQloader{
+    animation-play-state: paused;
+}
+
+
+
+
+.jjhelperButton{
+    font-size:1em;
+    background-color:@colorSand;
+    border:none;
+    transition:150ms linear;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    cursor:pointer;
+    height:100%;
+    width:45%;
+    font-weight:bold;
+}
+.jjhelperButton:hover{
+  
+   
+}
+
+
+
+
+
+
+
+
+
+#jjResetCountDown{
+    display:none;
+    background-color:@colorSand;
+    border-radius: 50%;
+    transition:100ms linear;
+    height:4em;
+    width:4em;
+    background-color:@colorSand;
+    justify-content: center;
+align-items: center;
+    cursor: pointer;
+    margin-top:1.5em;
+    border:none;
+    transition:300ms linear;
+    z-index:20;
+}
+
+#jjResetCountDown:hover{
+    color:green;
+    transform:scale(1.1);
+
+}
+#jjStartCountDown{
+    display:flex;
+    background-color:@colorSand;
+    border-radius: 50%;
+    height:4em;
+    width:4em;
+    background-color:@colorSand;
+    justify-content: center;
+align-items: center;
+    cursor: pointer;
+    margin-top:1.5em;
+    border:none;
+    transition:300ms linear;
+    z-index:20;
+    background-image: url(../../images/Balasis/quizImages/JJTurnOn.png);
+    background-repeat:no-repeat;
+    background-size:70% 70%;
+    background-position:50% 50%;
+}
+
+
+
+#jjStartCountDown:hover{
+   transform:scale(1.5);
+}
+
+
+
+#jjQuizLoadingBorder{
+    width:100%;
+    display:flex;
+    position:absolute;
+    bottom:0;
+height:1em;
+background-color:grey;
+
+flex-direction: row;
+align-items: center;
+margin-top:auto;
+}
+
+#jjQuizLoadingBorderBarMoving{
+    width:100%;
+    background-color:green;
+    display:flex;
+    height:100%;
+
+}
+#jjQuizLoadingBorderBarMovingTimer{
+    position:absolute;
+    display:flex;
+    
+    left:0.5em;
+    bottom:0.5em;
+    font-size:4.5em;
+    width:fit-content;
+    animation-duration:61s;
+    
+    
+
+}
+.jjQuizLoadingBorderBarMovingTimerName{
+animation-name:jjBarMinusForNum;
+}
+@keyframes jjBarMinusForNum {
+    0%{
+        
+        color:green;
+    }
+    40%{
+       
+        color: orange;
+    }
+    70%{
+        
+        color:darkorange;
+    }
+    85%{
+        
+        color:red;
+    }
+    100%{
+        
+        color:darkred;
+
+    }
+
+
+}
+
+
+
+
+#jjMiniQuizAssistButtons{
+
+
+    display:flex;
+flex-direction: row;
+width: calc(50% - 1.9em);
+height:3em;
+position:absolute;
+top:0;
+justify-content:center;
+background-color:@colorSand;
+transition:200ms linear;
+animation-iteration-count: 1;
+animation-duration:1s;
+z-index:100;
+}
+
+
+
+
+
+.jjanimationForDropDown{
+    animation-name: jjDropDownQuiz;
+}
+@keyframes jjDropDownQuiz{
+    0%{height:3em}
+    50%{height:calc(100vh - 1em)}
+    100%{height:3em}
+}
+
+
+@keyframes jjBarMinus {
+    0%{
+        width:100%;
+        background-color:green;
+    }
+    40%{
+       
+        background-color: orange;
+    }
+    70%{
+        
+        background-color:darkorange;
+    }
+    85%{
+        
+        background-color:red;
+    }
+    100%{
+        width: 0%;
+        background-color:darkred;
+
+    }
+
+
+}
+.jjAddAnimationForBar{
+    animation-name:jjBarMinus;
+    animation-duration:60s;
+    animation-iteration-count:1;
+}
+
+.jjQuizOptionsInputs:checked + .jjQuizOptionsInputsLabel {
+    background-color:@colorLightGreen;}
+
+
+  #jjClearLocalStorageButton{
+    position:fixed;
+    background:none;
+    right:0;
+    border-radius: 10px 0px 0px 10px;
+    transition:400ms linear;
+    width:10em;
+    height:5em;
+    padding-left:1em;
+    text-align:left;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+  }
+  #jjClearLocalStorageButton:hover{
+    width:15em;;
+  }
+
+  #jjScoreTable::before{
+    content:"Top 10 Score Table";
+    text-align:left;
+    padding-left:1em;
+    padding-top:1em;
+    top:-4em;
+    height:2em;
+    font-weight:bold;
+   left:-1em;
+   right:-1em;
+    position:absolute;
+    background-color:rgba(244, 244, 244, 0.9);
+    z-index:9;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  #jjScoreTable::after{
+    content:"";
+    top:-4em;
+    bottom:-1em;
+    left:-1em;
+    right:-1em;
+    position:absolute;
+    background-color:rgba(244,244,244,0.4);
+    z-index:8;
+    border-radius: 10px 10px 10px 10px;
+
+  }
+
+
+
+  #jjScoreTable tbody{
+    position:relative;
+    z-index:50;
+    
+  
+  }
+.jjAssistedTableColorYes{
+  border-radius: 10px 10px 10px 10px;
+  background-color:green;
+}
+.jjAssistedTableColorNo{
+    border-radius: 10px 10px 10px 10px;
+    background-color:red;
+}
+#jjScoreTable{
+    z-index:50;
+    width: calc(50% - 4em);
+    display:table;
+    border-collapse: collapse;
+    text-align: center;
+    max-height:70vh;
+    position:relative;
+    border-radius: 10px 10px 0px 0px;
+    overflow:hidden;
+    overflow:auto;
+    white-space: nowrap;
+}
+#jjScoreTable th{
+   
+   padding-top:1em;
+   padding-bottom:1em;
+    background-color:rgb(214,210,222) ;
+}
+#jjScoreTable td:nth-child(1) {
+    width: 10%;
+}
+
+#jjScoreTable td:nth-child(n+2) {
+    width: 30%;
+}
+
+#jjScoreTable tr:nth-child(even){
+   background-color:@colorSand;
+}
+
+#jjScoreTable tr:nth-child(odd){
+    background-color:rgb(226,224,238);
+ }
+ 
+#jjScoreTable td, th{
+    
+    padding:0.5em;
+}
+#jjScoreTable td{
+    padding-top:2vh;
+    padding-bottom:2vh;
+}
+
+@media screen and (max-width: 62.5em) {
+    #jjScoreTable{
+        width:calc(65% - 4em);
+        margin-top:3em;
+        overflow:auto;
+    }
+
+   
+    
+      #jjScoreTable td, th{
+        
+        padding:0em;
+    }
+    #jjScoreTable  th{
+        
+        padding:0.1em;
+    }
+
+
+
+
+    #jjMiniQuizAssistButtons{
+        width:calc(65% - 1.9em);
+
+    }
+    .jjhighlightMessage{
+        left:50%;
+        top:50%;
+        padding:1em;
+    }
+    #jjQuizLoadingBorderBarMovingTimer{
+        left:0.1em;
+        bottom:0.1em;
+    }
+    #jjMiniQuizFrame{
+        padding-top:2em;
+        width:65%;
+        height:85vh;
+    }
+    #jjClearLocalStorageButton{
+        bottom:8em;
+        width:5em;
+    }
+    #jjClearLocalStorageButton:hover{
+        width:initial;
+  
+    }
+    #jjQuizQuestionPlaceholder{
+        padding:0.1em;
+    }
+    #jjQuizGoHome{
+        left:0.1em;
+        top:0.1em;
+       
+    }
+  }
+
+  @media screen and (max-width: 46.8em) {
+
+
+
+  }
+
+
+
+  @media screen and (max-width: 28.12em) {
+    #jjMiniQuizFrame{
+        padding-top:4em;
+        width:100%;
+        overflow-x:hidden;
+        overflow-y:auto;
+        scrollbar-width: thin;
+        height:85vh;
+        margin-bottom:auto;
+    }
+   
+    #jjQuizGoHome{
+        right:0.5em;
+        bottom:1em;
+        transform:scale(0.8);
+       left:initial;
+       top:initial;
+       
+    }
+    #jjMiniQuizAssistButtons{
+        width:100%;
+
+    }
+    #jjQuizLoadingBorderBarMovingTimer{
+        font-size:3.5em;
+    }
+
+  
+  #jjScoreTable{
+    margin-top:3em;
+  }
+
+  #jjScoreTable td, th{
+    
+    padding:0em;
+}
+#jjScoreTable  th{
+    
+    padding:0.1em;
+}
+
+}
+
+
+
+@media screen and (max-width: 20.3em) {
+    #jjMiniQuizFrame,#jjMiniQuizAssistButtons,#jjClearLocalStorageButton,#jjScoreTable,#jjQuizLoadingBorderBarMovingTimer,#jjQuizLoadingBorder{
+        transform: scalex(0.5);
+    font-size: 0.5rem;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+//==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================//
+//==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================////==============================================================================================================//
+//===================================            BEHAVIOR       ==========================================//
+
+
+
+.jjjBehaviorBody h1,
+.jjjBehaviorBody h2,
+.jjjBehaviorBody h3,
+.jjjBehaviorBody h4,
+.jjjBehaviorBody h5,
+.jjjBehaviorBody h6 {
+    font-family:@fontFamilyHeader;
+}
+
+.jjjBehaviorBody p,a,button{
+    font-family:@fontFamilyMainText;
+}
+
+
+#jjjBehaviorMain{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    position: relative;
+    background-color:@colorCreme;
+    padding-top: 8em;
+}
+
+
+
+
+
+
+
+#jjjHandlerMenu{
+   
+    
+    position:absolute;
+    margin-left:auto;
+    margin-right:auto;
+    left:0;
+    right:0;
+    top:0em;
+    justify-content:space-between;
+    align-items:center;
+    align-self: center;
+    z-index:30;
+    margin-top:0;
+    height:2em;
+    border-radius: 0px 0px 20px 20px;
+   
+ 
+   width:70%;
+   overflow: hidden;
+    font-size:1.5em;
+
+
+}
+.jjjjPasalimata{
+    display:none;
+}
+
+.jjjRotateMenuButtons{
+    transition:500ms linear;
+    width:100%;
+    border:none;
+    background-color:none;
+    cursor:pointer;
+    height:100%;
+    background-color:@colorLightGreen;
+    color:white;
+    font-size:1.2em;
+}
+.jjjRotateMenuButtons:hover{
+    background-color:@colorLightGreen;
+    color:white;
+  
+}
+.jjjRotateMenuButtonsExtent{
+    background-color:rgb(92,132,89);
+}
+
+#jjjBookEnviroment{
+    width:100%;
+    height:fit-content;
+    min-height:26em;
+    background-color:@colorCreme;
+    display:flex;
+    justify-content: center;
+    flex-grow:0;
+    position:relative;
+    transform-origin:0% 0%;
+}
+
+
+
+
+
+#jjjBookWrapper{
+    position:absolute;
+    bottom:8.7em;
+
+   
+    width:fit-content;
+    transform-origin:50% 50%;
+    z-index: 5;
+    transition:2600ms linear;
+    }
+
+    .jjjBookWrapperClassMargins{
+        left:50%;
+    transform:translateX(-50%);
+        
+       
+    }
+    
+.jjjBookEnviromentTableEffect{
+    transition:2s ;
+    display:flex;
+    width:100%;
+    min-height:0.8em;
+    align-self:flex-end;
+    flex-grow:1;
+    position:absolute;
+    bottom:0;
+   
+    background-color:@colorLightGreen;
+    height:0.8em;
+    
+}
+
+   
+
+.jjjIneedOneMoreForEffect{
+    transition: 2s ;
+    display:flex;
+    position:absolute;
+    align-self: center;
+    background-color:@colorLightGreen;
+    flex-grow:1;
+    width:100%;
+    height: 20em;
+    bottom:-10em;
+    pointer-events: none;
+    z-index:1;
+   
+   transform:rotateX(-90deg);
+}
+
+
+
+.jjjBehflipper {
+    transition: transform 2.6s ;
+
+    position: absolute;
+    
+    z-index:4;
+    
+    font-size:19pt;
+    perspective: none;
+    width:20em;
+   
+    transform-style: preserve-3d;
+    
+    transform-origin: center center;
+    transform:rotateY(0deg) rotateX(0deg) translateZ(4.5em);
+  }
+
+  .jjjBehflipper *{
+    font-family:@fontFamilyMainText;
+  }
+  .jjjBehflipper h1,
+  .jjjBehflipper h2,
+  .jjjBehflipper h3,
+  .jjjBehflipper h4,
+  .jjjBehflipper h5,
+  .jjjBehflipper h6 {
+    font-family:@fontFamilyTitle;
+
+}
+.jjjBehflipper p,a,button{
+    font-family:@fontFamilyMainText;
+    
+}
+
+
+  .jjjBookEnviromentTableEffectAdd{
+    height:100%;
+    transform:rotateY('0deg');
+    }
+
+
+
+#jjjWelcomeText{
+    transition:2.6s;
+    
+    width:100%;
+    display:flex;
+   align-items: center;
+    flex-direction: column;
+    min-height:40em;
+}
+
+#jjjWelcomeTextHolder{
+    display:flex;
+    width:70%;
+    align-items: center;
+    flex-direction: column;
+}
+#jjjWelcomeTextHolderTitleAndButton{
+    display:flex;
+    width:100%;
+    justify-content:space-between;
+    margin-top:3em;
+
+}
+
+
+
+#jjjWelcomeTextHolderTitleAndButton button{
+width:20%;
+flex-shrink:0;
+
+justify-content: center;
+align-items: center;
+}
+
+#jjjWelcomeTextHolderTitleAndButton h1,
+#jjjWelcomeTextHolderTitleAndButton h2,
+#jjjWelcomeTextHolderTitleAndButton h3,
+#jjjWelcomeTextHolderTitleAndButton h4,
+#jjjWelcomeTextHolderTitleAndButton h5,
+#jjjWelcomeTextHolderTitleAndButton h6 {
+    font-size:53px;
+    align-self:center;
+    text-align:left;
+}
+
+
+
+#jjjBehaviorBody br{
+    display:none;
+}
+#jjjBehaviorMain br{
+    display:initial;
+}
+#jjjjDescription{
+    width:100%;
+    text-align:justify;
+    font-size:@fontSizeTitles;
+    margin-top:3em;
+}
+
+.jjjjarrowOff{
+  
+    align-self: center;
+    position: relative;
+    width:70%;
+   color:white;
+    
+    background-color:black;
+    border: none;
+    height:50%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 5em;
+    transition: background-color 0.3s ease;
+  display:none;
+}
+
+
+
+.jjjjarrowTopBtnn {
+    display:flex;
+    align-self: center;
+    position: relative;
+    width:70%;
+    background-color: @colorFlowerOrange;
+    color: #fff;
+    border: none;
+    height:50%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 5em;
+    transition: background-color 0.3s ease;
+    animation-name:jjjjpulseIt;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.jjjjarrowTopBtnn:hover {
+    opacity:0.6;
+}
+
+
+
+@keyframes jjjjpulseIt{
+    0%{transform:scale(1.2);}
+    50%{transform:scale(1.0);}
+    100%{transform:scale(1.2);}
+
+
+}
+
+
+
+
+#jjjClickOnTheBook{
+   pointer-events: none;
+    opacity:0.7;
+    position:absolute;
+  
+    display:flex;
+    align-self:flex-end;
+    font-size:1em;
+    color:white;
+   width:6em;
+   text-align:left;
+   z-index:100;
+   top:-6em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .jjjBehcardFront {
+ cursor:pointer;
+   perspective: none;
+   
+    position: absolute;
+    width:20em;
+    z-index:4;
+    
+    
+    transform-origin: 0% 0%;
+    height:20em;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+   
+    transform: rotateX(90deg) rotateX(90deg) rotateX(-90deg) translateY(-10em) translateZ(0em) ;
+  }
+
+
+  .jjjGodIamSoTiredMakeItWork{
+    position:absolute;
+    bottom:0;
+    height:20em;
+    width:20em;
+    
+    transform-origin:0% 0%;
+    transform-style: preserve-3d;
+    z-index: 20;
+   
+  }
+
+
+  .jjjCleanTheMess{
+ 
+    margin-top:1em;
+    margin-bottom:1em;
+    position: absolute;
+    bottom:0em;
+    margin-left:0.2em;
+    
+    box-shadow: 2px 0 5px  rgba(48, 48, 48, 0.7) inset;
+
+
+    perspective: none;
+      
+    backface-visibility: hidden;
+    width:19.5em;
+    height:18em;
+    transform-origin:center;
+    transform-style: preserve-3d;
+    background-color:white;
+    color: #000000;
+  
+    transform:rotateY(0deg);
+  }
+  .jjjCleanTheMessBack{
+    margin-left:0.2em;
+    backface-visibility: hidden;
+   
+    position: absolute;
+    margin-top:1em;
+    margin-bottom:1em;
+    box-shadow: -5px 0 5px rgba(48, 48, 48, 0.2) inset;
+  
+    bottom:0em;
+    
+    perspective: none;
+    background-color:white;
+    
+    width:19.5em;
+    height:18em;
+    transform-origin:center;
+    transform-style: preserve-3d;
+    
+    color: #000000;
+   
+    transform:rotateY(-180deg);
+
+  }
+
+
+
+  .jjjBehbookTop{
+
+    box-sizing:border-box;
+      transform-style: preserve-3d;
+      position: absolute;
+    width:20em;
+    height:5em;   
+    box-shadow: 0 0 10px grey(0, 0, 0, 0.5);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: white;
+   // border:0.3em solid grey;
+    border-right:none;
+ 
+   
+    transform: rotateX(180deg) translateZ(9em);
+    border-top-color: @colorFlowerOrange;
+
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 98%,rgba(255, 255, 255, 0)99%, rgba(255, 255, 255, 0));
+    margin-left:1px;
+  }
+
+
+  .jjjBehcardBottom {
+    
+box-sizing:border-box;
+  transform-style: preserve-3d;
+  position: absolute;
+width:20em;
+height:5em;      
+ 
+box-shadow: 0 0 10px grey(0, 0, 0, 0.5);
+  
+
+  
+
+ 
+display: flex;
+align-items: center;
+justify-content: center;
+color: #fff;
+background-color: white;
+border:0.3em solid grey;
+border-left:calc(0.3em + 2px) solid grey;;
+border-right:none;
+
+
+transform: rotateX(360deg) translateZ(9em);
+border-top-color:rgb(83,16,59);;
+
+background: linear-gradient(to right, rgba(255, 255, 255, 1) 98%, rgba(255, 255, 255, 0)99%, rgba(255, 255, 255, 0));
+
+}
+
+.jjjBookSideTexty{
+    writing-mode: vertical-rl; 
+    text-orientation: upright;
+    white-space: nowrap;
+    color:white;
+    letter-spacing: 0.2em;
+    background-color:black;
+
+}
+
+
+
+.jjjBehbookBackTexty h3,h4{
+    
+    
+   
+    
+   
+}
+
+
+  .jjjBehshowPlease{
+    height:100%;
+   
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+  }
+  .jjjbottomLines{
+    height:100%;
+    opacity:0.1;
+    width:19em;
+    overflow: hidden;
+    line-height:0.5;
+  }
+  .jjjbottomLines hr{
+    margin-top:2px;
+    margin-bottom:0px;
+  }
+
+  .jjjBehbookSide{
+  
+   left:1px;
+    overflow:hidden;
+   
+    position: absolute;
+    width: 5em;
+    height:20em;
+   margin-top:-7.49em;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: grey;
+   
+    transform:rotateX(-90deg) rotateY(90deg) rotateX(180deg) translateZ(2.5em) ;
+    transform-origin:50% 50%;
+  }
+ 
+
+
+  .jjjBehbookBack{
+   background-color:black;
+border-top-right-radius:0px 0px; 
+border-bottom-right-radius:0px 0px;
+    border:0.2 solid grey;
+    position: absolute;
+    width: 20em;
+    height:20em;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: grey;
+   
+    transform: rotateY(180deg) rotateX(-90deg) rotateZ(0deg) translateZ(-5em);
+
+  }
+  
+  #jjjWrapTheInnerWithOuter{
+    
+    position:relative;
+    
+    width:20em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+ 
+
+  .jjjBehcardFrontBacks{
+    position:absolute;
+  transform-origin:0% 0%;
+    width: 20em;
+    height:20em;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: orange;
+    
+  }
+
+
+
+
+  .jjjBehRotateMePlease{
+    transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+    height:20em;
+    width:20em;
+    transform-origin:0% 0%;
+    position:absolute;
+    transform-style: preserve-3d;
+    z-index:25;
+  }
+
+.jjjBehRotateMePlease::before{
+    content:"";
+    position:absolute;
+    
+    height:90%;
+    width:2%;
+    margin-top:5%;
+    margin-bottom:5%;
+    pointer-events:none;
+    left:0;
+    top:0;
+    bottom:0;
+    background-color:rgb(83,16,59);;
+}
+
+
+
+  .jjjBehClassRotateOrNot{
+    transform:rotateY(-165deg);
+ 
+  }
+  #jjjCleanTheMessBackFirst{
+    height:20em;
+    margin-top:initial;
+    margin-bottom:initial;
+    background-color:rgb(83,16,59);
+    width:20em;
+    
+  }
+  #jjjCleanTheMessFirst{
+    height:20em;
+    margin-top:initial;
+    margin-bottom:initial;
+    background-color:rgb(83,16,59);
+    width:20em;
+    margin-left:initial;
+    box-shadow:initial;
+    background-image:url(../../images/Balasis/Behavior/uglyOne.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-position:50% 0%;
+  }
+
+#jjjHeaderOfTheBook h3{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align:center;
+  display:flex;
+  color:white;
+  text-align:center;
+ 
+  width:80%;
+  left:0;
+  right:0;
+  top:0.5em;
+  margin-left:auto;
+  margin-right:auto;
+  flex-direction: column;
+  position:absolute;
+
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+#jjjHeaderOfTheBook h4{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align:center;
+  display:flex;
+  color:white;
+  text-align:center;
+  padding-left:2px;
+  padding-right:2px;
+  height:100%;
+  width:100%;
+  flex-direction: column;
+  margin-top:13em;
+  box-shadow:0px -10px solid rgb(83,16,59);;
+ 
+}
+
+
+
+
+  #jjjGPageLast{
+    pointer-events: none;
+
+    
+  }
+  .jjjDisplayThemNot{
+  display:none;
+  }
+
+
+
+
+
+
+#jjjjJustApplyThem{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:black !important;
+    padding:1em;
+    justify-content:center;
+}
+
+
+
+#jjjjJustApplyThem h5{
+    height:100%;
+    width:100%;
+    background-color:black;
+    color:white;
+    letter-spacing: 0.1em;
+    text-align:center;
+    padding-top:1em;
+}
+#jjjToBeContinued{
+    position:absolute;
+    bottom:-8.5em;
+    right:-10.5em;
+}
+
+.jjjClassForThePages{
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-bottom:2em;
+}
+.jjjClassForThePages p{font-size:0.85em;font-family:@fontSizeMainText; padding-left:1em;padding-right:1em ;text-align: justify;text-indent: 2em;}
+.jjjClassForThePages h6{
+    width:100%;
+    font-family:@fontFamilyTitle;
+    font-size:@fontSizeTitles;
+   padding-bottom:0;
+   margin-bottom:0;
+   
+    text-align: center;
+}
+
+
+.jjjClassForThePages img{
+    width:80%;
+    height:30%;
+    margin-left:auto;margin-right:auto;
+}
+
+.jjjSkGoldenit{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-self:center;
+    color:@colorFlowerOrange;
+    font-style:italic;
+    font-weight:bold;
+    filter: drop-shadow(0 0 50px #FFD700) drop-shadow(0 0 100px #FFD700) drop-shadow(0 0 105px #FFD700); 
+}
+.jjjPageNumberClass{
+    position:absolute;
+    bottom:0em;
+    width:100%;
+    padding-bottom:0.5em;
+    text-align:center;
+}
+
+
+#jjjjspecialCase h6{
+    margin-top:0.2em;
+    margin-bottom:0.2em;
+}
+
+#SmallScreenSizeOnly{
+    display:none;
+    flex-direction:column;
+    align-items: center;
+    width:100%;
+    font-size:0.7em;
+}
+.MiniVersionClassBoringText h5,h6{
+font-size:2.2em;
+text-align: center;
+}
+.MiniVersionClassBoringText{
+color:black;
+margin-top:1em;
+padding:1em;
+font-size:2em;
+display:flex;
+justify-content: center;
+flex-direction: column;
+}
+
+
+
+
+
+
+
+.MiniVersionClassBoringText .jjjPageNumberClass{
+width:100%;
+
+}
+.MiniVersionClassBoringText:nth-child(even) {
+    background-color:white; 
+    
+}
+.MiniVersionClassBoringText img{
+    width:70%;
+align-self: center;
+    height:12em;
+}
+
+.MiniVersionClassBoringText:nth-child(odd) {
+    background-color:@colorCreme; 
+}
+
+.jjjjDisplayNotMeDude{
+    display:none;
+}
+.jjjjDisplayMeDude{
+    display:flex;
+}
+
+
+
+
+
+
+
+
+
+.jjjBookWrapperMoveRemove{
+    left:calc(50% + +10em);
+    transform:translateX(-50%) ;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#jjjRealBooksSection {
+    
+    transition: 2.6s;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 40em;
+    background-color: #f7f7f7; 
+    padding: 2em;
+    padding-top:22em;
+    padding-bottom:22em;
+}
+
+.jjjRealBooksSectionChild {
+    display: flex;
+    width: 70%;
+   justify-content: space-between;
+    flex-direction: row;
+  
+    text-align: center;
+    box-shadow:0px 10px 10px #afc8ad;
+}
+.jjjRealBooksSectionChildTitle{
+    text-align: center;
+    width: 70%;
+    font-family:@fontFamilyHeader;
+    font-size:4.2em;
+    margin-bottom:3em;
+    color:#f2f1eb;
+    font-weight: bold;
+    filter:brightness(130%);    
+    -webkit-text-stroke: 2px #162415; 
+    text-stroke: 2px #162415; 
+}
+.jjjBookContainer {
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.jjjBookContainer p{
+    margin-top:2em;
+    font-style:italic;
+    font-size:18px;
+}
+
+.jjjBookImage {
+    max-width: 100%;
+    height:80%;
+    border-radius: 8px; 
+}
+
+.jjjBookLink {
+    margin-top: 1em;
+    text-decoration: none;
+    color: #afc8ad; 
+    font-weight: bold;
+}
+
+.jjjBookLink:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:100em){
+ 
+    
+    
+
+   
+.jjjBookWrapperMoveRemove{
+    left:calc(50% + +10em);
+    transform:translateX(-50%) ;
+   
+}
+
+
+}
+
+
+@media screen and (max-width:85em){
+    .jjjRealBooksSectionChildTitle{
+        width:100%;
+        font-size:2.9em;
+    }
+    .jjjRealBooksSectionChild {
+    flex-direction: column;
+        width:fit-content;
+        box-shadow:0px 10px 40px #afc8ad;
+    }
+
+    .jjjBookContainer p {
+        margin-top: 0.8em;
+        padding-top:0;
+       margin-bottom:0.2em;
+    }
+ 
+
+    .jjjBookWrapperMoveRemove{
+      //  left:calc(50% + -10em);
+        left:calc(50% + 12em );
+        transform:translateX(-50%) ;
+       right:initial;
+    }
+    
+    
+    }
+
+@media screen and (max-width:80em){
+    #jjjBookEnviroment{display:none;}
+    #jjjHandlerMenu{display:none;}
+    #jjjGetMeToBookEnviroment{display:none;}
+    #jjjResetBtn{display:none;}
+
+    #SmallScreenSizeOnly{display:flex;}
+}
+
+
+
+
+
+
+
+   
+    
+
+
+
+
+
+
+
+
+
+
+//=======================END of your BEHAVIOR code==================//
+
+
+//==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================//
+//==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================////==============================================================================================================//
+//===================================            CHANGING PAGE       ==========================================//
+#jjjjMiniGameIdentifier{
+    overflow-x:hidden ;
+  
+}
+
+
+
+#jjjjMiniGameMain{
+    display:flex;
+    position:relative;
+    width:100%;
+    min-height:100vh;
+   background-color:@colorCreme;
+   transform-style: preserve-3d;
+   background-image:url(../../images/Balasis/miniGame/qwer.jpeg);
+   background-size:100% 100%;
+
+}
+
+.jjjPerspectIt{
+    font-size:12px;
+display:flex;
+justify-content: center;
+margin-right:auto;
+margin-left:auto;
+align-self: flex-end;
+perspective: 15em;
+perspective-origin: 50% 100%;
+position:relative;
+
+}
+
+.jjjjcardItem{
+    transition:0.5s linear;
+    transform-style: preserve-3d;
+ aspect-ratio: 3/4;
+ min-width:12em ;
+ 
+ margin-left:1em;
+ margin-top:1em;
+ margin-right:1em;
+ margin-bottom:1em;
+ border-radius: 3px 3px 3px 3px;
+ 
+ animation-name:jjjhoverAnimation;
+ animation-iteration-count: infinite;
+ animation-duration:3s;
+ cursor:pointer;
+ box-shadow:0px 10px 11px 5px rgba(0,0,0,0.8);
+}
+
+@keyframes jjjhoverAnimation {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-2px);
+    }
+  }
+.jjjcardItemRotated{
+    transform:rotateY(180deg);
+    pointer-events: none;
+}
+.jjjcardItemRotatedRemoved{
+opacity:0;
+}
+
+
+#jjjjCardTimer{
+    top:-7em;
+    position:absolute;
+    margin-left:auto;
+    margin-right:auto;
+    left:0;
+    right:0;
+    height:10em;
+    color:white;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items: flex-end;
+    width:20em;
+    border-radius: 10px 10px 0px 0px;
+    border:0.5em solid rgb(77, 47, 12);
+    background-color:black;
+   // transform:translateZ(-0.1em);
+}
+
+
+#jjjjCardTimerText{
+color:white;
+font-size:5em;
+
+
+}
+
+
+#jjjjCardTimer::before{
+    content:"";
+position:absolute;
+top:-4em;
+bottom:-5em;
+left:-4em;
+right:-2em;
+background-image:url("../../images/Balasis/miniGame/tryThiss.png");
+background-repeat: no-repeat;
+background-size:100% 100%;
+}
+
+#jjjResetMiniGameTable{
+   background-color:@colorFlowerOrange;
+   border-radius: 10px 10px 10px 10px;
+   padding:0.5em;
+    cursor:pointer;
+    margin-top:1em;
+}
+#jjjResetMiniGameTable:hover{
+    opacity:0.9;
+}
+#jjjjSTimeTable{
+    text-align: center;
+ 
+    
+}
+#jjjjTableFrame h1,
+#jjjjTableFrame h2,
+#jjjjTableFrame h3,
+#jjjjTableFrame h4,
+#jjjjTableFrame h5,
+#jjjjTableFrame h6 {
+    color:@colorFlowerOrange;
+  text-align: center;
+  margin:1em;
+}
+#jjjjTableFrame{
+    top:50%;
+    left:50%;
+   
+    display:none;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    flex-direction: column;
+   
+   
+    transform: rotateX(5deg) translateZ(4.3em) translateX(-50%) translateY(-50%);
+    color:white;
+    font-size:2.5em;
+}
+
+#jjjjSTimeTable p{
+margin-bottom:0;
+margin-top:0.3em;
+}
+
+.jjjjcardHolder{
+    user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    background-image: url("../../images/Balasis/miniGame/woody.jpg");
+    background-size: 100% 100%;
+    padding:1em;
+    display:grid; 
+    grid-template-columns:repeat(6,1fr);   
+    align-items: center;
+    justify-items: center;
+    align-content: space-around;
+    justify-content: space-around;
+
+   
+    
+    transform-origin:50% 100%;
+    transform:rotateX(5deg) translateZ(4.3em);
+    transform-style: preserve-3d;
+    transition:1s linear;
+    position:relative;
+    bottom:0;
+    border-radius: 10px 10px 10px 10px;
+    overflow:hidden;
+    animation-duration:2s;
+    animation-iteration-count: 1;
+}
+
+
+.jjjjcardHolderCorrect{
+animation-name:jjjjcardHolderCorrect;
+}
+.jjjjcardHolderFalse{
+    animation-name:jjjjcardHolderFalse;
+}
+
+@keyframes jjjjcardHolderCorrect{
+    0%  { box-shadow:0px 0px 10px 4px transparent}
+    50% { box-shadow:0px 0px 45px 14px @colorLightGreen}
+    100%{ box-shadow:0px 0px 10px 4px transparent}
+}
+
+
+
+@keyframes jjjjcardHolderFalse{
+    0%  { box-shadow:0px 0px 10px 4px transparent}
+    50% { box-shadow:0px 0px 45px 14px red}
+    100%{ box-shadow:0px 0px 10px 4px transparent}
+}
+
+
+
+
+
+
+
+.jjjcardItemBack{
+display:flex;
+flex-direction:column;
+height:100%;
+width:100%;
+background-image:url(../../images/Balasis/miniGame/logoNoBGHELP.png);
+background-repeat: no-repeat;
+background-position:center center;
+background-size:80% 80%;
+border: 5px solid pink;
+backface-visibility: hidden;
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+transform:rotateY(0deg);
+//background-color: rgb(70,81,26);
+//background-color:@colorSand;
+}
+
+.jjjjcardItem:hover .jjjcardItemBack{
+    filter: brightness(120%); 
+   
+
+   
+     }
+
+   
+
+
+
+.jjjcardItemFront{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+width:100%;
+    backface-visibility: hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    transform-origin:center center;
+    transform:rotateY(-180deg);
+}
+
+
+
+
+
+
+
+#jjjShowMiniGame{
+    display:none;
+    width:5em;
+    justify-content: flex-start;
+    align-items: center;
+    position:absolute;
+    top:3.75em;
+    right:-1.5em;
+    font-size:3em;
+    background-image:url("../../images/Balasis/miniGame/woody.jpg");
+    color:white;
+    padding:0.3em;
+    padding-left:0.5em;
+    border-radius: 0px 0px 0px 10px;
+    cursor: pointer;
+    transition:500ms linear;
+
+
+}
+#jjjShowMiniGame:hover{
+    color:yellow;
+    right:0em;
+
+}
+#jjjScoresMiniGame{
+    display:flex;
+    width:5em;
+    justify-content: flex-start;
+    align-items: center;
+    position:absolute;
+    top:3.75em;
+    right:-1.5em;
+    font-size:3em;
+    background-image:url("../../images/Balasis/miniGame/woody.jpg");
+    color:white;
+    padding:0.3em;
+    padding-left:0.5em;
+    border-radius: 0px 0px 0px 10px;
+    cursor: pointer;
+    transition:500ms linear;
+    z-index:10;
+
+}
+#jjjScoresMiniGame:hover{
+    color:yellow;
+    right:0em;
+
+}
+
+
+
+
+
+
+
+#jjjResetMiniGame{
+    display:flex;
+    width:5em;
+    justify-content: flex-start;
+    align-items: center;
+    position:absolute;
+    top:2em;
+    right:-1.5em;
+    font-size:3em;
+    background-image:url("../../images/Balasis/miniGame/woody.jpg");
+    color:white;
+    padding:0.3em;
+    padding-left:0.5em;
+    border-radius: 10px 0px 0px 0px;
+    cursor: pointer;
+    transition:500ms linear;
+}
+
+#jjjResetMiniGame:hover{
+  color:yellow;
+  right:0em;
+}
+
+.jjjjcardHolder:hover{
+
+
+}
+.jjjFinalGrass{
+
+
+
+}
+
+
+.Empusidae .jjjcardItemFront{
+    background-image:url(../../images/Balasis/miniGame/Empusidae.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+
+}
+
+.Mantidae .jjjcardItemFront{
+    background-image:url(../../images/Balasis/miniGame/Mantidae.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+.Phyllocranidae .jjjcardItemFront{
+    background-image:url(../../images/Balasis/miniGame/Phyllocranidae.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+.Beauty .jjjcardItemFront{
+    background-image:url(../../images/Balasis/miniGame/Beauty.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+.AquaMantis .jjjcardItemFront{
+    background-image:url(../../images/Balasis/miniGame/AquaMantis.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+.funnySayings .jjjcardItemFront{
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:165em){
+    .jjjjcardItem{
+
+        min-width:15.5em;
+        margin-left:1em;
+        margin-top:1em;
+        margin-right:1em;
+        margin-bottom:1em;
+        
+    }
+    #jjjjCardTimer{
+        top:0em;
+    
+        height:8em;
+       
+        width:20em;
+        border:0.5em solid rgb(77, 47, 12);
+     
+    }
+    
+    
+    #jjjjCardTimerText{
+    color:white;
+    font-size:5em;
+    
+    
+    }
+    
+    
+    #jjjjCardTimer::before{
+        content:"";
+    position:absolute;
+    top:-3em;
+    bottom:-5em;
+    left:-4em;
+    right:-2em;
+    
+    }
+
+
+
+
+
+}
+
+@media screen and (min-width:225em){
+    .jjjjcardItem{
+        min-width:20em;
+        margin-left:2em;
+        margin-top:2em;
+        margin-right:2em;
+        margin-bottom:2em;
+    }
+      
+#jjjjCardTimer{
+    top:10em;
+
+    height:10em;
+   
+    width:20em;
+    border:0.5em solid rgb(77, 47, 12);
+ 
+}
+
+
+#jjjjCardTimerText{
+color:white;
+font-size:5em;
+
+
+}
+
+
+#jjjjCardTimer::before{
+    content:"";
+position:absolute;
+top:-3em;
+bottom:-5em;
+left:-4em;
+right:-2em;
+
+}
+
+}
+
+@media screen and (max-width:85em){
+    .jjjjcardItem{
+        
+        min-width:9.5em;
+        margin-left:0.4em;
+        margin-top:0.4em;
+        margin-right:0.4em;
+        margin-bottom:0.4em;
+    }
+    #jjjResetMiniGame{
+        top:0em;
+    }
+    #jjjShowMiniGame{top:1.7em;}
+        #jjjScoresMiniGame{ top:1.7em;}
+
+
+    .jjjPerspectIt{
+        margin-top:21em;
+
+    }
+    #jjjjTableFrame{
+        font-size:2.5em;
+
+    }
+    
+#jjjjCardTimer{
+    top:-8em;
+
+    height:7em;
+   
+    width:20em;
+    border:0.5em solid rgb(77, 47, 12);
+ 
+}
+
+
+#jjjjCardTimerText{
+color:white;
+font-size:5em;
+
+
+}
+
+
+#jjjjCardTimer::before{
+    content:"";
+position:absolute;
+top:-3em;
+bottom:-5em;
+left:-4em;
+right:-2em;
+
+}
+
+
+}
+
+@media screen and (max-width:75em){
+    .jjjjcardItem{
+        min-width:6.5em;
+        margin-left:0.3em;
+        margin-top:0.3em;
+        margin-right:0.3em;
+        margin-bottom:0.3em;
+    }
+    .jjjPerspectIt{
+        margin-top:21em;
+
+    }
+  
+    #jjjjCardTimer{
+        top:-10em;
+    
+        height:8em;
+       
+        width:20em;
+        border:0.5em solid rgb(77, 47, 12);
+     
+    }
+    
+    
+    #jjjjCardTimerText{
+    color:white;
+    font-size:5em;
+    
+    
+    }
+    
+    
+    #jjjjCardTimer::before{
+        content:"";
+    position:absolute;
+    top:-3em;
+    bottom:-5em;
+    left:-4em;
+    right:-2em;
+    
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width:60em){
+    .jjjjcardItem{
+        min-width:7em;
+        margin-left:0.4em;
+        margin-top:0.4em;
+        margin-right:0.4em;
+        margin-bottom:0.4em;
+    }
+    .jjjPerspectIt{
+        margin-top:21em;
+
+    }
+
+}
+
+
+
+
+@media screen and (max-width:45em){
+    .jjjjcardItem{
+        min-width:6em;
+        margin-left:0.4em;
+        margin-top:0.4em;
+        margin-right:0.4em;
+        margin-bottom:0.4em;
+
+    }
+    .jjjjcardHolder{
+        grid-template-columns:repeat(3,1fr);   
+
+    }
+    .jjjPerspectIt{
+        margin-top:21em;
+        font-size:10px;
+    }
+    #jjjjTableFrame{
+        font-size:1.7em;
+    }
+    #jjjjCardTimer{
+        top:-8em;
+        position:absolute;
+        margin-left:auto;
+        margin-right:auto;
+        left:0;
+        right:0;
+        height:10em;
+       
+    }
+    
+    
+    #jjjjCardTimerText{
+    color:white;
+    font-size:5em;
+    
+    
+    }
+    
+    
+    #jjjjCardTimer::before{
+        content:"";
+    position:absolute;
+    top:-4em;
+    bottom:-5em;
+    left:-2em;
+    right:-1.9em;
+    background-image:url("../../images/Balasis/miniGame/tryThiss.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    }
+
+
+
+
+
+}
+
+
+
+
+//==============================================================================================================//
+//===================================            SPECIES       ==========================================//
+//==============================================================================================================//
+//===================================            SPECIES         ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================////==============================================================================================================//
+//===================================            SPECIES   PAGE       ==========================================//
+
+
+
+//The viewer as always here
+
+.jSpchartQuite {
+    position: relative;
+    width: 60%;
+    max-width: 3000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-style: italic;
+   
+    line-height: 1.5;
+  
+    color: #555;
+    margin-top:5em;
+    margin-bottom:15em;
+    font-size: 1.2em;
+  }
+
+
+
+  .jSpchartQuite span:nth-child(1) {
+    color: rgb(82, 112, 31);
+  }
+  
+  .jSpchartQuite span:nth-child(2) {
+    color: var(--colorFlowerOrange);
+  }
+  
+  .jSpchartQuite span:nth-child(3) {
+    color: rgb(206, 149, 178);
+  }
+  
+  .jSpchartQuite span:nth-child(4) {
+    color: rgb(173, 182, 117);
+  }
+  
+  .jSpchartQuite span:nth-child(5) {
+    color: rgb(244, 99, 35);
+  }
+  
+  .jSpchartQuite span:nth-child(6) {
+    color: rgb(225, 197, 149);
+  }
+  
+  .jSpchartQuite span:nth-child(7) {
+    color: rgb(119, 109, 123);
+  }
+
+
+
+
+
+
+
+#jSPHomePageImgPreview{
+    z-index:500;
+    position:fixed;
+    display:none;
+    height:100vh;
+    width:100vw;
+    background-color:rgba(0,0,0,0.9);
+}
+
+
+#jSPHomePageImgPreview img{
+    width:auto;
+    height:70vh;
+}
+
+
+
+#jSPHomePageImgPreviewInDescription{
+    transition:100ms linear;
+    position:absolute;
+    bottom:0;
+    display:flex;
+    overflow:hidden;
+    height:0;
+    width:100%;
+    background-color:black;
+    color:White;
+    align-items:center;
+    justify-content:flex-start;
+    padding-left:1em;
+    padding-right:1em;
+   
+}
+
+#jSPHomePageImgPreviewFrame{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    display:flex;
+    flex-direction:column;
+}
+
+
+
+#jSPHomePageImgPreview img:hover + #jSPHomePageImgPreviewInDescription{
+height:fit-content;
+padding-bottom:0.5em;
+padding-top:0.5em;
+
+}
+
+
+
+///////Main page here,,,,
+.jSpItems{
+    display:none;
+    flex-direction: column;
+    position:relative;
+    align-items: center;
+    height:100%;
+    width:100%;
+}
+
+.jSpSubSpeciesMenuContent{
+    
+    flex-grow:1;
+    display:none;
+    padding-left:calc(20% + 2em);
+    background-color:white;
+    margin-top:4em;
+    padding-top:2em;
+    padding-right:2em;
+    text-indent: 3em;
+    line-height: 1.5;
+    overflow: auto; 
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent; 
+    -ms-overflow-style: none; 
+    width:100%;
+    overflow-x:hidden;
+   flex-direction: column;
+   padding-bottom:6em;
+}
+
+
+.jSpSubSpeciesMenuContent:not(.jSpClassForNotBefore)::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6em;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0.9) 76%, rgba(255, 255, 255, 0.7) 100%);
+    pointer-events: none;
+  }
+
+
+.jSpSubSpeciesMenuContent :first-child::first-letter{
+   font-size:150%;
+   
+}
+
+
+.jSpSubSpeciesMenuContent p{
+text-indent: 3em;
+}
+
+.jSpSubSpeciesMenuContent p:first{
+    text-indent: 3em;
+    }
+
+#jSpMainToCenterFrame{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+   margin-top:12em;
+}
+#jSpMainFrame{
+ display:flex;
+ width:100%;
+ max-width:3000px;
+ position:relative;
+height:30em;
+
+justify-content: center;
+margin-bottom:18em;
+}
+#jSPMainMenuFrameCenterPurpose{
+    margin-left:-10%;
+    width:20%;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    position:relative;
+    
+}
+#jSPMainMenuFrame{
+    
+    width:100%;
+    height:70%;
+    display:flex;
+    flex-direction: column;
+    position:absolute;
+   bottom:0;
+    margin-left:100%;
+   // border-top:1px solid black;
+   // border-bottom:1px solid black;
+   // overflow:hidden;
+}
+#jSPMainMenuFrameMantis{
+    position:absolute;
+    top:-34%;
+    right:0;
+    
+    z-index:30;
+    height:34%;
+    width:auto;
+    max-width:50%;
+
+}
+
+
+
+.jSpSubSpeciesClassForFunction{
+flex-grow:1;
+display:flex;
+justify-content: center;
+align-items:center;
+//border:1px solid black;
+
+z-index:20;
+cursor: pointer;
+//transition:300ms linear;
+}
+.jSpSubSpeciesClassForFunction:hover{
+transform:scale(1.05);
+z-index: 25;
+
+}
+.jSpSubSpeciesClassForFunctionScale{
+    transform:scale(1.1);
+    z-index:26;
+    
+}
+
+
+
+#jSPMainMenuFrame{
+    font-weight: bold;
+    color:white;
+}
+
+
+
+.jSpSubSpeciesMenuCommon1{
+    background-color:rgb(82,112,31);
+    
+    
+}
+.jSpSubSpeciesMenuCommon2{
+    background-color:@colorFlowerOrange;
+    
+}
+.jSpSubSpeciesMenuCommon3{
+    background-color:rgb(206,149,178);
+    
+}
+.jSpSubSpeciesMenuCommon4{
+    background-color:rgb(173,182,117);
+    
+}
+.jSpSubSpeciesMenuCommon5{
+    background-color:rgb(244,99,35);
+    
+}
+.jSpSubSpeciesMenuCommon6{
+    background-color:rgb(225,197,149);
+    
+}
+.jSpSubSpeciesMenuCommon7{
+    background-color:rgb(119,109,123);
+    
+}
+
+#jSpSubSpeciesMenuTitle0 span:nth-child(1) {
+    color: rgb(82,112,31); 
+  }
+  #jSpSubSpeciesMenuTitle0 span:nth-child(2) {
+    color: @colorFlowerOrange; 
+  }
+  #jSpSubSpeciesMenuTitle0 span:nth-child(3) {
+    color: rgb(206,149,178); 
+  }
+  #jSpSubSpeciesMenuTitle0 span:nth-child(4) {
+    color: rgb(173,182,117); 
+  }
+  #jSpSubSpeciesMenuTitle0 span:nth-child(5) {
+    color: rgb(244,99,35); 
+  }
+  #jSpSubSpeciesMenuTitle0 span:nth-child(6) {
+    color: rgb(225,197,149); 
+  }
+  #jSpSubSpeciesMenuTitle0 span:nth-child(7) {
+    color: rgb(119,109,123); 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#jSpContent{
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    
+    align-items: center;
+    width:50%;
+   
+}
+//which has the :
+
+
+.jSpSubSpeciesMenuTitle{
+    text-align: center; 
+    font-size:@fontSizeTitles;
+    display:none;
+    align-items: center;
+    flex-shrink:0;
+    font-weight: bold;
+    color:white;
+    min-height:3em;
+    cursor:pointer;
+    width:100%;
+    justify-content:center;
+
+}
+
+.jSpInitiateDisplay{
+    display:flex;
+}
+
+.jSpSubSpeciesMenuTitle:not(.jSpClassForNotBefore):hover{
+    opacity:0.5;
+}
+
+
+.jSpClassForChosenOne{
+    display:flex;
+}
+
+#jSpSubSpeciesMenu0{
+    background-color:initial;
+}
+
+
+#jSpSubSpeciesMenuTitle0{
+    text-align:center;
+    font-weight:bold;
+    min-height:initial;
+    letter-spacing: 25px;
+    cursor:initial;
+}
+#jSpSubSpeciesMenuTitle0 span{
+    display: inline-block;
+}
+
+
+
+#jSpSubSpeciesMenuText0{
+    position:absolute;
+    flex-grow:0;
+    width:100%;
+    height:46.6%;
+    bottom:11.7%;
+   border-radius: 10px 10px 10px 10px;
+  overflow:hidden;
+  padding-top:0.5em;
+}
+
+#jSpchartTitle{
+    position:absolute;
+    margin-left:auto;
+    margin-right:auto;
+    left:0;
+    right:0;
+    top:0.5em;
+    font-weight:bold;
+    font-size:2em;
+    color:black;
+    font-style:italic;
+    width: fit-content;
+}
+
+
+
+.jSpchart {
+
+
+    position:relative;
+    width: 60%;
+    max-width: 3000px;
+    background-color: #fff;   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display:flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height:30em;
+    margin-bottom:12em;
+    
+  }
+
+
+
+  .jSpbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:100%;
+    justify-content: flex-end;
+
+  }
+
+  .jSpbar label {
+    text-align: center;
+
+   
+  }
+
+  .jSpbar .jSppercentage {
+    margin-top:auto;
+    margin-bottom:1em;
+   
+    height: 30px;
+    padding-top:1em;
+    padding-bottom:1.5em;
+    color: #fff;
+    text-align: center;
+    
+    width:3em;
+  }
+
+  .jSppercentage::before{
+    height:100%;
+    width:100%;
+    position:absolute;
+    background-color:black;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    box-shadow:0px 0px 10px rgba(255,255,255,0.5)
+  }
+
+
+
+  @media screen and (max-width:68.75em){
+    .jSpchart {width:80%;}
+    .jSpchartQuite{width:80%;}
+  }
+
+
+
+
+
+
+
+
+@media screen and (max-width:56.25em){
+
+    #jSpMainFrame{ height:fit-content;}
+
+    .jSpchartQuite{width:100%;
+        border-radius:0px 0px 0px 0px;}
+
+
+
+    .jSpchart {width:100%;
+        border-radius:0px 0px 0px 0px;
+    }
+
+    .jSpSubSpeciesMenuContent{
+        flex-grow:1;
+        margin-top:initial;
+        padding-top:initial;
+        padding-left:10%;
+        max-height:25em;
+        
+    }
+    #jSpContent{
+        width:100%;
+       
+    }
+   
+    #jSpSubSpeciesMenu0{display:none}
+
+
+
+    #jSPMainMenuFrameCenterPurpose{
+        display:none;
+    }
+    #jSpSubSpeciesMenuTitle1,
+    #jSpSubSpeciesMenuTitle2,
+    #jSpSubSpeciesMenuTitle3,
+    #jSpSubSpeciesMenuTitle4,
+    #jSpSubSpeciesMenuTitle5,
+    #jSpSubSpeciesMenuTitle6,
+    #jSpSubSpeciesMenuTitle7{
+        display:flex;
+    }
+    #jSpSubSpeciesMenu1,
+    #jSpSubSpeciesMenu2,
+    #jSpSubSpeciesMenu3,
+    #jSpSubSpeciesMenu4,
+    #jSpSubSpeciesMenu5,
+    #jSpSubSpeciesMenu6,
+    #jSpSubSpeciesMenu7{
+        display:flex;
+    }
+}
+
+
+@media screen and (max-width:40.62em){
+ 
+
+      .jSpbar label{
+      white-space: nowrap;
+      width:2em;         
+      overflow: hidden;            
+      text-overflow: ellipsis;
+
+      }
+}
+
+
+
+//==============================================================================================================//
+//========================= Imports Should be only master.less here   ==========================================//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "variables.less";

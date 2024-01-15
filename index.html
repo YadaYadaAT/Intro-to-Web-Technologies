@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>        
-        <link rel="stylesheet/less" type="text/css" href="/other/less/balasis.less">
-        <title></title>
-        <meta name="Description" content="changeThisToTheDescription">
+
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <script src="https://kit.fontawesome.com/a6d6ba659c.js" crossorigin="anonymous"></script>        
+        <link rel="stylesheet/less" type="text/css" href="other/less/balasis.less">
+        <link rel="stylesheet/less" type="text/css" href="other/less/ververaki.less">
+        <link rel="stylesheet/less" type="text/css" href="other/less/master.less">
+        <title>Mantis Mania</title>
+        <meta name="Description" content="An informational website about praying mantises, their habitats and caring for them as pets. We also offer several interactive games and quizzes!">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="keywords" content="Mantises, Mantises Species, Mantises lifespan">
-        <link rel="icon" href="#" type="image/x-icon">
+        <link rel="icon" href="./images/LOGONOTEXT.ico" type="image/x-icon">
         <link rel="mask-icon" href="#" color="#000000">
         <meta property="og:url" content="">
         <meta property="og:type" content="website">
@@ -17,18 +22,18 @@
         <meta property="og:image:height" content="228">
         <meta property="og:description" content="Learn all about Mantises in our beautiful website">
         <script type="text/javascript" src="other/js/less.js"></script>
-        <script>document.addEventListener("DOMContentLoaded",function(){
-                        fetch("html/headerNav.html")
-                        .then(response=>response.text())
-                        .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("beforebegin",html)})
-                    })        
-                    document.addEventListener("DOMContentLoaded",function(){
-                        fetch("html/footer.html")
-                        .then(response=>response.text())
-                        .then(html=>{document.getElementsByTagName("main")[0].insertAdjacentHTML("afterend",html)})
-                    })
-        </script>                
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       
+        <script src="other/js/balasis.js" ></script>              
         <!--the following informs the visitor that our site is not viewable in case the browser has disabled javascript-->
+       
+       <style>
+        html{
+            overflow-x: initial;
+        }
+       </style>
+       
         <noscript>
             <style type="text/css">    	
                 body *{display:none;}
@@ -40,12 +45,489 @@
 
 
     
-    <body>
-        <main>
+    <body id="jHomePageIdentifier">
+        <div id="HomePageImgPreview">
+            <div id="HomePageImgPreviewFrame">
+
             
+            <img id="HomePageImgPreviewIn" src="" alt="Previewd Image">
+            <div id="HomePageImgPreviewInDescription"></div>
+            </div>
+        </div>
+        <div class="imgbox">
+            <img class="center-fit" src="images/Ververaki/landingplusplus.jpg">
+        </div>
+    <div id="navbar_wrapper">
+            
+                  <button class="hamburger">
+                    <i class="menuIcon fa-solid fa-bars fa-2xl"></i>
+                    <i class="closeIcon fa-solid fa-xmark fa-xl"></i>
+                  </button>
+                  <ul class="menu">
+                    <li><a class="menuItem" href="html/gallery.html">Gallery</a></li>
+                    <li><div class="menuItem" id="info" onclick="dropInfo();">Info</div>
+                            <div id="info-content">
+                                    <ul class="infoList">
+                                    <li><a href="html/species.html" id="speciesInList">Species</a></li>
+                                    <li><a href="html/behavior.html" id="behaviorInList">Behavior</a></li>
+                                    <li><a href="html/lifeCycle.html" id="lifeCycleInList">Life Cycle</a></li>
+                                    <li><a href="html/habitats.html" id="habitatsInList">Habitats</a></li>
+                                    <li><a href="html/care.html" id="careInList">Care</a></li>
+                                    </ul>
+                            </div></li>
+                            <li><a class="menuItem" href="index.html">Home</a></li>
+                    <li><div class="menuItem" id="resource" onclick="dropResources();">Resources</div>
+                            <div id="resources-content">
+                                    <ul class="resourcesList">
+                                            <li><a href="html/resources.html" id="resourcesInList">Our Sources</a></li>
+                                            <li><a href="html/faq.html" id="faqInList">FAQ</a></li>
+                                    </ul>
+                            </div>
+                    </li>
+                    <li><a class="menuItem" href="html/aboutPage.html">About us</a></li>
+                  </ul>
+                  
+    
+            <nav id="block-main-menu">
+                    <div class="flex-container-navbar">
+                            
+                                    <div id="menu_item_gallery">
+                                            <a href="html/gallery.html" >GALLERY</a>
+                                    </div>
+                                    <div class="dropdown">
+                                            <div class="drop-option">INFO</div>
+                                            <div class="dropdown-cont">
+                                                    <ul id="otherList">
+                                                            <li><a href="html/species.html">Species</a></li>
+                                                            <li><a href="html/behavior.html">Behavior</a></li>
+                                                            <li><a href="html/lifeCycle.html">Life Cycle</a></li>
+                                                            <li><a href="html/habitats.html">Habitats</a></li>
+                                                            <li><a href="html/care.html">Care</a></li>
+                                                    </ul>
+                                            </div>
+                                    </div>
+                                    <div id="menu_item_home">
+                                            <a href="./index.html">
+                                                    <img src="images/Ververaki/logoNoBGHELP.png">
+                                            </a>
+                                    </div>
+                                    <div class="dropdown">
+                                            <div class="drop-option">RESOURCES</div>
+                                            <div class="dropdown-cont">
+                                                    <ul id="resourceList">
+                                                            <li><a href="html/resources.html"  id="sourcesOption">Our Sources</a></li>
+                                                            <li><a href="html/faq.html"  id="faqOption">FAQ</a></li>
+                                                    </ul>
+                                            </div>
+                                    </div>
+                                    <div id="menu_item_about">
+                                            <a href="html/aboutPage.html" >ABOUT US</a>
+                                    </div>
+                            
+                    </div>
+    
+            </nav>
+    </div>
+
+    
+        <main style="margin-top: 8em;">
+        
+
+
+            
+            <div id="jHomePageAboutMantisesMenu">
+                
+
+                <section id="jAboutMantises" class="jHomePageMenuItemOverview">
+                     <h1>About Mantises</h1>
+                         <p>Praying mantises, captivating creatures belonging to the Mantodea order,
+                             are renowned for their unique appearance and predatory prowess.
+                              With over 2,400 known species worldwide, mantises exhibit fascinating
+                               characteristics that set them apart in the insect world.
+                            They boast elongated bodies, triangular heads, and distinctive forelegs
+                             adapted for hunting. <span class="kBrealBrCheat"></span>Their compound eyes and swiveling heads make them adept hunters.                        
+                            These insects come in various colors and sizes, often blending seamlessly into their 
+                            surroundings. Their iconic "prayer" pose is a defensive stance and a testament to their adaptability.
+                            Mantises are exclusively carnivorous, preying on a variety of insects. Their diet may include flies,
+                             moths, beetles, and even other mantises. Some larger species are known to capture small vertebrates
+                              such as frogs or lizards.
+                        </p>
+                </section>
+
+                <section id="jPhotoGallery">
+                    <div id="jPhotoGalleryFirstFour">
+                            <div id="jPhotoFirstTwoRow">    
+                                <div id="jPhotoFirstTwoRowOne"><img class="clickable-jImgBored"  src="images/Balasis/uglyThree.jpg" alt="radsafads" data-description="
+                                     It is very common for praying mantises to mimic the appearance of leaves. They are experts at camouflage!"></div>
+                                <div id="jPhotoFirstTwoRowTwo"><img class="clickable-jImgBored"  src="images/Balasis/uglyTwo.jpg" alt="fdasfsad" data-description="
+                                    The Blue Papua Mantis may be beautiful, but it is one of the fiercest breeds out there..."></div>
+                            </div>
+                            <div id="jPhotoSecondTwoRow">
+                                <div id="jPhotoSecondTwoRowOne"><img class="clickable-jImgBored"  src="images/Balasis/uglyOne.jpg" alt="sdfadsfas" data-description="
+                                    The stunning Orchid Mantis takes its name after the orchid flower."></div>
+                                <div id="jPhotoSecondTwoRowTwo"><img class="clickable-jImgBored"  src="images/Balasis/UglyFour.jpg" alt="rweradfasfsa" data-description="
+                                    Praying mantises don't smoke.. but maybe they would if tiny cigarettes existed."></div>
+                            </div>
+                    </div>
+                    <div id="jPhotoGalleryLastOne"><img class="clickable-jImgBored"  src="images/Balasis/uglyFive.jpg" alt="uglyFive" data-description="
+                       The Asian Ant Mantis, not to be confused with Antman."></div>
+                </section>
+                
+
+                <section id="jhomePageFunFacts">
+                    <div id="jhomePageFunFactsText">
+
+                    </div>
+
+                        <img id="jChatMantisImg" src="images/Balasis/mantisiumChatBox.png" alt="mantiChat">
+                        <div id="jChatLoading">
+                            <div id="jChatLoadingBullets"></div>
+                        </div>
+                        
+                </section>                
+
+
+
+                    <section id="jHomePageSpecies" class="jHomePageMenuItem jfirstOfItsKind">
+                        <div class="jHomePageContentAndReadMoreHolder">
+                            <h2>Species</h2>
+                             <div class="jHomePageMenuItemContent jHomePageMenuItemContentFog">
+                                        
+                            <!--class="jHomepageMenuImg" src="images/YadaYadaTest.png" alt="someInsect" style="float:right;padding-bottom:1em;">-->
+                             <p>Mantises are an order (Mantodea) of insects that contains over 2,400 species
+                                in about 460 genera in 33 families. The largest family is the Mantidae ("mantids").
+                                Mantises are distributed worldwide in temperate and tropical habitats. They have
+                                triangular heads with bulging eyes supported on flexible necks. Their elongated
+                                bodies may or may not have wings, but all Mantodea have forelegs that are greatly
+                                enlarged and adapted for catching and gripping prey; their upright posture, while
+                                remaining stationary with forearms folded, has led to the common name praying mantis.
+                                Mantises are an order (Mantodea) of insects that contains over 2,400 species
+                                in about 460 genera in 33 families.</p>
+                                
+                                <p>The largest family is the Mantidae ("mantids").
+                                Mantises are distributed worldwide in temperate and tropical habitats. They have
+                                triangular heads with bulging eyes supported on flexible necks. Their elongated
+                                bodies may or may not have wings, but all Mantodea have forelegs that are greatly
+                                enlarged and adapted for catching and gripping prey; their upright posture, while
+                                remaining stationary with forearms folded, has led to the common name praying mantis. 
+                                Mantises are an order (Mantodea) of insects that contains over 2,400 species
+                                in about 460 genera in 33 families. The largest family is the Mantidae ("mantids").
+                                Mantises are distributed worldwide in temperate and tropical habitats. They have
+                                triangular heads with bulging eyes supported on flexible necks. Their elongated
+                                bodies may or may not have wings, but all Mantodea have forelegs that are greatly
+                                enlarged and adapted for catching and gripping prey; their upright posture, while
+                                remaining stationary with forearms folded, has led to the common name praying mantis.
+                               </p>
+                                
+                                    </div>
+                                    <div class="jHomePageReadMoreHolder">
+                                        <button class="jHomePageReadMore">Read More</button>
+                                    </div>
+                        </div>
+                        <div class="jHomePageMinimizerHolder">
+                            <button class="jHomePageMinimizer">x</button>
+                        </div>
+                    </section>
+
+                    <section id="jHomePageHabits" class="jHomePageMenuItem">
+                        <div class="jHomePageContentAndReadMoreHolder">
+                            <h2>Behavior</h2>
+                                    <div class="jHomePageMenuItemContent  jHomePageMenuItemContentFog">
+                                       
+                         <!--src="images/YadaYadaTest.png" class="jHomepageMenuImg" alt="someInsect" style="float:left;padding-bottom:1em;">-->
+                                        <p>The behavior of praying mantises is a captivating aspect of their biology, encompassing a 
+                                            range of hunting techniques, adaptive behaviors, and intriguing mating rituals.<br><br><b>Hunting Strategies</b></p>
+                                        <p>Ambush Predators:
+                                            Praying mantises are adept ambush predators, relying on their excellent vision to detect movement. They often assume a stationary position, camouflaging themselves among vegetation or other surroundings. When potential prey comes within reach, mantises employ their lightning-fast raptorial legs to snatch and secure the victim.
+                                            </p>
+                                            <p>Raptorial Legs:
+                                                The specialized forelegs, often referred to as raptorial legs, are equipped with spines that aid in gripping and immobilizing prey. The speed and precision with which mantises strike make them highly effective hunters.
+                                                </p>
+                                        <p>
+                                            Head Movement:
+                                            Mantises possess remarkable head mobility, able to rotate their heads up to 180 degrees. This flexibility enhances their field of vision, allowing them to scan their surroundings for potential prey without moving their bodies.      
+                                        </p>
+                                    </div>
+                                    <div class="jHomePageReadMoreHolder">
+                                        <button class="jHomePageReadMore">Read More</button>
+                                    </div>
+                        </div>
+                        <div class="jHomePageMinimizerHolder">
+                            <button class="jHomePageMinimizer">x</button>
+                        </div>
+
+                    </section>
+
+
+
+
+                    
+
+                    <section id="jHomePageLifeCycle" class="jHomePageMenuItem">
+                        <div class="jHomePageContentAndReadMoreHolder">
+                            <h2>Life Cycle</h2>
+                                    <div class="jHomePageMenuItemContent  jHomePageMenuItemContentFog">
+                                      
+
+                            <!--src="images/YadaYadaTest.png" class="jHomepageMenuImg" alt="someInsect" style="float:right;padding-bottom:1em;">-->
+                                        <p>Praying mantises undergo a remarkable life cycle characterized by distinct stages of development, each contributing to the insect's fascinating journey from egg to adult.
+
+                                            <br><br><br><b>Egg Stage: Oothecae and Reproductive Strategies</b><br> 
+                                            
+                                            <br>Oothecae Formation:<br>
+                                            The life cycle begins with the female mantis depositing eggs in protective cases called oothecae. These structures, often resembling foam or solid masses, are crafted by the female using a secretion that hardens upon exposure to air. Oothecae serve as a shield, safeguarding the eggs from environmental threats and potential predators.
+                                            
+                                            <br><br>    Reproductive Strategies:<br>
+                                            Mantis species showcase a variety of reproductive strategies. Some lay oothecae in well-concealed locations, while others affix them to surfaces like twigs or leaves. The diversity in reproductive strategies is an adaptation to ensure the survival of offspring in different environments.
+                                            
+                                            <br><br><br><b>   Nymph Stage:  Miniature Replicas and Molting</b>
+                                            <br><br>   Emergence of Nymphs:<br>
+                                            Upon hatching, mantis nymphs emerge from the ootheca. At this stage, they resemble miniature versions of adult mantises but lack fully developed wings.
+                                            
+                                            <br><br> Molting Process:<br>
+                                            Nymphs undergo a series of molts, shedding their exoskeletons to accommodate their growing bodies. Molting is a crucial aspect of mantis development, allowing them to adapt to changes in size and shape as they progress toward adulthood.
+                                            
+                                                <br><br>   Nymphal Instars:<br>
+                                            Each molt results in a distinct nymphal instar, marking a developmental stage in the mantis nymph's life. The number of instars varies among species, with some undergoing five or six molts before reaching maturity.
+                                            
+                                            <br><br><br><b>   Adult Stage: Wing Development and Sexual Maturity</b><br>
+                                            <br>   Wing Development:<br>
+                                            As nymphs progress through instars, they undergo significant physiological changes. One of the notable transformations is the development of wings. In the final molt, the mantis acquires fully functional wings, essential for mobility and, in some cases, facilitating long-distance travel.
+                                            
+                                            <br><br>    Sexual Dimorphism:<br>
+                                            Adult mantises exhibit sexual dimorphism, with males and females often differing in size and appearance. Females tend to be larger in some species, and their abdomens may appear more rounded due to the presence of eggs.
+                                            
+                                            <br><br>   Reproductive Maturity:<br>
+                                            Upon reaching sexual maturity, typically a few weeks after the final molt, mantises are ready to reproduce. The adult stage is marked by the activation of reproductive organs and the onset of mating behaviors.
+                                            
+                                            <br><br><br><b>Reproduction and the Next Generation</b>
+                                            <br><br>    Courtship Rituals:<br>
+                                            Mating in praying mantises involves elaborate courtship rituals. Male mantises approach females cautiously, utilizing various displays and movements to signal their intentions. However, the mating process is not without risks, as females are known for engaging in cannibalistic behavior, consuming the male during or after copulation.
+                                            
+                                            <br><br>  Oviposition and Ootheca Production:<br>
+                                            After successful mating, females lay oothecae, each containing numerous eggs. The placement of the ootheca varies among species, with some attaching it to vegetation, while others secure it in sheltered locations.
+                                            
+                                            <br><br>   Cycle Continuation:<br>
+                                            The life cycle comes full circle when the eggs within the ootheca hatch, giving rise to a new generation of mantis nymphs. The cycle repeats, ensuring the survival and perpetuation of the species.
+                                            
+                                            Understanding the intricacies of the praying mantis life cycle provides a deeper appreciation for these remarkable insects. From the meticulous formation of oothecae to the dramatic transformations during molting and the intricate courtship rituals, each stage contributes to the survival and perpetuation of these fascinating creatures.
+                                        </p>
+                                    </div>
+                                    <div class="jHomePageReadMoreHolder">
+                                        <button class="jHomePageReadMore">Read More</button>
+                                    </div>
+                        </div>
+                        <div class="jHomePageMinimizerHolder">
+                            <button class="jHomePageMinimizer">x</button>
+                        </div>
+
+                    </section>
+
+
+                    <section id="jHomePageHabitats" class="jHomePageMenuItem">
+                        <div class="jHomePageContentAndReadMoreHolder">
+                            <h2>Habitats</h2>
+                                    <div class="jHomePageMenuItemContent  jHomePageMenuItemContentFog">
+                                       
+                           <!--src="images/YadaYadaTest.png" class="jHomepageMenuImg" alt="someInsect" style="float:left;padding-bottom:1em;">-->
+                                        <p>Praying mantises, adaptable insects with diverse species, can be found in a wide range of habitats 
+                                            across the globe. Their ability to thrive in various environments is a testament to their evolutionary flexibility.
+                                        </p>
+                                        <p><b>Diverse Ecosystems:</b></p>
+                                         <p>Praying mantises are not confined to specific ecosystems; instead, they inhabit a diverse array of environments. 
+                                         From tropical rainforests to arid deserts and temperate grasslands, mantises showcase adaptability to a variety of ecological niches.
+                                            </p>
+                                            <p>
+                                                Woodlands and Forests:
+                                                In wooded areas and forests, mantises often camouflage themselves among the foliage, utilizing their mimicry 
+                                                abilities to blend seamlessly with leaves and branches. Here, they hunt among the vegetation, preying on other 
+                                                insects that inhabit the same spaces.                                                   
+                                            </p>
+
+                                            <p>Grasslands and Meadows:
+                                                Open grasslands and meadows also serve as suitable habitats for mantises. Their cryptic coloration allows them
+                                                 to hide among the grass, providing cover as they patiently wait for prey to approach.
+                                                </p>
+                                            <p>
+                                                Urban Environments:
+                                                Praying mantises have successfully adapted to urban environments, including gardens, parks, and even residential areas.
+                                                 The abundance of vegetation and the presence of various insects make these locations viable habitats for mantises.                                                 
+                                            </p>
+
+                                            <p><b>Climate Preferences</b></p>
+                                            <p>Tropical Regions:
+                                                Many mantis species thrive in tropical climates, where warmth and humidity are conducive to their activity and reproduction. The lush vegetation and diverse insect life in tropical regions provide an ideal environment for mantises to flourish.
+                                             </p>
+                                             <p>Temperate Zones:
+                                                In temperate zones with distinct seasons, mantises are found in abundance during the warmer months. They are active during spring and summer, taking advantage of the increased availability of prey.
+                                                </p>
+                                                <p>Arid Regions:
+                                                    Certain mantis species have adapted to arid and desert environments. These mantises have evolved strategies to conserve water and navigate the challenges posed by the scarcity of vegetation.
+                                                    </p>
+
+                                                    <p> Vegetation and Foliage:<br><br>
+                                                        Within their chosen habitats, mantises often occupy microhabitats within vegetation. They may cling to leaves, branches,
+                                                         or stems, utilizing their camouflage to blend in with their surroundings.
+                                                         <br><br>
+                                                         <b>Microhabitats</b><br><br>
+                                                         Ground Level: While some mantises prefer elevated positions in plants, others are ground dwellers. They navigate the lower levels of vegetation
+                                                         or even the ground, searching for prey and suitable locations for egg-laying.
+                                                         <br><br>
+                                                           Human-Made Structures: In urban areas, mantises can be found on human-made structures such as fences, walls, and outdoor furniture. The presence
+                                                         of gardens and green spaces in residential areas provides them with ample opportunities for foraging.
+                                                        
+                                                        Understanding the diverse habitats where mantises reside allows enthusiasts and researchers to appreciate the adaptability
+                                                         of these insects. Whether in natural ecosystems or human-altered landscapes, praying mantises continue to thrive, showcasing
+                                                          their resilience and ability to coexist in various environments.
+                                                    </p>
+
+
+                                    </div>
+                                    <div class="jHomePageReadMoreHolder">
+                                        <button class="jHomePageReadMore">Read More</button>
+                                    </div>
+                        </div>
+                        <div class="jHomePageMinimizerHolder">
+                            <button class="jHomePageMinimizer">x</button>
+                        </div>
+
+                    </section>                    
+                    <section id="jHomePageEnvironments" class="jHomePageMenuItem">
+                        <div class="jHomePageContentAndReadMoreHolder">
+                            <h2>Care</h2>
+                                    <div class="jHomePageMenuItemContent  jHomePageMenuItemContentFog">
+                                        <p><b> Enclosure Setup</b><br><br>
+                                        Size and Structure:<br>
+                                        Begin by selecting an appropriate enclosure for your mantis. The size of the enclosure depends on the species, with larger species requiring more space. Ensure the enclosure has proper ventilation to maintain optimal air circulation.<br><br>
+                                        
+                                        Substrate:<br>
+                                        Choose a suitable substrate for the bottom of the enclosure. Peat moss, coconut coir, or a mix of vermiculite and soil can provide a good base. The substrate should allow for easy cleaning and help maintain humidity.<br><br>
+                                        
+                                        Climbing Surfaces:<br>
+                                        Mantises are arboreal creatures, so include vertical elements like twigs, branches, or artificial plants for climbing. These structures mimic their natural habitat and encourage natural behaviors.
+                                        <br><br><br>
+                                       <b> Feeding</b><br><br>
+                                        Diet:<br>
+                                        Praying mantises are carnivorous and thrive on live prey. Common food sources include flies, moths, crickets, and other small insects. Choose prey that is appropriately sized for the mantis, and provide a varied diet to ensure nutritional diversity.<br><br>
+                                        
+                                        Feeding Frequency:<br>
+                                        Feed your mantis regularly, adjusting the frequency based on its age and size. Juvenile mantises typically require more frequent meals than adults. Observe your mantis to gauge its appetite and adjust feeding accordingly.<br><br>
+                                        
+                                        Avoid Toxic Prey:<br>
+                                        Ensure that the prey you offer is free from pesticides or other harmful substances. Insects collected from areas with potential pesticide exposure should be avoided.<br><br>
+                                        
+                                        <b>Temperature and Humidity</b><br><br>
+                                        Temperature Range:<br>
+                                        Maintain an appropriate temperature range within the enclosure. Most mantises thrive in temperatures between 70-85°F (21-29°C). Use heat lamps or heat pads to create a suitable thermal gradient.<br><br>
+                                        
+                                        Humidity Control:<br>
+                                        Maintaining proper humidity is crucial for molting and overall well-being. Some species may require higher humidity levels. Regular misting of the enclosure or providing a water source can help achieve the desired humidity.<br><br>
+                                        
+                                        <b>Handling and Observation</b><br><br>
+                                        Gentle Handling:<br>
+                                        While mantises are generally not aggressive towards humans, handle them with care. Use gentle movements and avoid causing stress. Frequent handling is not recommended, as mantises may become stressed or agitated.<br><br>
+                                        
+                                        Observation:<br>
+                                        Spend time observing your mantis to understand its behaviors and habits. This not only enhances your appreciation for these creatures but also allows you to detect any signs of illness or stress.
+                                        <br><br>
+                                        <b>Molting and Health</b><br><br>
+                                        Molting Process:<br>
+                                        Mantises undergo molting to accommodate growth. Provide a secure environment during molting, as the mantis may be vulnerable at this time. Ensure that there are suitable surfaces for molting, such as branches or leaves.<br><br>
+                                        
+                                        Health Monitoring:<br>
+                                        Regularly check your mantis for signs of good health, such as vibrant coloration, alertness, and active behavior. Abnormalities, including lethargy or difficulty molting, may indicate health issues that require attention.
+                                        <br><br>
+                                        <b>Oviposition and Breeding</b><br><br>
+                                        Ootheca Handling:<br>
+                                        If your female mantis lays an ootheca, consider how you want to manage the next generation. You can leave it in the enclosure for natural hatching or carefully remove and incubate it separately.<br><br>
+                                        
+                                        Breeding Considerations:<br>
+                                        Breeding mantises requires careful planning. Ensure that both the male and female are healthy, provide suitable mating conditions, and be prepared for potential cannibalistic behavior. Research the specific requirements of the species you are breeding.
+                                        <br><br>
+                                        <b>Cleaning and Maintenance</b><br><br>
+                                        Regular Cleaning:<br>
+                                        Maintain a clean enclosure by removing uneaten prey, molting exoskeletons, and waste regularly. This prevents the buildup of bacteria and ensures a healthy environment for your mantis.<br><br>
+                                        
+                                        Substrate Replacement:<br>
+                                        Periodically replace the substrate to prevent mold and maintain cleanliness. This is especially important in humid conditions where mold growth is more likely.<br><br>
+                                        
+                                        By following these care guidelines, you can create a suitable and enriching environment for your praying mantis. Remember that different species may have specific requirements, so research the particular needs of your mantis to ensure its well-being and longevity in captivity.
+                                    </p>
+                                    </div>
+                                    <div class="jHomePageReadMoreHolder">
+                                        <button class="jHomePageReadMore">Read More</button>
+                                    </div>
+                        </div>
+                        <div class="jHomePageMinimizerHolder">
+                            <button class="jHomePageMinimizer">x</button>
+                        </div>
+
+                    </section>
+
+
 
 
 
         </main>
+        
+<footer>
+    <div class="footer_wrapper">
+     
+            <div class="footerRightsS"><!--divides the footer items into columns, check less-->
+                 <div class="footerRightsSContent">
+                   <div> <span>&#169;</span> 2023. All rights reserved.</div>
+                   <div> Athens Tech College</div>
+                </div>
+            </div>
+
+
+
+
+            <div class="footerMiddleWrapIt">
+            
+                <div class="footerMiddleWrapItContent1">
+                    <a href="./html/miniGame.html">Play a mini-game!</a>
+                </div>           
+          
+               <div class="footerMiddleWrapItContent2">
+                <a href="./html/worldMap.html">Try our interactive map</a>
+                 </div>
+           
+                <div class="footerMiddleWrapItContent3">
+                    <a href="./html/miniQuiz.html">Take a quick quiz</a>
+                </div>      
+
+            </div>
+
+
+
+            <div class="footerLinksWrapIt">
+                <div class="footerLinksWrapItContent">
+
+                        <div class="fixTheMonstrosity">                   
+                            <a href="https://github.com/YadaYadaAT" target="_blank">
+                                <i class="fa-brands fa-github fa-sm"></i>
+                                <div>Github</div>                            
+                                </a>
+                        </div>
+                
+                        <div class="fixTheMonstrosity">                        
+                            <i class="fa-solid fa-envelope fa-sm"></i>
+                            <div> yadayadaAt@gmail.com</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="column">
+                <div class="athTechRow">
+                    Athens Tech College.
+                </div>
+            </div>
+        </div> -->
+   
+</footer>
+
+<script src="other/js/ververaki.js"></script>
     </body>    
 </html>
