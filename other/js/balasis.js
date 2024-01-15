@@ -6,7 +6,7 @@
 
     document.addEventListener("DOMContentLoaded",function(){
  if (document.getElementById('jHomePageIdentifier') !== null){     
-        console.log('hello');
+        
         /*
         const imagesOfHomePageMenu=document.getElementsByClassName("jHomepageMenuImg");
         for (let i=0;i<imagesOfHomePageMenu.length;i++){
