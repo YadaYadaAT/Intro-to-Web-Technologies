@@ -275,7 +275,7 @@ let irointeractiveMapNote = "<p>As you explore the interactive map showcasing th
 
 let IroMantidaeData = {
   title: "Mantidae",
-  imageUrl: "../../images/Ververaki/worldMap/Mantidae.jpg",
+  imageUrl: "../images/Ververaki/worldMap/Mantidae.jpg",
   paragraphText: iromantidaeDescriptionBrazil + iromantidaeDescriptionUSA + iromantidaeDescriptionIndia + irointeractiveMapNote
 };
 
@@ -293,7 +293,7 @@ let IroMantidaeData = {
 
 let IroHymenopodidaeData = {
   title: "Hymenopodidae",
-  imageUrl: "../../images/Ververaki/worldMap/Hymenopodidae.jpg",
+  imageUrl: "../images/Ververaki/worldMap/Hymenopodidae.jpg",
   paragraphText: hymenopodidaeDescriptionCameroon+hymenopodidaeDescriptionAustralia+hymenopodidaeDescriptionMalaysia+hymenopodidaeInteractiveMapNote
 };
 
@@ -310,7 +310,7 @@ let empusidaeInteractiveMapNote = "<p>Explore the distribution of the <strong>Em
 
 let IroEmpusidaeData = {
   title: "Empusidae",
-  imageUrl: "../../images/Ververaki/worldMap/Empusidae.jpg",
+  imageUrl: "../images/Ververaki/worldMap/Empusidae.jpg",
   paragraphText : empusidaeDescriptionSpain + empusidaeDescriptionAfrica + empusidaeDescriptionThailand + empusidaeInteractiveMapNote
 };
 
@@ -327,7 +327,7 @@ let liturgusidaeInteractiveMapNote = "<p>Discover the enchanting world of the <s
 
 let IroLiturgusidaeData = {
   title: "Liturgusidae",
-  imageUrl: "../../images/Ververaki/worldMap/Liturgusidae.jpg",
+  imageUrl: "../images/Ververaki/worldMap/Liturgusidae.jpg",
   paragraphText : liturgusidaeDescriptionPeru + liturgusidaeDescriptionEcuador + liturgusidaeDescriptionColombia + liturgusidaeInteractiveMapNote
 };
 
@@ -343,7 +343,7 @@ let deroplatyidaeDescriptionIndonesia = "<p>Indonesia, with its vast archipelago
 
 let IroDeroplatyidaeData = {
   title: "Deroplatyidae",
-  imageUrl: "../../images/Ververaki/worldMap/Deroplatyidae.jpg",
+  imageUrl: "../images/Ververaki/worldMap/Deroplatyidae.jpg",
   paragraphText : deroplatyidaeDescriptionPhilippines + deroplatyidaeDescriptionMalaysia + deroplatyidaeDescriptionIndonesia
 };
 
@@ -360,7 +360,7 @@ let phyllocranidaeDescriptionIndonesia = "<p>Across the sprawling archipelago of
 
 let IroPhyllocranidaeData = {
   title: "Phyllocranidae",
-  imageUrl: "../../images/Ververaki/worldMap/Phyllocranidae.jpg",
+  imageUrl: "../images/Ververaki/worldMap/Phyllocranidae.jpg",
   paragraphText : phyllocranidaeDescriptionPhilippines + phyllocranidaeDescriptionMalaysia + phyllocranidaeDescriptionIndonesia
 };
 
@@ -375,7 +375,7 @@ let gonypetidaeDescriptionAustralia = "<p>In the expansive landscapes of Austral
 
 let IroGonypetidaeData = {
   title: "Gonypetidae",
-  imageUrl: "../../images/Ververaki/worldMap/Gonypetidae.jpeg",
+  imageUrl: "../images/Ververaki/worldMap/Gonypetidae.jpeg",
   paragraphText : gonypetidaeDescriptionPapua + gonypetidaeDescriptionSolomonIslands + gonypetidaeDescriptionAustralia
 };
 
