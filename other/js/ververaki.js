@@ -154,10 +154,13 @@ window.onload = () => {
 //   };
 // }
 
-///======================================================world map=================================================///
+///======================================================world map=================================================//
+//The map is a background image of a div which we resize in order to create the zoom effect while the parent of it remains in the same dimensions.
+
+//body element has an id which we check the existance of it with an if in order to secure that code will get triggered only in the worldMap page.
 if (document.getElementById('iroWorldMapMain')!==null){
 
-
+//the values declared here are explained later on during the following function...
 let IroCurrentWidth = 100; // Initial width percentage
 let IroWidthStep = 20; // Width increment or decrement on each wheel event
 let IroMinWidth = 100; // Minimum width percentage
@@ -171,25 +174,36 @@ let IroMaxHeight = 400; // Maximum height percentage
 let IroWrapper = document.getElementById('iroWorldMapScaleIt');
 let IroWasAt100Percent = false; // Variable to track if the height was at 100%
 
+
+//our goal here is to create a function which is triggered by a wheel listener and instead of having a scroll
+//it gets our map zoomed in.
+// in order to achieve this zoom effect we simple reform the width and height of the image while configuring the scrolling position of the parent.
 IroWrapper.addEventListener('wheel', function (event) {
+  //first of all we prevent the default behavior of wheel which would be to scroll...
   event.preventDefault();
 
-  // Save current scroll position as a percentage
+  //right here the idea is to save the scroll position so when we change the height and width
+  //we use the scroll position so when the elements change dimensions instead of having the scroll at the start it keeps the 
+  //relative position that it had before the "zoom" so:
+
+  // Saves current scroll position as a percentage
   let IroScrollLeftPercentage = (IroWrapper.scrollLeft / (IroWrapper.scrollWidth - IroWrapper.clientWidth)) * 100;
   let IroScrollTopPercentage = (IroWrapper.scrollTop / (IroWrapper.scrollHeight - IroWrapper.clientHeight)) * 100;
 
-  // Determine the direction of the wheel
+  // Determines the direction of the wheel
+  //deltaY takes + or minus value according to mouse Wheel direction (up or down)..so we set a default value for both cases.
   let IroDelta = event.deltaY > 0 ? -1 : 1;
 
-  // Update the width
+  // Update the width VARIABLE according to the values we have declared on top..(depending on the iroDelta before)
   let IroNewWidth = IroCurrentWidth + IroDelta * IroWidthStep;
   IroNewWidth = Math.min(Math.max(IroNewWidth, IroMinWidth), IroMaxWidth);
 
-  // Update the height
+  // Same for height...
   let IroNewHeight = IroCurrentHeight + IroDelta * IroHeightStep;
   IroNewHeight = Math.min(Math.max(IroNewHeight, IroMinHeight), IroMaxHeight);
 
   // Check if the height was at 100%
+  //the reason we do this its because we have to change the cursor if its 100% or not...if its 100% grab cursor should go away
   if (IroCurrentHeight === 100 && IroNewHeight === 120) {
     IroWrapper.classList.remove('grabbing');
     IroWasAt100Percent = true;
@@ -199,7 +213,9 @@ IroWrapper.addEventListener('wheel', function (event) {
   document.getElementById('iroWorldMap').style.width = IroNewWidth + '%';
   document.getElementById('iroWorldMap').style.height = IroNewHeight + '%';
 
- 
+ //the followings are to control scroll behavior...
+ //1 case is if we go from 100% to 120%  which will set the scroll position to center
+ //2nd case is any other dimension than 100% to 120% whch will set the scroll relative the previous scroll location
   if (IroWasAt100Percent && IroDelta > 0) {
     
    
@@ -223,6 +239,11 @@ if (IroCurrentHeight==100){
 
 });
 
+//the followings listeners are to create the drag effect ..(it simply calculates the difference of the mouse
+//and translates it to scroll position.)
+//mouse down while in parent div will get the starting position...mouse move will move according to difference
+//between mouse down and mouse move position of mouse..and mouse up will simple set the iro is draggin to false to stop
+//mousemove function.
 let IroIsDragging = false;
 let IroStartDragX, IroStartDragY, IroStartScrollLeft, IroStartScrollTop;
 
@@ -258,7 +279,7 @@ document.addEventListener('mouseup', function () {
 
 
 
-
+//variables that  hold paragraphs for each set of pins.
 
 
 let iromantidaeDescriptionBrazil = "<p>The <strong>Mantidae</strong> family, commonly known as mantises or praying mantises, is a fascinating group of insects with a global presence. Within the vast landscapes of Brazil, the Mantidae family thrives in diverse ecosystems, ranging from the dense Amazon rainforest to the expansive savannas of the Cerrado. These adept predators are known for their remarkable camouflage and agile hunting techniques, making them an integral part of the intricate web of life in the South American country.</p>";
@@ -380,7 +401,7 @@ let IroGonypetidaeData = {
 };
 
 
-
+//a function with a switch that takes the data from the arrays we have just passed 
 
 function iroClickListener(event) {
   let secondClass = event.target.parentNode.classList[1];
@@ -441,7 +462,7 @@ case "IroGonypetidae":
           break;
   }
 
-  
+  // here we simple add an effect for the elements that have the class chosen..iro effect class contains an animation..
   document.querySelector(".iroWorldMapInfoTitleHolder h2").textContent = title;
   document.querySelector(".iroWorldMapInfoImageHolder").src = imageUrl;
   document.querySelector(".iroSomeTextHere").innerHTML = paragraphText;
@@ -455,7 +476,7 @@ case "IroGonypetidae":
       }
   });
 }
-
+//scroll into view..
 let iroScrollToTop=document.getElementById('iroScrollToTop').addEventListener('click',()=>{
   document.getElementById('iroWorldMapInfo').scrollIntoView({  behavior: 'smooth' });
 } )

@@ -2,30 +2,22 @@
 <html lang="en-US">
     <head>  
               
-        <!--Change the "../../other/less/my.less" with yours ..for example "../../other/less/john.less" -->
-       
-        <link rel="stylesheet/less" type="text/css" href="balasis.less">
        
        
-       
-        <!--Change to title of your page-->
+        <link rel="stylesheet/less" type="text/css" href="balasis.less">     
+      
         <title>johnys hub</title>
-        <!--Change the content tag to the description of this current page-->
+       
         <meta name="Description" content="this is a page about myself...I guess all the backgrounds shall be black">
 
 
-        <!--Do Not Change. Sets the charset that it will be saved and informs the browser about it...google about charset if you are interested for more-->
+      
         <meta charset="utf-8">
-        <!--Do Not Change. Sets the width of your page depening of the devices width, also initial zoom of your page when loaded; default is (initial-scale=1)-->
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <!--Do Not Change. keywords to provide info for web crawlers...although they don't seem to care about the tag much... -->
-        <meta name="keywords" content="Mantises, Mantises Species, Mantises lifespan">
-        <!--Do not Change.Icon of the page-->
-        <link rel="icon" href="../../images/LOGONOTEXT.ico" type="image/x-icon">
-        <!--Do not Change.Mask-Icon of the page, replaces the icon when tab pinned-->
-        <link rel="mask-icon" href="path/to/mask-icon.svg" color="#000000">
+       <meta name="viewport" content="width=device-width,initial-scale=1">
+       <meta name="keywords" content="Mantises, Mantises Species, Mantises lifespan">
+       <link rel="icon" href="../../images/LOGONOTEXT.ico" type="image/x-icon">
+       <link rel="mask-icon" href="path/to/mask-icon.svg" color="#000000">
 
-        <!--Do not Change. Og ...basically how page appears on social media as link . Its what it shows for example when you post a link on Discord or Viber-->
         <meta property="og:url" content="">
         <meta property="og:type" content="website">
         <meta property="og:image" content="../../images/YadaYadaTest.png">
@@ -33,11 +25,10 @@
         <meta property="og:image:width" content="436">
         <meta property="og:image:height" content="228">
         <meta property="og:description" content="Learn all about Mantises in our beautiful website">
-        <!--Do not Change. The Script for less.js that converts are less file into css in runtime-->
-        <script src="../../other/js/less.js"></script>
-        <!--Do not Change. The Script that it gets the HeaderNav and the Footer to the current page. Will propably be deleted after production-->
+       <script src="../../other/js/less.js"></script>
+   
         
-        <!--Do not Change. Disables page view if javascript is disabled on browser-->
+        <!-- Disables page view if javascript is disabled on browser-->
         <noscript>
          <style type="text/css">    	
          body *{display:none;}
@@ -54,11 +45,9 @@
 
 
     <body id="jjjMyPageBody">
-       
+        <!-- this is placed on top so the view wont get blocked..it is the div that preview images-->
         <div id="jjjHomePageImgPreview">
-            <div id="jjjHomePageImgPreviewFrame">
-
-            
+            <div id="jjjHomePageImgPreviewFrame">            
             <img id="jjjHomePageImgPreviewIn" src="" alt="Previewd Image">
             <div id="jjjHomePageImgPreviewInDescription"></div>
             </div>
@@ -68,31 +57,29 @@
             <div id="jjjFakeHeader">
                 <a href="../../index.html"><div id="jjjGoHomeSora"><span>Go Home</span></div></a>
                 <div id="jjjParentOfCircles">
-                    
+                    <!--The divs inside jjjToolsWrapperCounterRotate are just for the view of the circled tools... -->
                     <div id="jjjToolsWrapperCounterRotate">
 
                     <div class="jjjCircleFrameToolWheel" id="jjjToolWheel1"></div>
                     <div class="jjjCircleFrameToolWheel" id="jjjToolWheel2"></div>
-                   <div class="jjjCircleFrameToolWheel" id="jjjToolWheel3"></div>
-                   <div class="jjjCircleFrameToolWheel" id="jjjToolWheel4"></div>
-                   <div class="jjjCircleFrameToolWheelRot" id="jjjToolWheel5"></div>
-                   <div class="jjjCircleFrameToolWheelRot" id="jjjToolWheel6"></div>  
-                   <div class="jjjCircleFrameToolWheelRot" id="jjjToolWheel7"></div>                              
+                    <div class="jjjCircleFrameToolWheel" id="jjjToolWheel3"></div>
+                    <div class="jjjCircleFrameToolWheel" id="jjjToolWheel4"></div>
+                    <div class="jjjCircleFrameToolWheelRot" id="jjjToolWheel5"></div>
+                    <div class="jjjCircleFrameToolWheelRot" id="jjjToolWheel6"></div>  
+                    <div class="jjjCircleFrameToolWheelRot" id="jjjToolWheel7"></div>                              
                     </div>
                                       
+                    <!--outer circled divs -->
                     <div id="jjjCircleFrame">
                             <div class="jjjCircleFrameCounterRotate" id="jjjCircleFrame1"><span class="jjjTextInside">Hobby</span></div>
                             <div class="jjjCircleFrameCounterRotate" id="jjjCircleFrame2"><span class="jjjTextInside">Gaming</span></div>
                             <div class="jjjCircleFrameCounterRotate" id="jjjCircleFrame3"><span class="jjjTextInside">About Me</span></div>
                             <div class="jjjCircleFrameCounterRotate" id="jjjCircleFrame4"><span class="jjjTextInside">Work</span></div>
-
-                           
-                           
-                                 
+         
                     </div>
                     
 
-
+                     <!--inner two circled divs -->
                     <div id="jjjCircleFrameFirstCircle">
                         <div class="jjjCircleFrameFirstCircleCounterRotate" id="jjjCircleFrameFirstCircle1"></div>                           
                         <div class="jjjCircleFrameFirstCircleCounterRotate" id="jjjCircleFrameFirstCircle2"></div>            
@@ -103,9 +90,10 @@
                     <div id="jjjCircleFrameFirstCircleCenterTool"></div>
                     
                     <div id="jjjCircleFrameFirstCircleCenter"><img src="../../images/Balasis/myPage/jjjcenterBg.png" alt="AthTech"></div>
+                    <!--outerDecoration is another div just for having an outer border of the main circle..-->
                     <div id="jjjouterDecoration"></div>
                     <div id="jjjHalfForPick"></div>
-
+                    <!--all Smoky divs contain just images for the effect when you spin the wheel..controlled opacity by javascript..-->
                     <div class="jjjSmoky" id="jjjCircleFrameFirstCircleCenterRSmoke1"><img src="../../images/Balasis/myPage/DarkFinal.gif" alt="AthTechS"></div>
                     <div class="jjjSmoky" id="jjjCircleFrameFirstCircleCenterRSmoke2"><img src="../../images/Balasis/myPage/DarkFinal.gif" alt="AthTechS"></div>
                     <div class="jjjSmoky" id="jjjCircleFrameFirstCircleCenterRSmoke3"><img src="../../images/Balasis/myPage/DarkFinal.gif" alt="AthTechS"></div>
@@ -116,6 +104,8 @@
                 
             </div>
             
+            <!--from here to bottom ther are all the 4 sections...1 its viewed its time controlled by javascript...all 4 are getting hidden if inner circle is chosen
+            by pushing the whole parent to the left..(javascript)-->
             <div id="jjjTextParentFrame">
                     <div id="jjjMergerHeaderBody"></div>
     
@@ -127,8 +117,7 @@
                                     about my life.
                                 </p>
                                 <div class="jjjSubContentItemsButtons">
-                                  <!--<button data-description="" data-src="../../images/Balasis/myPage/AboutMe/" class="jjjclickableImage"></button>
-                                    <button data-description="" data-src="../../images/Balasis/myPage/AboutMe/" class="jjjclickableImage"></button>-->
+                                 
                                 </div>
                                 </div>
                             </div>
@@ -306,6 +295,12 @@
                     </section>
                     <div id="jjjScrollBackToTop"><span id="jjjGoTopText">Go top</span></div>
             </div>
+
+
+
+
+            <!-- this is displayed when the main is getting pushed to the side.......I simple swap display none to flex
+            and main one goes from flex to none AFTER its being pushed to left for the effect(setTimeout in javascript)-->
             <div id="jjjYadaYada">
             
                 <section id="jjjYadaYadaSection" >
@@ -335,11 +330,7 @@
 
                             </div>
 
-                              <!--
-                        <div class="jjjYadaYadaSubContentItemsButtons">
-                          <button data-description="" data-src="../../images/Balasis/myPage/AboutMe/" class="jjjclickableImage"></button>
-                            <button data-description="" data-src="../../images/Balasis/myPage/AboutMe/" class="jjjclickableImage"></button>
-                        </div>-->
+                             
                         </div>
                     </div>
                     

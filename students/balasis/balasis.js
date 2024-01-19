@@ -1,3 +1,19 @@
+/*
+
+
+ immediately-invoked function expression (IIFE) 
+ ->  (function(){ }) ();  is to avoid variables go global ..
+ended up not needed for the personal page though since no other javascript file was included...
+
+
+-Also a listener to each one of these so the javascript runs after the elements are loaded
+so theres no need to place the js file before the body tag. 
+for example:
+ document.addEventListener("DOMContentLoaded",function(){ }
+
+
+
+*/
 (function() {
 
     document.addEventListener("DOMContentLoaded",function(){
@@ -64,7 +80,8 @@
             let jjjGamingListener=document.getElementById('jjjCircleFrame2');
             let jjjAboutMeListener= document.getElementById('jjjCircleFrame3');
             let jjjWorkListener= document.getElementById('jjjCircleFrame4');
-
+            //setting the appropriate rotation for each click...
+           
             jjjHobbyListener.addEventListener('click',function(){
                         jjjRotate(this,180);
                     }
@@ -84,7 +101,7 @@
 
         
 
-
+ 
         function jjjRotate(jjjTar,rotateValue){
             if(jjjLoadingSafety==false){
              if (jjjTar.parentNode.style.transform!=="rotate("+rotateValue+"deg)"){  
@@ -145,7 +162,10 @@
 
                
 
-
+                    //in order to keep rotating when rotate hits a certain points I first remove the animation
+                    // and then reset the rotate deg..for example making 360 to 0...and in order to do that
+                    //first I remove animation..then i set 360->0 and then I put the animation back in for the
+                    //next rotation..all this after the previous animation ends.
             }else if(jjjCurrentRotatePosition=='rotate(270deg)' && rotateValue==0){
                 jjjouterDecoration.classList.remove('jjjchosenCircle');
                 rotateValue=360;
@@ -202,6 +222,9 @@
                
                
 
+
+
+
             let jjjHobbyListener= document.getElementById('jjjCircleFrame1');
             let jjjGamingListener=document.getElementById('jjjCircleFrame2');
             let jjjAboutMeListener= document.getElementById('jjjCircleFrame3');
@@ -209,7 +232,9 @@
 
 
 
-
+            // all the following is simple to display the senction for each option..
+            ///jjjtar holds the value of the element chosen. the rotation value is not checked; instead the parameter on the function that rotates the elements
+            //is checked in order to see which element is on the position of the circle...
             setTimeout(function(){
         if (jjjTar==jjjAboutMeListener){
             for (let m=0;m<jjjDisplayNoneSwapElements.length;m++){
@@ -269,7 +294,8 @@
 
         let jjjSCircleFrameFirstCircleCounterRotate=document.getElementsByClassName('jjjCircleFrameFirstCircleCounterRotate');
         let jjjSouterDecoration=document.getElementById('jjjUpperPick');
-       
+        //the following is to create the effect of rotating the...(granazi pws to lene sta agglika ;p) and 
+        //push the previous div to right..
         document.getElementById('jjjCircleFrameFirstCircle1').addEventListener('click',function(){
             let jjjWhoAsks=this;
             jjjSRotate(jjjWhoAsks,180);
@@ -280,6 +306,8 @@
         })
 
         let jjjSloadingProtection=false;
+
+
         function jjjSRotate(jjjWhoAsks,jjjSrotation){ 
 
 
@@ -306,7 +334,9 @@
 
                    
 
-
+                            //this is to create a random smoke effect...I have just placed 4 images with the same class and opacity 0...
+                            //its time the inner circle rotates I randomly set the opacity of them up to 1 and then hide them again..
+                            //the interval is to slowly fade.....
                 const jjjElements = document.getElementsByClassName('jjjSmoky');
                 const jjjDuration = 4000; 
                 const jjjIntervalTime = 500; 
@@ -320,7 +350,7 @@
                 const jjjopacityInterval = setInterval(() => {
                 for (const jjjElement of jjjElements) {
                     //parseFloats convert string to number
-                    const jjjcurrentOpacity = parseFloat(jjjElement.style.opacity) || 0;
+                    const jjjcurrentOpacity = parseFloat(jjjElement.style.opacity) || 0;//this just falls back to 0 as safety measure if it cant find value;
                     const jjjnewOpacity = Math.max(0, jjjcurrentOpacity - 0.1);
                     jjjElement.style.opacity = jjjnewOpacity;
                 }
@@ -334,6 +364,9 @@
                     }
                 }, jjjDuration);
 
+
+                //for the effect is till here...
+
             jjjWhoAsks.parentNode.style.transform="rotate("+jjjSrotation+"deg)";   
               setTimeout(function(){  jjjSouterDecoration.classList.add('jjjChosenAnimationSmall');  } ,50);
                 jjjScounterRotate="-"+jjjSrotation;
@@ -344,7 +377,7 @@
             setTimeout(function(){
                 jjjSloadingProtection=false;
             },2001);
-
+                //checking rotation and push or recover main div...along with some style changes..(background color/img e.t.c)
             if (jjjSrotation==180){
                 document.getElementById('jjjTextParentFrame').style.marginLeft="4001px";
                 document.getElementById('jjjHalfForPick').style.transform="rotate(-900deg)";

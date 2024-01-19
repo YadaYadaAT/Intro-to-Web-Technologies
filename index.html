@@ -2,11 +2,15 @@
 <html lang="en-US">
 
     <head>
+        <!--These two links are just for some fonts(not frameworks)-->
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-        <script src="https://kit.fontawesome.com/a6d6ba659c.js" crossorigin="anonymous"></script>        
+        <script src="https://kit.fontawesome.com/a6d6ba659c.js" crossorigin="anonymous"></script>   
+        
+        
         <link rel="stylesheet/less" type="text/css" href="other/less/balasis.less">
         <link rel="stylesheet/less" type="text/css" href="other/less/ververaki.less">
         <link rel="stylesheet/less" type="text/css" href="other/less/master.less">
+
         <title>Mantis Mania</title>
         <meta name="Description" content="An informational website about praying mantises, their habitats and caring for them as pets. We also offer several interactive games and quizzes!">
         <meta charset="utf-8">
@@ -14,6 +18,9 @@
         <meta name="keywords" content="Mantises, Mantises Species, Mantises lifespan">
         <link rel="icon" href="./images/LOGONOTEXT.ico" type="image/x-icon">
         <link rel="mask-icon" href="#" color="#000000">
+
+        <!--The graph tags may miss from some pages...it is functional but in order for someone to check it page must be temporally be hosted
+        , (this can be done by using ngrok for example... https://ngrok.com/. With respect to your time examiner I would avoid doing it)-->
         <meta property="og:url" content="">
         <meta property="og:type" content="website">
         <meta property="og:image" content="images/YadaYadaTest.png">
@@ -24,10 +31,10 @@
         <script type="text/javascript" src="other/js/less.js"></script>
        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-       
+        <!--balasis.js script can be located here instead before the end of body due to including onLoad listener so it wont cause issue-->
         <script src="other/js/balasis.js" ></script>              
-        <!--the following informs the visitor that our site is not viewable in case the browser has disabled javascript-->
-       
+        <!--the following script informs the visitor that our site is not viewable in case the browser has disabled javascript-->
+        <!--you might disable javascript from your browser in order to check it-->
        <style>
         html{
             overflow-x: initial;
@@ -46,14 +53,16 @@
 
     
     <body id="jHomePageIdentifier">
+        <!--HomePageImgPreview is the div that holds the preview of the images and its placed on the top of root right after body 
+        in order to be displayed on top of everything when an image to be displayed is chosen. Initial display is none-->
         <div id="HomePageImgPreview">
-            <div id="HomePageImgPreviewFrame">
-
-            
+            <div id="HomePageImgPreviewFrame">            
             <img id="HomePageImgPreviewIn" src="" alt="Previewd Image">
             <div id="HomePageImgPreviewInDescription"></div>
             </div>
         </div>
+        
+<!--header elements :imgBox and navbarWrapper elements belongs to iro Ververaki-->
         <div class="imgbox">
             <img class="center-fit" src="images/Ververaki/landingplusplus.jpg">
         </div>
@@ -469,11 +478,11 @@
 
 
         </main>
-        
+      <!--footer element belongs to iro Ververaki-->  
 <footer>
     <div class="footer_wrapper">
      
-            <div class="footerRightsS"><!--divides the footer items into columns, check less-->
+            <div class="footerRightsS">
                  <div class="footerRightsSContent">
                    <div> <span>&#169;</span> 2023. All rights reserved.</div>
                    <div> Athens Tech College</div>
@@ -518,13 +527,7 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="row">
-            <div class="column">
-                <div class="athTechRow">
-                    Athens Tech College.
-                </div>
-            </div>
-        </div> -->
+      
    
 </footer>
 
