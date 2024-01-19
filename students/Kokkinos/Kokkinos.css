@@ -1,14 +1,17 @@
+*/* Global styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Resetting default margins and paddings for body,h1,h2,ul,p */
 body, h1, h2, ul, p {
     margin: 0;
     padding: 0;
 }
 
+/* Body styles */
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
@@ -18,6 +21,7 @@ body {
     padding-bottom: 50px;
 }
 
+/* Header styles */
 header {
     background: linear-gradient(to right, #6dd5ed, #2193b0);
     color: white;
@@ -26,6 +30,7 @@ header {
     position: relative;
 }
 
+/* Navigation link styles */
 header nav a {
     color: white;
     margin: 0 15px;
@@ -34,10 +39,12 @@ header nav a {
     transition: color 0.3s; 
 }
 
+/* Hover effect for navigation links */
 header nav a:hover {
     color: #ffeb3b; 
 }
 
+/* Main content styles */
 main {
     max-width: 800px; 
     margin: 40px auto;
@@ -45,6 +52,7 @@ main {
     text-align: left;
 }
 
+/* Section styles */
 section {
     background-color: rgba(255, 255, 255, 0.9); 
     margin: 20px 0;
@@ -53,6 +61,7 @@ section {
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); 
 }
 
+/* Footer styles */
 footer {
     background: linear-gradient(to right, #2193b0, #6dd5ed); 
     color: white;
@@ -63,11 +72,13 @@ footer {
     width: 100%;
 }
 
+/* Heading styles */
 h1, h2 {
     color: #333;
     margin-bottom: 20px;
 }
 
+/* Image styles within sections */
 section img {
     display: block;
     max-width: 100%;
@@ -75,15 +86,18 @@ section img {
     margin: 20px auto;
 }
 
+/* Unordered list styles */
 ul {
     list-style: none; 
     padding: 0;
 }
 
+/* List item styles */
 li {
     padding: 5px 0; 
 }
 
+/* Hover effect for sections */
 section:hover {
     transform: scale(1.01);
     box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2); 
