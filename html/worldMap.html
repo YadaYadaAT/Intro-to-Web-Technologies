@@ -39,7 +39,7 @@
                 </div>
             </section>
 
-
+            <!--content for each pin chosen. The content of iroHeader,iroRotatingMantisContent is getting replaced through javascript (+= )-->
             <section id="iroWorldMapWrapper">
                 <div id="iroHeader"><a href="../index.html" id="iroGoHome" >&larr;</a>Mantis World Explorer</div>
                 <div id="iroRotatingMantisWrapper">
@@ -55,15 +55,21 @@
                     </div>
                  </div>
                 <div id="iroWorldMapScaleIt">
+                    <!-- iro world Map contains the pins while its also the div that holds the background-image of the world map-->
                 <div id="iroWorldMap">
 
                     <!--
                     <div class="irotestPinn" id="iroYadaYadaPin">
                         <div class="nameItPinId"><span id="iroPinYadaYadaText">Yada<br>Yada</span></div>
                     </div>-->
+                    
+                    <!-- the parent element of each pin has 0 width and height..a small trick to perfectly
+                    position them in the map since any height or width would give the pins pointer different position due to 
+                the element dimension itself...hard to explain in words-->
+                        <!--nameItPinId creates the pin image with the help of border-radius while iroRotateBack hold the image-->
 
-
-
+                        <!-- there are also before and after elements that hold the name of the element when hovered
+                        and an effect when clicked-->
                    
                     <div class="irotestPin IroMantidae" id="Mantidae1">
                         <div class="nameItPinId"><div class="iroRotateBack"></div></div>

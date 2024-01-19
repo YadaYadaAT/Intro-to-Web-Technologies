@@ -1,5 +1,65 @@
 
+/* 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dear examiner,
+
+ I would like to notify you about the structure of this js in order to make it
+it easier for you to examine it.This javascript file contains all the javascript needed for all the pages
+that john balasis created . (Excluding any potential header and footer javascript which was iros ververakis job
+and therefore  is in ververaki .js)
+
+
+-Each pages' javascript start multiple identical comments that have the name of the page.
+
+-Each page contains  immediately-invoked function expression (IIFE) 
+ ->  (function(){ }) (); 
+which is a measure in order to not let variables go global and affect other js scripts.
+
+-The body of each page has an id. At the start of each page segement I check if the id
+exists in order to execute the code for the according page. This way I manage to not let each
+page javascript to interfere with anothers.
+for example:
+if (document.getElementById('jHomePageIdentifier') !== null){    }
+which jHomePageIdentifier is the id of the body of the homepage.
+
+-Also a listener to each one of these so the javascript runs after the elements are loaded
+so theres no need to place the js file before the body tag. 
+for example:
+ document.addEventListener("DOMContentLoaded",function(){ }
+
+
+
+*/
+
+
+
+
+
+
+
+
+//=========================================Homepage==============================================//
+//=========================================Homepage==============================================//
+//=========================================Homepage==============================================//
+//=========================================Homepage==============================================//
+//=========================================Homepage==============================================//
+//=========================================Homepage==============================================//
+//=========================================Homepage==============================================//
 (function() {
 
 
@@ -7,24 +67,23 @@
     document.addEventListener("DOMContentLoaded",function(){
  if (document.getElementById('jHomePageIdentifier') !== null){     
         
-        /*
-        const imagesOfHomePageMenu=document.getElementsByClassName("jHomepageMenuImg");
-        for (let i=0;i<imagesOfHomePageMenu.length;i++){
-            if (imagesOfHomePageMenu[i].style.cssFloat=="right"){
-                imagesOfHomePageMenu[i].classList.add("jAddPaddingLeftToImg");
-               
-            }else{
-                imagesOfHomePageMenu[i].classList.add("jAddPaddingRightToImg");
-            }
-        }*/
-    
+     
 
-   //Setting the listener to the ReadMores. Expanding the divs of their parents.
+  
 
+     
     const ReadMores=document.getElementsByClassName("jHomePageReadMore");
     const HomePageMiniHolder=document.getElementsByClassName("jHomePageMinimizerHolder");
     const HomePageMini=document.getElementsByClassName("jHomePageMinimizer");
 
+
+    //the following is giving a listener to the "x" buttons that minimize the texts
+    //in few words it does the followings:
+    //1)removes jHomePageMenuItemAddHeight class which sets height to auto and therefore text gets hidden due to limited height that parent initially had.
+    //2)displays to none so it hides the "x"
+    //3)Scroll into view to the div that we have just click "x"
+    //4)also removes another class jHomePageReadMoreWidthIt which was making the width of the header (h2) to be 100%..making the effect.
+    //
     for(let e=0;e<HomePageMini.length;e++){
         HomePageMini[e].addEventListener("click",function(){            
             this.parentNode.parentNode.classList.remove("jHomePageMenuItemAddHeight");
@@ -35,6 +94,10 @@
             this.parentNode.parentNode.querySelector("h2").parentNode.classList.remove("jHomePageReadMoreWidthIt");
         })
     }
+
+    //The following is to expand the text view...include commands exactly the opposite from the "x" while first performs
+    //the commands used for "x" in order to close any previous extended div text
+    //In other words the ReadMore button has the same functionality as "x" and then it opens the next
     for(let k=0;k<ReadMores.length;k++){
         ReadMores[k].addEventListener("click",function(){
             for (let qq=0;qq<HomePageMini.length;qq++){
@@ -54,6 +117,9 @@
         })
     }
       
+
+
+
             //IMG previewer
 const jImg = document.getElementsByClassName('clickable-jImgBored');
 const prev = document.getElementById('HomePageImgPreview');
@@ -113,11 +179,11 @@ document.getElementById("jChatMantisImg").addEventListener("click",jSendText);
 let jRouletaExclude=[];
 let jShowingTheEnd=false;
 function jSendText(){
-
-  
-//here
         //My first job is to generate a random number so I will use it to pick
         //one fun fact from the array....
+        //A combination of math floor  to round the number and math random to pick a number between 0 and 1
+        //and min max values form a random number....this way user won't see the same messages each time.
+        //I use this random number to pick a random index from the JfunFactsArray array list 
         function Jjrandom(min, max) {
             return Math.floor(Math.random() * (max - min + 1) + min);
           }        
@@ -125,20 +191,17 @@ function jSendText(){
 //I create an array and start fullfling and comparing each time...
     let jRouletaBegin=Jjrandom(0,8);
    
-
+//This checks if the jRouletaExclude array is 8 or smaller. Each time I pick one from JfunFactsArray and add it to this
+//array to use it..if it hits 8 it means we are done and the "else" is beiing triggered.
 if (jRouletaExclude.length<=8){
-
+// This while has as purpose to pick a random number that its not yet used...so it tells in a word:while the number  is already used go pick another random
     while(jRouletaExclude.includes(jRouletaBegin)){
         jRouletaBegin=Jjrandom(0,8);
     }
-    jRouletaExclude.push(jRouletaBegin);
+    jRouletaExclude.push(jRouletaBegin);    
+    jNoSameGeneratorTwice=jRouletaBegin;    
     
-    jNoSameGeneratorTwice=jRouletaBegin;
-    
-    //I gate the date here
     let jTimeNow=new Date();
-
-
     let jjjFixedday = jTimeNow.getDate().toString().padStart(2, '0');
     let jjjFixedmonth = (jTimeNow.getMonth() + 1).toString().padStart(2, '0');
     let jjjFixedyear = jTimeNow.getFullYear();
@@ -147,24 +210,20 @@ if (jRouletaExclude.length<=8){
 
 
 
+    //get Date seems to have an issue of addings zeros when months or days are smaller than <10 so I add it manually
+    //essentially this says that if hours are less than 10 then jAddThe zero (Which is the var for hours) is equal to 0 + hours..otherwise is just getHours();
+    //to not get you tired I wont add more comments to similar getDate lines.
+    let jAddTheZero=jTimeNow.getHours()<10?'0'+jTimeNow.getHours():jTimeNow.getHours();  
+
+    let jAddTheZeroMinutes=jTimeNow.getMinutes()<10?'0'+jTimeNow.getMinutes():jTimeNow.getMinutes();   
+
+    let jClockNow=jAddTheZero+":"+jAddTheZeroMinutes;  
+
+    let jAmOrPmSign=jTimeNow.getHours()>=12?' PM' :' AM';    
     
-
-    let jAddTheZero=jTimeNow.getHours()<10?'0'+jTimeNow.getHours():jTimeNow.getHours();
-
-    
-
-    let jAddTheZeroMinutes=jTimeNow.getMinutes()<10?'0'+jTimeNow.getMinutes():jTimeNow.getMinutes();
-
-   
-
-    let jClockNow=jAddTheZero+":"+jAddTheZeroMinutes;
-  
-
-    let jAmOrPmSign=jTimeNow.getHours()>=12?' PM' :' AM';
-    
-    
-   let jFullTime="<p>"+jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign+"</p>" ;
-   //Adding the name and I will combine these two since it will go to the same div.
+    //Here I create some html by adding them into variables..later on I form a div out of them.
+    //its the info that appears along with the text when you click on mantis ..
+   let jFullTime="<p>"+jDateNoww +" at " +jClockNow +" "+ jAmOrPmSign+"</p>" ; 
    let jMantiseName="<p><b>Wordy Mantis</b></p>";
    let jNameAndDate=jMantiseName+" "+jFullTime;
 
@@ -207,7 +266,12 @@ if (jRouletaExclude.length<=8){
     
 }else{
 
-            ///LAST CREATION HERE IN  IF to tell him a thanks for reading
+            //after we have used all 8 sentences this else gets triggered which holds few commands similar to the previous with
+            //the only difference that the text content will be a thanks for your time comment.
+
+            //the jShowingTheEnd is a safety variable.I use to have a variable set into false
+            // and become only true in the end of each big function. This way the same script wont get fired twice if the first one
+            //is not over.
     if (jShowingTheEnd==false){
                       //I gate the date here
     let jTimeNow=new Date();
@@ -271,7 +335,7 @@ if (jRouletaExclude.length<=8){
 
 
 
-    }// the end of IF here
+    }
 
 
 
@@ -285,7 +349,7 @@ if (jRouletaExclude.length<=8){
 
 
 
-}//The if to protect the page...
+}
 
 
 
@@ -298,12 +362,19 @@ if (jRouletaExclude.length<=8){
 
 
 
+//=================================MiniQuiz the page with the questions and you have to choose out of 4 =============================================//
+//=================================MiniQuiz the page with the questions and you have to choose out of 4 =============================================//
+//=================================MiniQuiz the page with the questions and you have to choose out of 4 =============================================//
+//=================================MiniQuiz the page with the questions and you have to choose out of 4 =============================================//
+//=================================MiniQuiz the page with the questions and you have to choose out of 4 =============================================//
+//=================================MiniQuiz the page with the questions and you have to choose out of 4 =============================================//
+//=================================MiniQuiz the page with the questions and you have to choose out of 4 =============================================//
+//=================================MiniQuiz the page with the questions and you have to choose out of 4 =============================================//
+//=================================MiniQuiz the page with the questions and you have to choose out of 4 =============================================//
 
 
 
-
-
-
+//As explained at top : 1)immediately-invoked function, 2)listener for on load ,3)check body's id enable javascript code and avoid conflicts between pages
 
 
 (function() {
@@ -315,32 +386,7 @@ if (jRouletaExclude.length<=8){
  if (document.getElementById('jjMiniQuizBody')!==null){
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//I made an array that holds the question,options,correct answer and the url for each image to be displayed
 
 
 const jjquizData = [
@@ -490,41 +536,30 @@ if (jjLockTillReset==1 && jjIntervalStillRun==false){
     
     jjQuiztimer=timer;
 
-       // Ok I used google for this one...It seems like that I was creating a refference instead of a copy..which
+       // Ok I used google for this one...It seems like that I was creating a reference instead of a copy..which
        //was obvious couldn't think of it..so instead of jjquizDataCopy = jjquizData; i switch to jjquizDataCopy = [...jjquizData];
     if (!jjquizDataCopy || jjquizDataCopy.length === 0) {
         jjquizDataCopy = [...jjquizData];
     }
 
-    jjquestionPickedd=jjgiveMeRandom(0,jjquizDataCopy.length-1);
-    
-    
-    
+    //getting a random index number and then I push the content of the chosen array[index] into the divs
+    jjquestionPickedd=jjgiveMeRandom(0,jjquizDataCopy.length-1);     
     document.getElementById("jjQuizQuestionPlaceholder").textContent=jjquizDataCopy[jjquestionPickedd].question;
-
-
     document.getElementById("jjOption1").value=jjquizDataCopy[jjquestionPickedd].options[0];
     document.getElementById("jjOption1Label").textContent=jjquizDataCopy[jjquestionPickedd].options[0];
-
-
     document.getElementById("jjOption2").value=jjquizDataCopy[jjquestionPickedd].options[1];
     document.getElementById("jjOption2Label").textContent=jjquizDataCopy[jjquestionPickedd].options[1];
-
-
     document.getElementById("jjOption3").value=jjquizDataCopy[jjquestionPickedd].options[2];
     document.getElementById("jjOption3Label").textContent=jjquizDataCopy[jjquestionPickedd].options[2];
-
     document.getElementById("jjOption4").value=jjquizDataCopy[jjquestionPickedd].options[3];
     document.getElementById("jjOption4Label").textContent=jjquizDataCopy[jjquestionPickedd].options[3];
-
-
     document.getElementById("jjQuizImgPlaceHolder").setAttribute("src",jjquizDataCopy[jjquestionPickedd].imageUrl);
-
+        //updating correct answer variable as well in order to use it later on..
     jjCorrectAnswer=jjquizDataCopy[jjquestionPickedd].correctAnswer;
 
-
-
-
+    //Ok here we have our timer...its a simple interval that does a -1...in case time hits zero
+    //we add a class jjPauseTheQQloader that pause the animation of the div while also
+    //add another class to the div with the correct answer to do the effect.(here is where the updated jjCorrectAnswer is used)
     jjCountDownInterval=setInterval(function(){
     jjQuiztimer=jjQuiztimer-1;
     
@@ -578,7 +613,10 @@ function jjHelperSolver(){
     document.getElementById("jjMiniQuizContentMiddleHelper1").style.transform='scale(0.80)';
     document.getElementById("jjMiniQuizContentMiddleHelper1").style.color="red";   
     if (jjHelperSolverCounter!==0){
-        jjHelperSolverCounter=jjHelperSolverCounter-1;//I SET TO 0 so you can cheat the game to check it.
+        jjHelperSolverCounter=jjHelperSolverCounter-1;
+        //THIS INITIALLY WOULD SET THE jjHelperSolverCounter TO 0 TO NOT BE REUSABLE.
+        //but i thought that in order you would check the quiz without playing I reset it later on again to 1
+        //so you can use it as infinitely as a cheat .
        }
     jjConfirmChoice();
            
@@ -590,10 +628,16 @@ function jjHelperSolver(){
 }
 
 
-//this function removes an wrong option..can be used only once
+
 let jjHiddenToBeSeen;
 let jjHiddenToBeSeen2;
 let jjflagToSeeIfOn;
+//this function removes two wrong options..can be used only once.
+//I again use a random factor and then check if the div hold the right answer...
+//if not then I hide it...,,jjLockTillReset is another
+//safety variable to not be retriggered before the function end
+//....also the jjHelperHideOneCounter is used so it wont be reusable...(becomes 0 from 1..)
+
 function jjHelperHideOne(){
     if (jjLockTillReset==1){
 
@@ -608,6 +652,7 @@ function jjHelperHideOne(){
         let jjUpToTwo=1;
         let jjLabelCounterToSaveIdToSecond=1;
         shuffledInputs.forEach(function(radioButton) {
+            //ignore jjFlagToSeeIfOn ...was another safety that didnt work properly but decided to let it be..issue covered with jjLockTillReset
            if(jjflagToSeeIfOn!==true){
             if (radioButton.value !== jjCorrectAnswer) {
 
@@ -626,7 +671,7 @@ function jjHelperHideOne(){
                     jjHiddenToBeSeen2=jjFindTheLabel2;
 
                  }
-
+                
                     if (jjUpToTwo==0){     
                         jjflagToSeeIfOn=true;              
                 jjHelperHideOneCounter=jjHelperHideOneCounter-1;
@@ -649,7 +694,9 @@ function jjHelperHideOne(){
 function jjConfirmChoice(){
    
 
-   
+   //I just check if the right answer is chosen..if yes then triggering the next one and replacing the context
+   //Also something i forgot to mention is that jjHiddenToBeSeen is to recover the 2 divs
+   //that have been hidden from jjHelperHideOne function.
     if (jjLockTillReset==1){
 
 
@@ -701,7 +748,9 @@ function jjConfirmChoice(){
             
                                         
                                         
-                                        
+                                    //here it gets if there are no more questions...check both "helpers" variables to check
+                                    //if they are used or not..if yes then jjassisted becomes yes..and I use it later on on the
+                                    //top 10 score table info
                                         
                                                             if ((jjHelperSolverCounter == 0) || (jjHelperHideOneCounter == 0)){
                                                                 jjassisted="Yes";
@@ -709,7 +758,7 @@ function jjConfirmChoice(){
                                                                 jjassisted="No";
                                                             }
 
-
+                                                            //Updating/creating the localStorage variable..used for ScoreTable...
                                                             if (localStorage.getItem("jjQuizScores") == null) {
                                                                
                                                             
@@ -774,6 +823,8 @@ function jjConfirmChoice(){
 
 
     }else{
+
+        //the following code is when the user has chosen a wrong answer...it it calls the reset function and clear the timer e.t.c
         jjLockTillReset=0;
         document.getElementById('jjQuizLoadingBorderBarMoving').classList.add('jjPauseTheQQloader');
         clearInterval(jjCountDownInterval);
@@ -796,7 +847,8 @@ function jjConfirmChoice(){
 
 
 
-
+//updates the score table..this is getting triggered at the start on load..also when game end succesfully
+//
 
 function jjUpdateScoreTable() {
     let jjScoreTable = document.getElementById("jjScoreTable");
@@ -861,7 +913,7 @@ function jjUpdateScoreTable() {
 
 
 
-
+//not much to explain in this one....reset all doms to starting state..(also variables)
 
 function jjResetTheWholeQuiz(){
     jjProtectClickingSolverBeforeStart=false;
@@ -905,22 +957,16 @@ function jjResetTheWholeQuiz(){
         
     
 
-        //Declaring variables for the intervalObj and for the moving bar itself
+        //Just resetting variables to be reused..
       
         jjQuizLoadingBorderBarMoving=document.getElementById("jjQuizLoadingBorderBarMoving");
-        
-        //current Variables that we need in order to compare the given answer with the correct one.
         jjCountDownInterval=undefined;
         jjquizDataCopy=undefined;
 
         jjquestionPickedd=undefined;
         jjCorrectAnswer=undefined;
         jjQuiztimer=undefined;
-        //here it will be given a +1 each time player answers wrong. If 3 answers quiz gets aborted.
-       
-
-
-     //Reset
+              
             
     if (jjflagToSeeIfOn){
     document.getElementById(jjHiddenToBeSeen).style.display="flex";
@@ -940,10 +986,10 @@ jjflagToSeeIfOn=false;
      document.getElementById("jjQuizImgPlaceHolder").setAttribute("src",undefined);
          
 }
-
+// the initial call of local storage variable to show score table.
 jjUpdateScoreTable();
 
-
+//here its the clear Score table listener...it just removes the local storage variable and then updates the scoretable to be viewed(like a refresh)
 document.getElementById('jjClearLocalStorageButton').addEventListener('click', function() {
   
     let jjKeyToRemove = 'jjQuizScores'; 
@@ -954,18 +1000,21 @@ document.getElementById('jjClearLocalStorageButton').addEventListener('click', f
 
 
 
-
+//a simple give me random number function..you have already seen where its used .
 function jjgiveMeRandom(min,max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 
+//Ok here we go..the following is for the tutorial at the start of the onload page...
 
+//all it actually does it its creating a div and adding a class to it with a very high z-index in order to be displayed
+// on Top of everything else....
 
-
-
-
-
+//Also there is a highlightElement function and remove highlight element.
+//In order to create the highlightElement effect I add a div which covers the whole page
+//with  background: rgba(0, 0, 0, 0.9); and Z-index z-index: 9900;   and then I add a class to the chosen to highlight element
+// that has a pseudo::before with  z-index: 9950 !important; and absolute,  so it will show on top
 
 
 function jjhighlightElement(jjselect, jjmessage) {
@@ -1022,6 +1071,12 @@ function jjremoveHighlightedItem() {
 
 let jjControlHighlights=1;
 
+
+//in order to control the tutorial I simply have a variable jjControlHighlights that depends on the number (using a switch) it will
+//call the add or remove highlight function. The value of jjControlHighlights changes by jjNextIt function (scroll down to see it).
+//while there is also a cancel function (check bellow again) that sets the jjControlHighlights to 0 and as you see in the case 0
+//in the switch it exists the tutorial.
+//default is never called I have it there for safety.
   function jjHighLightController(jjStep){
     switch(jjStep){
         case 0:
@@ -1061,7 +1116,7 @@ let jjControlHighlights=1;
   }
 
 
-
+//here is the initial call for the function to start...
 jjGuidance();
 
 
@@ -1077,11 +1132,13 @@ jjGuidance();
     jjHighLightController(jjControlHighlights); 
   }
 
-
+//this one just cancel the tutorial by setting jjControlHighlights to 0 and then it will exit from the switch inside the jjHighLightController function 
 function jjCancel(){
     jjControlHighlights=0;
     jjHighLightController(jjControlHighlights);
 } 
+
+//it will add 1 and then call  the controller again.
 function jjNextIt(){
     jjControlHighlights=jjControlHighlights+1;
     jjHighLightController(jjControlHighlights);
@@ -1122,7 +1179,7 @@ function jjNextIt(){
 //======================================            Behavior page        ================================================//
 
 
-
+//As explained at top : 1)immediately-invoked function, 2)listener for on load ,3)check body's id enable javascript code and avoid conflicts between pages
 
 
 (function() {
@@ -1134,7 +1191,12 @@ function jjNextIt(){
    
     if (document.getElementById('jjjBehaviorBody')!==null){
    
-
+        //Although the start is about pages inside the book I need to mention that the bookItself
+        //is being created by a combination of divs that have translateZ transforms    
+   //for example: transform-origin: center center;
+   //               transform:rotateY(0deg) rotateX(0deg) translateZ(4.5em);
+   //after a lot of testing and combinations of margins I managed to "merge/connect" the divs to form
+   //a box...(a side of book is missing but the angle of it is  not viewed on purpose)
 
    
         const jjjGPage1=document.getElementById('jjjGPage1');
@@ -1143,140 +1205,29 @@ function jjNextIt(){
         const jjjBehcardBottom=document.getElementsByClassName('jjjBehcardBottom')[0];
 
 
-        //const jjjPullAllow=document.getElementById('jjjPullAllow');
+      
         const jjjRotate=document.getElementById('jjjRotate');
+
       
         let  jjjAllowPull=false;
         
+
         let jjjOffsetX, jjjOffsetY, jjjIsDragging ;
 
-     /*   jjjPullAllow.addEventListener('click',function(){
-            jjjAunlockPull();
-        
-        });*/
-       
-       
-
-/*
-       function jjjAunlockPull(){
            
-            jjjAllowPull=true;
-            jjjPullListener();
-           
-        }
+            //Ok this is the hardest part of this js file...I will do my best to explain.
+            //first I take all the "pages" divs and add them a on click listener while passing
+            //also the "this" to the function that is being called at the listener so I will know
+            //which page triggers the function.
 
-       
-        
-
-        let jjjBookWrapper = document.getElementById('jjjBehflipper');
-        
-        function  jjjPullListener(e){
-
-       
-            if(jjjAllowPull){
-       
-        
-        jjjBookWrapper.addEventListener('mousedown', function (e) {
-            e.preventDefault();
-           jjjOffsetX, jjjOffsetY, jjjIsDragging = false;
-
-           
-         
-
-           
-           
-        
-     
-           jjjOffsetX = (e.clientX - document.getElementsByClassName('jjjBehbookBack')[0].getBoundingClientRect().left)+240;
-           jjjOffsetY =(e.clientY - document.getElementsByClassName('jjjBehbookBack')[0].getBoundingClientRect().top)+240;
-          
-         
-           
-        
-            jjjIsDragging = true;
-           
-           
-            document.addEventListener('mousemove', jjjhandleMouseMove);
-            document.addEventListener('mouseup', jjjhandleMouseUp);
-        }) ;
-        
-    }
-       
-        
-        function jjjhandleMouseMove(e) {
-            if(jjjAllowPull){
-                
-            if (jjjIsDragging) {
-                
-               
-             
-             let jjjjseeMe=   jjjBookWrapper.style.left = e.clientX - jjjOffsetX + 'px';
-                jjjBookWrapper.style.top = e.clientY - jjjOffsetY + 'px';
-             
-            }
-
-
-        }
-        }
-        
-        function jjjhandleMouseUp() {
-            if(jjjAllowPull){
-
-            // Reset appearance and dragging state
-            jjjBookWrapper.style.opacity = '1';
-            jjjIsDragging = false;
-        
-            // Remove the event listeners after the drag operation is complete
-            document.removeEventListener('mousemove', jjjhandleMouseMove);
-            document.removeEventListener('mouseup', jjjhandleMouseUp);
-        }
-
-
-    }
-
-
-        }
-
-
-
-            */
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-     
-            
-            
-            
+                      
             
             
                 for (let i=0;i<jjjBehDaPages.length;i++){
               jjjBehDaPages[i].addEventListener('click',function(){
+                //here is passing the this..
                  let WhoAsks=this;
-            
+                //and here i put it as parameter to jjjrotateit function.
                   jjjjrotateIt(WhoAsks);
                                       });
             
@@ -1289,20 +1240,27 @@ function jjNextIt(){
                
                 
             
-            
+            //Ok all "pages/divs" are from the css at the start transform rotated -180 deg Y,,,
+            //ignore the safety load page...it is there to ensure that till one page end the page turn
+            //animation no other will get triggered.(which could cause glitches in view)
+
+            //first I check if the page is already rotated by checking if the class that includes the rotation is contained          
             
                   if (!asksWho.classList.contains("jjjBehClassRotateOrNot") && jjjjSafetyLoadPage==false){
+                    //here I set the security on ..till this becomes false in the end of the function we wont have a retrigger
                     jjjjSafetyLoadPage=true;
+                    //as a matter of fact I set a delay setting to the false...I ENSURED that the delay here is bigger than
+                    //the animation Time of page to turn ..animation time <1200 ms
                     setTimeout(function(){ jjjjSafetyLoadPage=false; },1200);
             
+
+                    //heres another important step....I set the page before and after the page to have the according indexes..
+                    //for example if  page 3 is chosen then it will have z-index 30...the page 2 and 4 will have z-index 28
+                    //while the rest of the pages 25..This way they will be viewed correctly as a book..otherwise they would overlap.
                     for (let i = 0; i < jjjBehDaPages.length; i++) {
                         jjjBehDaPages[i].style.zIndex = 25;
                       }
-
-
-                     
-
-
+      
                       if(  asksWho.previousElementSibling !== null ){
                       asksWho.previousElementSibling.style.zIndex = 28;
                     }
@@ -1316,7 +1274,7 @@ function jjNextIt(){
                     asksWho.classList.add("jjjBehClassRotateOrNot");
             
             
-            
+                    //I hide pages rotated except from first ...the rotated page ofc not the back side..
                     for (let i = 0; i < jjjBehDaPages.length; i++) {
                       if (jjjBehDaPages[i].classList.contains('jjjBehClassRotateOrNot') && jjjBehDaPages[i].id!=="jjjGPage1"){
                         setTimeout(function(){
@@ -1332,6 +1290,8 @@ function jjNextIt(){
                       document.getElementById('jjjClickOnTheBook').style.display="none";
                      
                   }else{
+
+                    //here is the reverse turning....just removing the rotation class and also fixing the z-indexes again for the siblings pages
                     if (jjjjSafetyLoadPage==false){
                     jjjjSafetyLoadPage=true;
                     setTimeout(function(){ jjjjSafetyLoadPage=false; },1000);
@@ -1354,7 +1314,7 @@ function jjNextIt(){
                 }
             
             
-
+                //this is needed in order to hide borders when the book is opened..I use borderd to create the illusion of the book closed and viwed by angle..
                 jjjGPage1.addEventListener('click',()=>{
               if (jjjGPage1.classList.contains('jjjBehClassRotateOrNot')){
                 jjjBehbookTop.style.borderTopColor="transparent";
@@ -1372,7 +1332,7 @@ function jjNextIt(){
 
 
 
-
+            //here are all the listeners for the buttons that rotate the book..
 
             document.getElementById('jjjSideBtn').addEventListener('click',function (){ jjjC_jjjSideBtn()} );
             document.getElementById('jjjBackBtn').addEventListener('click',function (){jjjC_jjjBackBtn()} );
@@ -1383,7 +1343,8 @@ function jjNextIt(){
     
             const jjjC_book = document.getElementById('jjjBehflipper');
             let jjjC_rotation = 0;
-        
+            // each one of these functions simple rotate the div (parent one) that holds the book...
+            
             function jjjC_jjjSideBtn() {
 
                 jjjC_rotation = "rotateY(70deg) rotateX(-65deg) translateZ(4.5em)";
@@ -1397,7 +1358,7 @@ function jjNextIt(){
                 jjjC_book.style.transform = jjjC_rotation;
 
             }
-        //I have swapped front and read names in html..be aware..the read is the front and front is the read..
+        //I have swapped front and read names in html..be aware..the read button is the front and front is the read..
             function jjjC_jjjFrontBtn() {
 
                 jjjC_rotation = "rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
@@ -1421,7 +1382,10 @@ function jjNextIt(){
 
 
 
-
+                //This function is being called from all the above and rotates the book according to the value parameter given...
+                //also adds a class to move the book to the position that it should be while rotation.
+                //class holds the following : left:calc(50% + +10em);
+                //                              transform:translateX(-50%) ;
             function jjjC_applyRotation(val) {
                 document.getElementById('jjjBookWrapper').classList.add('jjjBookWrapperMoveRemove');
                 jjjC_book.style.transform = val;
@@ -1435,7 +1399,9 @@ function jjNextIt(){
             jjjBehExtent();
 
         });
-
+            //this function is executed when you press the button poping that enable the book view...
+            //it simple adds and removes classes that make the initial button hide and the close button appear
+            //while also configures the book to be in position.
         function jjjBehExtent(){
            
             document.getElementsByClassName('jjjjarrowTopBtnn')[0].classList.add('jjjjDisplayNotMeDude');
@@ -1453,7 +1419,7 @@ function jjNextIt(){
          
            jjjC_book.style.transform ="rotateY(0deg) rotateX(-90deg) translateZ(4.5em)";
              
-           //  jjjC_book.classList.add('jjjjvariemeTheeMouV2');
+           
 
 
             document.getElementsByClassName('jjjIneedOneMoreForEffect')[0].style.transform="rotateY(0deg) rotateX(0deg)";
@@ -1480,7 +1446,7 @@ function jjNextIt(){
             },5000);
         }   
 
-
+        //this function resets all the changes of the jjjBehExtent function...literally just resetting everything to the starting position.
         function jjjC_jjjResetBtn() {
             document.getElementById('jjjChangeswitchIt').style.color="orange";
            document.getElementById('jjjBookWrapper').classList.remove('jjjBookWrapperMoveRemove');
@@ -1495,12 +1461,13 @@ function jjNextIt(){
             //jjjC_book.classList.remove('jjjjvariemeTheeMou');
            // jjjC_applyRotation(jjjC_rotation);
             jjjC_book.style.transform =jjjC_rotation;
+            //the delay function is there to move further the book after picked up to position ..
             setTimeout(function(){
 
             jjjC_rotation = "rotateY(0deg) rotateX(0deg) translateZ(4.5em)";
-          //  jjjC_book.classList.remove('jjjjvariemeTheeMouV2');
+        
 
-
+                //the reset also close the book so it must reset the zindexes of the pages..
             for (let i = 0; i < jjjBehDaPages.length; i++) {
                 jjjBehDaPages[i].style.zIndex = 25;
                 jjjBehDaPages[i].classList.remove('jjjBehClassRotateOrNot');
@@ -1557,11 +1524,18 @@ function jjNextIt(){
 
 
 
+//============================================MiniGame cardGame=====================================================//
+//============================================MiniGame cardGame=====================================================//
+//============================================MiniGame cardGame=====================================================//
+//============================================MiniGame cardGame=====================================================//
+//============================================MiniGame cardGame=====================================================//
+//============================================MiniGame cardGame=====================================================//
+//============================================MiniGame cardGame=====================================================//
+//============================================MiniGame cardGame=====================================================//
+//============================================MiniGame cardGame=====================================================//
 
 
-
-
-
+//As explained at top : 1)immediately-invoked function, 2)listener for on load ,3)check body's id enable javascript code and avoid conflicts between pages
 
     (function() {
 
@@ -1583,7 +1557,8 @@ function jjNextIt(){
        
        
        
-       
+       // here I just declare a variable for all the cards and also set a starting array that holds the elements that I want to dispaly in them...
+       // as you see its 3 times the same ....
        let jjjjcardItem=document.getElementsByClassName("jjjjcardItem");
        let jjjjCardclasses=Array(
        "Empusidae","Empusidae","Empusidae",
@@ -1594,6 +1569,9 @@ function jjNextIt(){
        "funnySayings","funnySayings","funnySayings"
        );
        
+       //here I get all the cards, pick a random value from the array and add it as a class to each card, then i remove the value from array.
+       //this way I create sets of 3 ...so there will be the same class 3 times.
+       //the jjjjCardclasses.length ensures that the random number exists in the array...
        for (p=0;p<jjjjcardItem.length;p++){
          let getit=jjjjCardclasses[Math.floor(Math.random() * jjjjCardclasses.length)];
        
@@ -1604,6 +1582,7 @@ function jjNextIt(){
        
         }
        
+        //Also I have added a set that its a random funny saying...
        let jjjCardsFunnySayingsUrl=Array(
            "bamboo.jpg",
            "getALife.jpg",
@@ -1614,7 +1593,8 @@ function jjNextIt(){
        );
        
        
-       
+       //... and in order to achieve it heres another random picker to pick an image and add it to the class funnySayings! (so there will be 3 funnySayings
+       //with this image)
        let jjjjRandomFunny=jjjCardsFunnySayingsUrl[Math.floor(Math.random() * jjjCardsFunnySayingsUrl.length)];
        
        setTimeout(function(){
@@ -1632,18 +1612,14 @@ function jjNextIt(){
        }
            
        
-       
+       //triggering the game set up
        jjjjGameSetUp();
        
        
        let jjjjgameEnded=false;
        
-               //ok ..this is a tricky one because animations of rotation get interuppted with animation of hover(keyframe animation)
-               //in each one of these I need to first add the clicked element to an array (jjjcardiflipped) then
-               //disactivate his animation..then add the rotation...then check if matches or it has to be flipped again
-               //and in case it doesnt match add back the animation with a delay though to have time for the flip to take place..again..
-               //so setTimeout = animation time of flip...
-       
+                
+                //not much to explain here..same as the quiz I simple create localStorage items and keep the top 10...
        
                function jjjjSDisplayTopScores() {
                        
@@ -1680,6 +1656,8 @@ function jjNextIt(){
                jjjjShowTheScores();
            });
        
+        
+
            function jjjShowMiniGame(){
                if ( jjjjgameEnded==true){
                    jjjjResetMiniGameLet();
@@ -1738,8 +1716,18 @@ function jjNextIt(){
        
        
        
+               //I wanted to have a hover animation. Proble was that when using transform property in to the animation
+                // and you change it later with javascript it doesnt react well..(delays e.t.c) so:
+
+               //..this is a tricky one 
+               //in each one of these I need to first add the clicked element to an array (jjjcardiflipped) then
+               //disactivate his animation..then add the rotation...then check if matches or it has to be flipped again
+               //and in case it doesnt match add back the animation with a delay though to have time for the flip to take place..again..
+               //so setTimeout = animation time of flip...
        
-       
+
+
+
            for (let i = 0; i < jjjjcardItems.length; i++) {
                jjjjcardItems[i].addEventListener('click', function (e) {
                    e.preventDefault();
@@ -1747,11 +1735,13 @@ function jjNextIt(){
                    jjjjloadSafety=true;
                    
        
-       
+                    //I checkhow many cards are flipped each time ..
                    if (jjjCardiFlipped.length === 0) {
        
                      
-       
+                    // at each flip I push the class item to an array and then compare the array items between them...
+                    //if items are the same they remain open ..else they flip back..the flip back is getting triggered
+                    //only when 3 cards are flipped..
                        jjjCardiFlipped.push(jjjjcardItems[i]);
                        if (jjjjtimerIsOn==false){
                        jjjjStartCardGameTimer();
@@ -1831,7 +1821,7 @@ function jjNextIt(){
                            jjjCardiFlipped[1].classList[1] === jjjCardiFlipped[2].classList[1]) {
        
                            // Code to execute when cards match (for 3 cards)
-                         
+                         //I add delay so the flip animation end first and then activate the commands for the 3 flipped cards that match...
        
                           
                            setTimeout(function(){ 
@@ -1968,7 +1958,7 @@ function jjNextIt(){
        
                    }
        
-                   
+                   //this gets triggered in the end of the game if you won....
                    function jjjjSSaveTopScores(jjjjSScore) {              
                        let jjjjSTopScores = JSON.parse(localStorage.getItem('jjjjSTopScores')) || [];   
                        jjjjSTopScores.push(jjjjSScore);
@@ -1986,7 +1976,7 @@ function jjNextIt(){
        
        
        
-       
+                    //a timer which I get the value in the end of the game ...
                    function jjjjStartCardGameTimer(){
        
                        jjjjtimerIsOn=true;
@@ -2053,23 +2043,25 @@ function jjNextIt(){
        
        
        
-                    
+                        //just resetting all values to start..also the timer..
+                        
                         function jjjjResetMiniGameLet() {
                             
                             if (typeof jjjjCountDownInterval !== 'undefined') {
                                 clearInterval(jjjjCountDownInterval);
                             }
                         
-                            
+                            //reset the array that I push the sets...
                             jjjCardiFlipped = [];
                         
-                        
+                        //I remove all the setTimeouts delays...(in case there is a delay on so I can reset instantly);
+                        //the command is just getting its windowSetTimeout one after another and 0 it..
                             let id = window.setTimeout(function() {}, 0);
                             while (id--) {
                                 window.clearTimeout(id);
                             }
                             
-                            
+                            //rest of commands is to reset timers and recalling the set classes to cards e.t.c
                             for (let i = 0; i < jjjjcardItems.length; i++) {
                                 
                                 
@@ -2115,34 +2107,18 @@ function jjNextIt(){
 
 
 
+//===================================================Species page===============================================//
+//===================================================Species page===============================================//
+//===================================================Species page===============================================//
+//===================================================Species page===============================================//
+//===================================================Species page===============================================//
+//===================================================Species page===============================================//
+//===================================================Species page===============================================//
+//===================================================Species page===============================================//
+//===================================================Species page===============================================//
+//===================================================Species page===============================================//
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//As explained at top : 1)immediately-invoked function, 2)listener for on load ,3)check body's id enable javascript code and avoid conflicts between pages
 
 
 (function() {
@@ -2164,7 +2140,8 @@ function jjNextIt(){
 
 
 
-          
+          //in order to create the chart bars I get the values from inside the divs and put them in a variable called "counter"
+          //then I add the height of it and also at 1.5 em as base...
 function jSpapplyStylesToBars() {
     for (let i = 0; i < jSpbar.length; i++) {
         let percentageElement = jSpbar[i].querySelector(".jSppercentage");
@@ -2178,7 +2155,9 @@ function jSpapplyStylesToBars() {
         function animateCounter(counter) {
             jSpbar[i].querySelector(".jSppercentage").textContent = counter + "%";
             jSpbar[i].querySelector(".jSppercentage").style.height = "calc(" + counter + "% + 1.5em)";
-
+            //requestAnimationFrame executes a function before the next "repaint" of the browser...
+            //so adding a delay to it you create an animation per 150 ms in our case..so it updates the height
+            // of the bars per 150ms (By callying the function above..);()=> instant call..
             if (counter < percentage) {
                 setTimeout(function(){
                     requestAnimationFrame(() => animateCounter(counter + 1));
@@ -2189,7 +2168,7 @@ function jSpapplyStylesToBars() {
 
 
 
-
+        // a simple switch in order to change the color of the bar depending on the inner html (therefore the name of the species)
         switch (recognize) {
             case "Mantidae":
                 jSpbar[i].querySelector(".jSppercentage").style.backgroundColor = "rgb(82,112,31)";
@@ -2235,6 +2214,10 @@ function jSpapplyStylesToBars() {
     }
 }
 
+//creating an IntersectionObserver...it takes two parameteres
+//first is the object to be observeed which is the jSpchart(the whole chart container)
+//second parameter is the observer itself..which we disconnect when the function is getting triggered..
+//otherwise it would retrigger..and for the chart effect is not desirable behavior..
 
 const jSkobserver = new IntersectionObserver((entries, jSkobserver) => {
     entries.forEach(entry => {
@@ -2246,83 +2229,12 @@ const jSkobserver = new IntersectionObserver((entries, jSkobserver) => {
         }
     });
 }, { threshold: 1.0 }); 
-
+//threshold is to set if you want to trigger when its fully visible (1.0) or maybe half of it (0.5) you can set a value from 0.0->1.0 ...(i think 0.1 is minimum)
 
 const jSpchart = document.querySelector('.jSpchart');
 if (jSpchart) {
     jSkobserver.observe(jSpchart);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /*
-
-            for (let i=0;i<jSpbar.length;i++){
-                
-                let percentage=jSpbar[i].querySelector(".jSppercentage").innerHTML;
-               jSpbar[i].querySelector(".jSppercentage").style.height="calc("+percentage+" + 1.5em)";
-               let recognize=jSpbar[i].querySelector("label").innerHTML;
-               switch(recognize){
-                case "Mantidae":
-                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(82,112,31)";
-                    jSpbar[i].querySelector("label").style.color="rgb(82,112,31)";
-                    break;
-                case "Hymenopodidae":
-                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(237, 185, 67)";
-                    jSpbar[i].querySelector("label").style.color="rgb(237, 185, 67)";
-                    break;
-                case "Empusidae":
-                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(206,149,178)";
-                    jSpbar[i].querySelector("label").style.color="rgb(206,149,178)";
-                    break;
-                case "Liturgusidae":
-                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(173,182,117)";
-                    jSpbar[i].querySelector("label").style.color="rgb(173,182,117)";
-                    break;
-                case "Deroplatyidae":
-                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(244,99,35)";
-                    jSpbar[i].querySelector("label").style.color="rgb(244,99,35)";
-                    break;
-                case "Phyllocranidae":
-                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(225,197,149)";
-                    jSpbar[i].querySelector("label").style.color="rgb(225,197,149)";
-                    break;
-                case "Gonypetidae":
-                    jSpbar[i].querySelector(".jSppercentage").style.backgroundColor="rgb(119,109,123)";
-                    jSpbar[i].querySelector("label").style.color="rgb(119,109,123)";
-                    break;
-                    default:
-                        jSpbar[i].querySelector("label").style.color="black";
-
-
-               }
-
-
-            }
-
-*/
-
-
-
 
 
 
@@ -2338,7 +2250,10 @@ if (jSpchart) {
                 })
             }
             
-
+            //this is just to choose the appropriate content depending on what you clicked...
+            //in order to replace the content I cheat it a bit by playing with charAt and length...taking the last letter which is the number
+            // and forming the right element id..
+       
             function jSpChooseSpecies(jSpWhoCalled){
                 let theElementToBeSeen=document.getElementById("jSpSubSpeciesMenu"+jSpWhoCalled.id.charAt(jSpWhoCalled.id.length - 1)  );
                 let theElementToBeScaled=document.getElementById("jSPMainMenu"+jSpWhoCalled.id.charAt(jSpWhoCalled.id.length - 1)  );
@@ -2372,6 +2287,7 @@ if (jSpchart) {
                 theElementToBeSeen.querySelector('.jSpSubSpeciesMenuContent').classList.add('jSpClassForChosenOne');
                 theElementToBeSeen.querySelector('.jSpSubSpeciesMenuContent').scrollTop=0;
                 theElementToBeScaled.classList.add('jSpSubSpeciesClassForFunctionScale');
+                //here I switch the src attribute depending on the id chosen...(its the mantis you see on the top);
                 switch(theElementToBeSeen.id){
 
                     case "jSpSubSpeciesMenu1":
@@ -2455,30 +2371,4 @@ if (jSpchart) {
 
         }
     })  })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
