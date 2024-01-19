@@ -1,4 +1,4 @@
-
+/*styling for the entire document*/
   
     body {
       font-family: 'Arial';
@@ -8,6 +8,7 @@
       color: #000000;
     }
 
+ /*Styling for the header section*/
     header {
       background-color: #fca3cc; 
       color: #fff; 
@@ -17,10 +18,13 @@
       
     }
 
+ /* Styling for the main content section */
+
     main {
       padding: 30px;
     }
 
+ /*Styling for each about section */
     .about-section {
       margin-bottom: 35px;
       background-color: rgba(255, 255, 255, 0.9); 
@@ -29,6 +33,7 @@
  
     }
 
+/*Styling for the section titles*/
     .section-title {
       color: #fca3cc;
       text-transform: uppercase;
@@ -36,6 +41,7 @@
       margin-bottom: 10px;
     }
 
+/*Styling for the footer section*/ 
     footer {
       background-color: #cdb2fc; 
       color: #fff; 
@@ -44,6 +50,7 @@
       width: 100%;
     }
 
+/*Styling for a decorative element in the footer*/
     footer:before {
      
       font-size: 25px;
